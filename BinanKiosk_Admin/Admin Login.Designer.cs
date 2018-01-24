@@ -44,20 +44,18 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(507, 362);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(349, 38);
+            this.txtUsername.Size = new System.Drawing.Size(349, 45);
             this.txtUsername.TabIndex = 41;
             // 
             // txtPassword
             // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(507, 458);
+            this.txtPassword.Location = new System.Drawing.Point(507, 470);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(349, 38);
+            this.txtPassword.Size = new System.Drawing.Size(349, 45);
             this.txtPassword.TabIndex = 42;
             // 
             // btnLogin
@@ -113,7 +111,7 @@
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox2.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.password;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(566, 406);
+            this.pictureBox2.Location = new System.Drawing.Point(566, 418);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(217, 57);
             this.pictureBox2.TabIndex = 50;

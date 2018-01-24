@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timestamp = new System.Windows.Forms.Timer(this.components);
             this.btnJob = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -57,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // timestamp
@@ -65,15 +68,15 @@
             // 
             // btnJob
             // 
-            this.btnJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
+            this.btnJob.BackColor = System.Drawing.Color.DarkGreen;
             this.btnJob.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnJob.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
+            this.btnJob.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnJob.FlatAppearance.BorderSize = 2;
-            this.btnJob.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral;
+            this.btnJob.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJob.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJob.ForeColor = System.Drawing.Color.Transparent;
-            this.btnJob.Location = new System.Drawing.Point(0, 347);
+            this.btnJob.Location = new System.Drawing.Point(0, 423);
             this.btnJob.Name = "btnJob";
             this.btnJob.Size = new System.Drawing.Size(155, 88);
             this.btnJob.TabIndex = 32;
@@ -83,15 +86,15 @@
             // 
             // btnServices
             // 
-            this.btnServices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
+            this.btnServices.BackColor = System.Drawing.Color.DarkGreen;
             this.btnServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnServices.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
+            this.btnServices.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnServices.FlatAppearance.BorderSize = 2;
-            this.btnServices.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral;
+            this.btnServices.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnServices.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnServices.ForeColor = System.Drawing.Color.Transparent;
-            this.btnServices.Location = new System.Drawing.Point(0, 434);
+            this.btnServices.Location = new System.Drawing.Point(0, 511);
             this.btnServices.Name = "btnServices";
             this.btnServices.Size = new System.Drawing.Size(155, 88);
             this.btnServices.TabIndex = 30;
@@ -101,15 +104,15 @@
             // 
             // btnMaps
             // 
-            this.btnMaps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
+            this.btnMaps.BackColor = System.Drawing.Color.DarkGreen;
             this.btnMaps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMaps.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
+            this.btnMaps.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnMaps.FlatAppearance.BorderSize = 2;
-            this.btnMaps.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral;
+            this.btnMaps.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnMaps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaps.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaps.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMaps.Location = new System.Drawing.Point(0, 260);
+            this.btnMaps.Location = new System.Drawing.Point(0, 335);
             this.btnMaps.Name = "btnMaps";
             this.btnMaps.Size = new System.Drawing.Size(155, 88);
             this.btnMaps.TabIndex = 29;
@@ -119,16 +122,16 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
+            this.btnSearch.BackColor = System.Drawing.Color.DarkGreen;
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnSearch.FlatAppearance.BorderSize = 2;
-            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Transparent;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSearch.Location = new System.Drawing.Point(0, 173);
+            this.btnSearch.Location = new System.Drawing.Point(0, 247);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(155, 88);
             this.btnSearch.TabIndex = 28;
@@ -138,16 +141,17 @@
             // 
             // btnHome
             // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
+            this.btnHome.AutoSize = true;
+            this.btnHome.BackColor = System.Drawing.Color.DarkGreen;
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
+            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnHome.FlatAppearance.BorderSize = 2;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral;
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Transparent;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHome.Location = new System.Drawing.Point(0, 86);
+            this.btnHome.Location = new System.Drawing.Point(0, 159);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(155, 88);
             this.btnHome.TabIndex = 27;
@@ -170,11 +174,11 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button4;
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Transparent;
@@ -190,11 +194,11 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button4;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Transparent;
@@ -210,11 +214,11 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button4;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Transparent;
@@ -230,11 +234,11 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button4;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Transparent;
@@ -259,11 +263,11 @@
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.Transparent;
-            this.addButton.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button4;
+            this.addButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addButton.BackgroundImage")));
             this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.addButton.FlatAppearance.BorderSize = 2;
-            this.addButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Coral;
+            this.addButton.FlatAppearance.BorderSize = 0;
+            this.addButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.ForeColor = System.Drawing.Color.Transparent;
@@ -278,7 +282,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
+            this.pictureBox7.BackColor = System.Drawing.Color.ForestGreen;
             this.pictureBox7.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.binancity_nav_logo;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.Location = new System.Drawing.Point(503, 5);
@@ -290,7 +294,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
+            this.pictureBox8.BackColor = System.Drawing.Color.ForestGreen;
             this.pictureBox8.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.Binan_city;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox8.Location = new System.Drawing.Point(593, 5);
@@ -302,15 +306,14 @@
             // 
             // lbldate
             // 
-            this.lbldate.BackColor = System.Drawing.Color.Transparent;
+            this.lbldate.BackColor = System.Drawing.Color.ForestGreen;
             this.lbldate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbldate.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldate.ForeColor = System.Drawing.Color.White;
-            this.lbldate.Image = global::BinanKiosk_Admin.Properties.Resources.timestamp;
             this.lbldate.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbldate.Location = new System.Drawing.Point(970, 699);
+            this.lbldate.Location = new System.Drawing.Point(970, 691);
             this.lbldate.Name = "lbldate";
-            this.lbldate.Size = new System.Drawing.Size(396, 73);
+            this.lbldate.Size = new System.Drawing.Size(396, 81);
             this.lbldate.TabIndex = 94;
             this.lbldate.Text = ".";
             this.lbldate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -318,6 +321,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
+            this.pictureBox4.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.uppermenu;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
@@ -328,7 +332,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
-            this.pictureBox3.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.udown;
+            this.pictureBox3.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.undermenu;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(0, 677);
             this.pictureBox3.Name = "pictureBox3";
@@ -338,11 +342,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.DarkGreen;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 522);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 592);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 155);
+            this.pictureBox1.Size = new System.Drawing.Size(155, 180);
             this.pictureBox1.TabIndex = 242;
             this.pictureBox1.TabStop = false;
             // 
@@ -355,11 +359,23 @@
             this.pictureBox5.TabIndex = 250;
             this.pictureBox5.TabStop = false;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.DarkGreen;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(155, 177);
+            this.pictureBox6.TabIndex = 251;
+            this.pictureBox6.TabStop = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
@@ -371,15 +387,17 @@
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.lbldate);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.btnJob);
             this.Controls.Add(this.btnServices);
             this.Controls.Add(this.btnMaps);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox3);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -392,6 +410,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,5 +438,6 @@
     private System.Windows.Forms.Button button5;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.PictureBox pictureBox5;
-}
+        private System.Windows.Forms.PictureBox pictureBox6;
+    }
 }
