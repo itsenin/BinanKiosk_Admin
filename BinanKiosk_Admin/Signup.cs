@@ -82,7 +82,7 @@ namespace BinanKiosk_Admin
 
         private bool nullCheck () //true if at least one value is nullxxx
         {
-            if ((userName==null)||(firstName==null)||(middleInitial==null)||(lastName==null)||(designation==null)||(office==null)||(password==null)||(confPassword==null))
+            if ((userName==String.Empty)||(firstName== String.Empty) ||(middleInitial== String.Empty) ||(lastName== String.Empty) ||(designation== String.Empty) ||(office== String.Empty) ||(password== String.Empty) ||(confPassword== String.Empty))
             {
                 return false;
             }
