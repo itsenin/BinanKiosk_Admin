@@ -38,11 +38,11 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pb_preview = new System.Windows.Forms.PictureBox();
             this.addButton = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -52,7 +52,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pb_test = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_test)).BeginInit();
             this.SuspendLayout();
             // 
             // timestamp
@@ -171,25 +173,26 @@
             this.label1.Text = "10 / 10";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button5
+            // saveButton
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(786, 592);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(142, 68);
-            this.button5.TabIndex = 248;
-            this.button5.Text = "SAVE";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button5.UseVisualStyleBackColor = false;
+            this.saveButton.BackColor = System.Drawing.Color.Transparent;
+            this.saveButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveButton.BackgroundImage")));
+            this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.saveButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.ForeColor = System.Drawing.Color.Transparent;
+            this.saveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.saveButton.Location = new System.Drawing.Point(764, 414);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(142, 68);
+            this.saveButton.TabIndex = 248;
+            this.saveButton.Text = "SAVE";
+            this.saveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // button4
             // 
@@ -251,14 +254,15 @@
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // pictureBox2
+            // pb_preview
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox2.Location = new System.Drawing.Point(272, 105);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(982, 440);
-            this.pictureBox2.TabIndex = 244;
-            this.pictureBox2.TabStop = false;
+            this.pb_preview.BackColor = System.Drawing.Color.Gainsboro;
+            this.pb_preview.Location = new System.Drawing.Point(606, 108);
+            this.pb_preview.Name = "pb_preview";
+            this.pb_preview.Size = new System.Drawing.Size(300, 300);
+            this.pb_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_preview.TabIndex = 244;
+            this.pb_preview.TabStop = false;
             // 
             // addButton
             // 
@@ -272,13 +276,14 @@
             this.addButton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.ForeColor = System.Drawing.Color.Transparent;
             this.addButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.addButton.Location = new System.Drawing.Point(638, 592);
+            this.addButton.Location = new System.Drawing.Point(606, 414);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(142, 68);
             this.addButton.TabIndex = 243;
             this.addButton.Text = "ADD";
             this.addButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // pictureBox7
             // 
@@ -369,6 +374,16 @@
             this.pictureBox6.TabIndex = 251;
             this.pictureBox6.TabStop = false;
             // 
+            // pb_test
+            // 
+            this.pb_test.BackColor = System.Drawing.Color.Gainsboro;
+            this.pb_test.Location = new System.Drawing.Point(263, 108);
+            this.pb_test.Name = "pb_test";
+            this.pb_test.Size = new System.Drawing.Size(300, 300);
+            this.pb_test.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_test.TabIndex = 252;
+            this.pb_test.TabStop = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,12 +392,13 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.pb_test);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pb_preview);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
@@ -403,7 +419,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -411,6 +427,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_test)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,13 +448,14 @@
     private System.Windows.Forms.PictureBox pictureBox7;
     private System.Windows.Forms.PictureBox pictureBox1;
     private System.Windows.Forms.Button addButton;
-    private System.Windows.Forms.PictureBox pictureBox2;
+    private System.Windows.Forms.PictureBox pb_preview;
     private System.Windows.Forms.Button button2;
     private System.Windows.Forms.Button button3;
     private System.Windows.Forms.Button button4;
-    private System.Windows.Forms.Button button5;
+    private System.Windows.Forms.Button saveButton;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pb_test;
     }
 }

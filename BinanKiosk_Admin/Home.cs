@@ -35,5 +35,47 @@ namespace BinanKiosk_Admin
             timestamp.Enabled = true;
             timestamp.Tick += new System.EventHandler(OnTimerEvent);
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Title = "Choose Image";
+            openFile.Filter = "Images (*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG;*.)|*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                Image img = new Bitmap(openFile.FileName);
+                pb_preview.Image = img;
+            }
+        }
+
+        public static byte[] ImageToByteArray(Image img, PictureBox pb)
+        {
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            if (pb.Image != null)
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+            return ms.ToArray();
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            var serializedImage = ImageToByteArray(pb_preview.Image,pb_preview);
+            pb_test.Image = GetDataToImage(serializedImage);
+        }
+
+        public Image GetDataToImage(byte[] pData)
+        {
+            try
+            {
+                ImageConverter imgConverter = new ImageConverter();
+                return imgConverter.ConvertFrom(pData) as Image;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+                return null;
+            }
+        }
     }
 }
