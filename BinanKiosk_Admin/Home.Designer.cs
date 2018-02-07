@@ -53,6 +53,8 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pb_test = new System.Windows.Forms.PictureBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lb_imageName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -185,7 +187,7 @@
             this.saveButton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.ForeColor = System.Drawing.Color.Transparent;
             this.saveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.saveButton.Location = new System.Drawing.Point(764, 414);
+            this.saveButton.Location = new System.Drawing.Point(1074, 414);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(142, 68);
             this.saveButton.TabIndex = 248;
@@ -206,7 +208,7 @@
             this.button4.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Transparent;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(934, 592);
+            this.button4.Location = new System.Drawing.Point(556, 183);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(142, 68);
             this.button4.TabIndex = 247;
@@ -257,9 +259,9 @@
             // pb_preview
             // 
             this.pb_preview.BackColor = System.Drawing.Color.Gainsboro;
-            this.pb_preview.Location = new System.Drawing.Point(606, 108);
+            this.pb_preview.Location = new System.Drawing.Point(766, 108);
             this.pb_preview.Name = "pb_preview";
-            this.pb_preview.Size = new System.Drawing.Size(300, 300);
+            this.pb_preview.Size = new System.Drawing.Size(450, 300);
             this.pb_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_preview.TabIndex = 244;
             this.pb_preview.TabStop = false;
@@ -276,7 +278,7 @@
             this.addButton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.ForeColor = System.Drawing.Color.Transparent;
             this.addButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.addButton.Location = new System.Drawing.Point(606, 414);
+            this.addButton.Location = new System.Drawing.Point(556, 109);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(142, 68);
             this.addButton.TabIndex = 243;
@@ -377,12 +379,30 @@
             // pb_test
             // 
             this.pb_test.BackColor = System.Drawing.Color.Gainsboro;
-            this.pb_test.Location = new System.Drawing.Point(263, 108);
+            this.pb_test.Location = new System.Drawing.Point(193, 224);
             this.pb_test.Name = "pb_test";
             this.pb_test.Size = new System.Drawing.Size(300, 300);
             this.pb_test.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_test.TabIndex = 252;
             this.pb_test.TabStop = false;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(193, 108);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(300, 95);
+            this.listBox1.TabIndex = 254;
+            // 
+            // lb_imageName
+            // 
+            this.lb_imageName.BackColor = System.Drawing.Color.Transparent;
+            this.lb_imageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_imageName.Location = new System.Drawing.Point(762, 441);
+            this.lb_imageName.Name = "lb_imageName";
+            this.lb_imageName.Size = new System.Drawing.Size(306, 23);
+            this.lb_imageName.TabIndex = 255;
+            this.lb_imageName.Text = "imageName";
             // 
             // Home
             // 
@@ -392,6 +412,8 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.lb_imageName);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.pb_test);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.saveButton);
@@ -457,5 +479,7 @@
     private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pb_test;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label lb_imageName;
     }
 }

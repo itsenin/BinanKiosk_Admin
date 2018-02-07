@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,7 +46,37 @@ namespace BinanKiosk_Admin
             {
                 Image img = new Bitmap(openFile.FileName);
                 pb_preview.Image = img;
+                lb_imageName.Text = openFile.SafeFileName;
+                
             }
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = Config.conn;
+            MySqlDataReader reader;
+            conn.Open();
+            var serializedImage = ImageToByteArray(pb_preview.Image, pb_preview);
+
+            using (var cmd = new MySqlCommand("INSERT INTO images(image_id, image_name, image_byte) VALUES(NULL,'firstImage', @image)", conn))
+            {
+                cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Successfully Saved to Database!");
+            }
+
+            using (var cmd = new MySqlCommand("SELECT image_byte from images WHERE image_id = 1", conn))
+            {
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    byte[] deserializedImage = (byte[])reader["image_byte"];
+                    pb_test.Image = GetDataToImage(deserializedImage);
+                }
+            }
+            conn.Close();
+
         }
 
         public static byte[] ImageToByteArray(Image img, PictureBox pb)
@@ -56,12 +87,6 @@ namespace BinanKiosk_Admin
                 img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             }
             return ms.ToArray();
-        }
-
-        private void saveButton_Click(object sender, EventArgs e)
-        {
-            var serializedImage = ImageToByteArray(pb_preview.Image,pb_preview);
-            pb_test.Image = GetDataToImage(serializedImage);
         }
 
         public Image GetDataToImage(byte[] pData)
