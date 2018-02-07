@@ -108,7 +108,7 @@
             this.btnReturn.Location = new System.Drawing.Point(643, 591);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(180, 90);
-            this.btnReturn.TabIndex = 63;
+            this.btnReturn.TabIndex = 10;
             this.btnReturn.Text = "BACK";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -124,7 +124,7 @@
             this.btnSignup.Location = new System.Drawing.Point(378, 591);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(180, 90);
-            this.btnSignup.TabIndex = 62;
+            this.btnSignup.TabIndex = 9;
             this.btnSignup.Text = "SIGN UP";
             this.btnSignup.UseVisualStyleBackColor = true;
             this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
@@ -134,18 +134,22 @@
             this.txtConfirmPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPass.Location = new System.Drawing.Point(851, 293);
+            this.txtConfirmPass.MaxLength = 50;
             this.txtConfirmPass.Name = "txtConfirmPass";
+            this.txtConfirmPass.PasswordChar = '*';
             this.txtConfirmPass.Size = new System.Drawing.Size(322, 38);
-            this.txtConfirmPass.TabIndex = 61;
+            this.txtConfirmPass.TabIndex = 8;
             // 
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(851, 163);
+            this.txtPassword.MaxLength = 50;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(322, 38);
-            this.txtPassword.TabIndex = 60;
+            this.txtPassword.TabIndex = 7;
             // 
             // label11
             // 
@@ -162,12 +166,14 @@
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(300, 407);
+            this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(322, 38);
-            this.txtEmail.TabIndex = 57;
+            this.txtEmail.TabIndex = 6;
             // 
             // txtOffice
             // 
+            this.txtOffice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtOffice.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOffice.FormattingEnabled = true;
             this.txtOffice.Items.AddRange(new object[] {
@@ -177,10 +183,11 @@
             this.txtOffice.Location = new System.Drawing.Point(295, 342);
             this.txtOffice.Name = "txtOffice";
             this.txtOffice.Size = new System.Drawing.Size(327, 43);
-            this.txtOffice.TabIndex = 56;
+            this.txtOffice.TabIndex = 5;
             // 
             // txtDesignation
             // 
+            this.txtDesignation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtDesignation.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesignation.FormattingEnabled = true;
             this.txtDesignation.Items.AddRange(new object[] {
@@ -190,25 +197,27 @@
             this.txtDesignation.Location = new System.Drawing.Point(295, 284);
             this.txtDesignation.Name = "txtDesignation";
             this.txtDesignation.Size = new System.Drawing.Size(327, 43);
-            this.txtDesignation.TabIndex = 55;
+            this.txtDesignation.TabIndex = 4;
             // 
             // txtMI
             // 
             this.txtMI.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMI.Location = new System.Drawing.Point(300, 229);
+            this.txtMI.MaxLength = 2;
             this.txtMI.Name = "txtMI";
             this.txtMI.Size = new System.Drawing.Size(322, 38);
-            this.txtMI.TabIndex = 54;
+            this.txtMI.TabIndex = 3;
             // 
             // txtLastName
             // 
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(300, 173);
+            this.txtLastName.MaxLength = 30;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(322, 38);
-            this.txtLastName.TabIndex = 53;
+            this.txtLastName.TabIndex = 2;
             // 
             // label10
             // 
@@ -295,18 +304,20 @@
             this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(300, 114);
+            this.txtFirstName.MaxLength = 40;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(322, 38);
-            this.txtFirstName.TabIndex = 42;
+            this.txtFirstName.TabIndex = 1;
             // 
             // txtUsername
             // 
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(300, 60);
+            this.txtUsername.MaxLength = 30;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(322, 38);
-            this.txtUsername.TabIndex = 41;
+            this.txtUsername.TabIndex = 0;
             // 
             // pictureBox2
             // 
