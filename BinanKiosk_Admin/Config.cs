@@ -26,6 +26,12 @@ namespace BinanKiosk_Admin
             changeForm(current, hm);
         }
 
+        public static void CallSearch(Form current)
+        {
+            Search src = new Search();
+            changeForm(current, src);
+        }
+
         public static void CallServices(Form current)
         {
             Services sv = new Services();
