@@ -14,12 +14,23 @@ namespace BinanKiosk_Admin
     {
         public Services()
         {
+            DoubleBuffered = true;
             InitializeComponent();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Config.CallHome(this);
+        }
+
+        private void btnServices_Click(object sender, EventArgs e)
+        {
+            Config.CallServices(this);
         }
     }
 }

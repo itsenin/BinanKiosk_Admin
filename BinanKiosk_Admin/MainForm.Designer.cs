@@ -86,6 +86,7 @@
             this.btnServices.Text = "SERVICES";
             this.btnServices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnServices.UseVisualStyleBackColor = false;
+            this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
             // 
             // btnMaps
             // 

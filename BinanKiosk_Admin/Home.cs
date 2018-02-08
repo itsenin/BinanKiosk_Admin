@@ -15,6 +15,7 @@ namespace BinanKiosk_Admin
     {
         public Home()
         {
+            DoubleBuffered = true;
             InitializeComponent();
             timer1.Interval = 5000;
             timer1.Start();
@@ -101,6 +102,16 @@ namespace BinanKiosk_Admin
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
                 return null;
             }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Config.CallHome(this);
+        }
+
+        private void btnServices_Click(object sender, EventArgs e)
+        {
+            Config.CallServices(this);
         }
     }
 }
