@@ -55,6 +55,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(507, 470);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(349, 45);
             this.txtPassword.TabIndex = 42;
             // 
@@ -141,7 +142,7 @@
             this.pictureBox4.TabIndex = 40;
             this.pictureBox4.TabStop = false;
             // 
-            // Admin_Login
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,7 +161,7 @@
             this.Controls.Add(this.pictureBox4);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Admin_Login";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

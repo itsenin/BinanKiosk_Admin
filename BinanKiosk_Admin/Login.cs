@@ -87,7 +87,7 @@ namespace BinanKiosk_Admin
 
         private bool nullCheck() //true if at least one value is nullxxx
         {
-            if ((userName == null) || (password == null))
+            if ((string.IsNullOrEmpty(userName)) || (string.IsNullOrEmpty(password)))
             {
                 MessageBox.Show("please fill out the fields");
                 return false;
@@ -108,6 +108,10 @@ namespace BinanKiosk_Admin
                     this.Hide();
                     MainForm mf = new MainForm(userName, firstName, lastName, middleInitial, designation, office, email, password);
                     mf.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("account doesn't exist");
                 }
             }
         }

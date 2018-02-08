@@ -59,11 +59,8 @@ namespace BinanKiosk_Admin
         {
             initialize();
             //test();
+            retainData();
             alertmsg();
-            
-            this.Hide();
-            Login lg = new Login();
-            lg.ShowDialog();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -82,7 +79,10 @@ namespace BinanKiosk_Admin
 
         private bool nullCheck () //true if at least one value is nullxxx
         {
-            if ((userName==String.Empty)||(firstName== String.Empty) ||(middleInitial== String.Empty) ||(lastName== String.Empty) ||(designation== String.Empty) ||(office== String.Empty) ||(password== String.Empty) ||(confPassword== String.Empty))
+            if (((string.IsNullOrEmpty(userName)) ||((string.IsNullOrEmpty(firstName)) ||
+                ((string.IsNullOrEmpty(middleInitial)) ||((string.IsNullOrEmpty(lastName)) ||
+                ((string.IsNullOrEmpty(designation)) ||((string.IsNullOrEmpty(office)) ||((string.IsNullOrEmpty(password)) ||
+                ((string.IsNullOrEmpty(confPassword)))))))))))
             {
                 return false;
             }
@@ -95,7 +95,8 @@ namespace BinanKiosk_Admin
 
         private bool passwordCheck () //true if passwords match
         {
-            if (password.Equals(confPassword))
+            if (password.Equals(confPassword) &&
+                ((!(string.IsNullOrEmpty(password)) && !(string.IsNullOrEmpty(password)))))
             {
                 return true;
             }
@@ -122,6 +123,17 @@ namespace BinanKiosk_Admin
             {
                 register();
             }
+        }
+
+        private void retainData ()
+        {
+            txtDesignation.Text = designation;
+            txtEmail.Text = email;
+            txtFirstName.Text = firstName;
+            txtLastName.Text = lastName;
+            txtMI.Text = middleInitial;
+            txtOffice.Text = office;
+            txtUsername.Text = userName;
         }
 
         private void prepareSQL ()
@@ -190,6 +202,9 @@ namespace BinanKiosk_Admin
                 if (createAccount())
                 {
                     MessageBox.Show("registration complete");
+                    this.Hide();
+                    Login lg = new Login();
+                    lg.ShowDialog();
                 }
 
                 else
