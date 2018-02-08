@@ -53,7 +53,7 @@ namespace BinanKiosk_Admin
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = Config.conn;
+            MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
             MySqlDataReader reader;
             conn.Open();
             var serializedImage = ImageToByteArray(pb_preview.Image, pb_preview);

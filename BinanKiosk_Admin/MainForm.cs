@@ -34,10 +34,17 @@ namespace BinanKiosk_Admin
             this.office = office;
             this.email = email;
             this.password = password;
+            showValues();
+        }
+
+        private void showValues()
+        {
+            MessageBox.Show("Username: " + userName + " Password: " + password + " Name: " + firstName + " " + middleInitial + " " + lastName + " Designation: " + designation + " Office: " + office + " Email: " + email);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            
             timestamp.Interval = 1;
             timestamp.Start();
         }
