@@ -60,6 +60,12 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mapground.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mapground.Designer.cs">
+      <DependentUpon>Mapground.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapground.resx">
+      <DependentUpon>Mapground.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -190,6 +199,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\groundfloornew3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\groundfloornew21.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

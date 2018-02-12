@@ -44,5 +44,11 @@ namespace BinanKiosk_Admin
             changeForm(current, mf);
         }
 
+        public static void CallMap1(Form current)
+        {
+            Mapground mg = new Mapground();
+            changeForm(current, mg);
+        }
+
     }
 }
