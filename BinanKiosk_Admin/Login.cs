@@ -105,8 +105,18 @@ namespace BinanKiosk_Admin
             {
                 if(accountExists())
                 {
+
+                    User.userName = userName;
+                    User.firstName = firstName;
+                    User.lastName = lastName;
+                    User.middleInitial = middleInitial;
+                    User.email = email;
+                    User.password = password;
+                    User.office = office;
+                    User.designation = designation;
+                    
                     this.Hide();
-                    MainForm mf = new MainForm(userName, firstName, lastName, middleInitial, designation, office, email, password);
+                    MainForm mf = new MainForm();
                     mf.ShowDialog();
                 }
                 else

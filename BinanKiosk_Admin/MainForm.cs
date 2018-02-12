@@ -21,19 +21,20 @@ namespace BinanKiosk_Admin
         String office;
         String email;
         String password;
-        public MainForm(String userName, String firstName, String lastName, String middleInitial, String designation, String office, String email, String password)
+
+        public MainForm()
         {
             InitializeComponent();
             timer1.Interval = 5000;
             timer1.Start();
-            this.userName = userName;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.middleInitial = middleInitial;
-            this.designation = designation;
-            this.office = office;
-            this.email = email;
-            this.password = password;
+            this.userName = User.userName;
+            this.firstName = User.firstName;
+            this.lastName = User.lastName;
+            this.middleInitial = User.middleInitial;
+            this.designation = User.designation;
+            this.office = User.office;
+            this.email = User.email;
+            this.password = User.password;
             showValues();
         }
 

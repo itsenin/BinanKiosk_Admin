@@ -38,5 +38,11 @@ namespace BinanKiosk_Admin
             changeForm(current, sv);
         }
 
+        public static void CallMain(Form current)
+        {
+            MainForm mf = new MainForm();
+            changeForm(current, mf);
+        }
+
     }
 }

@@ -302,7 +302,7 @@ namespace BinanKiosk_Admin
         
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Config.CallHome(this);
+            Config.CallMain(this);
         }
 
         private void officerPicture_Click(object sender, EventArgs e)
@@ -316,6 +316,11 @@ namespace BinanKiosk_Admin
                 officerPicture.Image = img;
                 imageString = openFile.SafeFileName;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Config.CallHome(this);
         }
     }
 }

@@ -43,6 +43,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -227,6 +228,18 @@
             this.pictureBox6.TabIndex = 251;
             this.pictureBox6.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(323, 335);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(679, 66);
+            this.label1.TabIndex = 252;
+            this.label1.Text = "Welcome to Binan Kiosk Administration Software!\r\nClick the buttons from the left " +
+    "side bar to view the modules!";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +248,7 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.lbldate);
@@ -278,5 +292,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label1;
     }
 }

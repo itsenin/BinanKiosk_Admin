@@ -31,18 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timestamp = new System.Windows.Forms.Timer(this.components);
-            this.btnJob = new System.Windows.Forms.Button();
-            this.btnServices = new System.Windows.Forms.Button();
-            this.btnMaps = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.lbldate = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBoxOfficers = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.officerInformation = new System.Windows.Forms.GroupBox();
@@ -68,111 +61,30 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.officersName = new System.Windows.Forms.GroupBox();
             this.officersList = new System.Windows.Forms.ListBox();
+            this.btnOfficers = new System.Windows.Forms.Button();
+            this.btnOffices = new System.Windows.Forms.Button();
+            this.btnServices = new System.Windows.Forms.Button();
+            this.btnJob = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnMaps = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.searchGroup = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBoxOfficers.SuspendLayout();
             this.officerInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.officerPicture)).BeginInit();
             this.officersName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.searchGroup.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnJob
-            // 
-            this.btnJob.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnJob.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnJob.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnJob.FlatAppearance.BorderSize = 2;
-            this.btnJob.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJob.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJob.ForeColor = System.Drawing.Color.Transparent;
-            this.btnJob.Location = new System.Drawing.Point(0, 423);
-            this.btnJob.Name = "btnJob";
-            this.btnJob.Size = new System.Drawing.Size(155, 88);
-            this.btnJob.TabIndex = 32;
-            this.btnJob.Text = "JOBS";
-            this.btnJob.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnJob.UseVisualStyleBackColor = false;
-            // 
-            // btnServices
-            // 
-            this.btnServices.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnServices.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnServices.FlatAppearance.BorderSize = 2;
-            this.btnServices.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServices.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServices.ForeColor = System.Drawing.Color.Transparent;
-            this.btnServices.Location = new System.Drawing.Point(0, 511);
-            this.btnServices.Name = "btnServices";
-            this.btnServices.Size = new System.Drawing.Size(155, 88);
-            this.btnServices.TabIndex = 30;
-            this.btnServices.Text = "SERVICES";
-            this.btnServices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnServices.UseVisualStyleBackColor = false;
-            // 
-            // btnMaps
-            // 
-            this.btnMaps.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnMaps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMaps.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnMaps.FlatAppearance.BorderSize = 2;
-            this.btnMaps.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnMaps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaps.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaps.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMaps.Location = new System.Drawing.Point(0, 335);
-            this.btnMaps.Name = "btnMaps";
-            this.btnMaps.Size = new System.Drawing.Size(155, 88);
-            this.btnMaps.TabIndex = 29;
-            this.btnMaps.Text = "OFFICES";
-            this.btnMaps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnMaps.UseVisualStyleBackColor = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnSearch.FlatAppearance.BorderSize = 2;
-            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSearch.Location = new System.Drawing.Point(0, 247);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(155, 88);
-            this.btnSearch.TabIndex = 28;
-            this.btnSearch.Text = "OFFICERS";
-            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // btnHome
-            // 
-            this.btnHome.AutoSize = true;
-            this.btnHome.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnHome.FlatAppearance.BorderSize = 2;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.Transparent;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHome.Location = new System.Drawing.Point(0, 159);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(155, 88);
-            this.btnHome.TabIndex = 27;
-            this.btnHome.Text = "HOME";
-            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // pictureBox7
             // 
@@ -234,37 +146,17 @@
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DarkGreen;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 592);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 180);
-            this.pictureBox1.TabIndex = 242;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.DarkGreen;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(155, 177);
-            this.pictureBox6.TabIndex = 251;
-            this.pictureBox6.TabStop = false;
-            // 
             // groupBoxOfficers
             // 
-            this.groupBoxOfficers.BackColor = System.Drawing.Color.White;
+            this.groupBoxOfficers.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxOfficers.Controls.Add(this.btnEdit);
             this.groupBoxOfficers.Controls.Add(this.officerInformation);
             this.groupBoxOfficers.Controls.Add(this.btnDelete);
             this.groupBoxOfficers.Controls.Add(this.btnAdd);
             this.groupBoxOfficers.Controls.Add(this.officersName);
-            this.groupBoxOfficers.Location = new System.Drawing.Point(161, 92);
+            this.groupBoxOfficers.Location = new System.Drawing.Point(699, 92);
             this.groupBoxOfficers.Name = "groupBoxOfficers";
-            this.groupBoxOfficers.Size = new System.Drawing.Size(435, 579);
+            this.groupBoxOfficers.Size = new System.Drawing.Size(445, 579);
             this.groupBoxOfficers.TabIndex = 252;
             this.groupBoxOfficers.TabStop = false;
             this.groupBoxOfficers.Text = "Officers";
@@ -519,6 +411,207 @@
             this.officersList.TabIndex = 0;
             this.officersList.SelectedValueChanged += new System.EventHandler(this.officersList_SelectedValueChanged);
             // 
+            // btnOfficers
+            // 
+            this.btnOfficers.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnOfficers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOfficers.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnOfficers.FlatAppearance.BorderSize = 2;
+            this.btnOfficers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnOfficers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOfficers.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOfficers.ForeColor = System.Drawing.Color.Transparent;
+            this.btnOfficers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnOfficers.Location = new System.Drawing.Point(3, 7);
+            this.btnOfficers.Name = "btnOfficers";
+            this.btnOfficers.Size = new System.Drawing.Size(110, 50);
+            this.btnOfficers.TabIndex = 28;
+            this.btnOfficers.Text = "OFFICERS";
+            this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnOfficers.UseVisualStyleBackColor = false;
+            // 
+            // btnOffices
+            // 
+            this.btnOffices.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnOffices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOffices.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnOffices.FlatAppearance.BorderSize = 2;
+            this.btnOffices.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnOffices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOffices.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOffices.ForeColor = System.Drawing.Color.Transparent;
+            this.btnOffices.Location = new System.Drawing.Point(3, 63);
+            this.btnOffices.Name = "btnOffices";
+            this.btnOffices.Size = new System.Drawing.Size(110, 50);
+            this.btnOffices.TabIndex = 29;
+            this.btnOffices.Text = "OFFICES";
+            this.btnOffices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnOffices.UseVisualStyleBackColor = false;
+            // 
+            // btnServices
+            // 
+            this.btnServices.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnServices.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnServices.FlatAppearance.BorderSize = 2;
+            this.btnServices.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServices.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServices.ForeColor = System.Drawing.Color.Transparent;
+            this.btnServices.Location = new System.Drawing.Point(3, 175);
+            this.btnServices.Name = "btnServices";
+            this.btnServices.Size = new System.Drawing.Size(110, 50);
+            this.btnServices.TabIndex = 30;
+            this.btnServices.Text = "SERVICES";
+            this.btnServices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnServices.UseVisualStyleBackColor = false;
+            // 
+            // btnJob
+            // 
+            this.btnJob.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnJob.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnJob.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnJob.FlatAppearance.BorderSize = 2;
+            this.btnJob.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJob.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJob.ForeColor = System.Drawing.Color.Transparent;
+            this.btnJob.Location = new System.Drawing.Point(3, 119);
+            this.btnJob.Name = "btnJob";
+            this.btnJob.Size = new System.Drawing.Size(110, 50);
+            this.btnJob.TabIndex = 32;
+            this.btnJob.Text = "JOBS";
+            this.btnJob.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnJob.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkGreen;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(0, 423);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 88);
+            this.button1.TabIndex = 264;
+            this.button1.Text = "JOBS";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DarkGreen;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(0, 511);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(155, 88);
+            this.button2.TabIndex = 263;
+            this.button2.Text = "SERVICES";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // btnMaps
+            // 
+            this.btnMaps.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnMaps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMaps.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnMaps.FlatAppearance.BorderSize = 2;
+            this.btnMaps.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnMaps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaps.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaps.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMaps.Location = new System.Drawing.Point(0, 335);
+            this.btnMaps.Name = "btnMaps";
+            this.btnMaps.Size = new System.Drawing.Size(155, 88);
+            this.btnMaps.TabIndex = 262;
+            this.btnMaps.Text = "MAPS";
+            this.btnMaps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnMaps.UseVisualStyleBackColor = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnSearch.FlatAppearance.BorderSize = 2;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSearch.Location = new System.Drawing.Point(0, 247);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(155, 88);
+            this.btnSearch.TabIndex = 261;
+            this.btnSearch.Text = "SEARCH";
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.AutoSize = true;
+            this.button3.BackColor = System.Drawing.Color.DarkGreen;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button3.FlatAppearance.BorderSize = 2;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Transparent;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(0, 159);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(155, 88);
+            this.button3.TabIndex = 260;
+            this.button3.Text = "HOME";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.DarkGreen;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(155, 177);
+            this.pictureBox2.TabIndex = 266;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.DarkGreen;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 592);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(155, 180);
+            this.pictureBox5.TabIndex = 265;
+            this.pictureBox5.TabStop = false;
+            // 
+            // searchGroup
+            // 
+            this.searchGroup.AutoSize = true;
+            this.searchGroup.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.searchGroup.BackColor = System.Drawing.Color.Transparent;
+            this.searchGroup.Controls.Add(this.btnOfficers);
+            this.searchGroup.Controls.Add(this.btnOffices);
+            this.searchGroup.Controls.Add(this.btnServices);
+            this.searchGroup.Controls.Add(this.btnJob);
+            this.searchGroup.Location = new System.Drawing.Point(161, 302);
+            this.searchGroup.Name = "searchGroup";
+            this.searchGroup.Size = new System.Drawing.Size(116, 228);
+            this.searchGroup.TabIndex = 267;
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -527,18 +620,19 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.searchGroup);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnMaps);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.groupBoxOfficers);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.lbldate);
-            this.Controls.Add(this.btnJob);
-            this.Controls.Add(this.btnServices);
-            this.Controls.Add(this.btnMaps);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox3);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -550,24 +644,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBoxOfficers.ResumeLayout(false);
             this.officerInformation.ResumeLayout(false);
             this.officerInformation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.officerPicture)).EndInit();
             this.officersName.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.searchGroup.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnJob;
-        private System.Windows.Forms.Button btnServices;
-        private System.Windows.Forms.Button btnMaps;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Timer timestamp;
@@ -575,8 +665,6 @@
         private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.GroupBox groupBoxOfficers;
         private System.Windows.Forms.GroupBox officersName;
         private System.Windows.Forms.Button btnDelete;
@@ -602,5 +690,17 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.PictureBox officerPicture;
+        private System.Windows.Forms.Button btnOfficers;
+        private System.Windows.Forms.Button btnOffices;
+        private System.Windows.Forms.Button btnServices;
+        private System.Windows.Forms.Button btnJob;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMaps;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel searchGroup;
     }
 }
