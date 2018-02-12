@@ -320,7 +320,7 @@ namespace BinanKiosk_Admin
 
         private void btnOffices_Click(object sender, EventArgs e)
         {
-            Config.CallOfficer(this);
+            Config.CallOffices(this);
         }
     }
 }

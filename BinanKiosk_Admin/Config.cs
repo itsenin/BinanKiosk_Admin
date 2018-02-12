@@ -38,10 +38,16 @@ namespace BinanKiosk_Admin
             changeForm(current, mf);
         }
 
-        public static void CallOfficer(Form current)
+        public static void CallOfficers(Form current)
         {
             Officer ofc = new Officer();
             changeForm(current, ofc);
+        }
+
+        public static void CallOffices(Form current)
+        {
+            Offices ofs = new Offices();
+            changeForm(current, ofs);
         }
 
         public static void CallMap1(Form current)

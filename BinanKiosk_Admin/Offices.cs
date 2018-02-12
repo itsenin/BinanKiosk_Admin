@@ -31,17 +31,17 @@ namespace BinanKiosk_Admin
 
         private void Search_Load(object sender, EventArgs e)
         {
-            officers();
-            departments();
+            offices();
+            //departments();
             positions();
         }
 
-        public void officers()
+        public void offices()
         {
 
             conn.Open();
 
-            cmd = new MySqlCommand("SELECT CONCAT (officials.first_name, ' ', officials.middle_initial, ' ', officials.last_name, ' ', officials.suffex) AS name FROM officials", conn);
+            cmd = new MySqlCommand("SELECT department_name FROM departments", conn);
             cmd.ExecuteNonQuery();
             reader = cmd.ExecuteReader();
 
@@ -58,7 +58,7 @@ namespace BinanKiosk_Admin
 
         }
 
-        public void departments()
+        /*public void departments()
         {
             conn.Open();
             cmd = new MySqlCommand("SELECT department_name FROM departments", conn);
@@ -76,11 +76,11 @@ namespace BinanKiosk_Admin
 
             reader.Close();
             conn.Close();
-        }
+        }*/
 
         public void positions()
         {
-            conn.Open();
+            /*conn.Open();
             cmd = new MySqlCommand("SELECT position_name FROM positions", conn);
             cmd.ExecuteNonQuery();
             reader = cmd.ExecuteReader();
@@ -95,19 +95,19 @@ namespace BinanKiosk_Admin
             }
 
             reader.Close();
-            conn.Close();
+            conn.Close();*/
         }
 
         public void clear()
         {
-            txtID.Text = "";
+            /*txtID.Text = "";
             txtFirstName.Text = "";
             txtLastName.Text = "";
             txtSuffix.Text = "";
             txtMI.Text = "";
             comboBoxDepartment.Text = "";
             comboBoxPosition.Text = "";
-            officerPicture.Image = null;
+            officerPicture.Image = null;*/
         }
 
         public static byte[] ImageToByteArray(Image img, PictureBox pb)
@@ -136,7 +136,7 @@ namespace BinanKiosk_Admin
 
         private void officersList_SelectedValueChanged(object sender, EventArgs e)
         {
-            officeInformation.Enabled = false;
+            /*officeInformation.Enabled = false;
             selectedValue = officeList.GetItemText(officeList.SelectedItem);
 
             conn.Open();
@@ -174,7 +174,7 @@ namespace BinanKiosk_Admin
             }
 
 
-            conn.Close();
+            conn.Close();*/
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -187,7 +187,7 @@ namespace BinanKiosk_Admin
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete the record of " + txtID.Text + "?", "Confirmation!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            /*DialogResult result = MessageBox.Show("Are you sure you want to delete the record of " + txtID.Text + "?", "Confirmation!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -214,7 +214,7 @@ namespace BinanKiosk_Admin
                 officeList.Items.Clear();
                 officers();
                 clear();
-            }
+            }*/
 
 
         }
@@ -228,7 +228,7 @@ namespace BinanKiosk_Admin
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "" || txtFirstName.Text == "" || txtMI.Text == "" || comboBoxDepartment.Text == "" || comboBoxPosition.Text == "")
+            /*if (txtID.Text == "" || txtFirstName.Text == "" || txtMI.Text == "" || comboBoxDepartment.Text == "" || comboBoxPosition.Text == "")
             {
                 MessageBox.Show("Please enter all credentials!", "Confirmation!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -297,7 +297,7 @@ namespace BinanKiosk_Admin
                     officers();
                     clear();
                 }
-            }
+            }*/
         }
 
         private void officerPicture_Click(object sender, EventArgs e)
@@ -320,7 +320,12 @@ namespace BinanKiosk_Admin
 
         private void btnOffices_Click(object sender, EventArgs e)
         {
-            Config.CallOfficer(this);
+            Config.CallOffices(this);
+        }
+
+        private void btnOfficers_Click(object sender, EventArgs e)
+        {
+            Config.CallOfficers(this);
         }
     }
 }

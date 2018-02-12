@@ -365,6 +365,7 @@
             this.btnOfficers.Text = "OFFICERS";
             this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOfficers.UseVisualStyleBackColor = false;
+            this.btnOfficers.Click += new System.EventHandler(this.btnOfficers_Click);
             // 
             // btnJobs
             // 
