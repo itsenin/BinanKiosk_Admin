@@ -20,6 +20,7 @@ namespace BinanKiosk_Admin
         String selectedValue;
         String position;
         String department;
+        String imageString;
 
         bool add = false;
 
@@ -106,6 +107,31 @@ namespace BinanKiosk_Admin
             txtMI.Text = "";
             comboBoxDepartment.Text = "";
             comboBoxPosition.Text = "";
+            officerPicture.Image = null;
+        }
+
+        public static byte[] ImageToByteArray(Image img, PictureBox pb)
+        {
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            if (pb.Image != null)
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+            return ms.ToArray();
+        }
+
+        public Image GetDataToImage(byte[] pData)
+        {
+            try
+            {
+                ImageConverter imgConverter = new ImageConverter();
+                return imgConverter.ConvertFrom(pData) as Image;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+                return null;
+            }
         }
 
         private void officersList_SelectedValueChanged(object sender, EventArgs e)
@@ -131,6 +157,23 @@ namespace BinanKiosk_Admin
             }
 
             reader.Close();
+
+            using (var cmd = new MySqlCommand("SELECT picture_string from pictures WHERE officials_id = '"+Convert.ToInt32(txtID.Text)+"' ", conn))
+            {
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    byte[] deserializedImage = (byte[])reader["picture_string"];
+                    officerPicture.Image = GetDataToImage(deserializedImage);
+                }
+                else
+                {
+                    officerPicture.Image = null;
+                }
+            }
+
+            
             conn.Close();
         }
 
@@ -150,9 +193,12 @@ namespace BinanKiosk_Admin
             {
                 conn.Open();
 
-                cmd = new MySqlCommand("DELETE FROM officials WHERE officials.officials_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                cmd = new MySqlCommand("DELETE FROM pictures WHERE pictures.officials_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
                 cmd.ExecuteNonQuery();
 
+                cmd = new MySqlCommand("DELETE FROM officials WHERE officials.officials_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                cmd.ExecuteNonQuery();
+                
                 conn.Close();
 
                 MessageBox.Show("Deleted!");
@@ -182,67 +228,94 @@ namespace BinanKiosk_Admin
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (add == true)
+            if (txtID.Text == "" || txtFirstName.Text == "" || txtMI.Text == "" || comboBoxDepartment.Text == "" || comboBoxPosition.Text == "")
             {
-                conn.Open();
-
-                cmd = new MySqlCommand("SELECT departments.department_id, positions.position_id FROM departments,positions WHERE departments.department_name = '" + comboBoxDepartment.Text + "' AND positions.position_name = '" + comboBoxPosition.Text + "' ", conn);
-                cmd.ExecuteNonQuery();
-                reader = cmd.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    reader.Read();
-                    department = reader["department_id"].ToString();
-                    position = reader["position_id"].ToString();
-                }
-
-                reader.Close();
-
-                cmd = new MySqlCommand("insert into officials (officials_id, first_name, last_name, middle_initial, suffex, position_id, department_id) values('" + Convert.ToInt32(txtID.Text) + "', '" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtMI.Text + "','" + txtSuffix.Text + "','" + Convert.ToInt32(position) + "','" + Convert.ToInt32(department) + "')", conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-
-                MessageBox.Show("Inserted!");
-
-                officerInformation.Enabled = false;
-                officersList.Items.Clear();
-                officers();
-                clear();
+                MessageBox.Show("Please enter all credentials!", "Confirmation!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                conn.Open();
-
-                cmd = new MySqlCommand("SELECT departments.department_id, positions.position_id FROM departments,positions WHERE departments.department_name = '" + comboBoxDepartment.Text + "' AND positions.position_name = '" + comboBoxPosition.Text + "' ", conn);
-                cmd.ExecuteNonQuery();
-                reader = cmd.ExecuteReader();
-
-                if (reader.HasRows)
+                if (add == true)
                 {
-                    reader.Read();
-                    department = reader["department_id"].ToString();
-                    position = reader["position_id"].ToString();
+                    conn.Open();
+
+                    cmd = new MySqlCommand("SELECT departments.department_id, positions.position_id FROM departments,positions WHERE departments.department_name = '" + comboBoxDepartment.Text + "' AND positions.position_name = '" + comboBoxPosition.Text + "' ", conn);
+                    cmd.ExecuteNonQuery();
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        department = reader["department_id"].ToString();
+                        position = reader["position_id"].ToString();
+                    }
+
+                    reader.Close();
+
+                    cmd = new MySqlCommand("insert into officials (officials_id, first_name, last_name, middle_initial, suffex, position_id, department_id) values('" + Convert.ToInt32(txtID.Text) + "', '" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtMI.Text + "','" + txtSuffix.Text + "','" + Convert.ToInt32(position) + "','" + Convert.ToInt32(department) + "')", conn);
+                    cmd.ExecuteNonQuery();
+
+                    //Picture Saving
+                    var serializedImage = ImageToByteArray(officerPicture.Image, officerPicture);
+                    cmd = new MySqlCommand("INSERT INTO pictures(picture_id, officials_id, picture_string) VALUES('" + Convert.ToInt32(txtID.Text) + "', '" + Convert.ToInt32(txtID.Text) + "', @image)", conn);
+                    cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+                    cmd.ExecuteNonQuery();
+
+                    conn.Close();
+
+                    MessageBox.Show("Inserted!");
+
+                    officerInformation.Enabled = false;
+                    officersList.Items.Clear();
+                    officers();
+                    clear();
                 }
+                else
+                {
+                    conn.Open();
 
-                reader.Close();
+                    cmd = new MySqlCommand("SELECT departments.department_id, positions.position_id FROM departments,positions WHERE departments.department_name = '" + comboBoxDepartment.Text + "' AND positions.position_name = '" + comboBoxPosition.Text + "' ", conn);
+                    cmd.ExecuteNonQuery();
+                    reader = cmd.ExecuteReader();
 
-                cmd = new MySqlCommand("UPDATE officials SET first_name = '" + txtFirstName.Text + "', last_name = '" + txtLastName.Text + "', middle_initial = '" + txtMI.Text + "', suffex = '" + txtSuffix.Text + "', position_id = '" + Convert.ToInt32(position) + "', department_id = '" + Convert.ToInt32(department) + "' WHERE officials_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        department = reader["department_id"].ToString();
+                        position = reader["position_id"].ToString();
+                    }
 
-                MessageBox.Show("Updated!");
+                    reader.Close();
 
-                officerInformation.Enabled = false;
-                officersList.Items.Clear();
-                officers();
-                clear();
+                    cmd = new MySqlCommand("UPDATE officials SET first_name = '" + txtFirstName.Text + "', last_name = '" + txtLastName.Text + "', middle_initial = '" + txtMI.Text + "', suffex = '" + txtSuffix.Text + "', position_id = '" + Convert.ToInt32(position) + "', department_id = '" + Convert.ToInt32(department) + "' WHERE officials_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    MessageBox.Show("Updated!");
+
+                    officerInformation.Enabled = false;
+                    officersList.Items.Clear();
+                    officers();
+                    clear();
+                }
             }
         }
-
+        
         private void btnHome_Click(object sender, EventArgs e)
         {
             Config.CallHome(this);
+        }
+
+        private void officerPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Title = "Choose Image";
+            openFile.Filter = "Images (*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG;*.)|*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                Image img = new Bitmap(openFile.FileName);
+                officerPicture.Image = img;
+                imageString = openFile.SafeFileName;
+            }
         }
     }
 }

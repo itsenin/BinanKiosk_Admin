@@ -46,6 +46,7 @@
             this.groupBoxOfficers = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.officerInformation = new System.Windows.Forms.GroupBox();
+            this.officerPicture = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
@@ -75,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBoxOfficers.SuspendLayout();
             this.officerInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.officerPicture)).BeginInit();
             this.officersName.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -262,7 +264,7 @@
             this.groupBoxOfficers.Controls.Add(this.officersName);
             this.groupBoxOfficers.Location = new System.Drawing.Point(161, 92);
             this.groupBoxOfficers.Name = "groupBoxOfficers";
-            this.groupBoxOfficers.Size = new System.Drawing.Size(416, 579);
+            this.groupBoxOfficers.Size = new System.Drawing.Size(435, 579);
             this.groupBoxOfficers.TabIndex = 252;
             this.groupBoxOfficers.TabStop = false;
             this.groupBoxOfficers.Text = "Officers";
@@ -270,7 +272,7 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(330, 77);
+            this.btnEdit.Location = new System.Drawing.Point(353, 77);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 2;
@@ -281,6 +283,7 @@
             // officerInformation
             // 
             this.officerInformation.BackColor = System.Drawing.Color.White;
+            this.officerInformation.Controls.Add(this.officerPicture);
             this.officerInformation.Controls.Add(this.label8);
             this.officerInformation.Controls.Add(this.txtID);
             this.officerInformation.Controls.Add(this.comboBoxDepartment);
@@ -301,10 +304,21 @@
             this.officerInformation.Enabled = false;
             this.officerInformation.Location = new System.Drawing.Point(6, 201);
             this.officerInformation.Name = "officerInformation";
-            this.officerInformation.Size = new System.Drawing.Size(318, 371);
+            this.officerInformation.Size = new System.Drawing.Size(422, 371);
             this.officerInformation.TabIndex = 16;
             this.officerInformation.TabStop = false;
             this.officerInformation.Text = "Officer Information";
+            // 
+            // officerPicture
+            // 
+            this.officerPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.officerPicture.Location = new System.Drawing.Point(312, 18);
+            this.officerPicture.Name = "officerPicture";
+            this.officerPicture.Size = new System.Drawing.Size(100, 100);
+            this.officerPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.officerPicture.TabIndex = 16;
+            this.officerPicture.TabStop = false;
+            this.officerPicture.Click += new System.EventHandler(this.officerPicture_Click);
             // 
             // label8
             // 
@@ -466,7 +480,7 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(330, 48);
+            this.btnDelete.Location = new System.Drawing.Point(353, 48);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 1;
@@ -477,7 +491,7 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(330, 19);
+            this.btnAdd.Location = new System.Drawing.Point(353, 19);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 0;
@@ -541,6 +555,7 @@
             this.groupBoxOfficers.ResumeLayout(false);
             this.officerInformation.ResumeLayout(false);
             this.officerInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.officerPicture)).EndInit();
             this.officersName.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -586,5 +601,6 @@
         private System.Windows.Forms.ComboBox comboBoxDepartment;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.PictureBox officerPicture;
     }
 }
