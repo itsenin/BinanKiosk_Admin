@@ -26,12 +26,6 @@ namespace BinanKiosk_Admin
             changeForm(current, hm);
         }
 
-        public static void CallSearch(Form current)
-        {
-            Search src = new Search();
-            changeForm(current, src);
-        }
-
         public static void CallServices(Form current)
         {
             Services sv = new Services();
@@ -44,11 +38,22 @@ namespace BinanKiosk_Admin
             changeForm(current, mf);
         }
 
+        public static void CallOfficer(Form current)
+        {
+            Officer ofc = new Officer();
+            changeForm(current, ofc);
+        }
+
         public static void CallMap1(Form current)
         {
             Mapground mg = new Mapground();
             changeForm(current, mg);
         }
 
+        public static void CallSearch(Form current)
+        {
+            Officer ofc = new Officer();
+            changeForm(current, ofc);
+        }
     }
 }

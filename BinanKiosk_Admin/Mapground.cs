@@ -60,10 +60,5 @@ namespace BinanKiosk_Admin
         {
             Config.CallServices(this);
         }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            Config.CallSearch(this);
-        }
     }
 }
