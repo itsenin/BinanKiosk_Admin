@@ -26,7 +26,10 @@ namespace BinanKiosk_Admin
 
         private void Mapground_Load(object sender, EventArgs e)
         {
-            
+            Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112 };
+            Config.loadbuttonnames(btnarray);
+
+
             timestamp.Interval = 1;
             timestamp.Start();
         }

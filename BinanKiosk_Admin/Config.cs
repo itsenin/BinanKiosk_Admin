@@ -20,6 +20,7 @@ namespace BinanKiosk_Admin
             current.Close();
         }
 
+
         public static void CallLogin(Form current)
         {
             Login lg = new Login();
@@ -30,6 +31,30 @@ namespace BinanKiosk_Admin
         {
             Signup sg = new Signup();
             changeForm(current, sg);
+        }
+
+        public static void loadbuttonnames(Button[] buttonarray)
+        {
+            foreach (Button btn in buttonarray)
+            {
+                MySqlConnection conn = Config.conn;
+                MySqlDataReader reader;
+                conn.Open();
+                string queryStr = "SELECT room_label from floors WHERE room_id = '" + btn.Name + "' ";
+                MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        btn.Text = reader.GetString(0);
+                    }
+                }
+                conn.Close();
+            }
+
+
         }
 
         public static void CallHome(Form current)
