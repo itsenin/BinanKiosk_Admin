@@ -13,7 +13,7 @@ namespace BinanKiosk_Admin
 {
     public partial class Login : Form
     {
-        MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
+        MySqlConnection conn = Config.conn;
         MySqlCommand cmdAccountLookup;
 
         String userName;
@@ -46,9 +46,7 @@ namespace BinanKiosk_Admin
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Signup su = new Signup();
-            su.ShowDialog();
+            Config.CallSignup(this);
         }
 
         private void prepareSQL ()
@@ -114,10 +112,8 @@ namespace BinanKiosk_Admin
                     User.password = password;
                     User.office = office;
                     User.designation = designation;
-                    
-                    this.Hide();
-                    MainForm mf = new MainForm();
-                    mf.ShowDialog();
+
+                    Config.CallMain(this);
                 }
                 else
                 {
@@ -125,5 +121,6 @@ namespace BinanKiosk_Admin
                 }
             }
         }
+
     }
 }

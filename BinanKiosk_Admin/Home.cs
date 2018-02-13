@@ -38,7 +38,7 @@ namespace BinanKiosk_Admin
             timestamp.Tick += new System.EventHandler(OnTimerEvent);
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void btn_add_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Title = "Choose Image";
@@ -117,6 +117,16 @@ namespace BinanKiosk_Admin
         private void btnSearch_Click(object sender, EventArgs e)
         {
             Config.CallSearch(this);
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lst_sliderPics_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

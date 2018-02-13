@@ -45,18 +45,20 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(507, 362);
+            this.txtUsername.Location = new System.Drawing.Point(676, 446);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(349, 45);
+            this.txtUsername.Size = new System.Drawing.Size(464, 54);
             this.txtUsername.TabIndex = 41;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(507, 470);
+            this.txtPassword.Location = new System.Drawing.Point(676, 578);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(349, 45);
+            this.txtPassword.Size = new System.Drawing.Size(464, 54);
             this.txtPassword.TabIndex = 42;
             // 
             // btnLogin
@@ -68,9 +70,10 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(469, 544);
+            this.btnLogin.Location = new System.Drawing.Point(625, 670);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(122, 61);
+            this.btnLogin.Size = new System.Drawing.Size(163, 75);
             this.btnLogin.TabIndex = 46;
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -85,9 +88,10 @@
             this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignup.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignup.ForeColor = System.Drawing.Color.White;
-            this.btnSignup.Location = new System.Drawing.Point(611, 544);
+            this.btnSignup.Location = new System.Drawing.Point(815, 670);
+            this.btnSignup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSignup.Name = "btnSignup";
-            this.btnSignup.Size = new System.Drawing.Size(122, 61);
+            this.btnSignup.Size = new System.Drawing.Size(163, 75);
             this.btnSignup.TabIndex = 47;
             this.btnSignup.Text = "Sign Up";
             this.btnSignup.UseVisualStyleBackColor = false;
@@ -102,9 +106,10 @@
             this.btnForgotPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForgotPass.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgotPass.ForeColor = System.Drawing.Color.White;
-            this.btnForgotPass.Location = new System.Drawing.Point(755, 544);
+            this.btnForgotPass.Location = new System.Drawing.Point(1007, 670);
+            this.btnForgotPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnForgotPass.Name = "btnForgotPass";
-            this.btnForgotPass.Size = new System.Drawing.Size(122, 61);
+            this.btnForgotPass.Size = new System.Drawing.Size(163, 75);
             this.btnForgotPass.TabIndex = 48;
             this.btnForgotPass.Text = "Forgot\r\nPassword";
             this.btnForgotPass.UseVisualStyleBackColor = false;
@@ -114,9 +119,10 @@
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox2.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.password;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(566, 418);
+            this.pictureBox2.Location = new System.Drawing.Point(755, 514);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(217, 57);
+            this.pictureBox2.Size = new System.Drawing.Size(289, 70);
             this.pictureBox2.TabIndex = 50;
             this.pictureBox2.TabStop = false;
             // 
@@ -125,9 +131,10 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox1.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.username;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(566, 310);
+            this.pictureBox1.Location = new System.Drawing.Point(755, 382);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(217, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(289, 70);
             this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;
             // 
@@ -136,21 +143,22 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.login_admin;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(430, 161);
+            this.pictureBox4.Location = new System.Drawing.Point(573, 198);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(482, 478);
+            this.pictureBox4.Size = new System.Drawing.Size(643, 588);
             this.pictureBox4.TabIndex = 40;
             this.pictureBox4.TabStop = false;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1821, 945);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.pictureBox2);
@@ -161,6 +169,7 @@
             this.Controls.Add(this.pictureBox4);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search";

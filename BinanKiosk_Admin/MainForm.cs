@@ -25,6 +25,13 @@ namespace BinanKiosk_Admin
         public MainForm()
         {
             InitializeComponent();
+
+            //retain navigation place and transparency over picturebox
+            var pos = this.PointToScreen(lbl_navigation.Location);
+            pos = pictureBox2.PointToClient(pos);
+            lbl_navigation.Parent = pictureBox2;
+            lbl_navigation.Location = pos;
+
             timer1.Interval = 5000;
             timer1.Start();
             this.userName = User.userName;

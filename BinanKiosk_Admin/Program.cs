@@ -16,7 +16,9 @@ namespace BinanKiosk_Admin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Login ln = new Login();
+            ln.Show();
+            Application.Run();
         }
     }
 }

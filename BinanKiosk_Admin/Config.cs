@@ -20,6 +20,18 @@ namespace BinanKiosk_Admin
             current.Close();
         }
 
+        public static void CallLogin(Form current)
+        {
+            Login lg = new Login();
+            changeForm(current, lg);
+        }
+
+        public static void CallSignup(Form current)
+        {
+            Signup sg = new Signup();
+            changeForm(current, sg);
+        }
+
         public static void CallHome(Form current)
         {
             Home hm = new Home();

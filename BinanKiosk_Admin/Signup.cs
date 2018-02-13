@@ -65,9 +65,8 @@ namespace BinanKiosk_Admin
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login lg = new Login();
-            lg.ShowDialog();
+            if(MessageBox.Show("Go back to the Login screen? (Current registration info will be discarded)", "Confirm Action", MessageBoxButtons.YesNo)==DialogResult.Yes)
+                Config.CallLogin(this);
         }
 
         private bool valueCheck () //true if email and user is ok
@@ -202,9 +201,7 @@ namespace BinanKiosk_Admin
                 if (createAccount())
                 {
                     MessageBox.Show("registration complete");
-                    this.Hide();
-                    Login lg = new Login();
-                    lg.ShowDialog();
+                    
                 }
 
                 else
