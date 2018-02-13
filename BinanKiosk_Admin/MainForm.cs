@@ -83,7 +83,7 @@ namespace BinanKiosk_Admin
 
         private void btnMaps_Click(object sender, EventArgs e)
         {
-
+            Config.CallMap1(this);
         }
 
         private void btnServices_Click(object sender, EventArgs e)

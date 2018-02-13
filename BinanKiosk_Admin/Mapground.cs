@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,15 +25,7 @@ namespace BinanKiosk_Admin
 
         
 
-        private void Mapground_Load(object sender, EventArgs e)
-        {
-            Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112 };
-            Config.loadbuttonnames(btnarray);
-
-
-            timestamp.Interval = 1;
-            timestamp.Start();
-        }
+        
 
         public int seconds = 0;
 
@@ -50,7 +43,7 @@ namespace BinanKiosk_Admin
         private void btnHome_Click(object sender, EventArgs e)
         {
             
-            Config.CallHome(this);
+            Config.CallMain(this);
 
         }
 
@@ -62,6 +55,39 @@ namespace BinanKiosk_Admin
         private void btnServices_Click(object sender, EventArgs e)
         {
             Config.CallServices(this);
+        }
+
+        private void Mapground_Load_1(object sender, EventArgs e)
+        {
+            Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112 };
+            Config.loadbuttonnames(btnarray);
+
+        }
+
+        private void r101_Click(object sender, EventArgs e)
+        {
+            roomtxt.Text = r101.Text;
+            valuelbl.Text = r101.Name;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            roomtxt.Enabled = true;
+            savebtn.Enabled = true;
+        }
+
+        private void savebtn_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = Config.conn;
+            MySqlDataReader reader;
+            conn.Open();
+            string queryStr = "UPDATE floors SET room_label = '" + roomtxt.Text + "' WHERE room_id = '"+valuelbl.Text+"' ";
+            MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+            reader = cmd.ExecuteReader();
+            conn.Close();
+            roomtxt.Enabled = false;
+            savebtn.Enabled = false;
+            Config.CallMap1(this);
         }
     }
 }

@@ -40,9 +40,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.editbtn = new System.Windows.Forms.Button();
+            this.roomtxt = new System.Windows.Forms.TextBox();
+            this.savebtn = new System.Windows.Forms.Button();
             this.r101 = new System.Windows.Forms.Button();
             this.btnOffices = new System.Windows.Forms.Button();
             this.btnOfficers = new System.Windows.Forms.Button();
@@ -63,6 +63,7 @@
             this.r111 = new System.Windows.Forms.Button();
             this.r109 = new System.Windows.Forms.Button();
             this.r112 = new System.Windows.Forms.Button();
+            this.valuelbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -187,44 +188,47 @@
             this.button3.Text = "3F";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // editbtn
             // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button1;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Transparent;
-            this.button6.Location = new System.Drawing.Point(1156, 177);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(96, 43);
-            this.button6.TabIndex = 258;
-            this.button6.Text = "Edit";
-            this.button6.UseVisualStyleBackColor = false;
+            this.editbtn.BackColor = System.Drawing.Color.Transparent;
+            this.editbtn.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button1;
+            this.editbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.editbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editbtn.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editbtn.ForeColor = System.Drawing.Color.Transparent;
+            this.editbtn.Location = new System.Drawing.Point(1156, 177);
+            this.editbtn.Name = "editbtn";
+            this.editbtn.Size = new System.Drawing.Size(96, 43);
+            this.editbtn.TabIndex = 258;
+            this.editbtn.Text = "Edit";
+            this.editbtn.UseVisualStyleBackColor = false;
+            this.editbtn.Click += new System.EventHandler(this.button6_Click);
             // 
-            // textBox1
+            // roomtxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(1157, 138);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 27);
-            this.textBox1.TabIndex = 259;
+            this.roomtxt.Enabled = false;
+            this.roomtxt.Location = new System.Drawing.Point(1157, 138);
+            this.roomtxt.Multiline = true;
+            this.roomtxt.Name = "roomtxt";
+            this.roomtxt.Size = new System.Drawing.Size(197, 27);
+            this.roomtxt.TabIndex = 259;
             // 
-            // button7
+            // savebtn
             // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button1;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Enabled = false;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.Transparent;
-            this.button7.Location = new System.Drawing.Point(1258, 177);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(96, 43);
-            this.button7.TabIndex = 260;
-            this.button7.Text = "Save";
-            this.button7.UseVisualStyleBackColor = false;
+            this.savebtn.BackColor = System.Drawing.Color.Transparent;
+            this.savebtn.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button1;
+            this.savebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.savebtn.Enabled = false;
+            this.savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savebtn.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.savebtn.ForeColor = System.Drawing.Color.Transparent;
+            this.savebtn.Location = new System.Drawing.Point(1258, 177);
+            this.savebtn.Name = "savebtn";
+            this.savebtn.Size = new System.Drawing.Size(96, 43);
+            this.savebtn.TabIndex = 260;
+            this.savebtn.Text = "Save";
+            this.savebtn.UseVisualStyleBackColor = false;
+            this.savebtn.Click += new System.EventHandler(this.savebtn_Click);
             // 
             // r101
             // 
@@ -233,11 +237,12 @@
             this.r101.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r101.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r101.ForeColor = System.Drawing.Color.Black;
-            this.r101.Location = new System.Drawing.Point(376, 501);
+            this.r101.Location = new System.Drawing.Point(378, 501);
             this.r101.Name = "r101";
             this.r101.Size = new System.Drawing.Size(187, 62);
             this.r101.TabIndex = 261;
             this.r101.UseVisualStyleBackColor = false;
+            this.r101.Click += new System.EventHandler(this.r101_Click);
             // 
             // btnOffices
             // 
@@ -379,7 +384,7 @@
             this.r102.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.r102.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r102.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r102.ForeColor = System.Drawing.Color.Black;
+            this.r102.ForeColor = System.Drawing.SystemColors.ControlText;
             this.r102.Location = new System.Drawing.Point(472, 236);
             this.r102.Name = "r102";
             this.r102.Size = new System.Drawing.Size(88, 157);
@@ -516,6 +521,16 @@
             this.r112.TabIndex = 293;
             this.r112.UseVisualStyleBackColor = false;
             // 
+            // valuelbl
+            // 
+            this.valuelbl.AutoSize = true;
+            this.valuelbl.Location = new System.Drawing.Point(161, 616);
+            this.valuelbl.Name = "valuelbl";
+            this.valuelbl.Size = new System.Drawing.Size(35, 13);
+            this.valuelbl.TabIndex = 294;
+            this.valuelbl.Text = "label1";
+            this.valuelbl.Visible = false;
+            // 
             // Mapground
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -524,6 +539,7 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.valuelbl);
             this.Controls.Add(this.r112);
             this.Controls.Add(this.r109);
             this.Controls.Add(this.r111);
@@ -544,9 +560,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.r101);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.savebtn);
+            this.Controls.Add(this.roomtxt);
+            this.Controls.Add(this.editbtn);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox2);
@@ -561,6 +577,7 @@
             this.Name = "Mapground";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Mapground_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -585,9 +602,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button editbtn;
+        private System.Windows.Forms.TextBox roomtxt;
+        private System.Windows.Forms.Button savebtn;
         private System.Windows.Forms.Button r101;
         private System.Windows.Forms.Button btnOffices;
         private System.Windows.Forms.Button btnOfficers;
@@ -608,5 +625,6 @@
         private System.Windows.Forms.Button r111;
         private System.Windows.Forms.Button r109;
         private System.Windows.Forms.Button r112;
+        private System.Windows.Forms.Label valuelbl;
     }
 }
