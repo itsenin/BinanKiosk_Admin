@@ -58,21 +58,33 @@ namespace BinanKiosk_Admin
 
         private void Mapground_Load_1(object sender, EventArgs e)
         {
-            Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112 };
-            Config.loadbuttonnames(btnarray);
-            
+            //Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112 };
+            //loadbuttonnames(btnarray);
 
-            foreach(Control child in panelfloor1.Controls)
+            MySqlConnection conn = Config.conn;
+            MySqlDataReader reader;
+
+            foreach (Control child in panelfloor1.Controls)
             {
                 if (child is Button)
                 {
-                  child.Click += new EventHandler(clickbait);
+                    conn.Open();
+                    string queryStr = "SELECT room_label from floors WHERE room_id = '" + child.Name + "' ";
+                    MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            child.Text = reader.GetString(0);
+                        }
+                    }
+                    conn.Close();
+
+                    child.Click += new EventHandler(clickbait);
                 }
-                
-
             }
-
-
 
         }
 

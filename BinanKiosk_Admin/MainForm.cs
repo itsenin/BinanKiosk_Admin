@@ -87,13 +87,16 @@ namespace BinanKiosk_Admin
         {
             Config.CallMap1(this);
         }
+        private void btnJobs_Click(object sender, EventArgs e)
+        {
+            Config.CallJobs(this);
+        }
 
         private void btnServices_Click(object sender, EventArgs e)
         {
             Config.CallServices(this);
         }
-        
-        
+
         
     }
 }
