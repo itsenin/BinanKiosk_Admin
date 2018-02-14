@@ -11,7 +11,7 @@ namespace BinanKiosk_Admin
         private static async void changeForm(Form current, Form next)
         {
             next.Show();
-            await Task.Delay(500);
+            await Task.Delay(250);
             current.Hide();
             current.Close();
         }

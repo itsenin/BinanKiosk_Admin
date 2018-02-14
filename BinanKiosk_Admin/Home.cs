@@ -125,7 +125,8 @@ namespace BinanKiosk_Admin
         }
 
         private void lst_sliderPics_SelectedIndexChanged(object sender, EventArgs e)
-        { 
+        {
+            
         }
     }
 }

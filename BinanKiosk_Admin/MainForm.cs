@@ -72,13 +72,15 @@ namespace BinanKiosk_Admin
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            //Home hm = new Home();
-            //this.Hide();
-            //hm.FormClosed += (s, args) => this.Close();
-            //hm.ShowDialog();
-            //hm.Focus();
             Config.CallHome(this);
-
+        }
+        private void btnOfficers_Click(object sender, EventArgs e)
+        {
+            Config.CallOfficers(this);
+        }
+        private void btnOffices_Click(object sender, EventArgs e)
+        {
+            Config.CallOffices(this);
         }
 
         private void btnMaps_Click(object sender, EventArgs e)
@@ -88,23 +90,10 @@ namespace BinanKiosk_Admin
 
         private void btnServices_Click(object sender, EventArgs e)
         {
-            //Services sv = new Services();
-            //this.Hide();
-            //sv.FormClosed += (s, args) => this.Close();
-            //sv.ShowDialog();
-            //sv.Focus();
-
             Config.CallServices(this);
         }
         
-        private void btnOffices_Click(object sender, EventArgs e)
-        {
-            Config.CallOffices(this);
-        }
-
-        private void btnOfficers_Click(object sender, EventArgs e)
-        {
-            Config.CallOfficers(this);
-        }
+        
+        
     }
 }
