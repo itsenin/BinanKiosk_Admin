@@ -415,9 +415,9 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(595, 89);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(197, 57);
+            this.label9.Size = new System.Drawing.Size(223, 57);
             this.label9.TabIndex = 33;
-            this.label9.Text = "OFFICER";
+            this.label9.Text = "OFFICERS";
             // 
             // btnOffices
             // 
@@ -429,7 +429,7 @@
             this.btnOffices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOffices.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffices.ForeColor = System.Drawing.Color.Transparent;
-            this.btnOffices.Location = new System.Drawing.Point(0, 208);
+            this.btnOffices.Location = new System.Drawing.Point(0, 257);
             this.btnOffices.Name = "btnOffices";
             this.btnOffices.Size = new System.Drawing.Size(155, 50);
             this.btnOffices.TabIndex = 268;
@@ -449,7 +449,7 @@
             this.btnOfficers.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfficers.ForeColor = System.Drawing.Color.Transparent;
             this.btnOfficers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnOfficers.Location = new System.Drawing.Point(0, 257);
+            this.btnOfficers.Location = new System.Drawing.Point(0, 208);
             this.btnOfficers.Name = "btnOfficers";
             this.btnOfficers.Size = new System.Drawing.Size(155, 50);
             this.btnOfficers.TabIndex = 267;

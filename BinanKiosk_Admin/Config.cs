@@ -73,7 +73,7 @@ namespace BinanKiosk_Admin
 
         public static void CallOfficers(Form current)
         {
-            Officer ofc = new Officer();
+            Officers ofc = new Officers();
             changeForm(current, ofc);
         }
 
@@ -91,7 +91,7 @@ namespace BinanKiosk_Admin
 
         public static void CallSearch(Form current)
         {
-            Officer ofc = new Officer();
+            Officers ofc = new Officers();
             changeForm(current, ofc);
         }
     }

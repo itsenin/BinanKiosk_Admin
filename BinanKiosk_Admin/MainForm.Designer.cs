@@ -124,7 +124,7 @@
             this.btnOffices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOffices.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffices.ForeColor = System.Drawing.Color.Transparent;
-            this.btnOffices.Location = new System.Drawing.Point(0, 208);
+            this.btnOffices.Location = new System.Drawing.Point(0, 257);
             this.btnOffices.Name = "btnOffices";
             this.btnOffices.Size = new System.Drawing.Size(155, 50);
             this.btnOffices.TabIndex = 276;
@@ -144,7 +144,7 @@
             this.btnOfficers.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfficers.ForeColor = System.Drawing.Color.Transparent;
             this.btnOfficers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnOfficers.Location = new System.Drawing.Point(0, 257);
+            this.btnOfficers.Location = new System.Drawing.Point(0, 208);
             this.btnOfficers.Name = "btnOfficers";
             this.btnOfficers.Size = new System.Drawing.Size(155, 50);
             this.btnOfficers.TabIndex = 275;
@@ -268,7 +268,7 @@
             this.lbl_navigation.AutoSize = true;
             this.lbl_navigation.BackColor = System.Drawing.Color.Transparent;
             this.lbl_navigation.Font = new System.Drawing.Font("Arial Narrow", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_navigation.Location = new System.Drawing.Point(5, 103);
+            this.lbl_navigation.Location = new System.Drawing.Point(2, 103);
             this.lbl_navigation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_navigation.Name = "lbl_navigation";
             this.lbl_navigation.Size = new System.Drawing.Size(153, 42);
