@@ -22,7 +22,7 @@ namespace BinanKiosk_Admin
         String department;
         String imageString;
 
-        bool add = false;
+        bool add = false, available = false;
 
         public Officers()
         {
@@ -288,6 +288,37 @@ namespace BinanKiosk_Admin
 
                     cmd = new MySqlCommand("UPDATE officials SET first_name = '" + txtFirstName.Text + "', last_name = '" + txtLastName.Text + "', middle_initial = '" + txtMI.Text + "', suffex = '" + txtSuffix.Text + "', position_id = '" + Convert.ToInt32(position) + "', department_id = '" + Convert.ToInt32(department) + "' WHERE officials_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
                     cmd.ExecuteNonQuery();
+
+                    using (var cmd = new MySqlCommand("SELECT picture_string from pictures WHERE officials_id = '" + Convert.ToInt32(txtID.Text) + "' ", conn))
+                    {
+                        reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            available = true;
+                        }
+                        else
+                        {
+                            available = false;
+                        }
+                    }
+
+                    if (available == true)
+                    {
+                        //Picture Saving
+                        var serializedImage = ImageToByteArray(officerPicture.Image, officerPicture);
+                        cmd = new MySqlCommand("UPDATE pictures SET picture_string = @image WHERE officials_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                        cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+                        cmd.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        //Picture Saving
+                        var serializedImage = ImageToByteArray(officerPicture.Image, officerPicture);
+                        cmd = new MySqlCommand("INSERT INTO pictures(picture_id, officials_id, picture_string) VALUES('" + Convert.ToInt32(txtID.Text) + "', '" + Convert.ToInt32(txtID.Text) + "', @image)", conn);
+                        cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+                        cmd.ExecuteNonQuery();
+                    }
+
                     conn.Close();
 
                     MessageBox.Show("Updated!");
