@@ -81,7 +81,7 @@
             this.btnJob.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJob.ForeColor = System.Drawing.Color.Transparent;
             this.btnJob.Location = new System.Drawing.Point(0, 521);
-            this.btnJob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnJob.Margin = new System.Windows.Forms.Padding(4);
             this.btnJob.Name = "btnJob";
             this.btnJob.Size = new System.Drawing.Size(207, 108);
             this.btnJob.TabIndex = 32;
@@ -100,7 +100,7 @@
             this.btnServices.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnServices.ForeColor = System.Drawing.Color.Transparent;
             this.btnServices.Location = new System.Drawing.Point(0, 629);
-            this.btnServices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnServices.Margin = new System.Windows.Forms.Padding(4);
             this.btnServices.Name = "btnServices";
             this.btnServices.Size = new System.Drawing.Size(207, 108);
             this.btnServices.TabIndex = 30;
@@ -120,7 +120,7 @@
             this.btnMaps.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaps.ForeColor = System.Drawing.Color.Transparent;
             this.btnMaps.Location = new System.Drawing.Point(0, 412);
-            this.btnMaps.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMaps.Margin = new System.Windows.Forms.Padding(4);
             this.btnMaps.Name = "btnMaps";
             this.btnMaps.Size = new System.Drawing.Size(207, 108);
             this.btnMaps.TabIndex = 29;
@@ -140,7 +140,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.Transparent;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSearch.Location = new System.Drawing.Point(0, 304);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(207, 108);
             this.btnSearch.TabIndex = 28;
@@ -161,7 +161,7 @@
             this.btnHome.ForeColor = System.Drawing.Color.Transparent;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnHome.Location = new System.Drawing.Point(0, 196);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(207, 108);
             this.btnHome.TabIndex = 27;
@@ -182,8 +182,8 @@
             this.saveButton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.ForeColor = System.Drawing.Color.Transparent;
             this.saveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.saveButton.Location = new System.Drawing.Point(420, 437);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Location = new System.Drawing.Point(245, 437);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(189, 84);
             this.saveButton.TabIndex = 248;
@@ -205,7 +205,7 @@
             this.btn_delete.ForeColor = System.Drawing.Color.Transparent;
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_delete.Location = new System.Drawing.Point(797, 398);
-            this.btn_delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(4);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(189, 84);
             this.btn_delete.TabIndex = 247;
@@ -218,9 +218,9 @@
             // 
             this.pb_preview.BackColor = System.Drawing.Color.Gainsboro;
             this.pb_preview.Location = new System.Drawing.Point(9, 67);
-            this.pb_preview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_preview.Margin = new System.Windows.Forms.Padding(4);
             this.pb_preview.Name = "pb_preview";
-            this.pb_preview.Size = new System.Drawing.Size(600, 350);
+            this.pb_preview.Size = new System.Drawing.Size(425, 350);
             this.pb_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_preview.TabIndex = 244;
             this.pb_preview.TabStop = false;
@@ -238,7 +238,7 @@
             this.btn_add.ForeColor = System.Drawing.Color.Transparent;
             this.btn_add.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_add.Location = new System.Drawing.Point(797, 306);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(4);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(189, 84);
             this.btn_add.TabIndex = 243;
@@ -253,7 +253,7 @@
             this.pictureBox7.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.binancity_nav_logo;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.Location = new System.Drawing.Point(671, 6);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(99, 91);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -266,7 +266,7 @@
             this.pictureBox8.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.Binan_city;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox8.Location = new System.Drawing.Point(791, 6);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(279, 91);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -294,7 +294,7 @@
             this.pictureBox4.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.uppermenu;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(1821, 106);
             this.pictureBox4.TabIndex = 92;
@@ -306,7 +306,7 @@
             this.pictureBox3.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.undermenu;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(0, 833);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(1945, 116);
             this.pictureBox3.TabIndex = 51;
@@ -317,7 +317,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.DarkGreen;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(0, 729);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(207, 222);
             this.pictureBox1.TabIndex = 242;
@@ -328,7 +328,7 @@
             this.pictureBox6.BackColor = System.Drawing.Color.DarkGreen;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(207, 218);
             this.pictureBox6.TabIndex = 251;
@@ -338,7 +338,7 @@
             // 
             this.pb_test.BackColor = System.Drawing.Color.Gainsboro;
             this.pb_test.Location = new System.Drawing.Point(732, 487);
-            this.pb_test.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_test.Margin = new System.Windows.Forms.Padding(4);
             this.pb_test.Name = "pb_test";
             this.pb_test.Size = new System.Drawing.Size(323, 191);
             this.pb_test.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -353,7 +353,7 @@
             this.lb_imageName.Location = new System.Drawing.Point(11, 469);
             this.lb_imageName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_imageName.Name = "lb_imageName";
-            this.lb_imageName.Size = new System.Drawing.Size(408, 28);
+            this.lb_imageName.Size = new System.Drawing.Size(214, 28);
             this.lb_imageName.TabIndex = 255;
             this.lb_imageName.Text = "imageName";
             // 
@@ -401,12 +401,8 @@
             this.lst_sliderPics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lst_sliderPics.FormattingEnabled = true;
             this.lst_sliderPics.ItemHeight = 25;
-            this.lst_sliderPics.Items.AddRange(new object[] {
-            "1st Pic",
-            "2nd pic",
-            "3rd Pic"});
             this.lst_sliderPics.Location = new System.Drawing.Point(316, 306);
-            this.lst_sliderPics.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lst_sliderPics.Margin = new System.Windows.Forms.Padding(4);
             this.lst_sliderPics.Name = "lst_sliderPics";
             this.lst_sliderPics.Size = new System.Drawing.Size(400, 304);
             this.lst_sliderPics.TabIndex = 254;
@@ -421,7 +417,7 @@
             this.pnl_Save.Controls.Add(this.saveButton);
             this.pnl_Save.Location = new System.Drawing.Point(1062, 237);
             this.pnl_Save.Name = "pnl_Save";
-            this.pnl_Save.Size = new System.Drawing.Size(616, 533);
+            this.pnl_Save.Size = new System.Drawing.Size(449, 533);
             this.pnl_Save.TabIndex = 259;
             this.pnl_Save.Visible = false;
             // 
@@ -454,7 +450,7 @@
             this.Controls.Add(this.pnl_Save);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";

@@ -13,6 +13,8 @@ namespace BinanKiosk_Admin
 {
     public partial class Home : Form
     {
+        MySqlConnection conn = Config.conn;
+        MySqlDataReader reader;
         public Home()
         {
             DoubleBuffered = true;
@@ -25,6 +27,7 @@ namespace BinanKiosk_Admin
         {
             timestamp.Interval = 1;
             timestamp.Start();
+            loadImageList();
         }
 
         private void OnTimerEvent(object sender, EventArgs e)
@@ -38,6 +41,24 @@ namespace BinanKiosk_Admin
             timestamp.Tick += new System.EventHandler(OnTimerEvent);
         }
 
+        private void loadImageList()
+        {
+            conn.Open();
+
+            using (var cmd = new MySqlCommand("SELECT image_name from images", conn))
+            {
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while(reader.Read())
+                    {
+                        lst_sliderPics.Items.Add(reader["image_name"].ToString());
+                    }
+                }
+            }
+            conn.Close();
+        }
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
@@ -45,29 +66,40 @@ namespace BinanKiosk_Admin
             openFile.Filter = "Images (*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG;*.)|*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG";
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                pnl_Save.Visible = true;
-                Image img = new Bitmap(openFile.FileName);
-                pb_preview.Image = img;
-                lb_imageName.Text = openFile.SafeFileName;
+                try
+                {
+                    Image img = new Bitmap(openFile.FileName);
+                    {
+                        pb_preview.Image = img;
+                        lb_imageName.Text = openFile.SafeFileName;
+                        pnl_Save.Visible = true;
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message + " error");
+                }
             }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
-            MySqlDataReader reader;
             conn.Open();
             var serializedImage = ImageToByteArray(pb_preview.Image, pb_preview);
 
-            using (var cmd = new MySqlCommand("INSERT INTO images(image_id, image_name, image_byte) VALUES(NULL,'firstImage', @image)", conn))
+            //INSERT
+            using (var cmd = new MySqlCommand("INSERT INTO images(image_id, image_name, image_byte) VALUES(NULL, @name, @image)", conn))
             {
+                cmd.Parameters.AddWithValue("@name", lb_imageName.Text);
                 cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Successfully Saved to Database!");
             }
 
-            using (var cmd = new MySqlCommand("SELECT image_byte from images WHERE image_id = 1", conn))
+            //RETRIEVE using Name
+            using (var cmd = new MySqlCommand("SELECT image_byte from images WHERE image_name = @name", conn))
             {
+                cmd.Parameters.AddWithValue("@name", lb_imageName.Text);
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
