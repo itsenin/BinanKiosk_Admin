@@ -45,10 +45,10 @@ namespace BinanKiosk_Admin
             openFile.Filter = "Images (*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG;*.)|*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG";
             if (openFile.ShowDialog() == DialogResult.OK)
             {
+                pnl_Save.Visible = true;
                 Image img = new Bitmap(openFile.FileName);
                 pb_preview.Image = img;
                 lb_imageName.Text = openFile.SafeFileName;
-                
             }
         }
 
@@ -125,8 +125,7 @@ namespace BinanKiosk_Admin
         }
 
         private void lst_sliderPics_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+        { 
         }
     }
 }
