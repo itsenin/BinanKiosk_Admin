@@ -34,6 +34,9 @@ namespace BinanKiosk_Admin
             offices();
             //departments();
             positions();
+
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         public void offices()
@@ -57,27 +60,7 @@ namespace BinanKiosk_Admin
             conn.Close();
 
         }
-
-        /*public void departments()
-        {
-            conn.Open();
-            cmd = new MySqlCommand("SELECT department_name FROM departments", conn);
-            cmd.ExecuteNonQuery();
-            reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    comboBoxDepartment.AutoCompleteCustomSource.Add(reader.GetString(0));
-                    comboBoxDepartment.Items.Add(reader.GetString(0));
-                }
-            }
-
-            reader.Close();
-            conn.Close();
-        }*/
-
+        
         public void positions()
         {
             /*conn.Open();
@@ -100,14 +83,53 @@ namespace BinanKiosk_Admin
 
         public void clear()
         {
-            /*txtID.Text = "";
-            txtFirstName.Text = "";
-            txtLastName.Text = "";
-            txtSuffix.Text = "";
-            txtMI.Text = "";
-            comboBoxDepartment.Text = "";
-            comboBoxPosition.Text = "";
-            officerPicture.Image = null;*/
+            txtID.Text = "";
+            txtDeptName.Text = "";
+            txtRoomID.Text = "";
+            txtDescription.Text = "";
+            officerPicture.Image = null;
+        }
+
+        private void officesList_SelectedValueChanged(object sender, EventArgs e)
+        {
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+
+            selectedValue = officeList.GetItemText(officeList.SelectedItem);
+
+            conn.Open();
+            cmd = new MySqlCommand("SELECT departments.department_id, departments.department_name, departments.room_id, departments.Dep_description FROM departments WHERE departments.department_name  = '" + selectedValue + "' ", conn);
+            cmd.ExecuteNonQuery();
+            reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                reader.Read();
+                txtID.Text = reader["department_id"].ToString();
+                txtDeptName.Text = reader["department_name"].ToString();
+                txtRoomID.Text = reader["room_id"].ToString();
+                txtDescription.Text = reader["Dep_description"].ToString();
+            }
+
+            reader.Close();
+
+            /*using (var cmd = new MySqlCommand("SELECT picture_string from pictures WHERE officials_id = '" + Convert.ToInt32(txtID.Text) + "' ", conn))
+            {
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    byte[] deserializedImage = (byte[])reader["picture_string"];
+                    officerPicture.Image = GetDataToImage(deserializedImage);
+                }
+                else
+                {
+                    officerPicture.Image = null;
+                }
+            }*/
+
+
+            conn.Close();
         }
 
         public static byte[] ImageToByteArray(Image img, PictureBox pb)
@@ -132,49 +154,6 @@ namespace BinanKiosk_Admin
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
                 return null;
             }
-        }
-
-        private void officersList_SelectedValueChanged(object sender, EventArgs e)
-        {
-            /*officeInformation.Enabled = false;
-            selectedValue = officeList.GetItemText(officeList.SelectedItem);
-
-            conn.Open();
-            cmd = new MySqlCommand("SELECT officials.officials_id, officials.first_name, officials.last_name, officials.middle_initial, officials.suffex, departments.department_name, positions.position_name, departments.room_id FROM officials,departments,positions WHERE positions.position_id = officials.position_id AND departments.department_id = officials.department_id AND CONCAT (officials.first_name, ' ', officials.middle_initial, ' ', officials.last_name, ' ', officials.suffex) LIKE '%" + selectedValue + "%' ", conn);
-            cmd.ExecuteNonQuery();
-            reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                reader.Read();
-                txtID.Text = reader["officials_id"].ToString();
-                txtFirstName.Text = reader["first_name"].ToString();
-                txtLastName.Text = reader["last_name"].ToString();
-                txtMI.Text = reader["middle_initial"].ToString();
-                txtSuffix.Text = reader["suffex"].ToString();
-                comboBoxDepartment.Text = reader["department_name"].ToString();
-                comboBoxPosition.Text = reader["position_name"].ToString();
-            }
-
-            reader.Close();
-
-            using (var cmd = new MySqlCommand("SELECT picture_string from pictures WHERE officials_id = '" + Convert.ToInt32(txtID.Text) + "' ", conn))
-            {
-                reader = cmd.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    reader.Read();
-                    byte[] deserializedImage = (byte[])reader["picture_string"];
-                    officerPicture.Image = GetDataToImage(deserializedImage);
-                }
-                else
-                {
-                    officerPicture.Image = null;
-                }
-            }
-
-
-            conn.Close();*/
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -228,6 +207,19 @@ namespace BinanKiosk_Admin
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            conn.Open();
+
+            cmd = new MySqlCommand("UPDATE departments SET department_name = '" + txtDeptName.Text + "', room_ID = '" + txtRoomID.Text + "', Dep_description = '" + txtDescription.Text + "' WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show("Updated!");
+
+            officeInformation.Enabled = false;
+            officeList.Items.Clear();
+            offices();
+            clear();
+
             /*if (txtID.Text == "" || txtFirstName.Text == "" || txtMI.Text == "" || comboBoxDepartment.Text == "" || comboBoxPosition.Text == "")
             {
                 MessageBox.Show("Please enter all credentials!", "Confirmation!", MessageBoxButtons.OK, MessageBoxIcon.Information);

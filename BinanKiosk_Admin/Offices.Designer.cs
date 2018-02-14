@@ -45,8 +45,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtMI = new System.Windows.Forms.TextBox();
+            this.txtDeptName = new System.Windows.Forms.TextBox();
+            this.txtRoomID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -158,6 +158,7 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // officeInformation
             // 
@@ -168,8 +169,8 @@
             this.officeInformation.Controls.Add(this.btnSave);
             this.officeInformation.Controls.Add(this.label1);
             this.officeInformation.Controls.Add(this.label4);
-            this.officeInformation.Controls.Add(this.txtFirstName);
-            this.officeInformation.Controls.Add(this.txtMI);
+            this.officeInformation.Controls.Add(this.txtDeptName);
+            this.officeInformation.Controls.Add(this.txtRoomID);
             this.officeInformation.Controls.Add(this.label5);
             this.officeInformation.Controls.Add(this.txtDescription);
             this.officeInformation.Enabled = false;
@@ -239,21 +240,20 @@
             this.label4.Size = new System.Drawing.Size(100, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Description:";
-            this.label4.Visible = false;
             // 
-            // txtFirstName
+            // txtDeptName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(112, 46);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(194, 20);
-            this.txtFirstName.TabIndex = 4;
+            this.txtDeptName.Location = new System.Drawing.Point(112, 46);
+            this.txtDeptName.Name = "txtDeptName";
+            this.txtDeptName.Size = new System.Drawing.Size(194, 20);
+            this.txtDeptName.TabIndex = 4;
             // 
-            // txtMI
+            // txtRoomID
             // 
-            this.txtMI.Location = new System.Drawing.Point(112, 74);
-            this.txtMI.Name = "txtMI";
-            this.txtMI.Size = new System.Drawing.Size(194, 20);
-            this.txtMI.TabIndex = 5;
+            this.txtRoomID.Location = new System.Drawing.Point(112, 74);
+            this.txtRoomID.Name = "txtRoomID";
+            this.txtRoomID.Size = new System.Drawing.Size(194, 20);
+            this.txtRoomID.TabIndex = 5;
             // 
             // label5
             // 
@@ -272,7 +272,6 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(194, 219);
             this.txtDescription.TabIndex = 10;
-            this.txtDescription.Visible = false;
             // 
             // btnDelete
             // 
@@ -314,7 +313,7 @@
             this.officeList.Name = "officeList";
             this.officeList.Size = new System.Drawing.Size(306, 342);
             this.officeList.TabIndex = 0;
-            this.officeList.SelectedValueChanged += new System.EventHandler(this.officersList_SelectedValueChanged);
+            this.officeList.SelectedValueChanged += new System.EventHandler(this.officesList_SelectedValueChanged);
             // 
             // label9
             // 
@@ -521,9 +520,9 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtDeptName;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.TextBox txtMI;
+        private System.Windows.Forms.TextBox txtRoomID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox officeInformation;
         private System.Windows.Forms.Button btnSave;
