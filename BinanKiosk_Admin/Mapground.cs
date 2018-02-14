@@ -13,6 +13,8 @@ namespace BinanKiosk_Admin
 {
     public partial class Mapground : Form
     {
+
+        string roomname, roomtext;
         
 
         public Mapground()
@@ -23,9 +25,6 @@ namespace BinanKiosk_Admin
             
         }
 
-        
-
-        
 
         public int seconds = 0;
 
@@ -61,23 +60,73 @@ namespace BinanKiosk_Admin
         {
             Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112 };
             Config.loadbuttonnames(btnarray);
+            
+
+            foreach(Control child in panelfloor1.Controls)
+            {
+                if (child is Button)
+                {
+                  child.Click += new EventHandler(clickbait);
+                }
+                
+
+            }
+
+
 
         }
 
-        private void r101_Click(object sender, EventArgs e)
+        private void clickbait(object sender, EventArgs e)
         {
-            roomtxt.Text = r101.Text;
-            valuelbl.Text = r101.Name;
+
+            var bttn = sender as Button;
+            getnames(bttn.Name, bttn.Text);
+
         }
 
+        
+
+        private void getnames(string roomname2,string roomtxt2)
+        {
+            roomtxt.Text = roomtxt2;
+            valuelbl.Text = roomname2;
+
+        }
+
+        //edit button
         private void button6_Click(object sender, EventArgs e)
         {
+            if (roomtxt.Text!= "")
+            {
+                enabling();
+            }
+            
+        }
+
+        private void enabling()
+        {
+
             roomtxt.Enabled = true;
             savebtn.Enabled = true;
+
+        }
+
+        private void disabling ()
+        {
+            roomtxt.Enabled = false;
+            savebtn.Enabled = false;
+
         }
 
         private void savebtn_Click(object sender, EventArgs e)
         {
+            if (roomtxt.Text == "")
+            {
+                roomtxt.Text = "Empty Room";
+
+            }
+
+
             MySqlConnection conn = Config.conn;
             MySqlDataReader reader;
             conn.Open();
@@ -85,9 +134,17 @@ namespace BinanKiosk_Admin
             MySqlCommand cmd = new MySqlCommand(queryStr, conn);
             reader = cmd.ExecuteReader();
             conn.Close();
-            roomtxt.Enabled = false;
-            savebtn.Enabled = false;
+            disabling();
+            
             Config.CallMap1(this);
         }
+
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

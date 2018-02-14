@@ -36,7 +36,6 @@
             this.lbldate = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -64,6 +63,7 @@
             this.r109 = new System.Windows.Forms.Button();
             this.r112 = new System.Windows.Forms.Button();
             this.valuelbl = new System.Windows.Forms.Label();
+            this.panelfloor1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -71,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panelfloor1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox7
@@ -133,30 +134,16 @@
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button1;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(177, 134);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 67);
-            this.button1.TabIndex = 252;
-            this.button1.Text = "GF";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.groundfloornew2;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(344, 102);
+            this.pictureBox2.Location = new System.Drawing.Point(26, 10);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(798, 551);
             this.pictureBox2.TabIndex = 253;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // button2
             // 
@@ -166,7 +153,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(177, 207);
+            this.button2.Location = new System.Drawing.Point(176, 102);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(142, 67);
             this.button2.TabIndex = 254;
@@ -181,7 +168,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(177, 280);
+            this.button3.Location = new System.Drawing.Point(176, 175);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(142, 67);
             this.button3.TabIndex = 255;
@@ -237,12 +224,11 @@
             this.r101.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r101.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r101.ForeColor = System.Drawing.Color.Black;
-            this.r101.Location = new System.Drawing.Point(378, 501);
+            this.r101.Location = new System.Drawing.Point(58, 407);
             this.r101.Name = "r101";
             this.r101.Size = new System.Drawing.Size(187, 62);
             this.r101.TabIndex = 261;
             this.r101.UseVisualStyleBackColor = false;
-            this.r101.Click += new System.EventHandler(this.r101_Click);
             // 
             // btnOffices
             // 
@@ -385,7 +371,7 @@
             this.r102.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r102.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r102.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.r102.Location = new System.Drawing.Point(472, 236);
+            this.r102.Location = new System.Drawing.Point(152, 142);
             this.r102.Name = "r102";
             this.r102.Size = new System.Drawing.Size(88, 157);
             this.r102.TabIndex = 283;
@@ -398,7 +384,7 @@
             this.r103.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r103.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r103.ForeColor = System.Drawing.Color.Black;
-            this.r103.Location = new System.Drawing.Point(471, 153);
+            this.r103.Location = new System.Drawing.Point(151, 59);
             this.r103.Name = "r103";
             this.r103.Size = new System.Drawing.Size(97, 62);
             this.r103.TabIndex = 284;
@@ -411,7 +397,7 @@
             this.r104.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r104.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r104.ForeColor = System.Drawing.Color.Black;
-            this.r104.Location = new System.Drawing.Point(568, 112);
+            this.r104.Location = new System.Drawing.Point(248, 18);
             this.r104.Name = "r104";
             this.r104.Size = new System.Drawing.Size(80, 39);
             this.r104.TabIndex = 285;
@@ -424,7 +410,7 @@
             this.r105.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r105.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r105.ForeColor = System.Drawing.Color.Black;
-            this.r105.Location = new System.Drawing.Point(609, 148);
+            this.r105.Location = new System.Drawing.Point(289, 54);
             this.r105.Name = "r105";
             this.r105.Size = new System.Drawing.Size(58, 74);
             this.r105.TabIndex = 286;
@@ -437,7 +423,7 @@
             this.r106.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r106.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r106.ForeColor = System.Drawing.Color.Black;
-            this.r106.Location = new System.Drawing.Point(667, 164);
+            this.r106.Location = new System.Drawing.Point(347, 70);
             this.r106.Name = "r106";
             this.r106.Size = new System.Drawing.Size(88, 56);
             this.r106.TabIndex = 287;
@@ -448,11 +434,11 @@
             this.r107.BackColor = System.Drawing.Color.White;
             this.r107.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.r107.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r107.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r107.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r107.ForeColor = System.Drawing.Color.Black;
-            this.r107.Location = new System.Drawing.Point(755, 184);
+            this.r107.Location = new System.Drawing.Point(435, 90);
             this.r107.Name = "r107";
-            this.r107.Size = new System.Drawing.Size(63, 34);
+            this.r107.Size = new System.Drawing.Size(75, 38);
             this.r107.TabIndex = 288;
             this.r107.UseVisualStyleBackColor = false;
             // 
@@ -463,7 +449,7 @@
             this.r108.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r108.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r108.ForeColor = System.Drawing.Color.Black;
-            this.r108.Location = new System.Drawing.Point(757, 146);
+            this.r108.Location = new System.Drawing.Point(437, 52);
             this.r108.Name = "r108";
             this.r108.Size = new System.Drawing.Size(63, 34);
             this.r108.TabIndex = 289;
@@ -476,7 +462,7 @@
             this.r110.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r110.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r110.ForeColor = System.Drawing.Color.Black;
-            this.r110.Location = new System.Drawing.Point(836, 185);
+            this.r110.Location = new System.Drawing.Point(516, 91);
             this.r110.Name = "r110";
             this.r110.Size = new System.Drawing.Size(135, 37);
             this.r110.TabIndex = 290;
@@ -489,9 +475,9 @@
             this.r111.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r111.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r111.ForeColor = System.Drawing.Color.Black;
-            this.r111.Location = new System.Drawing.Point(871, 306);
+            this.r111.Location = new System.Drawing.Point(551, 191);
             this.r111.Name = "r111";
-            this.r111.Size = new System.Drawing.Size(96, 116);
+            this.r111.Size = new System.Drawing.Size(100, 137);
             this.r111.TabIndex = 291;
             this.r111.UseVisualStyleBackColor = false;
             // 
@@ -502,7 +488,7 @@
             this.r109.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r109.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r109.ForeColor = System.Drawing.Color.Black;
-            this.r109.Location = new System.Drawing.Point(843, 114);
+            this.r109.Location = new System.Drawing.Point(523, 20);
             this.r109.Name = "r109";
             this.r109.Size = new System.Drawing.Size(88, 37);
             this.r109.TabIndex = 292;
@@ -515,7 +501,7 @@
             this.r112.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r112.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r112.ForeColor = System.Drawing.Color.Black;
-            this.r112.Location = new System.Drawing.Point(911, 501);
+            this.r112.Location = new System.Drawing.Point(593, 407);
             this.r112.Name = "r112";
             this.r112.Size = new System.Drawing.Size(138, 74);
             this.r112.TabIndex = 293;
@@ -531,6 +517,27 @@
             this.valuelbl.Text = "label1";
             this.valuelbl.Visible = false;
             // 
+            // panelfloor1
+            // 
+            this.panelfloor1.BackColor = System.Drawing.Color.Transparent;
+            this.panelfloor1.Controls.Add(this.r112);
+            this.panelfloor1.Controls.Add(this.r111);
+            this.panelfloor1.Controls.Add(this.r109);
+            this.panelfloor1.Controls.Add(this.r101);
+            this.panelfloor1.Controls.Add(this.r102);
+            this.panelfloor1.Controls.Add(this.r110);
+            this.panelfloor1.Controls.Add(this.r103);
+            this.panelfloor1.Controls.Add(this.r108);
+            this.panelfloor1.Controls.Add(this.r104);
+            this.panelfloor1.Controls.Add(this.r107);
+            this.panelfloor1.Controls.Add(this.r105);
+            this.panelfloor1.Controls.Add(this.r106);
+            this.panelfloor1.Controls.Add(this.pictureBox2);
+            this.panelfloor1.Location = new System.Drawing.Point(324, 102);
+            this.panelfloor1.Name = "panelfloor1";
+            this.panelfloor1.Size = new System.Drawing.Size(838, 569);
+            this.panelfloor1.TabIndex = 295;
+            // 
             // Mapground
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,17 +547,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.valuelbl);
-            this.Controls.Add(this.r112);
-            this.Controls.Add(this.r109);
-            this.Controls.Add(this.r111);
-            this.Controls.Add(this.r110);
-            this.Controls.Add(this.r108);
-            this.Controls.Add(this.r107);
-            this.Controls.Add(this.r106);
-            this.Controls.Add(this.r105);
-            this.Controls.Add(this.r104);
-            this.Controls.Add(this.r103);
-            this.Controls.Add(this.r102);
             this.Controls.Add(this.btnOffices);
             this.Controls.Add(this.btnOfficers);
             this.Controls.Add(this.btnJobs);
@@ -559,19 +555,17 @@
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.r101);
             this.Controls.Add(this.savebtn);
             this.Controls.Add(this.roomtxt);
             this.Controls.Add(this.editbtn);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.lbldate);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.panelfloor1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Mapground";
@@ -585,6 +579,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panelfloor1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -598,7 +593,6 @@
         private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -626,5 +620,6 @@
         private System.Windows.Forms.Button r109;
         private System.Windows.Forms.Button r112;
         private System.Windows.Forms.Label valuelbl;
+        private System.Windows.Forms.Panel panelfloor1;
     }
 }
