@@ -72,11 +72,11 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Officer.cs">
+    <Compile Include="Officers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Officer.Designer.cs">
-      <DependentUpon>Officer.cs</DependentUpon>
+    <Compile Include="Officers.Designer.cs">
+      <DependentUpon>Officers.cs</DependentUpon>
     </Compile>
     <Compile Include="Offices.cs">
       <SubType>Form</SubType>
@@ -111,8 +111,8 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Officer.resx">
-      <DependentUpon>Officer.cs</DependentUpon>
+    <EmbeddedResource Include="Officers.resx">
+      <DependentUpon>Officers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Offices.resx">
       <DependentUpon>Offices.cs</DependentUpon>

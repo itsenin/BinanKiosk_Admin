@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace BinanKiosk_Admin
 {
-    public partial class Officer : Form
+    public partial class Officers : Form
     {
         MySqlConnection conn = Config.conn;
         MySqlDataReader reader;
@@ -24,7 +24,7 @@ namespace BinanKiosk_Admin
 
         bool add = false;
 
-        public Officer()
+        public Officers()
         {
             InitializeComponent();
         }
@@ -321,6 +321,11 @@ namespace BinanKiosk_Admin
         private void btnOffices_Click(object sender, EventArgs e)
         {
             Config.CallOffices(this);
+        }
+
+        private void btnOfficers_Click(object sender, EventArgs e)
+        {
+            Config.CallOfficers(this);
         }
     }
 }

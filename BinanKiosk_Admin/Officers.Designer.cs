@@ -1,6 +1,6 @@
 ﻿namespace BinanKiosk_Admin
 {
-    partial class Officer
+    partial class Officers
     {
         /// <summary>
         /// Required designer variable.
@@ -456,6 +456,7 @@
             this.btnOfficers.Text = "OFFICERS";
             this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOfficers.UseVisualStyleBackColor = false;
+            this.btnOfficers.Click += new System.EventHandler(this.btnOfficers_Click);
             // 
             // btnJobs
             // 
@@ -552,7 +553,7 @@
             this.pictureBox5.TabIndex = 273;
             this.pictureBox5.TabStop = false;
             // 
-            // Officer
+            // Officers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -577,7 +578,7 @@
             this.Controls.Add(this.pictureBox4);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Officer";
+            this.Name = "Officers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Search_Load);
