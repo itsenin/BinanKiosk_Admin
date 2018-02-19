@@ -41,8 +41,8 @@ namespace BinanKiosk_Admin
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            
-            Config.CallMain(this);
+
+            Config.CallHome(this);
 
         }
 

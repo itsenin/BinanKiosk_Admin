@@ -281,15 +281,27 @@ namespace BinanKiosk_Admin
         {
             Config.CallHome(this);
         }
-
+        private void btnOfficers_Click(object sender, EventArgs e)
+        {
+            Config.CallOfficers(this);
+        }
         private void btnOffices_Click(object sender, EventArgs e)
         {
             Config.CallOffices(this);
         }
 
-        private void btnOfficers_Click(object sender, EventArgs e)
+        private void btnMaps_Click(object sender, EventArgs e)
         {
-            Config.CallOfficers(this);
+            Config.CallMap1(this);
+        }
+        private void btnJobs_Click(object sender, EventArgs e)
+        {
+            Config.CallJobs(this);
+        }
+
+        private void btnServices_Click(object sender, EventArgs e)
+        {
+            Config.CallServices(this);
         }
     }
 }
