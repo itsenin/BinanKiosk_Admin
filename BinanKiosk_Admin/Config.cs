@@ -8,7 +8,7 @@ namespace BinanKiosk_Admin
     {
         public static MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
 
-        public static int currentfloor = 1;
+        public static string currentfloor = "f1";
 
         private static async void changeForm(Form current, Form next)
         {

@@ -60,27 +60,29 @@ namespace BinanKiosk_Admin
         {
             //Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112 };
             //loadbuttonnames(btnarray);
-
+            //MessageBox.Show(Config.currentfloor.ToString());
             MySqlConnection conn = Config.conn;
             MySqlDataReader reader;
 
-            //if (Config.currentfloor == 1)
-            //{
-            //    panelfloor1.Visible = true;
-            //    panelfloor2.Visible = false;
-            //}
-            //else if (Config.currentfloor == 2)
-            //{
-            //    panelfloor2.Visible = true;
-            //    panelfloor1.Visible = false;
+            
 
-            //}
+            if (Config.currentfloor == "f1")
+            {
+                panelfloor1.Visible = true;
+                panelfloor2.Visible = false;
+            }
+            else if (Config.currentfloor == "f2")
+            {
+                panelfloor1.Visible = false;
+                panelfloor2.Visible = true;
 
-            //else
-            //{
-            //    MessageBox.Show(Config.currentfloor.ToString());
+            }
 
-            //}
+            else
+            {
+                MessageBox.Show(Config.currentfloor.ToString());
+
+            }
 
             foreach (Control child in panelfloor1.Controls)
             {
@@ -188,25 +190,25 @@ namespace BinanKiosk_Admin
             reader = cmd.ExecuteReader();
             conn.Close();
             disabling();
-            
-            //if (panelfloor1.Visible = true)
-            //{
 
-            //    Config.CallMap1(this);
+            if (panelfloor1.Visible == true)
+            {
+                Config.currentfloor = "f1";
+                Config.CallMap1(this);
 
-            //}
+            }
 
-            //else if (panelfloor2.Visible = true)
-            //{
-            //    Config.currentfloor = 2;
-            //    Config.CallMap1(this);
-            //}
+            else if (panelfloor1.Visible == false)
+            {
+                Config.currentfloor = "f2";
+                Config.CallMap1(this);
+            }
 
-            //else
-            //{
-            //    MessageBox.Show("oh no");
-            //}
-           
+            else
+            {
+                MessageBox.Show("oh no");
+            }
+
 
         }
 
