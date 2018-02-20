@@ -64,6 +64,24 @@ namespace BinanKiosk_Admin
             MySqlConnection conn = Config.conn;
             MySqlDataReader reader;
 
+            //if (Config.currentfloor == 1)
+            //{
+            //    panelfloor1.Visible = true;
+            //    panelfloor2.Visible = false;
+            //}
+            //else if (Config.currentfloor == 2)
+            //{
+            //    panelfloor2.Visible = true;
+            //    panelfloor1.Visible = false;
+
+            //}
+
+            //else
+            //{
+            //    MessageBox.Show(Config.currentfloor.ToString());
+
+            //}
+
             foreach (Control child in panelfloor1.Controls)
             {
                 if (child is Button)
@@ -85,6 +103,29 @@ namespace BinanKiosk_Admin
                     child.Click += new EventHandler(clickbait);
                 }
             }
+
+            foreach (Control child in panelfloor2.Controls)
+            {
+                if (child is Button)
+                {
+                    conn.Open();
+                    string queryStr = "SELECT room_label from floors WHERE room_id = '" + child.Name + "' ";
+                    MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            child.Text = reader.GetString(0);
+                        }
+                    }
+                    conn.Close();
+
+                    child.Click += new EventHandler(clickbait);
+                }
+            }
+
 
         }
 
@@ -148,12 +189,44 @@ namespace BinanKiosk_Admin
             conn.Close();
             disabling();
             
-            Config.CallMap1(this);
+            //if (panelfloor1.Visible = true)
+            //{
+
+            //    Config.CallMap1(this);
+
+            //}
+
+            //else if (panelfloor2.Visible = true)
+            //{
+            //    Config.currentfloor = 2;
+            //    Config.CallMap1(this);
+            //}
+
+            //else
+            //{
+            //    MessageBox.Show("oh no");
+            //}
+           
+
         }
 
+        private void gfbutton_Click(object sender, EventArgs e)
+        {
+            panelfloor1.Visible = true;
+            panelfloor2.Visible = false;
+
+        }
+
+        private void secondfbutton_Click(object sender, EventArgs e)
+        {
+            panelfloor1.Visible = false;
+            panelfloor2.Visible = true;
+
+        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            
 
         }
 

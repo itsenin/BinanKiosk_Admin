@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mapground));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timestamp = new System.Windows.Forms.Timer(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -37,8 +38,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.secondfbutton = new System.Windows.Forms.Button();
+            this.thirdfbutton = new System.Windows.Forms.Button();
             this.editbtn = new System.Windows.Forms.Button();
             this.roomtxt = new System.Windows.Forms.TextBox();
             this.savebtn = new System.Windows.Forms.Button();
@@ -64,6 +65,30 @@
             this.r112 = new System.Windows.Forms.Button();
             this.valuelbl = new System.Windows.Forms.Label();
             this.panelfloor1 = new System.Windows.Forms.Panel();
+            this.gfbutton = new System.Windows.Forms.Button();
+            this.panelfloor2 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.r201 = new System.Windows.Forms.Button();
+            this.r202 = new System.Windows.Forms.Button();
+            this.r203 = new System.Windows.Forms.Button();
+            this.r204 = new System.Windows.Forms.Button();
+            this.r205 = new System.Windows.Forms.Button();
+            this.r206 = new System.Windows.Forms.Button();
+            this.r207 = new System.Windows.Forms.Button();
+            this.r208 = new System.Windows.Forms.Button();
+            this.R209 = new System.Windows.Forms.Button();
+            this.r211 = new System.Windows.Forms.Button();
+            this.r212 = new System.Windows.Forms.Button();
+            this.r210 = new System.Windows.Forms.Button();
+            this.r213 = new System.Windows.Forms.Button();
+            this.r214 = new System.Windows.Forms.Button();
+            this.r215 = new System.Windows.Forms.Button();
+            this.r216 = new System.Windows.Forms.Button();
+            this.r217 = new System.Windows.Forms.Button();
+            this.r218 = new System.Windows.Forms.Button();
+            this.r219 = new System.Windows.Forms.Button();
+            this.r220 = new System.Windows.Forms.Button();
+            this.r221 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -72,6 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelfloor1.SuspendLayout();
+            this.panelfloor2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox7
@@ -145,35 +172,36 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // button2
+            // secondfbutton
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button1;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(176, 102);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 67);
-            this.button2.TabIndex = 254;
-            this.button2.Text = "2F";
-            this.button2.UseVisualStyleBackColor = false;
+            this.secondfbutton.BackColor = System.Drawing.Color.Transparent;
+            this.secondfbutton.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button1;
+            this.secondfbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.secondfbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.secondfbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondfbutton.ForeColor = System.Drawing.Color.Transparent;
+            this.secondfbutton.Location = new System.Drawing.Point(176, 175);
+            this.secondfbutton.Name = "secondfbutton";
+            this.secondfbutton.Size = new System.Drawing.Size(142, 67);
+            this.secondfbutton.TabIndex = 254;
+            this.secondfbutton.Text = "2F";
+            this.secondfbutton.UseVisualStyleBackColor = false;
+            this.secondfbutton.Click += new System.EventHandler(this.secondfbutton_Click);
             // 
-            // button3
+            // thirdfbutton
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button1;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(176, 175);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 67);
-            this.button3.TabIndex = 255;
-            this.button3.Text = "3F";
-            this.button3.UseVisualStyleBackColor = false;
+            this.thirdfbutton.BackColor = System.Drawing.Color.Transparent;
+            this.thirdfbutton.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button1;
+            this.thirdfbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.thirdfbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.thirdfbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thirdfbutton.ForeColor = System.Drawing.Color.Transparent;
+            this.thirdfbutton.Location = new System.Drawing.Point(176, 248);
+            this.thirdfbutton.Name = "thirdfbutton";
+            this.thirdfbutton.Size = new System.Drawing.Size(142, 67);
+            this.thirdfbutton.TabIndex = 255;
+            this.thirdfbutton.Text = "3F";
+            this.thirdfbutton.UseVisualStyleBackColor = false;
             // 
             // editbtn
             // 
@@ -538,6 +566,315 @@
             this.panelfloor1.Size = new System.Drawing.Size(838, 569);
             this.panelfloor1.TabIndex = 295;
             // 
+            // gfbutton
+            // 
+            this.gfbutton.BackColor = System.Drawing.Color.Transparent;
+            this.gfbutton.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button1;
+            this.gfbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gfbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gfbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gfbutton.ForeColor = System.Drawing.Color.Transparent;
+            this.gfbutton.Location = new System.Drawing.Point(176, 102);
+            this.gfbutton.Name = "gfbutton";
+            this.gfbutton.Size = new System.Drawing.Size(142, 67);
+            this.gfbutton.TabIndex = 296;
+            this.gfbutton.Text = "GF";
+            this.gfbutton.UseVisualStyleBackColor = false;
+            this.gfbutton.Click += new System.EventHandler(this.gfbutton_Click);
+            // 
+            // panelfloor2
+            // 
+            this.panelfloor2.BackColor = System.Drawing.Color.Transparent;
+            this.panelfloor2.Controls.Add(this.r221);
+            this.panelfloor2.Controls.Add(this.r220);
+            this.panelfloor2.Controls.Add(this.r219);
+            this.panelfloor2.Controls.Add(this.r218);
+            this.panelfloor2.Controls.Add(this.r217);
+            this.panelfloor2.Controls.Add(this.r216);
+            this.panelfloor2.Controls.Add(this.r215);
+            this.panelfloor2.Controls.Add(this.r214);
+            this.panelfloor2.Controls.Add(this.r213);
+            this.panelfloor2.Controls.Add(this.r210);
+            this.panelfloor2.Controls.Add(this.r212);
+            this.panelfloor2.Controls.Add(this.r211);
+            this.panelfloor2.Controls.Add(this.R209);
+            this.panelfloor2.Controls.Add(this.r208);
+            this.panelfloor2.Controls.Add(this.r207);
+            this.panelfloor2.Controls.Add(this.r206);
+            this.panelfloor2.Controls.Add(this.r205);
+            this.panelfloor2.Controls.Add(this.r204);
+            this.panelfloor2.Controls.Add(this.r203);
+            this.panelfloor2.Controls.Add(this.r202);
+            this.panelfloor2.Controls.Add(this.r201);
+            this.panelfloor2.Controls.Add(this.pictureBox6);
+            this.panelfloor2.Location = new System.Drawing.Point(324, 102);
+            this.panelfloor2.Name = "panelfloor2";
+            this.panelfloor2.Size = new System.Drawing.Size(838, 569);
+            this.panelfloor2.TabIndex = 297;
+            this.panelfloor2.Visible = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.floor_2;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Location = new System.Drawing.Point(26, 10);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(798, 551);
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
+            // 
+            // r201
+            // 
+            this.r201.BackColor = System.Drawing.Color.White;
+            this.r201.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r201.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r201.Location = new System.Drawing.Point(112, 485);
+            this.r201.Name = "r201";
+            this.r201.Size = new System.Drawing.Size(158, 59);
+            this.r201.TabIndex = 1;
+            this.r201.Text = "button1";
+            this.r201.UseVisualStyleBackColor = false;
+            // 
+            // r202
+            // 
+            this.r202.BackColor = System.Drawing.Color.White;
+            this.r202.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r202.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r202.Location = new System.Drawing.Point(44, 407);
+            this.r202.Name = "r202";
+            this.r202.Size = new System.Drawing.Size(115, 48);
+            this.r202.TabIndex = 298;
+            this.r202.Text = "button1";
+            this.r202.UseVisualStyleBackColor = false;
+            // 
+            // r203
+            // 
+            this.r203.BackColor = System.Drawing.Color.White;
+            this.r203.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r203.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r203.Location = new System.Drawing.Point(179, 407);
+            this.r203.Name = "r203";
+            this.r203.Size = new System.Drawing.Size(91, 48);
+            this.r203.TabIndex = 299;
+            this.r203.Text = "button1";
+            this.r203.UseVisualStyleBackColor = false;
+            // 
+            // r204
+            // 
+            this.r204.BackColor = System.Drawing.Color.White;
+            this.r204.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r204.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r204.Location = new System.Drawing.Point(167, 258);
+            this.r204.Name = "r204";
+            this.r204.Size = new System.Drawing.Size(103, 62);
+            this.r204.TabIndex = 298;
+            this.r204.Text = "button1";
+            this.r204.UseVisualStyleBackColor = false;
+            // 
+            // r205
+            // 
+            this.r205.BackColor = System.Drawing.Color.White;
+            this.r205.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r205.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r205.Location = new System.Drawing.Point(167, 204);
+            this.r205.Name = "r205";
+            this.r205.Size = new System.Drawing.Size(103, 39);
+            this.r205.TabIndex = 298;
+            this.r205.Text = "button1";
+            this.r205.UseVisualStyleBackColor = false;
+            // 
+            // r206
+            // 
+            this.r206.BackColor = System.Drawing.Color.White;
+            this.r206.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r206.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r206.Location = new System.Drawing.Point(167, 165);
+            this.r206.Name = "r206";
+            this.r206.Size = new System.Drawing.Size(103, 39);
+            this.r206.TabIndex = 299;
+            this.r206.Text = "button1";
+            this.r206.UseVisualStyleBackColor = false;
+            // 
+            // r207
+            // 
+            this.r207.BackColor = System.Drawing.Color.White;
+            this.r207.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r207.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r207.Location = new System.Drawing.Point(167, 127);
+            this.r207.Name = "r207";
+            this.r207.Size = new System.Drawing.Size(103, 39);
+            this.r207.TabIndex = 299;
+            this.r207.Text = "button1";
+            this.r207.UseVisualStyleBackColor = false;
+            // 
+            // r208
+            // 
+            this.r208.BackColor = System.Drawing.Color.White;
+            this.r208.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r208.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r208.Location = new System.Drawing.Point(167, 36);
+            this.r208.Name = "r208";
+            this.r208.Size = new System.Drawing.Size(116, 82);
+            this.r208.TabIndex = 300;
+            this.r208.Text = "button1";
+            this.r208.UseVisualStyleBackColor = false;
+            // 
+            // R209
+            // 
+            this.R209.BackColor = System.Drawing.Color.White;
+            this.R209.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.R209.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R209.Location = new System.Drawing.Point(343, 47);
+            this.R209.Name = "R209";
+            this.R209.Size = new System.Drawing.Size(135, 60);
+            this.R209.TabIndex = 301;
+            this.R209.Text = "button1";
+            this.R209.UseVisualStyleBackColor = false;
+            // 
+            // r211
+            // 
+            this.r211.BackColor = System.Drawing.Color.White;
+            this.r211.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r211.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r211.Location = new System.Drawing.Point(565, 22);
+            this.r211.Name = "r211";
+            this.r211.Size = new System.Drawing.Size(103, 39);
+            this.r211.TabIndex = 302;
+            this.r211.Text = "button1";
+            this.r211.UseVisualStyleBackColor = false;
+            // 
+            // r212
+            // 
+            this.r212.BackColor = System.Drawing.Color.White;
+            this.r212.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r212.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r212.Location = new System.Drawing.Point(565, 59);
+            this.r212.Name = "r212";
+            this.r212.Size = new System.Drawing.Size(103, 39);
+            this.r212.TabIndex = 303;
+            this.r212.Text = "button1";
+            this.r212.UseVisualStyleBackColor = false;
+            // 
+            // r210
+            // 
+            this.r210.BackColor = System.Drawing.Color.White;
+            this.r210.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r210.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r210.Location = new System.Drawing.Point(484, 101);
+            this.r210.Name = "r210";
+            this.r210.Size = new System.Drawing.Size(62, 39);
+            this.r210.TabIndex = 304;
+            this.r210.Text = "button1";
+            this.r210.UseVisualStyleBackColor = false;
+            // 
+            // r213
+            // 
+            this.r213.BackColor = System.Drawing.Color.White;
+            this.r213.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r213.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r213.Location = new System.Drawing.Point(565, 101);
+            this.r213.Name = "r213";
+            this.r213.Size = new System.Drawing.Size(103, 39);
+            this.r213.TabIndex = 305;
+            this.r213.Text = "button1";
+            this.r213.UseVisualStyleBackColor = false;
+            // 
+            // r214
+            // 
+            this.r214.BackColor = System.Drawing.Color.White;
+            this.r214.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r214.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r214.Location = new System.Drawing.Point(565, 154);
+            this.r214.Name = "r214";
+            this.r214.Size = new System.Drawing.Size(103, 39);
+            this.r214.TabIndex = 306;
+            this.r214.Text = "button1";
+            this.r214.UseVisualStyleBackColor = false;
+            // 
+            // r215
+            // 
+            this.r215.BackColor = System.Drawing.Color.White;
+            this.r215.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r215.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r215.Location = new System.Drawing.Point(565, 196);
+            this.r215.Name = "r215";
+            this.r215.Size = new System.Drawing.Size(103, 39);
+            this.r215.TabIndex = 307;
+            this.r215.Text = "button1";
+            this.r215.UseVisualStyleBackColor = false;
+            // 
+            // r216
+            // 
+            this.r216.BackColor = System.Drawing.Color.White;
+            this.r216.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r216.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r216.Location = new System.Drawing.Point(565, 240);
+            this.r216.Name = "r216";
+            this.r216.Size = new System.Drawing.Size(103, 39);
+            this.r216.TabIndex = 308;
+            this.r216.Text = "button1";
+            this.r216.UseVisualStyleBackColor = false;
+            // 
+            // r217
+            // 
+            this.r217.BackColor = System.Drawing.Color.White;
+            this.r217.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r217.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r217.Location = new System.Drawing.Point(565, 287);
+            this.r217.Name = "r217";
+            this.r217.Size = new System.Drawing.Size(103, 39);
+            this.r217.TabIndex = 309;
+            this.r217.Text = "button1";
+            this.r217.UseVisualStyleBackColor = false;
+            // 
+            // r218
+            // 
+            this.r218.BackColor = System.Drawing.Color.White;
+            this.r218.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r218.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r218.Location = new System.Drawing.Point(565, 407);
+            this.r218.Name = "r218";
+            this.r218.Size = new System.Drawing.Size(111, 48);
+            this.r218.TabIndex = 310;
+            this.r218.Text = "button1";
+            this.r218.UseVisualStyleBackColor = false;
+            // 
+            // r219
+            // 
+            this.r219.BackColor = System.Drawing.Color.White;
+            this.r219.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r219.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r219.Location = new System.Drawing.Point(689, 404);
+            this.r219.Name = "r219";
+            this.r219.Size = new System.Drawing.Size(119, 50);
+            this.r219.TabIndex = 311;
+            this.r219.Text = "button1";
+            this.r219.UseVisualStyleBackColor = false;
+            // 
+            // r220
+            // 
+            this.r220.BackColor = System.Drawing.Color.White;
+            this.r220.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r220.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r220.Location = new System.Drawing.Point(673, 475);
+            this.r220.Name = "r220";
+            this.r220.Size = new System.Drawing.Size(74, 69);
+            this.r220.TabIndex = 312;
+            this.r220.Text = "button1";
+            this.r220.UseVisualStyleBackColor = false;
+            // 
+            // r221
+            // 
+            this.r221.BackColor = System.Drawing.Color.White;
+            this.r221.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r221.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r221.Location = new System.Drawing.Point(555, 475);
+            this.r221.Name = "r221";
+            this.r221.Size = new System.Drawing.Size(116, 69);
+            this.r221.TabIndex = 313;
+            this.r221.Text = "button1";
+            this.r221.UseVisualStyleBackColor = false;
+            // 
             // Mapground
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -546,6 +883,10 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.editbtn);
+            this.Controls.Add(this.roomtxt);
+            this.Controls.Add(this.panelfloor2);
+            this.Controls.Add(this.gfbutton);
             this.Controls.Add(this.valuelbl);
             this.Controls.Add(this.btnOffices);
             this.Controls.Add(this.btnOfficers);
@@ -556,10 +897,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.savebtn);
-            this.Controls.Add(this.roomtxt);
-            this.Controls.Add(this.editbtn);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.thirdfbutton);
+            this.Controls.Add(this.secondfbutton);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.lbldate);
@@ -568,6 +907,7 @@
             this.Controls.Add(this.panelfloor1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Mapground";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
@@ -580,6 +920,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panelfloor1.ResumeLayout(false);
+            this.panelfloor2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -594,8 +936,8 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button secondfbutton;
+        private System.Windows.Forms.Button thirdfbutton;
         private System.Windows.Forms.Button editbtn;
         private System.Windows.Forms.TextBox roomtxt;
         private System.Windows.Forms.Button savebtn;
@@ -621,5 +963,29 @@
         private System.Windows.Forms.Button r112;
         private System.Windows.Forms.Label valuelbl;
         private System.Windows.Forms.Panel panelfloor1;
+        private System.Windows.Forms.Button gfbutton;
+        private System.Windows.Forms.Panel panelfloor2;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button r206;
+        private System.Windows.Forms.Button r205;
+        private System.Windows.Forms.Button r204;
+        private System.Windows.Forms.Button r203;
+        private System.Windows.Forms.Button r202;
+        private System.Windows.Forms.Button r201;
+        private System.Windows.Forms.Button r208;
+        private System.Windows.Forms.Button r207;
+        private System.Windows.Forms.Button r221;
+        private System.Windows.Forms.Button r220;
+        private System.Windows.Forms.Button r219;
+        private System.Windows.Forms.Button r218;
+        private System.Windows.Forms.Button r217;
+        private System.Windows.Forms.Button r216;
+        private System.Windows.Forms.Button r215;
+        private System.Windows.Forms.Button r214;
+        private System.Windows.Forms.Button r213;
+        private System.Windows.Forms.Button r210;
+        private System.Windows.Forms.Button r212;
+        private System.Windows.Forms.Button r211;
+        private System.Windows.Forms.Button R209;
     }
 }
