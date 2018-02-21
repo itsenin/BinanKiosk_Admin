@@ -855,7 +855,7 @@
             // 
             this.r220.BackColor = System.Drawing.Color.White;
             this.r220.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r220.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r220.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r220.Location = new System.Drawing.Point(673, 475);
             this.r220.Name = "r220";
             this.r220.Size = new System.Drawing.Size(74, 69);
