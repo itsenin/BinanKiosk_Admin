@@ -15,16 +15,21 @@ namespace BinanKiosk_Admin
     {
         MySqlConnection conn = Config.conn;
         MySqlDataReader reader;
+        List<int> imgIds;
+
         public Home()
         {
             DoubleBuffered = true;
             InitializeComponent();
+            lst_sliderPics.AllowDrop = true;
             timer1.Interval = 5000;
             timer1.Start();
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
+            btn_delete.Enabled = false;
+            imgIds = new List<int>();
             timestamp.Interval = 1;
             timestamp.Start();
             loadImageList();
@@ -43,9 +48,12 @@ namespace BinanKiosk_Admin
 
         private void loadImageList()
         {
+            lst_sliderPics.Items.Clear(); //clear image name list on reloads
+            imgIds.Clear(); //clear image ID list on reloads
+
             conn.Open();
 
-            using (var cmd = new MySqlCommand("SELECT image_name from images", conn))
+            using (var cmd = new MySqlCommand("SELECT image_id,image_name from images WHERE image_type = 1", conn))
             {
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -53,6 +61,7 @@ namespace BinanKiosk_Admin
                     while(reader.Read())
                     {
                         lst_sliderPics.Items.Add(reader["image_name"].ToString());
+                        imgIds.Add((int)reader["image_id"]);
                     }
                 }
             }
@@ -61,6 +70,9 @@ namespace BinanKiosk_Admin
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+            lst_sliderPics.ClearSelected();
+            btn_delete.Enabled = false;
+
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Title = "Choose Image";
             openFile.Filter = "Images (*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG;*.)|*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG";
@@ -71,8 +83,9 @@ namespace BinanKiosk_Admin
                     Image img = new Bitmap(openFile.FileName);
                     {
                         pb_preview.Image = img;
-                        lb_imageName.Text = openFile.SafeFileName;
+                        lbl_imageName.Text = openFile.SafeFileName;
                         pnl_Save.Visible = true;
+                        btn_save.Visible = true; //show save button in case it is disabled by review
                     }
                 }
                 catch(Exception ex)
@@ -82,33 +95,23 @@ namespace BinanKiosk_Admin
             }
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+        private void btn_save_Click(object sender, EventArgs e)
         {
             conn.Open();
             var serializedImage = ImageToByteArray(pb_preview.Image, pb_preview);
 
             //INSERT
-            using (var cmd = new MySqlCommand("INSERT INTO images(image_id, image_name, image_byte) VALUES(NULL, @name, @image)", conn))
+            using (var cmd = new MySqlCommand("INSERT INTO images(image_id, image_type, image_name, image_byte) VALUES(NULL, 1, @name, @image)", conn))
             {
-                cmd.Parameters.AddWithValue("@name", lb_imageName.Text);
+                cmd.Parameters.AddWithValue("@name", lbl_imageName.Text);
                 cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Successfully Saved to Database!");
             }
-
-            //RETRIEVE using Name
-            using (var cmd = new MySqlCommand("SELECT image_byte from images WHERE image_name = @name", conn))
-            {
-                cmd.Parameters.AddWithValue("@name", lb_imageName.Text);
-                reader = cmd.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    reader.Read();
-                    byte[] deserializedImage = (byte[])reader["image_byte"];
-                    pb_test.Image = GetDataToImage(deserializedImage);
-                }
-            }
             conn.Close();
+
+            loadImageList();
+            pnl_Save.Visible = false;
 
         }
 
@@ -161,6 +164,66 @@ namespace BinanKiosk_Admin
         private void btnServices_Click(object sender, EventArgs e)
         {
             Config.CallServices(this);
+        }
+
+        private void lst_sliderPics_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = lst_sliderPics.SelectedIndex;
+            if (index > -1) //if there is something currently selected
+            {
+                //RETRIEVE using Name and ID
+                conn.Open();
+                using (var cmd = new MySqlCommand("SELECT image_byte from images WHERE image_name = @name AND image_id = @id", conn))
+                {
+                    string name = lst_sliderPics.SelectedItem.ToString();
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@id", imgIds[index]);
+
+                    reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        byte[] deserializedImage = (byte[])reader["image_byte"];
+                        pb_preview.Image = GetDataToImage(deserializedImage);
+                    }
+                }
+
+                pnl_Save.Visible = true;
+
+                btn_delete.Enabled = true; //enable delete on "View" mode
+
+                btn_save.Visible = false; //hide save button to just preview Image of item selected from the list
+
+                lbl_imageName.Text = lst_sliderPics.SelectedItem.ToString();
+                conn.Close();
+            }
+            else
+                return;
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            string name = lst_sliderPics.SelectedItem.ToString();
+            int id = imgIds[lst_sliderPics.SelectedIndex];
+
+            if (MessageBox.Show("Delete the selected item?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                conn.Open();
+                using (var cmd = new MySqlCommand("DELETE from images WHERE image_name = @name AND image_id = @id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+
+                loadImageList();
+                pnl_Save.Visible = false;
+            }
+            else
+                return;
+
         }
     }
 }
