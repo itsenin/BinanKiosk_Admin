@@ -265,6 +265,7 @@
             // 
             // txtRoomID
             // 
+            this.txtRoomID.Enabled = false;
             this.txtRoomID.Location = new System.Drawing.Point(112, 74);
             this.txtRoomID.Name = "txtRoomID";
             this.txtRoomID.Size = new System.Drawing.Size(194, 20);
@@ -273,6 +274,7 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(6, 74);
             this.label5.Name = "label5";
@@ -308,7 +310,6 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Visible = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // officersName

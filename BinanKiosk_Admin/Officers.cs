@@ -136,53 +136,64 @@ namespace BinanKiosk_Admin
 
         private void officersList_SelectedValueChanged(object sender, EventArgs e)
         {
-            officerInformation.Enabled = false;
-            selectedValue = officersList.GetItemText(officersList.SelectedItem);
-
-            conn.Open();
-            cmd = new MySqlCommand("SELECT officials.officials_id, officials.first_name, officials.last_name, officials.middle_initial, officials.suffex, departments.department_name, positions.position_name, departments.room_id FROM officials,departments,positions WHERE positions.position_id = officials.position_id AND departments.department_id = officials.department_id AND CONCAT (officials.first_name, ' ', officials.middle_initial, ' ', officials.last_name, ' ', officials.suffex) LIKE '%" + selectedValue + "%' ", conn);
-            cmd.ExecuteNonQuery();
-            reader = cmd.ExecuteReader();
-
-            if (reader.HasRows)
+            if (officersList.SelectedIndex > -1)
             {
-                reader.Read();
-                txtID.Text = reader["officials_id"].ToString();
-                txtFirstName.Text = reader["first_name"].ToString();
-                txtLastName.Text = reader["last_name"].ToString();
-                txtMI.Text = reader["middle_initial"].ToString();
-                txtSuffix.Text = reader["suffex"].ToString();
-                comboBoxDepartment.Text = reader["department_name"].ToString();
-                comboBoxPosition.Text = reader["position_name"].ToString();
-            }
+                btnDelete.Enabled = true;
+                btnEdit.Enabled = true;
+                btnAdd.Enabled = true;
 
-            reader.Close();
 
-            using (var cmd = new MySqlCommand("SELECT picture_string from officials_pictures WHERE officials_id = '" + Convert.ToInt32(txtID.Text) + "' ", conn))
-            {
+                officerInformation.Enabled = false;
+                selectedValue = officersList.GetItemText(officersList.SelectedItem);
+
+                conn.Open();
+                cmd = new MySqlCommand("SELECT officials.officials_id, officials.first_name, officials.last_name, officials.middle_initial, officials.suffex, departments.department_name, positions.position_name FROM officials,departments,positions WHERE positions.position_id = officials.position_id AND departments.department_id = officials.department_id AND CONCAT (officials.first_name, ' ', officials.middle_initial, ' ', officials.last_name, ' ', officials.suffex) LIKE '%" + selectedValue + "%' ", conn);
+                cmd.ExecuteNonQuery();
                 reader = cmd.ExecuteReader();
+
                 if (reader.HasRows)
                 {
                     reader.Read();
-                    byte[] deserializedImage = (byte[])reader["picture_string"];
-                    officerPicture.Image = GetDataToImage(deserializedImage);
+                    txtID.Text = reader["officials_id"].ToString();
+                    txtFirstName.Text = reader["first_name"].ToString();
+                    txtLastName.Text = reader["last_name"].ToString();
+                    txtMI.Text = reader["middle_initial"].ToString();
+                    txtSuffix.Text = reader["suffex"].ToString();
+                    comboBoxDepartment.Text = reader["department_name"].ToString();
+                    comboBoxPosition.Text = reader["position_name"].ToString();
                 }
-                else
+
+                reader.Close();
+
+                using (var cmd = new MySqlCommand("SELECT picture_string from officials_pictures WHERE officials_id = '" + Convert.ToInt32(txtID.Text) + "' ", conn))
                 {
-                    officerPicture.Image = null;
+                    reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        byte[] deserializedImage = (byte[])reader["picture_string"];
+                        officerPicture.Image = GetDataToImage(deserializedImage);
+                    }
+                    else
+                    {
+                        officerPicture.Image = null;
+                    }
                 }
+
+
+                conn.Close();
             }
-
-
-            conn.Close();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            officersList.ClearSelected();
             clear();
             add = true;
             txtID.Enabled = true;
             officerInformation.Enabled = true;
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -221,6 +232,8 @@ namespace BinanKiosk_Admin
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = false;
             add = false;
             txtID.Enabled = false;
             officerInformation.Enabled = true;

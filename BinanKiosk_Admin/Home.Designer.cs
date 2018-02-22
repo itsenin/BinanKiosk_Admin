@@ -41,7 +41,6 @@
             this.lbldate = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pb_test = new System.Windows.Forms.PictureBox();
             this.lbl_imageName = new System.Windows.Forms.Label();
             this.lbl_sliderPics = new System.Windows.Forms.Label();
             this.lbl_imagePrv = new System.Windows.Forms.Label();
@@ -62,7 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_test)).BeginInit();
             this.pnl_Save.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -120,7 +118,7 @@
             this.pb_preview.Location = new System.Drawing.Point(7, 54);
             this.pb_preview.Name = "pb_preview";
             this.pb_preview.Size = new System.Drawing.Size(319, 284);
-            this.pb_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_preview.TabIndex = 244;
             this.pb_preview.TabStop = false;
             // 
@@ -204,16 +202,6 @@
             this.pictureBox3.Size = new System.Drawing.Size(1459, 94);
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
-            // 
-            // pb_test
-            // 
-            this.pb_test.BackColor = System.Drawing.Color.Gainsboro;
-            this.pb_test.Location = new System.Drawing.Point(549, 396);
-            this.pb_test.Name = "pb_test";
-            this.pb_test.Size = new System.Drawing.Size(242, 155);
-            this.pb_test.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_test.TabIndex = 252;
-            this.pb_test.TabStop = false;
             // 
             // lbl_imageName
             // 
@@ -457,7 +445,6 @@
             this.Controls.Add(this.lbl_Home);
             this.Controls.Add(this.lbl_sliderPics);
             this.Controls.Add(this.lst_sliderPics);
-            this.Controls.Add(this.pb_test);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.pictureBox7);
@@ -477,7 +464,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_test)).EndInit();
             this.pnl_Save.ResumeLayout(false);
             this.pnl_Save.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -499,7 +485,6 @@
     private System.Windows.Forms.PictureBox pb_preview;
     private System.Windows.Forms.Button btn_delete;
     private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.PictureBox pb_test;
         private System.Windows.Forms.Label lbl_imageName;
         private System.Windows.Forms.Label lbl_sliderPics;
         private System.Windows.Forms.Label lbl_imagePrv;

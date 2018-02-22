@@ -17,10 +17,10 @@ namespace BinanKiosk_Admin
         MySqlDataReader reader;
         MySqlCommand cmd;
 
-        String selectedValue;
+        String selectedValue, selectedID;
         String imageString;
 
-        bool add = false, availalbe = false;
+        bool add = false, availalbe = false, officeAvailable = false;
 
         public Offices()
         {
@@ -90,28 +90,77 @@ namespace BinanKiosk_Admin
 
         private void officesList_SelectedValueChanged(object sender, EventArgs e)
         {
-            btnEdit.Enabled = true;
+            if (officeList.SelectedIndex > -1)
+            {
+            
+
             btnDelete.Enabled = true;
+            btnEdit.Enabled = true;
+            btnAdd.Enabled = true;
 
             selectedValue = officeList.GetItemText(officeList.SelectedItem);
 
             conn.Open();
-            cmd = new MySqlCommand("SELECT departments.department_id, departments.department_name, departments.room_id, departments.Dep_description FROM departments WHERE departments.department_name  = '" + selectedValue + "' ", conn);
-            cmd.ExecuteNonQuery();
+
+            cmd = new MySqlCommand("SELECT departments.department_id FROM departments, offices WHERE departments.department_name  = '" + selectedValue + "' ", conn);
             reader = cmd.ExecuteReader();
 
             if (reader.HasRows)
             {
                 reader.Read();
-                txtID.Text = reader["department_id"].ToString();
-                txtDeptName.Text = reader["department_name"].ToString();
-                txtRoomID.Text = reader["room_id"].ToString();
-                txtDescription.Text = reader["Dep_description"].ToString();
+                selectedID = reader["department_id"].ToString();
             }
 
             reader.Close();
 
-            using (var cmd = new MySqlCommand("SELECT picture_string from departments_pictures WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "' ", conn))
+            cmd = new MySqlCommand("SELECT offices.department_id FROM offices WHERE offices.department_id  = '" + Convert.ToInt32(selectedID) + "' ", conn);
+            reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                officeAvailable = true;
+            }
+            else
+            {
+                officeAvailable = false;
+            }
+
+            reader.Close();
+
+            if (officeAvailable == true)
+            {
+                cmd = new MySqlCommand("SELECT departments.department_name, offices.room_name, departments.Dep_description FROM departments, offices WHERE departments.department_id  = '" + Convert.ToInt32(selectedID) + "' AND offices.department_id  = '" + Convert.ToInt32(selectedID) + "' ", conn);
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    txtID.Text = selectedID;
+                    txtDeptName.Text = reader["department_name"].ToString();
+                    txtRoomID.Text = reader["room_name"].ToString();
+                    txtDescription.Text = reader["Dep_description"].ToString();
+                }
+
+                reader.Close();
+            }
+            else
+            {
+                cmd = new MySqlCommand("SELECT departments.department_name, offices.room_name, departments.Dep_description FROM departments, offices WHERE departments.department_id  = '" + Convert.ToInt32(selectedID) + "' ", conn);
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    txtID.Text = selectedID;
+                    txtDeptName.Text = reader["department_name"].ToString();
+                    txtRoomID.Text = "";
+                    txtDescription.Text = reader["Dep_description"].ToString();
+                }
+
+                reader.Close();
+            }
+
+            using (var cmd = new MySqlCommand("SELECT picture_string from departments_pictures WHERE department_id = '" + Convert.ToInt32(selectedID) + "' ", conn))
             {
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -127,6 +176,7 @@ namespace BinanKiosk_Admin
             }
             
             conn.Close();
+            }
         }
 
         public static byte[] ImageToByteArray(Image img, PictureBox pb)
@@ -155,6 +205,9 @@ namespace BinanKiosk_Admin
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            officeList.ClearSelected();
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
             clear();
             add = true;
             txtID.Enabled = true;
@@ -197,6 +250,8 @@ namespace BinanKiosk_Admin
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = false;
             add = false;
             txtID.Enabled = false;
             officeInformation.Enabled = true;
@@ -219,7 +274,7 @@ namespace BinanKiosk_Admin
             }
             else
             {
-                cmd = new MySqlCommand("UPDATE departments SET department_name = '" + txtDeptName.Text + "', room_ID = '" + txtRoomID.Text + "', Dep_description = '" + txtDescription.Text + "' WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                cmd = new MySqlCommand("UPDATE departments SET department_name = '" + txtDeptName.Text + "', Dep_description = '" + txtDescription.Text + "' WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
                 cmd.ExecuteNonQuery();
 
                 using (var cmd = new MySqlCommand("SELECT picture_string from departments_pictures WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "' ", conn))

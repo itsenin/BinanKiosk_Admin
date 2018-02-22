@@ -218,6 +218,7 @@ namespace BinanKiosk_Admin
                 }
                 conn.Close();
 
+                btn_delete.Enabled = false;
                 loadImageList();
                 pnl_Save.Visible = false;
             }

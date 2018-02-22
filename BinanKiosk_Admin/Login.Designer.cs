@@ -48,7 +48,8 @@
             this.txtUsername.Location = new System.Drawing.Point(507, 362);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(349, 45);
-            this.txtUsername.TabIndex = 41;
+            this.txtUsername.TabIndex = 2;
+            this.txtUsername.Text = "admin";
             // 
             // txtPassword
             // 
@@ -57,7 +58,8 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(349, 45);
-            this.txtPassword.TabIndex = 42;
+            this.txtPassword.TabIndex = 3;
+            this.txtPassword.Text = "admin";
             // 
             // btnLogin
             // 
@@ -71,7 +73,7 @@
             this.btnLogin.Location = new System.Drawing.Point(469, 544);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(122, 61);
-            this.btnLogin.TabIndex = 46;
+            this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
