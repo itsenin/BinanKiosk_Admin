@@ -39,7 +39,8 @@
             this.groupBoxOfficers = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.officeInformation = new System.Windows.Forms.GroupBox();
-            this.officerPicture = new System.Windows.Forms.PictureBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.officeLogo = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -57,18 +58,19 @@
             this.btnOffices = new System.Windows.Forms.Button();
             this.btnOfficers = new System.Windows.Forms.Button();
             this.btnJobs = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnServices = new System.Windows.Forms.Button();
             this.btnMaps = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.lbl_navigation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBoxOfficers.SuspendLayout();
             this.officeInformation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.officerPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.officeLogo)).BeginInit();
             this.officersName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -152,7 +154,7 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(353, 77);
+            this.btnEdit.Location = new System.Drawing.Point(353, 48);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 2;
@@ -163,7 +165,8 @@
             // officeInformation
             // 
             this.officeInformation.BackColor = System.Drawing.Color.White;
-            this.officeInformation.Controls.Add(this.officerPicture);
+            this.officeInformation.Controls.Add(this.btnCancel);
+            this.officeInformation.Controls.Add(this.officeLogo);
             this.officeInformation.Controls.Add(this.label8);
             this.officeInformation.Controls.Add(this.txtID);
             this.officeInformation.Controls.Add(this.btnSave);
@@ -181,16 +184,28 @@
             this.officeInformation.TabStop = false;
             this.officeInformation.Text = "Office Information";
             // 
-            // officerPicture
+            // btnCancel
             // 
-            this.officerPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.officerPicture.Location = new System.Drawing.Point(312, 18);
-            this.officerPicture.Name = "officerPicture";
-            this.officerPicture.Size = new System.Drawing.Size(100, 100);
-            this.officerPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.officerPicture.TabIndex = 16;
-            this.officerPicture.TabStop = false;
-            this.officerPicture.Click += new System.EventHandler(this.officerPicture_Click);
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(231, 330);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 17;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // officeLogo
+            // 
+            this.officeLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.officeLogo.Location = new System.Drawing.Point(312, 18);
+            this.officeLogo.Name = "officeLogo";
+            this.officeLogo.Size = new System.Drawing.Size(100, 100);
+            this.officeLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.officeLogo.TabIndex = 16;
+            this.officeLogo.TabStop = false;
+            this.officeLogo.Click += new System.EventHandler(this.officerPicture_Click);
             // 
             // label8
             // 
@@ -213,7 +228,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(231, 330);
+            this.btnSave.Location = new System.Drawing.Point(112, 330);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 11;
@@ -276,7 +291,7 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(353, 48);
+            this.btnDelete.Location = new System.Drawing.Point(353, 77);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 1;
@@ -293,6 +308,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Visible = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // officersName
@@ -323,9 +339,9 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(595, 89);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(195, 57);
+            this.label9.Size = new System.Drawing.Size(322, 57);
             this.label9.TabIndex = 33;
-            this.label9.Text = "OFFICES";
+            this.label9.Text = "DEPARTMENTS";
             // 
             // btnOffices
             // 
@@ -335,13 +351,13 @@
             this.btnOffices.FlatAppearance.BorderSize = 2;
             this.btnOffices.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnOffices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOffices.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOffices.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffices.ForeColor = System.Drawing.Color.Transparent;
             this.btnOffices.Location = new System.Drawing.Point(0, 257);
             this.btnOffices.Name = "btnOffices";
             this.btnOffices.Size = new System.Drawing.Size(155, 50);
             this.btnOffices.TabIndex = 268;
-            this.btnOffices.Text = "OFFICES";
+            this.btnOffices.Text = "DEPARTMENTS";
             this.btnOffices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOffices.UseVisualStyleBackColor = false;
             this.btnOffices.Click += new System.EventHandler(this.btnOffices_Click);
@@ -354,7 +370,7 @@
             this.btnOfficers.FlatAppearance.BorderSize = 2;
             this.btnOfficers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnOfficers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOfficers.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOfficers.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfficers.ForeColor = System.Drawing.Color.Transparent;
             this.btnOfficers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnOfficers.Location = new System.Drawing.Point(0, 208);
@@ -374,7 +390,7 @@
             this.btnJobs.FlatAppearance.BorderSize = 2;
             this.btnJobs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJobs.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJobs.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJobs.ForeColor = System.Drawing.Color.Transparent;
             this.btnJobs.Location = new System.Drawing.Point(0, 355);
             this.btnJobs.Name = "btnJobs";
@@ -385,24 +401,24 @@
             this.btnJobs.UseVisualStyleBackColor = false;
             this.btnJobs.Click += new System.EventHandler(this.btnJobs_Click);
             // 
-            // button2
+            // btnServices
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkGreen;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(0, 404);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 50);
-            this.button2.TabIndex = 271;
-            this.button2.Text = "SERVICES";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btnServices_Click);
+            this.btnServices.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnServices.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnServices.FlatAppearance.BorderSize = 2;
+            this.btnServices.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServices.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServices.ForeColor = System.Drawing.Color.Transparent;
+            this.btnServices.Location = new System.Drawing.Point(0, 404);
+            this.btnServices.Name = "btnServices";
+            this.btnServices.Size = new System.Drawing.Size(155, 50);
+            this.btnServices.TabIndex = 271;
+            this.btnServices.Text = "SERVICES";
+            this.btnServices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnServices.UseVisualStyleBackColor = false;
+            this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
             // 
             // btnMaps
             // 
@@ -412,7 +428,7 @@
             this.btnMaps.FlatAppearance.BorderSize = 2;
             this.btnMaps.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnMaps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaps.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaps.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaps.ForeColor = System.Drawing.Color.Transparent;
             this.btnMaps.Location = new System.Drawing.Point(0, 306);
             this.btnMaps.Name = "btnMaps";
@@ -432,7 +448,7 @@
             this.btnHome.FlatAppearance.BorderSize = 2;
             this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Transparent;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnHome.Location = new System.Drawing.Point(0, 159);
@@ -464,6 +480,19 @@
             this.pictureBox5.TabIndex = 273;
             this.pictureBox5.TabStop = false;
             // 
+            // lbl_navigation
+            // 
+            this.lbl_navigation.BackColor = System.Drawing.Color.DarkGreen;
+            this.lbl_navigation.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_navigation.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lbl_navigation.Location = new System.Drawing.Point(1, 114);
+            this.lbl_navigation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_navigation.Name = "lbl_navigation";
+            this.lbl_navigation.Size = new System.Drawing.Size(153, 42);
+            this.lbl_navigation.TabIndex = 294;
+            this.lbl_navigation.Text = "Navigation";
+            this.lbl_navigation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Offices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,10 +501,11 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.lbl_navigation);
             this.Controls.Add(this.btnOffices);
             this.Controls.Add(this.btnOfficers);
             this.Controls.Add(this.btnJobs);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnServices);
             this.Controls.Add(this.btnMaps);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.pictureBox2);
@@ -500,7 +530,7 @@
             this.groupBoxOfficers.ResumeLayout(false);
             this.officeInformation.ResumeLayout(false);
             this.officeInformation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.officerPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.officeLogo)).EndInit();
             this.officersName.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -533,15 +563,17 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.PictureBox officerPicture;
+        private System.Windows.Forms.PictureBox officeLogo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnOffices;
         private System.Windows.Forms.Button btnOfficers;
         private System.Windows.Forms.Button btnJobs;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnServices;
         private System.Windows.Forms.Button btnMaps;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lbl_navigation;
     }
 }

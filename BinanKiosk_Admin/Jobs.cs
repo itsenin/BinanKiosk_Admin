@@ -382,5 +382,10 @@ namespace BinanKiosk_Admin
         {
             clearFields();
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Config.CallHome(this);
+        }
     }
 }

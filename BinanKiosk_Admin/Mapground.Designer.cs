@@ -44,14 +44,6 @@
             this.roomtxt = new System.Windows.Forms.TextBox();
             this.savebtn = new System.Windows.Forms.Button();
             this.r101 = new System.Windows.Forms.Button();
-            this.btnOffices = new System.Windows.Forms.Button();
-            this.btnOfficers = new System.Windows.Forms.Button();
-            this.btnJobs = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.btnMaps = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.r102 = new System.Windows.Forms.Button();
             this.r103 = new System.Windows.Forms.Button();
             this.r104 = new System.Windows.Forms.Button();
@@ -67,38 +59,47 @@
             this.panelfloor1 = new System.Windows.Forms.Panel();
             this.gfbutton = new System.Windows.Forms.Button();
             this.panelfloor2 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.r201 = new System.Windows.Forms.Button();
-            this.r202 = new System.Windows.Forms.Button();
-            this.r203 = new System.Windows.Forms.Button();
-            this.r204 = new System.Windows.Forms.Button();
-            this.r205 = new System.Windows.Forms.Button();
-            this.r206 = new System.Windows.Forms.Button();
-            this.r207 = new System.Windows.Forms.Button();
-            this.r208 = new System.Windows.Forms.Button();
-            this.R209 = new System.Windows.Forms.Button();
-            this.r211 = new System.Windows.Forms.Button();
-            this.r212 = new System.Windows.Forms.Button();
-            this.r210 = new System.Windows.Forms.Button();
-            this.r213 = new System.Windows.Forms.Button();
-            this.r214 = new System.Windows.Forms.Button();
-            this.r215 = new System.Windows.Forms.Button();
-            this.r216 = new System.Windows.Forms.Button();
-            this.r217 = new System.Windows.Forms.Button();
-            this.r218 = new System.Windows.Forms.Button();
-            this.r219 = new System.Windows.Forms.Button();
-            this.r220 = new System.Windows.Forms.Button();
             this.r221 = new System.Windows.Forms.Button();
+            this.r220 = new System.Windows.Forms.Button();
+            this.r219 = new System.Windows.Forms.Button();
+            this.r218 = new System.Windows.Forms.Button();
+            this.r217 = new System.Windows.Forms.Button();
+            this.r216 = new System.Windows.Forms.Button();
+            this.r215 = new System.Windows.Forms.Button();
+            this.r214 = new System.Windows.Forms.Button();
+            this.r213 = new System.Windows.Forms.Button();
+            this.r210 = new System.Windows.Forms.Button();
+            this.r212 = new System.Windows.Forms.Button();
+            this.r211 = new System.Windows.Forms.Button();
+            this.R209 = new System.Windows.Forms.Button();
+            this.r208 = new System.Windows.Forms.Button();
+            this.r207 = new System.Windows.Forms.Button();
+            this.r206 = new System.Windows.Forms.Button();
+            this.r205 = new System.Windows.Forms.Button();
+            this.r204 = new System.Windows.Forms.Button();
+            this.r203 = new System.Windows.Forms.Button();
+            this.r202 = new System.Windows.Forms.Button();
+            this.r201 = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lbl_navigation = new System.Windows.Forms.Label();
+            this.btnOffices = new System.Windows.Forms.Button();
+            this.btnOfficers = new System.Windows.Forms.Button();
+            this.btnJobs = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnMaps = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelfloor1.SuspendLayout();
             this.panelfloor2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox7
@@ -257,140 +258,6 @@
             this.r101.Size = new System.Drawing.Size(187, 62);
             this.r101.TabIndex = 261;
             this.r101.UseVisualStyleBackColor = false;
-            // 
-            // btnOffices
-            // 
-            this.btnOffices.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnOffices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOffices.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnOffices.FlatAppearance.BorderSize = 2;
-            this.btnOffices.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnOffices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOffices.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOffices.ForeColor = System.Drawing.Color.Transparent;
-            this.btnOffices.Location = new System.Drawing.Point(0, 257);
-            this.btnOffices.Name = "btnOffices";
-            this.btnOffices.Size = new System.Drawing.Size(155, 50);
-            this.btnOffices.TabIndex = 276;
-            this.btnOffices.Text = "OFFICES";
-            this.btnOffices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnOffices.UseVisualStyleBackColor = false;
-            // 
-            // btnOfficers
-            // 
-            this.btnOfficers.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnOfficers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOfficers.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnOfficers.FlatAppearance.BorderSize = 2;
-            this.btnOfficers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnOfficers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOfficers.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOfficers.ForeColor = System.Drawing.Color.Transparent;
-            this.btnOfficers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnOfficers.Location = new System.Drawing.Point(0, 208);
-            this.btnOfficers.Name = "btnOfficers";
-            this.btnOfficers.Size = new System.Drawing.Size(155, 50);
-            this.btnOfficers.TabIndex = 275;
-            this.btnOfficers.Text = "OFFICERS";
-            this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnOfficers.UseVisualStyleBackColor = false;
-            // 
-            // btnJobs
-            // 
-            this.btnJobs.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnJobs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnJobs.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnJobs.FlatAppearance.BorderSize = 2;
-            this.btnJobs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJobs.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJobs.ForeColor = System.Drawing.Color.Transparent;
-            this.btnJobs.Location = new System.Drawing.Point(0, 355);
-            this.btnJobs.Name = "btnJobs";
-            this.btnJobs.Size = new System.Drawing.Size(155, 50);
-            this.btnJobs.TabIndex = 280;
-            this.btnJobs.Text = "JOBS";
-            this.btnJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnJobs.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.DarkGreen;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.button9.FlatAppearance.BorderSize = 2;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Transparent;
-            this.button9.Location = new System.Drawing.Point(0, 404);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(155, 50);
-            this.button9.TabIndex = 279;
-            this.button9.Text = "SERVICES";
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.btnServices_Click);
-            // 
-            // btnMaps
-            // 
-            this.btnMaps.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnMaps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMaps.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnMaps.FlatAppearance.BorderSize = 2;
-            this.btnMaps.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnMaps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaps.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaps.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMaps.Location = new System.Drawing.Point(0, 306);
-            this.btnMaps.Name = "btnMaps";
-            this.btnMaps.Size = new System.Drawing.Size(155, 50);
-            this.btnMaps.TabIndex = 278;
-            this.btnMaps.Text = "MAPS";
-            this.btnMaps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnMaps.UseVisualStyleBackColor = false;
-            this.btnMaps.Click += new System.EventHandler(this.btnMaps_Click);
-            // 
-            // btnHome
-            // 
-            this.btnHome.AutoSize = true;
-            this.btnHome.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnHome.FlatAppearance.BorderSize = 2;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.Transparent;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHome.Location = new System.Drawing.Point(0, 159);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(155, 50);
-            this.btnHome.TabIndex = 277;
-            this.btnHome.Text = "HOME";
-            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DarkGreen;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 177);
-            this.pictureBox1.TabIndex = 282;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.DarkGreen;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 453);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(155, 319);
-            this.pictureBox5.TabIndex = 281;
-            this.pictureBox5.TabStop = false;
             // 
             // r102
             // 
@@ -613,243 +480,17 @@
             this.panelfloor2.TabIndex = 297;
             this.panelfloor2.Visible = false;
             // 
-            // pictureBox6
+            // r221
             // 
-            this.pictureBox6.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.floor_2;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(26, 10);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(798, 551);
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            // 
-            // r201
-            // 
-            this.r201.BackColor = System.Drawing.Color.White;
-            this.r201.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r201.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r201.Location = new System.Drawing.Point(112, 485);
-            this.r201.Name = "r201";
-            this.r201.Size = new System.Drawing.Size(158, 59);
-            this.r201.TabIndex = 1;
-            this.r201.Text = "button1";
-            this.r201.UseVisualStyleBackColor = false;
-            // 
-            // r202
-            // 
-            this.r202.BackColor = System.Drawing.Color.White;
-            this.r202.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r202.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r202.Location = new System.Drawing.Point(44, 407);
-            this.r202.Name = "r202";
-            this.r202.Size = new System.Drawing.Size(115, 48);
-            this.r202.TabIndex = 298;
-            this.r202.Text = "button1";
-            this.r202.UseVisualStyleBackColor = false;
-            // 
-            // r203
-            // 
-            this.r203.BackColor = System.Drawing.Color.White;
-            this.r203.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r203.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r203.Location = new System.Drawing.Point(179, 407);
-            this.r203.Name = "r203";
-            this.r203.Size = new System.Drawing.Size(91, 48);
-            this.r203.TabIndex = 299;
-            this.r203.Text = "button1";
-            this.r203.UseVisualStyleBackColor = false;
-            // 
-            // r204
-            // 
-            this.r204.BackColor = System.Drawing.Color.White;
-            this.r204.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r204.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r204.Location = new System.Drawing.Point(167, 258);
-            this.r204.Name = "r204";
-            this.r204.Size = new System.Drawing.Size(103, 62);
-            this.r204.TabIndex = 298;
-            this.r204.Text = "button1";
-            this.r204.UseVisualStyleBackColor = false;
-            // 
-            // r205
-            // 
-            this.r205.BackColor = System.Drawing.Color.White;
-            this.r205.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r205.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r205.Location = new System.Drawing.Point(167, 204);
-            this.r205.Name = "r205";
-            this.r205.Size = new System.Drawing.Size(103, 39);
-            this.r205.TabIndex = 298;
-            this.r205.Text = "button1";
-            this.r205.UseVisualStyleBackColor = false;
-            // 
-            // r206
-            // 
-            this.r206.BackColor = System.Drawing.Color.White;
-            this.r206.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r206.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r206.Location = new System.Drawing.Point(167, 165);
-            this.r206.Name = "r206";
-            this.r206.Size = new System.Drawing.Size(103, 39);
-            this.r206.TabIndex = 299;
-            this.r206.Text = "button1";
-            this.r206.UseVisualStyleBackColor = false;
-            // 
-            // r207
-            // 
-            this.r207.BackColor = System.Drawing.Color.White;
-            this.r207.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r207.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r207.Location = new System.Drawing.Point(167, 127);
-            this.r207.Name = "r207";
-            this.r207.Size = new System.Drawing.Size(103, 39);
-            this.r207.TabIndex = 299;
-            this.r207.Text = "button1";
-            this.r207.UseVisualStyleBackColor = false;
-            // 
-            // r208
-            // 
-            this.r208.BackColor = System.Drawing.Color.White;
-            this.r208.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r208.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r208.Location = new System.Drawing.Point(167, 36);
-            this.r208.Name = "r208";
-            this.r208.Size = new System.Drawing.Size(116, 82);
-            this.r208.TabIndex = 300;
-            this.r208.Text = "button1";
-            this.r208.UseVisualStyleBackColor = false;
-            // 
-            // R209
-            // 
-            this.R209.BackColor = System.Drawing.Color.White;
-            this.R209.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.R209.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.R209.Location = new System.Drawing.Point(343, 47);
-            this.R209.Name = "R209";
-            this.R209.Size = new System.Drawing.Size(135, 60);
-            this.R209.TabIndex = 301;
-            this.R209.Text = "button1";
-            this.R209.UseVisualStyleBackColor = false;
-            // 
-            // r211
-            // 
-            this.r211.BackColor = System.Drawing.Color.White;
-            this.r211.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r211.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r211.Location = new System.Drawing.Point(565, 22);
-            this.r211.Name = "r211";
-            this.r211.Size = new System.Drawing.Size(103, 39);
-            this.r211.TabIndex = 302;
-            this.r211.Text = "button1";
-            this.r211.UseVisualStyleBackColor = false;
-            // 
-            // r212
-            // 
-            this.r212.BackColor = System.Drawing.Color.White;
-            this.r212.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r212.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r212.Location = new System.Drawing.Point(565, 59);
-            this.r212.Name = "r212";
-            this.r212.Size = new System.Drawing.Size(103, 39);
-            this.r212.TabIndex = 303;
-            this.r212.Text = "button1";
-            this.r212.UseVisualStyleBackColor = false;
-            // 
-            // r210
-            // 
-            this.r210.BackColor = System.Drawing.Color.White;
-            this.r210.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r210.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r210.Location = new System.Drawing.Point(484, 101);
-            this.r210.Name = "r210";
-            this.r210.Size = new System.Drawing.Size(62, 39);
-            this.r210.TabIndex = 304;
-            this.r210.Text = "button1";
-            this.r210.UseVisualStyleBackColor = false;
-            // 
-            // r213
-            // 
-            this.r213.BackColor = System.Drawing.Color.White;
-            this.r213.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r213.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r213.Location = new System.Drawing.Point(565, 101);
-            this.r213.Name = "r213";
-            this.r213.Size = new System.Drawing.Size(103, 39);
-            this.r213.TabIndex = 305;
-            this.r213.Text = "button1";
-            this.r213.UseVisualStyleBackColor = false;
-            // 
-            // r214
-            // 
-            this.r214.BackColor = System.Drawing.Color.White;
-            this.r214.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r214.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r214.Location = new System.Drawing.Point(565, 154);
-            this.r214.Name = "r214";
-            this.r214.Size = new System.Drawing.Size(103, 39);
-            this.r214.TabIndex = 306;
-            this.r214.Text = "button1";
-            this.r214.UseVisualStyleBackColor = false;
-            // 
-            // r215
-            // 
-            this.r215.BackColor = System.Drawing.Color.White;
-            this.r215.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r215.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r215.Location = new System.Drawing.Point(565, 196);
-            this.r215.Name = "r215";
-            this.r215.Size = new System.Drawing.Size(103, 39);
-            this.r215.TabIndex = 307;
-            this.r215.Text = "button1";
-            this.r215.UseVisualStyleBackColor = false;
-            // 
-            // r216
-            // 
-            this.r216.BackColor = System.Drawing.Color.White;
-            this.r216.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r216.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r216.Location = new System.Drawing.Point(565, 240);
-            this.r216.Name = "r216";
-            this.r216.Size = new System.Drawing.Size(103, 39);
-            this.r216.TabIndex = 308;
-            this.r216.Text = "button1";
-            this.r216.UseVisualStyleBackColor = false;
-            // 
-            // r217
-            // 
-            this.r217.BackColor = System.Drawing.Color.White;
-            this.r217.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r217.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r217.Location = new System.Drawing.Point(565, 287);
-            this.r217.Name = "r217";
-            this.r217.Size = new System.Drawing.Size(103, 39);
-            this.r217.TabIndex = 309;
-            this.r217.Text = "button1";
-            this.r217.UseVisualStyleBackColor = false;
-            // 
-            // r218
-            // 
-            this.r218.BackColor = System.Drawing.Color.White;
-            this.r218.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r218.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r218.Location = new System.Drawing.Point(565, 407);
-            this.r218.Name = "r218";
-            this.r218.Size = new System.Drawing.Size(111, 48);
-            this.r218.TabIndex = 310;
-            this.r218.Text = "button1";
-            this.r218.UseVisualStyleBackColor = false;
-            // 
-            // r219
-            // 
-            this.r219.BackColor = System.Drawing.Color.White;
-            this.r219.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r219.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r219.Location = new System.Drawing.Point(689, 404);
-            this.r219.Name = "r219";
-            this.r219.Size = new System.Drawing.Size(119, 50);
-            this.r219.TabIndex = 311;
-            this.r219.Text = "button1";
-            this.r219.UseVisualStyleBackColor = false;
+            this.r221.BackColor = System.Drawing.Color.White;
+            this.r221.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r221.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r221.Location = new System.Drawing.Point(555, 475);
+            this.r221.Name = "r221";
+            this.r221.Size = new System.Drawing.Size(116, 69);
+            this.r221.TabIndex = 313;
+            this.r221.Text = "button1";
+            this.r221.UseVisualStyleBackColor = false;
             // 
             // r220
             // 
@@ -863,17 +504,390 @@
             this.r220.Text = "button1";
             this.r220.UseVisualStyleBackColor = false;
             // 
-            // r221
+            // r219
             // 
-            this.r221.BackColor = System.Drawing.Color.White;
-            this.r221.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r221.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r221.Location = new System.Drawing.Point(555, 475);
-            this.r221.Name = "r221";
-            this.r221.Size = new System.Drawing.Size(116, 69);
-            this.r221.TabIndex = 313;
-            this.r221.Text = "button1";
-            this.r221.UseVisualStyleBackColor = false;
+            this.r219.BackColor = System.Drawing.Color.White;
+            this.r219.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r219.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r219.Location = new System.Drawing.Point(689, 404);
+            this.r219.Name = "r219";
+            this.r219.Size = new System.Drawing.Size(119, 50);
+            this.r219.TabIndex = 311;
+            this.r219.Text = "button1";
+            this.r219.UseVisualStyleBackColor = false;
+            // 
+            // r218
+            // 
+            this.r218.BackColor = System.Drawing.Color.White;
+            this.r218.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r218.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r218.Location = new System.Drawing.Point(565, 407);
+            this.r218.Name = "r218";
+            this.r218.Size = new System.Drawing.Size(111, 48);
+            this.r218.TabIndex = 310;
+            this.r218.Text = "button1";
+            this.r218.UseVisualStyleBackColor = false;
+            // 
+            // r217
+            // 
+            this.r217.BackColor = System.Drawing.Color.White;
+            this.r217.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r217.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r217.Location = new System.Drawing.Point(565, 287);
+            this.r217.Name = "r217";
+            this.r217.Size = new System.Drawing.Size(103, 39);
+            this.r217.TabIndex = 309;
+            this.r217.Text = "button1";
+            this.r217.UseVisualStyleBackColor = false;
+            // 
+            // r216
+            // 
+            this.r216.BackColor = System.Drawing.Color.White;
+            this.r216.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r216.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r216.Location = new System.Drawing.Point(565, 240);
+            this.r216.Name = "r216";
+            this.r216.Size = new System.Drawing.Size(103, 39);
+            this.r216.TabIndex = 308;
+            this.r216.Text = "button1";
+            this.r216.UseVisualStyleBackColor = false;
+            // 
+            // r215
+            // 
+            this.r215.BackColor = System.Drawing.Color.White;
+            this.r215.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r215.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r215.Location = new System.Drawing.Point(565, 196);
+            this.r215.Name = "r215";
+            this.r215.Size = new System.Drawing.Size(103, 39);
+            this.r215.TabIndex = 307;
+            this.r215.Text = "button1";
+            this.r215.UseVisualStyleBackColor = false;
+            // 
+            // r214
+            // 
+            this.r214.BackColor = System.Drawing.Color.White;
+            this.r214.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r214.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r214.Location = new System.Drawing.Point(565, 154);
+            this.r214.Name = "r214";
+            this.r214.Size = new System.Drawing.Size(103, 39);
+            this.r214.TabIndex = 306;
+            this.r214.Text = "button1";
+            this.r214.UseVisualStyleBackColor = false;
+            // 
+            // r213
+            // 
+            this.r213.BackColor = System.Drawing.Color.White;
+            this.r213.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r213.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r213.Location = new System.Drawing.Point(565, 101);
+            this.r213.Name = "r213";
+            this.r213.Size = new System.Drawing.Size(103, 39);
+            this.r213.TabIndex = 305;
+            this.r213.Text = "button1";
+            this.r213.UseVisualStyleBackColor = false;
+            // 
+            // r210
+            // 
+            this.r210.BackColor = System.Drawing.Color.White;
+            this.r210.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r210.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r210.Location = new System.Drawing.Point(484, 101);
+            this.r210.Name = "r210";
+            this.r210.Size = new System.Drawing.Size(62, 39);
+            this.r210.TabIndex = 304;
+            this.r210.Text = "button1";
+            this.r210.UseVisualStyleBackColor = false;
+            // 
+            // r212
+            // 
+            this.r212.BackColor = System.Drawing.Color.White;
+            this.r212.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r212.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r212.Location = new System.Drawing.Point(565, 59);
+            this.r212.Name = "r212";
+            this.r212.Size = new System.Drawing.Size(103, 39);
+            this.r212.TabIndex = 303;
+            this.r212.Text = "button1";
+            this.r212.UseVisualStyleBackColor = false;
+            // 
+            // r211
+            // 
+            this.r211.BackColor = System.Drawing.Color.White;
+            this.r211.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r211.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r211.Location = new System.Drawing.Point(565, 22);
+            this.r211.Name = "r211";
+            this.r211.Size = new System.Drawing.Size(103, 39);
+            this.r211.TabIndex = 302;
+            this.r211.Text = "button1";
+            this.r211.UseVisualStyleBackColor = false;
+            // 
+            // R209
+            // 
+            this.R209.BackColor = System.Drawing.Color.White;
+            this.R209.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.R209.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.R209.Location = new System.Drawing.Point(343, 47);
+            this.R209.Name = "R209";
+            this.R209.Size = new System.Drawing.Size(135, 60);
+            this.R209.TabIndex = 301;
+            this.R209.Text = "button1";
+            this.R209.UseVisualStyleBackColor = false;
+            // 
+            // r208
+            // 
+            this.r208.BackColor = System.Drawing.Color.White;
+            this.r208.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r208.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r208.Location = new System.Drawing.Point(167, 36);
+            this.r208.Name = "r208";
+            this.r208.Size = new System.Drawing.Size(116, 82);
+            this.r208.TabIndex = 300;
+            this.r208.Text = "button1";
+            this.r208.UseVisualStyleBackColor = false;
+            // 
+            // r207
+            // 
+            this.r207.BackColor = System.Drawing.Color.White;
+            this.r207.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r207.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r207.Location = new System.Drawing.Point(167, 127);
+            this.r207.Name = "r207";
+            this.r207.Size = new System.Drawing.Size(103, 39);
+            this.r207.TabIndex = 299;
+            this.r207.Text = "button1";
+            this.r207.UseVisualStyleBackColor = false;
+            // 
+            // r206
+            // 
+            this.r206.BackColor = System.Drawing.Color.White;
+            this.r206.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r206.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r206.Location = new System.Drawing.Point(167, 165);
+            this.r206.Name = "r206";
+            this.r206.Size = new System.Drawing.Size(103, 39);
+            this.r206.TabIndex = 299;
+            this.r206.Text = "button1";
+            this.r206.UseVisualStyleBackColor = false;
+            // 
+            // r205
+            // 
+            this.r205.BackColor = System.Drawing.Color.White;
+            this.r205.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r205.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r205.Location = new System.Drawing.Point(167, 204);
+            this.r205.Name = "r205";
+            this.r205.Size = new System.Drawing.Size(103, 39);
+            this.r205.TabIndex = 298;
+            this.r205.Text = "button1";
+            this.r205.UseVisualStyleBackColor = false;
+            // 
+            // r204
+            // 
+            this.r204.BackColor = System.Drawing.Color.White;
+            this.r204.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r204.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r204.Location = new System.Drawing.Point(167, 258);
+            this.r204.Name = "r204";
+            this.r204.Size = new System.Drawing.Size(103, 62);
+            this.r204.TabIndex = 298;
+            this.r204.Text = "button1";
+            this.r204.UseVisualStyleBackColor = false;
+            // 
+            // r203
+            // 
+            this.r203.BackColor = System.Drawing.Color.White;
+            this.r203.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r203.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r203.Location = new System.Drawing.Point(179, 407);
+            this.r203.Name = "r203";
+            this.r203.Size = new System.Drawing.Size(91, 48);
+            this.r203.TabIndex = 299;
+            this.r203.Text = "button1";
+            this.r203.UseVisualStyleBackColor = false;
+            // 
+            // r202
+            // 
+            this.r202.BackColor = System.Drawing.Color.White;
+            this.r202.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r202.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r202.Location = new System.Drawing.Point(44, 407);
+            this.r202.Name = "r202";
+            this.r202.Size = new System.Drawing.Size(115, 48);
+            this.r202.TabIndex = 298;
+            this.r202.Text = "button1";
+            this.r202.UseVisualStyleBackColor = false;
+            // 
+            // r201
+            // 
+            this.r201.BackColor = System.Drawing.Color.White;
+            this.r201.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r201.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r201.Location = new System.Drawing.Point(112, 485);
+            this.r201.Name = "r201";
+            this.r201.Size = new System.Drawing.Size(158, 59);
+            this.r201.TabIndex = 1;
+            this.r201.Text = "button1";
+            this.r201.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.floor_2;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Location = new System.Drawing.Point(26, 10);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(798, 551);
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
+            // 
+            // lbl_navigation
+            // 
+            this.lbl_navigation.BackColor = System.Drawing.Color.DarkGreen;
+            this.lbl_navigation.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_navigation.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lbl_navigation.Location = new System.Drawing.Point(1, 114);
+            this.lbl_navigation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_navigation.Name = "lbl_navigation";
+            this.lbl_navigation.Size = new System.Drawing.Size(153, 42);
+            this.lbl_navigation.TabIndex = 298;
+            this.lbl_navigation.Text = "Navigation";
+            this.lbl_navigation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnOffices
+            // 
+            this.btnOffices.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnOffices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOffices.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnOffices.FlatAppearance.BorderSize = 2;
+            this.btnOffices.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnOffices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOffices.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOffices.ForeColor = System.Drawing.Color.Transparent;
+            this.btnOffices.Location = new System.Drawing.Point(0, 257);
+            this.btnOffices.Name = "btnOffices";
+            this.btnOffices.Size = new System.Drawing.Size(155, 50);
+            this.btnOffices.TabIndex = 300;
+            this.btnOffices.Text = "DEPARTMENTS";
+            this.btnOffices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnOffices.UseVisualStyleBackColor = false;
+            // 
+            // btnOfficers
+            // 
+            this.btnOfficers.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnOfficers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOfficers.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnOfficers.FlatAppearance.BorderSize = 2;
+            this.btnOfficers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnOfficers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOfficers.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOfficers.ForeColor = System.Drawing.Color.Transparent;
+            this.btnOfficers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnOfficers.Location = new System.Drawing.Point(0, 208);
+            this.btnOfficers.Name = "btnOfficers";
+            this.btnOfficers.Size = new System.Drawing.Size(155, 50);
+            this.btnOfficers.TabIndex = 299;
+            this.btnOfficers.Text = "OFFICERS";
+            this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnOfficers.UseVisualStyleBackColor = false;
+            // 
+            // btnJobs
+            // 
+            this.btnJobs.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnJobs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnJobs.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnJobs.FlatAppearance.BorderSize = 2;
+            this.btnJobs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJobs.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJobs.ForeColor = System.Drawing.Color.Transparent;
+            this.btnJobs.Location = new System.Drawing.Point(0, 355);
+            this.btnJobs.Name = "btnJobs";
+            this.btnJobs.Size = new System.Drawing.Size(155, 50);
+            this.btnJobs.TabIndex = 304;
+            this.btnJobs.Text = "JOBS";
+            this.btnJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnJobs.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DarkGreen;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(0, 404);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(155, 50);
+            this.button2.TabIndex = 303;
+            this.button2.Text = "SERVICES";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnServices_Click);
+            // 
+            // btnMaps
+            // 
+            this.btnMaps.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnMaps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMaps.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnMaps.FlatAppearance.BorderSize = 2;
+            this.btnMaps.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnMaps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaps.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaps.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMaps.Location = new System.Drawing.Point(0, 306);
+            this.btnMaps.Name = "btnMaps";
+            this.btnMaps.Size = new System.Drawing.Size(155, 50);
+            this.btnMaps.TabIndex = 302;
+            this.btnMaps.Text = "MAPS";
+            this.btnMaps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnMaps.UseVisualStyleBackColor = false;
+            this.btnMaps.Click += new System.EventHandler(this.btnMaps_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.AutoSize = true;
+            this.btnHome.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnHome.FlatAppearance.BorderSize = 2;
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.Transparent;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHome.Location = new System.Drawing.Point(0, 159);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(155, 50);
+            this.btnHome.TabIndex = 301;
+            this.btnHome.Text = "HOME";
+            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.DarkGreen;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 177);
+            this.pictureBox1.TabIndex = 306;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.DarkGreen;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 453);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(155, 319);
+            this.pictureBox5.TabIndex = 305;
+            this.pictureBox5.TabStop = false;
             // 
             // Mapground
             // 
@@ -883,19 +897,20 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.lbl_navigation);
+            this.Controls.Add(this.btnOffices);
+            this.Controls.Add(this.btnOfficers);
+            this.Controls.Add(this.btnJobs);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnMaps);
+            this.Controls.Add(this.btnHome);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.editbtn);
             this.Controls.Add(this.roomtxt);
             this.Controls.Add(this.panelfloor2);
             this.Controls.Add(this.gfbutton);
             this.Controls.Add(this.valuelbl);
-            this.Controls.Add(this.btnOffices);
-            this.Controls.Add(this.btnOfficers);
-            this.Controls.Add(this.btnJobs);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.btnMaps);
-            this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.savebtn);
             this.Controls.Add(this.thirdfbutton);
             this.Controls.Add(this.secondfbutton);
@@ -917,11 +932,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panelfloor1.ResumeLayout(false);
             this.panelfloor2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -942,14 +957,6 @@
         private System.Windows.Forms.TextBox roomtxt;
         private System.Windows.Forms.Button savebtn;
         private System.Windows.Forms.Button r101;
-        private System.Windows.Forms.Button btnOffices;
-        private System.Windows.Forms.Button btnOfficers;
-        private System.Windows.Forms.Button btnJobs;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button btnMaps;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button r102;
         private System.Windows.Forms.Button r103;
         private System.Windows.Forms.Button r104;
@@ -987,5 +994,14 @@
         private System.Windows.Forms.Button r212;
         private System.Windows.Forms.Button r211;
         private System.Windows.Forms.Button R209;
+        private System.Windows.Forms.Label lbl_navigation;
+        private System.Windows.Forms.Button btnOffices;
+        private System.Windows.Forms.Button btnOfficers;
+        private System.Windows.Forms.Button btnJobs;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMaps;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

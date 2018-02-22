@@ -85,7 +85,7 @@ namespace BinanKiosk_Admin
             txtDeptName.Text = "";
             txtRoomID.Text = "";
             txtDescription.Text = "";
-            officerPicture.Image = null;
+            officeLogo.Image = null;
         }
 
         private void officesList_SelectedValueChanged(object sender, EventArgs e)
@@ -118,11 +118,11 @@ namespace BinanKiosk_Admin
                 {
                     reader.Read();
                     byte[] deserializedImage = (byte[])reader["picture_string"];
-                    officerPicture.Image = GetDataToImage(deserializedImage);
+                    officeLogo.Image = GetDataToImage(deserializedImage);
                 }
                 else
                 {
-                    officerPicture.Image = null;
+                    officeLogo.Image = null;
                 }
             }
             
@@ -212,7 +212,7 @@ namespace BinanKiosk_Admin
                 cmd.ExecuteNonQuery();
 
                 //Picture Saving
-                var serializedImage = ImageToByteArray(officerPicture.Image, officerPicture);
+                var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
                 cmd = new MySqlCommand("INSERT INTO departments_pictures(picture_id, department_id, picture_string) VALUES('" + Convert.ToInt32(txtID.Text) + "', '" + Convert.ToInt32(txtID.Text) + "', @image)", conn);
                 cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
                 cmd.ExecuteNonQuery();
@@ -238,7 +238,7 @@ namespace BinanKiosk_Admin
                 if (availalbe == true)
                 {
                     //Picture Saving
-                    var serializedImage = ImageToByteArray(officerPicture.Image, officerPicture);
+                    var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
                     cmd = new MySqlCommand("UPDATE departments_pictures SET picture_string = @image WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
                     cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
                     cmd.ExecuteNonQuery();
@@ -246,7 +246,7 @@ namespace BinanKiosk_Admin
                 else
                 {
                     //Picture Saving
-                    var serializedImage = ImageToByteArray(officerPicture.Image, officerPicture);
+                    var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
                     cmd = new MySqlCommand("INSERT INTO departments_pictures(picture_id, department_id, picture_string) VALUES('" + Convert.ToInt32(txtID.Text) + "', '" + Convert.ToInt32(txtID.Text) + "', @image)", conn);
                     cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
                     cmd.ExecuteNonQuery();
@@ -264,6 +264,11 @@ namespace BinanKiosk_Admin
             
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void officerPicture_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
@@ -272,7 +277,7 @@ namespace BinanKiosk_Admin
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 Image img = new Bitmap(openFile.FileName);
-                officerPicture.Image = img;
+                officeLogo.Image = img;
                 imageString = openFile.SafeFileName;
             }
         }
@@ -298,7 +303,7 @@ namespace BinanKiosk_Admin
         {
             Config.CallJobs(this);
         }
-
+        
         private void btnServices_Click(object sender, EventArgs e)
         {
             Config.CallServices(this);
