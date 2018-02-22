@@ -8,8 +8,6 @@ namespace BinanKiosk_Admin
     {
         public static MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
 
-        public static string currentfloor = "f13";
-
         private static async void changeForm(Form current, Form next)
         {
             next.Show();
@@ -31,22 +29,60 @@ namespace BinanKiosk_Admin
             changeForm(current, sg);
         }
 
-        public static void CallMain(Form current)
+        public static void CallJobs(Form current)
         {
-            MainForm mf = new MainForm();
-            changeForm(current, mf);
+            Jobs jb = new Jobs();
+            changeForm(current, jb);
         }
+
+        public static void loadbuttonnames(Button[] buttonarray)
+        {
+            foreach (Button btn in buttonarray)
+            {
+                MySqlConnection conn = Config.conn;
+                MySqlDataReader reader;
+                conn.Open();
+                string queryStr = "SELECT room_label from floors WHERE room_id = '" + btn.Name + "' ";
+                MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        btn.Text = reader.GetString(0);
+                    }
+                }
+                conn.Close();
+            }
+
+
+        }
+
         public static void CallHome(Form current)
         {
             Home hm = new Home();
             changeForm(current, hm);
         }
+
+        public static void CallServices(Form current)
+        {
+            Services sv = new Services();
+            changeForm(current, sv);
+        }
+
+        public static void CallMain(Form current)
+        {
+            MainForm mf = new MainForm();
+            changeForm(current, mf);
+        }
+
         public static void CallOfficers(Form current)
         {
             Officers ofc = new Officers();
             changeForm(current, ofc);
         }
-    
+
         public static void CallOffices(Form current)
         {
             Offices ofs = new Offices();
@@ -59,16 +95,10 @@ namespace BinanKiosk_Admin
             changeForm(current, mg);
         }
 
-        public static void CallJobs(Form current)
+        public static void CallSearch(Form current)
         {
-            Jobs jb = new Jobs();
-            changeForm(current, jb);
-        }
-
-        public static void CallServices(Form current)
-        {
-            Services sv = new Services();
-            changeForm(current, sv);
+            Officers ofc = new Officers();
+            changeForm(current, ofc);
         }
     }
 }

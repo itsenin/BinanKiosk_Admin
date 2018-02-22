@@ -36,10 +36,6 @@
             this.btnMaps = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.btn_delete = new System.Windows.Forms.Button();
-            this.pb_preview = new System.Windows.Forms.PictureBox();
-            this.btn_add = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.lbldate = new System.Windows.Forms.Label();
@@ -47,22 +43,33 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pb_test = new System.Windows.Forms.PictureBox();
-            this.lb_imageName = new System.Windows.Forms.Label();
-            this.lbl_sliderPics = new System.Windows.Forms.Label();
-            this.lbl_imagePrv = new System.Windows.Forms.Label();
             this.lbl_Home = new System.Windows.Forms.Label();
-            this.lst_sliderPics = new System.Windows.Forms.ListBox();
-            this.pnl_Save = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).BeginInit();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.gridview = new System.Windows.Forms.DataGridView();
+            this.txtJobType = new System.Windows.Forms.ComboBox();
+            this.txtJobTypeID = new System.Windows.Forms.TextBox();
+            this.txtJobLocation = new System.Windows.Forms.TextBox();
+            this.txtJobDescription = new System.Windows.Forms.TextBox();
+            this.txtJobCompany = new System.Windows.Forms.TextBox();
+            this.txtJobCategory = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtJobTitle = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_test)).BeginInit();
-            this.pnl_Save.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridview)).BeginInit();
             this.SuspendLayout();
             // 
             // btnJob
@@ -157,74 +164,6 @@
             this.btnHome.Text = "HOME";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.BackColor = System.Drawing.Color.Transparent;
-            this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.saveButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.saveButton.FlatAppearance.BorderSize = 0;
-            this.saveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveButton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.ForeColor = System.Drawing.Color.Transparent;
-            this.saveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.saveButton.Location = new System.Drawing.Point(315, 355);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(142, 68);
-            this.saveButton.TabIndex = 248;
-            this.saveButton.Text = "SAVE";
-            this.saveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.saveButton.UseVisualStyleBackColor = false;
-            // 
-            // btn_delete
-            // 
-            this.btn_delete.BackColor = System.Drawing.Color.Transparent;
-            this.btn_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_delete.FlatAppearance.BorderSize = 0;
-            this.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_delete.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delete.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_delete.Location = new System.Drawing.Point(598, 323);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(142, 68);
-            this.btn_delete.TabIndex = 247;
-            this.btn_delete.Text = "DELETE";
-            this.btn_delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_delete.UseVisualStyleBackColor = false;
-            // 
-            // pb_preview
-            // 
-            this.pb_preview.BackColor = System.Drawing.Color.Gainsboro;
-            this.pb_preview.Location = new System.Drawing.Point(7, 54);
-            this.pb_preview.Name = "pb_preview";
-            this.pb_preview.Size = new System.Drawing.Size(450, 284);
-            this.pb_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_preview.TabIndex = 244;
-            this.pb_preview.TabStop = false;
-            // 
-            // btn_add
-            // 
-            this.btn_add.BackColor = System.Drawing.Color.Transparent;
-            this.btn_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_add.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_add.FlatAppearance.BorderSize = 0;
-            this.btn_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_add.Location = new System.Drawing.Point(598, 249);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(142, 68);
-            this.btn_add.TabIndex = 243;
-            this.btn_add.Text = "ADD";
-            this.btn_add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btn_add.UseVisualStyleBackColor = false;
             // 
             // pictureBox7
             // 
@@ -306,90 +245,248 @@
             this.pictureBox6.TabIndex = 251;
             this.pictureBox6.TabStop = false;
             // 
-            // pb_test
-            // 
-            this.pb_test.BackColor = System.Drawing.Color.Gainsboro;
-            this.pb_test.Location = new System.Drawing.Point(549, 396);
-            this.pb_test.Name = "pb_test";
-            this.pb_test.Size = new System.Drawing.Size(242, 155);
-            this.pb_test.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_test.TabIndex = 252;
-            this.pb_test.TabStop = false;
-            // 
-            // lb_imageName
-            // 
-            this.lb_imageName.BackColor = System.Drawing.Color.Transparent;
-            this.lb_imageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_imageName.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lb_imageName.Location = new System.Drawing.Point(8, 381);
-            this.lb_imageName.Name = "lb_imageName";
-            this.lb_imageName.Size = new System.Drawing.Size(306, 23);
-            this.lb_imageName.TabIndex = 255;
-            this.lb_imageName.Text = "imageName";
-            // 
-            // lbl_sliderPics
-            // 
-            this.lbl_sliderPics.AutoSize = true;
-            this.lbl_sliderPics.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_sliderPics.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_sliderPics.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbl_sliderPics.Location = new System.Drawing.Point(232, 206);
-            this.lbl_sliderPics.Name = "lbl_sliderPics";
-            this.lbl_sliderPics.Size = new System.Drawing.Size(204, 31);
-            this.lbl_sliderPics.TabIndex = 256;
-            this.lbl_sliderPics.Text = "Slider Pictures";
-            // 
-            // lbl_imagePrv
-            // 
-            this.lbl_imagePrv.AutoSize = true;
-            this.lbl_imagePrv.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_imagePrv.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_imagePrv.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbl_imagePrv.Location = new System.Drawing.Point(7, 14);
-            this.lbl_imagePrv.Name = "lbl_imagePrv";
-            this.lbl_imagePrv.Size = new System.Drawing.Size(206, 31);
-            this.lbl_imagePrv.TabIndex = 257;
-            this.lbl_imagePrv.Text = "Image Preview";
-            // 
             // lbl_Home
             // 
             this.lbl_Home.AutoSize = true;
             this.lbl_Home.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Home.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Home.Location = new System.Drawing.Point(598, 102);
+            this.lbl_Home.Location = new System.Drawing.Point(1168, 105);
             this.lbl_Home.Name = "lbl_Home";
             this.lbl_Home.Size = new System.Drawing.Size(172, 55);
             this.lbl_Home.TabIndex = 258;
             this.lbl_Home.Text = "HOME";
             // 
-            // lst_sliderPics
+            // txtSearch
             // 
-            this.lst_sliderPics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lst_sliderPics.FormattingEnabled = true;
-            this.lst_sliderPics.ItemHeight = 20;
-            this.lst_sliderPics.Items.AddRange(new object[] {
-            "1st Pic",
-            "2nd pic",
-            "3rd Pic"});
-            this.lst_sliderPics.Location = new System.Drawing.Point(237, 249);
-            this.lst_sliderPics.Name = "lst_sliderPics";
-            this.lst_sliderPics.Size = new System.Drawing.Size(301, 244);
-            this.lst_sliderPics.TabIndex = 254;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(180, 92);
+            this.txtSearch.MaxLength = 30;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(322, 38);
+            this.txtSearch.TabIndex = 260;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // pnl_Save
+            // gridview
             // 
-            this.pnl_Save.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_Save.Controls.Add(this.lbl_imagePrv);
-            this.pnl_Save.Controls.Add(this.pb_preview);
-            this.pnl_Save.Controls.Add(this.lb_imageName);
-            this.pnl_Save.Controls.Add(this.saveButton);
-            this.pnl_Save.Location = new System.Drawing.Point(796, 193);
-            this.pnl_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnl_Save.Name = "pnl_Save";
-            this.pnl_Save.Size = new System.Drawing.Size(462, 433);
-            this.pnl_Save.TabIndex = 259;
-            this.pnl_Save.Visible = false;
+            this.gridview.AllowUserToAddRows = false;
+            this.gridview.AllowUserToDeleteRows = false;
+            this.gridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridview.Location = new System.Drawing.Point(180, 140);
+            this.gridview.Name = "gridview";
+            this.gridview.ReadOnly = true;
+            this.gridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridview.Size = new System.Drawing.Size(749, 150);
+            this.gridview.TabIndex = 261;
+            this.gridview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_CellClick);
+            this.gridview.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridview_RowHeaderMouseClick);
+            // 
+            // txtJobType
+            // 
+            this.txtJobType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtJobType.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJobType.FormattingEnabled = true;
+            this.txtJobType.Location = new System.Drawing.Point(602, 92);
+            this.txtJobType.Name = "txtJobType";
+            this.txtJobType.Size = new System.Drawing.Size(327, 43);
+            this.txtJobType.TabIndex = 262;
+            this.txtJobType.SelectedValueChanged += new System.EventHandler(this.txtJobType_SelectedValueChanged);
+            // 
+            // txtJobTypeID
+            // 
+            this.txtJobTypeID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtJobTypeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJobTypeID.Location = new System.Drawing.Point(353, 376);
+            this.txtJobTypeID.MaxLength = 30;
+            this.txtJobTypeID.Name = "txtJobTypeID";
+            this.txtJobTypeID.Size = new System.Drawing.Size(164, 38);
+            this.txtJobTypeID.TabIndex = 263;
+            // 
+            // txtJobLocation
+            // 
+            this.txtJobLocation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtJobLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJobLocation.Location = new System.Drawing.Point(353, 440);
+            this.txtJobLocation.MaxLength = 30;
+            this.txtJobLocation.Name = "txtJobLocation";
+            this.txtJobLocation.Size = new System.Drawing.Size(322, 38);
+            this.txtJobLocation.TabIndex = 264;
+            // 
+            // txtJobDescription
+            // 
+            this.txtJobDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtJobDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJobDescription.Location = new System.Drawing.Point(748, 376);
+            this.txtJobDescription.MaxLength = 128;
+            this.txtJobDescription.Multiline = true;
+            this.txtJobDescription.Name = "txtJobDescription";
+            this.txtJobDescription.Size = new System.Drawing.Size(322, 223);
+            this.txtJobDescription.TabIndex = 265;
+            // 
+            // txtJobCompany
+            // 
+            this.txtJobCompany.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtJobCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJobCompany.Location = new System.Drawing.Point(353, 501);
+            this.txtJobCompany.MaxLength = 30;
+            this.txtJobCompany.Name = "txtJobCompany";
+            this.txtJobCompany.Size = new System.Drawing.Size(322, 38);
+            this.txtJobCompany.TabIndex = 266;
+            // 
+            // txtJobCategory
+            // 
+            this.txtJobCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtJobCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJobCategory.FormattingEnabled = true;
+            this.txtJobCategory.Location = new System.Drawing.Point(353, 560);
+            this.txtJobCategory.Name = "txtJobCategory";
+            this.txtJobCategory.Size = new System.Drawing.Size(322, 43);
+            this.txtJobCategory.TabIndex = 268;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(173, 376);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(155, 39);
+            this.label5.TabIndex = 270;
+            this.label5.Text = "Type ID: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(173, 441);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 39);
+            this.label1.TabIndex = 271;
+            this.label1.Text = "Location: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(173, 501);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(181, 39);
+            this.label2.TabIndex = 272;
+            this.label2.Text = "Company: ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(173, 559);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(173, 39);
+            this.label3.TabIndex = 273;
+            this.label3.Text = "Category: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(536, 376);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(206, 39);
+            this.label4.TabIndex = 274;
+            this.label4.Text = "Description: ";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button11;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(1129, 454);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(211, 57);
+            this.btnSave.TabIndex = 275;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button11;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(1129, 526);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(211, 57);
+            this.btnDelete.TabIndex = 276;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button11;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(1129, 376);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(211, 57);
+            this.btnAdd.TabIndex = 277;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(173, 315);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 39);
+            this.label6.TabIndex = 279;
+            this.label6.Text = "Job Title: ";
+            // 
+            // txtJobTitle
+            // 
+            this.txtJobTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtJobTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJobTitle.Location = new System.Drawing.Point(353, 314);
+            this.txtJobTitle.MaxLength = 30;
+            this.txtJobTitle.Name = "txtJobTitle";
+            this.txtJobTitle.Size = new System.Drawing.Size(322, 38);
+            this.txtJobTitle.TabIndex = 278;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Transparent;
+            this.btnClear.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button11;
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(748, 308);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(322, 57);
+            this.btnClear.TabIndex = 280;
+            this.btnClear.Text = "CLEAR FIELDS";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.button1_Click);
             // 
             // Jobs
             // 
@@ -398,13 +495,27 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1040, 640);
+            this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtJobTitle);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtJobCategory);
+            this.Controls.Add(this.txtJobCompany);
+            this.Controls.Add(this.txtJobDescription);
+            this.Controls.Add(this.txtJobLocation);
+            this.Controls.Add(this.txtJobTypeID);
+            this.Controls.Add(this.txtJobType);
+            this.Controls.Add(this.gridview);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lbl_Home);
-            this.Controls.Add(this.lbl_sliderPics);
-            this.Controls.Add(this.lst_sliderPics);
-            this.Controls.Add(this.pb_test);
-            this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.lbldate);
@@ -417,22 +528,18 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pnl_Save);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Jobs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_test)).EndInit();
-            this.pnl_Save.ResumeLayout(false);
-            this.pnl_Save.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,17 +559,26 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.PictureBox pb_preview;
-        private System.Windows.Forms.Button btn_delete;
-        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pb_test;
-        private System.Windows.Forms.Label lb_imageName;
-        private System.Windows.Forms.Label lbl_sliderPics;
-        private System.Windows.Forms.Label lbl_imagePrv;
         private System.Windows.Forms.Label lbl_Home;
-        private System.Windows.Forms.ListBox lst_sliderPics;
-        private System.Windows.Forms.Panel pnl_Save;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.DataGridView gridview;
+        private System.Windows.Forms.ComboBox txtJobType;
+        private System.Windows.Forms.TextBox txtJobTypeID;
+        private System.Windows.Forms.TextBox txtJobLocation;
+        private System.Windows.Forms.TextBox txtJobDescription;
+        private System.Windows.Forms.TextBox txtJobCompany;
+        private System.Windows.Forms.ComboBox txtJobCategory;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtJobTitle;
+        private System.Windows.Forms.Button btnClear;
     }
 }
