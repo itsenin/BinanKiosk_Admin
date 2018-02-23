@@ -158,9 +158,15 @@ namespace BinanKiosk_Admin
 
             if (editable)
             {
-                if(unassignrooms.SelectedIndex == -1)
+                if(unassignrooms.SelectedIndex == -1)//nothing is selected
                 {
-                    unassignrooms.Items.Add(bttn.Text);
+
+                    if (bttn.Text !="")
+                    {
+                      unassignrooms.Items.Add(bttn.Text);
+
+                    }
+                    
                     
                     //mapchange.Remove(bttn.Text);
                     //var templist = mapchange.re.Where(stringtocheck => stringtocheck.ToString() == bttn.Text);
@@ -181,14 +187,20 @@ namespace BinanKiosk_Admin
                     bttn.Text = "";
                 }
 
-                else
+                else //something is selected
                 {
                     unassigned = unassignrooms.SelectedItem.ToString();
-                    mapchange.Add(new KeyValuePair<string, string>(bttn.Name, unassigned));
-                    bttn.Text = unassigned;
-                    var templistindex = unassignrooms.SelectedIndex;
-                    unassignrooms.Items.RemoveAt(templistindex);
-                    
+                    if (bttn.Text == "")
+                    {
+                        mapchange.Add(new KeyValuePair<string, string>(bttn.Name, unassigned));
+                        bttn.Text = unassigned;
+                        var templistindex = unassignrooms.SelectedIndex;
+                        unassignrooms.Items.RemoveAt(templistindex);
+                    }
+                    else //conflict
+                    {
+                        MessageBox.Show("Room is currently occupied! Empty the room first.");
+                    }
                 }
 
                 
