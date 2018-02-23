@@ -108,10 +108,9 @@
             this.pictureBox7.BackColor = System.Drawing.Color.ForestGreen;
             this.pictureBox7.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.binancity_nav_logo;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(671, 6);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox7.Location = new System.Drawing.Point(503, 5);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(99, 91);
+            this.pictureBox7.Size = new System.Drawing.Size(74, 74);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 241;
             this.pictureBox7.TabStop = false;
@@ -121,10 +120,9 @@
             this.pictureBox8.BackColor = System.Drawing.Color.ForestGreen;
             this.pictureBox8.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.Binan_city;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(791, 6);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox8.Location = new System.Drawing.Point(593, 5);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(279, 91);
+            this.pictureBox8.Size = new System.Drawing.Size(209, 74);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 95;
             this.pictureBox8.TabStop = false;
@@ -136,10 +134,9 @@
             this.lbldate.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldate.ForeColor = System.Drawing.Color.White;
             this.lbldate.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbldate.Location = new System.Drawing.Point(1293, 850);
-            this.lbldate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbldate.Location = new System.Drawing.Point(970, 691);
             this.lbldate.Name = "lbldate";
-            this.lbldate.Size = new System.Drawing.Size(528, 100);
+            this.lbldate.Size = new System.Drawing.Size(396, 81);
             this.lbldate.TabIndex = 94;
             this.lbldate.Text = ".";
             this.lbldate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -150,9 +147,8 @@
             this.pictureBox4.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.uppermenu;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1821, 106);
+            this.pictureBox4.Size = new System.Drawing.Size(1366, 86);
             this.pictureBox4.TabIndex = 92;
             this.pictureBox4.TabStop = false;
             // 
@@ -161,10 +157,9 @@
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
             this.pictureBox3.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.undermenu;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 833);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 677);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1945, 116);
+            this.pictureBox3.Size = new System.Drawing.Size(1459, 94);
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
             // 
@@ -172,10 +167,9 @@
             // 
             this.pictureBox2.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.groundfloornew2;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(35, 12);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(26, 10);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1064, 678);
+            this.pictureBox2.Size = new System.Drawing.Size(798, 551);
             this.pictureBox2.TabIndex = 253;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -188,10 +182,9 @@
             this.secondfbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.secondfbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.secondfbutton.ForeColor = System.Drawing.Color.Transparent;
-            this.secondfbutton.Location = new System.Drawing.Point(219, 207);
-            this.secondfbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.secondfbutton.Location = new System.Drawing.Point(164, 168);
             this.secondfbutton.Name = "secondfbutton";
-            this.secondfbutton.Size = new System.Drawing.Size(107, 78);
+            this.secondfbutton.Size = new System.Drawing.Size(80, 63);
             this.secondfbutton.TabIndex = 254;
             this.secondfbutton.Text = "2F";
             this.secondfbutton.UseVisualStyleBackColor = false;
@@ -205,10 +198,9 @@
             this.thirdfbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.thirdfbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thirdfbutton.ForeColor = System.Drawing.Color.Transparent;
-            this.thirdfbutton.Location = new System.Drawing.Point(219, 297);
-            this.thirdfbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.thirdfbutton.Location = new System.Drawing.Point(164, 241);
             this.thirdfbutton.Name = "thirdfbutton";
-            this.thirdfbutton.Size = new System.Drawing.Size(107, 78);
+            this.thirdfbutton.Size = new System.Drawing.Size(80, 63);
             this.thirdfbutton.TabIndex = 255;
             this.thirdfbutton.Text = "3F";
             this.thirdfbutton.UseVisualStyleBackColor = false;
@@ -221,10 +213,9 @@
             this.editbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editbtn.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editbtn.ForeColor = System.Drawing.Color.Transparent;
-            this.editbtn.Location = new System.Drawing.Point(1463, 165);
-            this.editbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.editbtn.Location = new System.Drawing.Point(1097, 134);
             this.editbtn.Name = "editbtn";
-            this.editbtn.Size = new System.Drawing.Size(128, 53);
+            this.editbtn.Size = new System.Drawing.Size(96, 43);
             this.editbtn.TabIndex = 258;
             this.editbtn.Text = "Edit";
             this.editbtn.UseVisualStyleBackColor = false;
@@ -233,11 +224,10 @@
             // roomtxt
             // 
             this.roomtxt.Enabled = false;
-            this.roomtxt.Location = new System.Drawing.Point(1468, 121);
-            this.roomtxt.Margin = new System.Windows.Forms.Padding(4);
+            this.roomtxt.Location = new System.Drawing.Point(1101, 98);
             this.roomtxt.Multiline = true;
             this.roomtxt.Name = "roomtxt";
-            this.roomtxt.Size = new System.Drawing.Size(261, 32);
+            this.roomtxt.Size = new System.Drawing.Size(197, 27);
             this.roomtxt.TabIndex = 259;
             // 
             // savebtn
@@ -249,10 +239,9 @@
             this.savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savebtn.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savebtn.ForeColor = System.Drawing.Color.Transparent;
-            this.savebtn.Location = new System.Drawing.Point(1608, 165);
-            this.savebtn.Margin = new System.Windows.Forms.Padding(4);
+            this.savebtn.Location = new System.Drawing.Point(1206, 134);
             this.savebtn.Name = "savebtn";
-            this.savebtn.Size = new System.Drawing.Size(128, 53);
+            this.savebtn.Size = new System.Drawing.Size(96, 43);
             this.savebtn.TabIndex = 260;
             this.savebtn.Text = "Save";
             this.savebtn.UseVisualStyleBackColor = false;
@@ -265,10 +254,9 @@
             this.r101.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r101.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r101.ForeColor = System.Drawing.Color.Black;
-            this.r101.Location = new System.Drawing.Point(77, 501);
-            this.r101.Margin = new System.Windows.Forms.Padding(4);
+            this.r101.Location = new System.Drawing.Point(58, 407);
             this.r101.Name = "r101";
-            this.r101.Size = new System.Drawing.Size(249, 76);
+            this.r101.Size = new System.Drawing.Size(187, 62);
             this.r101.TabIndex = 261;
             this.r101.UseVisualStyleBackColor = false;
             // 
@@ -279,10 +267,9 @@
             this.r102.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r102.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r102.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.r102.Location = new System.Drawing.Point(203, 175);
-            this.r102.Margin = new System.Windows.Forms.Padding(4);
+            this.r102.Location = new System.Drawing.Point(152, 142);
             this.r102.Name = "r102";
-            this.r102.Size = new System.Drawing.Size(117, 193);
+            this.r102.Size = new System.Drawing.Size(88, 157);
             this.r102.TabIndex = 283;
             this.r102.UseVisualStyleBackColor = false;
             // 
@@ -293,10 +280,9 @@
             this.r103.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r103.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r103.ForeColor = System.Drawing.Color.Black;
-            this.r103.Location = new System.Drawing.Point(201, 73);
-            this.r103.Margin = new System.Windows.Forms.Padding(4);
+            this.r103.Location = new System.Drawing.Point(151, 59);
             this.r103.Name = "r103";
-            this.r103.Size = new System.Drawing.Size(129, 76);
+            this.r103.Size = new System.Drawing.Size(97, 62);
             this.r103.TabIndex = 284;
             this.r103.UseVisualStyleBackColor = false;
             // 
@@ -307,10 +293,9 @@
             this.r104.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r104.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r104.ForeColor = System.Drawing.Color.Black;
-            this.r104.Location = new System.Drawing.Point(331, 22);
-            this.r104.Margin = new System.Windows.Forms.Padding(4);
+            this.r104.Location = new System.Drawing.Point(248, 18);
             this.r104.Name = "r104";
-            this.r104.Size = new System.Drawing.Size(107, 48);
+            this.r104.Size = new System.Drawing.Size(80, 39);
             this.r104.TabIndex = 285;
             this.r104.UseVisualStyleBackColor = false;
             // 
@@ -321,10 +306,9 @@
             this.r105.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r105.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r105.ForeColor = System.Drawing.Color.Black;
-            this.r105.Location = new System.Drawing.Point(385, 66);
-            this.r105.Margin = new System.Windows.Forms.Padding(4);
+            this.r105.Location = new System.Drawing.Point(289, 54);
             this.r105.Name = "r105";
-            this.r105.Size = new System.Drawing.Size(77, 91);
+            this.r105.Size = new System.Drawing.Size(58, 74);
             this.r105.TabIndex = 286;
             this.r105.UseVisualStyleBackColor = false;
             // 
@@ -335,10 +319,9 @@
             this.r106.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r106.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r106.ForeColor = System.Drawing.Color.Black;
-            this.r106.Location = new System.Drawing.Point(463, 86);
-            this.r106.Margin = new System.Windows.Forms.Padding(4);
+            this.r106.Location = new System.Drawing.Point(347, 70);
             this.r106.Name = "r106";
-            this.r106.Size = new System.Drawing.Size(117, 69);
+            this.r106.Size = new System.Drawing.Size(88, 56);
             this.r106.TabIndex = 287;
             this.r106.UseVisualStyleBackColor = false;
             // 
@@ -349,10 +332,9 @@
             this.r107.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r107.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r107.ForeColor = System.Drawing.Color.Black;
-            this.r107.Location = new System.Drawing.Point(580, 111);
-            this.r107.Margin = new System.Windows.Forms.Padding(4);
+            this.r107.Location = new System.Drawing.Point(435, 90);
             this.r107.Name = "r107";
-            this.r107.Size = new System.Drawing.Size(100, 47);
+            this.r107.Size = new System.Drawing.Size(75, 38);
             this.r107.TabIndex = 288;
             this.r107.UseVisualStyleBackColor = false;
             // 
@@ -363,10 +345,9 @@
             this.r108.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r108.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r108.ForeColor = System.Drawing.Color.Black;
-            this.r108.Location = new System.Drawing.Point(583, 64);
-            this.r108.Margin = new System.Windows.Forms.Padding(4);
+            this.r108.Location = new System.Drawing.Point(437, 52);
             this.r108.Name = "r108";
-            this.r108.Size = new System.Drawing.Size(84, 42);
+            this.r108.Size = new System.Drawing.Size(63, 34);
             this.r108.TabIndex = 289;
             this.r108.UseVisualStyleBackColor = false;
             // 
@@ -377,10 +358,9 @@
             this.r110.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r110.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r110.ForeColor = System.Drawing.Color.Black;
-            this.r110.Location = new System.Drawing.Point(688, 112);
-            this.r110.Margin = new System.Windows.Forms.Padding(4);
+            this.r110.Location = new System.Drawing.Point(516, 91);
             this.r110.Name = "r110";
-            this.r110.Size = new System.Drawing.Size(180, 46);
+            this.r110.Size = new System.Drawing.Size(135, 37);
             this.r110.TabIndex = 290;
             this.r110.UseVisualStyleBackColor = false;
             // 
@@ -391,10 +371,9 @@
             this.r111.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r111.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r111.ForeColor = System.Drawing.Color.Black;
-            this.r111.Location = new System.Drawing.Point(735, 235);
-            this.r111.Margin = new System.Windows.Forms.Padding(4);
+            this.r111.Location = new System.Drawing.Point(551, 191);
             this.r111.Name = "r111";
-            this.r111.Size = new System.Drawing.Size(133, 169);
+            this.r111.Size = new System.Drawing.Size(100, 137);
             this.r111.TabIndex = 291;
             this.r111.UseVisualStyleBackColor = false;
             // 
@@ -405,10 +384,9 @@
             this.r109.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r109.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r109.ForeColor = System.Drawing.Color.Black;
-            this.r109.Location = new System.Drawing.Point(697, 25);
-            this.r109.Margin = new System.Windows.Forms.Padding(4);
+            this.r109.Location = new System.Drawing.Point(523, 20);
             this.r109.Name = "r109";
-            this.r109.Size = new System.Drawing.Size(117, 46);
+            this.r109.Size = new System.Drawing.Size(88, 37);
             this.r109.TabIndex = 292;
             this.r109.UseVisualStyleBackColor = false;
             // 
@@ -419,20 +397,18 @@
             this.r112.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r112.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.r112.ForeColor = System.Drawing.Color.Black;
-            this.r112.Location = new System.Drawing.Point(791, 501);
-            this.r112.Margin = new System.Windows.Forms.Padding(4);
+            this.r112.Location = new System.Drawing.Point(593, 407);
             this.r112.Name = "r112";
-            this.r112.Size = new System.Drawing.Size(184, 91);
+            this.r112.Size = new System.Drawing.Size(138, 74);
             this.r112.TabIndex = 293;
             this.r112.UseVisualStyleBackColor = false;
             // 
             // valuelbl
             // 
             this.valuelbl.AutoSize = true;
-            this.valuelbl.Location = new System.Drawing.Point(253, 693);
-            this.valuelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valuelbl.Location = new System.Drawing.Point(190, 563);
             this.valuelbl.Name = "valuelbl";
-            this.valuelbl.Size = new System.Drawing.Size(46, 17);
+            this.valuelbl.Size = new System.Drawing.Size(35, 13);
             this.valuelbl.TabIndex = 294;
             this.valuelbl.Text = "label1";
             // 
@@ -452,10 +428,9 @@
             this.panelfloor1.Controls.Add(this.r105);
             this.panelfloor1.Controls.Add(this.r106);
             this.panelfloor1.Controls.Add(this.pictureBox2);
-            this.panelfloor1.Location = new System.Drawing.Point(337, 117);
-            this.panelfloor1.Margin = new System.Windows.Forms.Padding(4);
+            this.panelfloor1.Location = new System.Drawing.Point(253, 95);
             this.panelfloor1.Name = "panelfloor1";
-            this.panelfloor1.Size = new System.Drawing.Size(1117, 700);
+            this.panelfloor1.Size = new System.Drawing.Size(838, 569);
             this.panelfloor1.TabIndex = 295;
             // 
             // gfbutton
@@ -466,10 +441,9 @@
             this.gfbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gfbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gfbutton.ForeColor = System.Drawing.Color.Transparent;
-            this.gfbutton.Location = new System.Drawing.Point(219, 117);
-            this.gfbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.gfbutton.Location = new System.Drawing.Point(164, 95);
             this.gfbutton.Name = "gfbutton";
-            this.gfbutton.Size = new System.Drawing.Size(107, 78);
+            this.gfbutton.Size = new System.Drawing.Size(80, 63);
             this.gfbutton.TabIndex = 296;
             this.gfbutton.Text = "GF";
             this.gfbutton.UseVisualStyleBackColor = false;
@@ -500,10 +474,9 @@
             this.panelfloor2.Controls.Add(this.r202);
             this.panelfloor2.Controls.Add(this.r201);
             this.panelfloor2.Controls.Add(this.pictureBox6);
-            this.panelfloor2.Location = new System.Drawing.Point(337, 117);
-            this.panelfloor2.Margin = new System.Windows.Forms.Padding(4);
+            this.panelfloor2.Location = new System.Drawing.Point(253, 95);
             this.panelfloor2.Name = "panelfloor2";
-            this.panelfloor2.Size = new System.Drawing.Size(1117, 700);
+            this.panelfloor2.Size = new System.Drawing.Size(838, 569);
             this.panelfloor2.TabIndex = 297;
             this.panelfloor2.Visible = false;
             // 
@@ -512,10 +485,9 @@
             this.r221.BackColor = System.Drawing.Color.White;
             this.r221.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r221.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r221.Location = new System.Drawing.Point(740, 585);
-            this.r221.Margin = new System.Windows.Forms.Padding(4);
+            this.r221.Location = new System.Drawing.Point(555, 475);
             this.r221.Name = "r221";
-            this.r221.Size = new System.Drawing.Size(155, 85);
+            this.r221.Size = new System.Drawing.Size(116, 69);
             this.r221.TabIndex = 313;
             this.r221.Text = "button1";
             this.r221.UseVisualStyleBackColor = false;
@@ -525,10 +497,9 @@
             this.r220.BackColor = System.Drawing.Color.White;
             this.r220.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r220.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r220.Location = new System.Drawing.Point(897, 585);
-            this.r220.Margin = new System.Windows.Forms.Padding(4);
+            this.r220.Location = new System.Drawing.Point(673, 475);
             this.r220.Name = "r220";
-            this.r220.Size = new System.Drawing.Size(99, 85);
+            this.r220.Size = new System.Drawing.Size(74, 69);
             this.r220.TabIndex = 312;
             this.r220.Text = "button1";
             this.r220.UseVisualStyleBackColor = false;
@@ -538,10 +509,9 @@
             this.r219.BackColor = System.Drawing.Color.White;
             this.r219.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r219.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r219.Location = new System.Drawing.Point(919, 497);
-            this.r219.Margin = new System.Windows.Forms.Padding(4);
+            this.r219.Location = new System.Drawing.Point(689, 404);
             this.r219.Name = "r219";
-            this.r219.Size = new System.Drawing.Size(159, 62);
+            this.r219.Size = new System.Drawing.Size(119, 50);
             this.r219.TabIndex = 311;
             this.r219.Text = "button1";
             this.r219.UseVisualStyleBackColor = false;
@@ -551,10 +521,9 @@
             this.r218.BackColor = System.Drawing.Color.White;
             this.r218.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r218.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r218.Location = new System.Drawing.Point(753, 501);
-            this.r218.Margin = new System.Windows.Forms.Padding(4);
+            this.r218.Location = new System.Drawing.Point(565, 407);
             this.r218.Name = "r218";
-            this.r218.Size = new System.Drawing.Size(148, 59);
+            this.r218.Size = new System.Drawing.Size(111, 48);
             this.r218.TabIndex = 310;
             this.r218.Text = "button1";
             this.r218.UseVisualStyleBackColor = false;
@@ -564,10 +533,9 @@
             this.r217.BackColor = System.Drawing.Color.White;
             this.r217.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r217.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r217.Location = new System.Drawing.Point(753, 353);
-            this.r217.Margin = new System.Windows.Forms.Padding(4);
+            this.r217.Location = new System.Drawing.Point(565, 287);
             this.r217.Name = "r217";
-            this.r217.Size = new System.Drawing.Size(137, 48);
+            this.r217.Size = new System.Drawing.Size(103, 39);
             this.r217.TabIndex = 309;
             this.r217.Text = "button1";
             this.r217.UseVisualStyleBackColor = false;
@@ -577,10 +545,9 @@
             this.r216.BackColor = System.Drawing.Color.White;
             this.r216.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r216.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r216.Location = new System.Drawing.Point(753, 295);
-            this.r216.Margin = new System.Windows.Forms.Padding(4);
+            this.r216.Location = new System.Drawing.Point(565, 240);
             this.r216.Name = "r216";
-            this.r216.Size = new System.Drawing.Size(137, 48);
+            this.r216.Size = new System.Drawing.Size(103, 39);
             this.r216.TabIndex = 308;
             this.r216.Text = "button1";
             this.r216.UseVisualStyleBackColor = false;
@@ -590,10 +557,9 @@
             this.r215.BackColor = System.Drawing.Color.White;
             this.r215.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r215.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r215.Location = new System.Drawing.Point(753, 241);
-            this.r215.Margin = new System.Windows.Forms.Padding(4);
+            this.r215.Location = new System.Drawing.Point(565, 196);
             this.r215.Name = "r215";
-            this.r215.Size = new System.Drawing.Size(137, 48);
+            this.r215.Size = new System.Drawing.Size(103, 39);
             this.r215.TabIndex = 307;
             this.r215.Text = "button1";
             this.r215.UseVisualStyleBackColor = false;
@@ -603,10 +569,9 @@
             this.r214.BackColor = System.Drawing.Color.White;
             this.r214.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r214.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r214.Location = new System.Drawing.Point(753, 190);
-            this.r214.Margin = new System.Windows.Forms.Padding(4);
+            this.r214.Location = new System.Drawing.Point(565, 154);
             this.r214.Name = "r214";
-            this.r214.Size = new System.Drawing.Size(137, 48);
+            this.r214.Size = new System.Drawing.Size(103, 39);
             this.r214.TabIndex = 306;
             this.r214.Text = "button1";
             this.r214.UseVisualStyleBackColor = false;
@@ -616,10 +581,9 @@
             this.r213.BackColor = System.Drawing.Color.White;
             this.r213.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r213.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r213.Location = new System.Drawing.Point(753, 124);
-            this.r213.Margin = new System.Windows.Forms.Padding(4);
+            this.r213.Location = new System.Drawing.Point(565, 101);
             this.r213.Name = "r213";
-            this.r213.Size = new System.Drawing.Size(137, 48);
+            this.r213.Size = new System.Drawing.Size(103, 39);
             this.r213.TabIndex = 305;
             this.r213.Text = "button1";
             this.r213.UseVisualStyleBackColor = false;
@@ -629,10 +593,9 @@
             this.r210.BackColor = System.Drawing.Color.White;
             this.r210.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r210.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r210.Location = new System.Drawing.Point(645, 124);
-            this.r210.Margin = new System.Windows.Forms.Padding(4);
+            this.r210.Location = new System.Drawing.Point(484, 101);
             this.r210.Name = "r210";
-            this.r210.Size = new System.Drawing.Size(83, 48);
+            this.r210.Size = new System.Drawing.Size(62, 39);
             this.r210.TabIndex = 304;
             this.r210.Text = "button1";
             this.r210.UseVisualStyleBackColor = false;
@@ -642,10 +605,9 @@
             this.r212.BackColor = System.Drawing.Color.White;
             this.r212.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r212.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r212.Location = new System.Drawing.Point(753, 73);
-            this.r212.Margin = new System.Windows.Forms.Padding(4);
+            this.r212.Location = new System.Drawing.Point(565, 59);
             this.r212.Name = "r212";
-            this.r212.Size = new System.Drawing.Size(137, 48);
+            this.r212.Size = new System.Drawing.Size(103, 39);
             this.r212.TabIndex = 303;
             this.r212.Text = "button1";
             this.r212.UseVisualStyleBackColor = false;
@@ -655,10 +617,9 @@
             this.r211.BackColor = System.Drawing.Color.White;
             this.r211.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r211.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r211.Location = new System.Drawing.Point(753, 27);
-            this.r211.Margin = new System.Windows.Forms.Padding(4);
+            this.r211.Location = new System.Drawing.Point(565, 22);
             this.r211.Name = "r211";
-            this.r211.Size = new System.Drawing.Size(137, 48);
+            this.r211.Size = new System.Drawing.Size(103, 39);
             this.r211.TabIndex = 302;
             this.r211.Text = "button1";
             this.r211.UseVisualStyleBackColor = false;
@@ -668,10 +629,9 @@
             this.R209.BackColor = System.Drawing.Color.White;
             this.R209.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.R209.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.R209.Location = new System.Drawing.Point(457, 58);
-            this.R209.Margin = new System.Windows.Forms.Padding(4);
+            this.R209.Location = new System.Drawing.Point(343, 47);
             this.R209.Name = "R209";
-            this.R209.Size = new System.Drawing.Size(180, 74);
+            this.R209.Size = new System.Drawing.Size(135, 60);
             this.R209.TabIndex = 301;
             this.R209.Text = "button1";
             this.R209.UseVisualStyleBackColor = false;
@@ -681,10 +641,9 @@
             this.r208.BackColor = System.Drawing.Color.White;
             this.r208.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r208.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r208.Location = new System.Drawing.Point(223, 44);
-            this.r208.Margin = new System.Windows.Forms.Padding(4);
+            this.r208.Location = new System.Drawing.Point(167, 36);
             this.r208.Name = "r208";
-            this.r208.Size = new System.Drawing.Size(155, 101);
+            this.r208.Size = new System.Drawing.Size(116, 82);
             this.r208.TabIndex = 300;
             this.r208.Text = "button1";
             this.r208.UseVisualStyleBackColor = false;
@@ -694,10 +653,9 @@
             this.r207.BackColor = System.Drawing.Color.White;
             this.r207.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r207.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r207.Location = new System.Drawing.Point(223, 156);
-            this.r207.Margin = new System.Windows.Forms.Padding(4);
+            this.r207.Location = new System.Drawing.Point(167, 127);
             this.r207.Name = "r207";
-            this.r207.Size = new System.Drawing.Size(137, 48);
+            this.r207.Size = new System.Drawing.Size(103, 39);
             this.r207.TabIndex = 299;
             this.r207.Text = "button1";
             this.r207.UseVisualStyleBackColor = false;
@@ -707,10 +665,9 @@
             this.r206.BackColor = System.Drawing.Color.White;
             this.r206.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r206.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r206.Location = new System.Drawing.Point(223, 203);
-            this.r206.Margin = new System.Windows.Forms.Padding(4);
+            this.r206.Location = new System.Drawing.Point(167, 165);
             this.r206.Name = "r206";
-            this.r206.Size = new System.Drawing.Size(137, 48);
+            this.r206.Size = new System.Drawing.Size(103, 39);
             this.r206.TabIndex = 299;
             this.r206.Text = "button1";
             this.r206.UseVisualStyleBackColor = false;
@@ -720,10 +677,9 @@
             this.r205.BackColor = System.Drawing.Color.White;
             this.r205.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r205.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r205.Location = new System.Drawing.Point(223, 251);
-            this.r205.Margin = new System.Windows.Forms.Padding(4);
+            this.r205.Location = new System.Drawing.Point(167, 204);
             this.r205.Name = "r205";
-            this.r205.Size = new System.Drawing.Size(137, 48);
+            this.r205.Size = new System.Drawing.Size(103, 39);
             this.r205.TabIndex = 298;
             this.r205.Text = "button1";
             this.r205.UseVisualStyleBackColor = false;
@@ -733,10 +689,9 @@
             this.r204.BackColor = System.Drawing.Color.White;
             this.r204.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r204.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r204.Location = new System.Drawing.Point(223, 318);
-            this.r204.Margin = new System.Windows.Forms.Padding(4);
+            this.r204.Location = new System.Drawing.Point(167, 258);
             this.r204.Name = "r204";
-            this.r204.Size = new System.Drawing.Size(137, 76);
+            this.r204.Size = new System.Drawing.Size(103, 62);
             this.r204.TabIndex = 298;
             this.r204.Text = "button1";
             this.r204.UseVisualStyleBackColor = false;
@@ -746,10 +701,9 @@
             this.r203.BackColor = System.Drawing.Color.White;
             this.r203.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r203.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r203.Location = new System.Drawing.Point(239, 501);
-            this.r203.Margin = new System.Windows.Forms.Padding(4);
+            this.r203.Location = new System.Drawing.Point(179, 407);
             this.r203.Name = "r203";
-            this.r203.Size = new System.Drawing.Size(121, 59);
+            this.r203.Size = new System.Drawing.Size(91, 48);
             this.r203.TabIndex = 299;
             this.r203.Text = "button1";
             this.r203.UseVisualStyleBackColor = false;
@@ -759,10 +713,9 @@
             this.r202.BackColor = System.Drawing.Color.White;
             this.r202.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r202.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r202.Location = new System.Drawing.Point(59, 501);
-            this.r202.Margin = new System.Windows.Forms.Padding(4);
+            this.r202.Location = new System.Drawing.Point(44, 407);
             this.r202.Name = "r202";
-            this.r202.Size = new System.Drawing.Size(153, 59);
+            this.r202.Size = new System.Drawing.Size(115, 48);
             this.r202.TabIndex = 298;
             this.r202.Text = "button1";
             this.r202.UseVisualStyleBackColor = false;
@@ -772,10 +725,9 @@
             this.r201.BackColor = System.Drawing.Color.White;
             this.r201.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.r201.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r201.Location = new System.Drawing.Point(149, 597);
-            this.r201.Margin = new System.Windows.Forms.Padding(4);
+            this.r201.Location = new System.Drawing.Point(112, 485);
             this.r201.Name = "r201";
-            this.r201.Size = new System.Drawing.Size(211, 73);
+            this.r201.Size = new System.Drawing.Size(158, 59);
             this.r201.TabIndex = 1;
             this.r201.Text = "button1";
             this.r201.UseVisualStyleBackColor = false;
@@ -784,10 +736,9 @@
             // 
             this.pictureBox6.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.floor_2;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(35, 12);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox6.Location = new System.Drawing.Point(26, 10);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(1064, 678);
+            this.pictureBox6.Size = new System.Drawing.Size(798, 551);
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
             // 
@@ -796,9 +747,10 @@
             this.lbl_navigation.BackColor = System.Drawing.Color.DarkGreen;
             this.lbl_navigation.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_navigation.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbl_navigation.Location = new System.Drawing.Point(1, 140);
+            this.lbl_navigation.Location = new System.Drawing.Point(1, 114);
+            this.lbl_navigation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_navigation.Name = "lbl_navigation";
-            this.lbl_navigation.Size = new System.Drawing.Size(204, 52);
+            this.lbl_navigation.Size = new System.Drawing.Size(153, 42);
             this.lbl_navigation.TabIndex = 298;
             this.lbl_navigation.Text = "Navigation";
             this.lbl_navigation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -813,10 +765,9 @@
             this.btnOffices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOffices.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffices.ForeColor = System.Drawing.Color.Transparent;
-            this.btnOffices.Location = new System.Drawing.Point(0, 316);
-            this.btnOffices.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOffices.Location = new System.Drawing.Point(0, 257);
             this.btnOffices.Name = "btnOffices";
-            this.btnOffices.Size = new System.Drawing.Size(207, 62);
+            this.btnOffices.Size = new System.Drawing.Size(155, 50);
             this.btnOffices.TabIndex = 300;
             this.btnOffices.Text = "DEPARTMENTS";
             this.btnOffices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -833,10 +784,9 @@
             this.btnOfficers.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfficers.ForeColor = System.Drawing.Color.Transparent;
             this.btnOfficers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnOfficers.Location = new System.Drawing.Point(0, 256);
-            this.btnOfficers.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOfficers.Location = new System.Drawing.Point(0, 208);
             this.btnOfficers.Name = "btnOfficers";
-            this.btnOfficers.Size = new System.Drawing.Size(207, 62);
+            this.btnOfficers.Size = new System.Drawing.Size(155, 50);
             this.btnOfficers.TabIndex = 299;
             this.btnOfficers.Text = "OFFICERS";
             this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -852,10 +802,9 @@
             this.btnJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJobs.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJobs.ForeColor = System.Drawing.Color.Transparent;
-            this.btnJobs.Location = new System.Drawing.Point(0, 437);
-            this.btnJobs.Margin = new System.Windows.Forms.Padding(4);
+            this.btnJobs.Location = new System.Drawing.Point(0, 355);
             this.btnJobs.Name = "btnJobs";
-            this.btnJobs.Size = new System.Drawing.Size(207, 62);
+            this.btnJobs.Size = new System.Drawing.Size(155, 50);
             this.btnJobs.TabIndex = 304;
             this.btnJobs.Text = "JOBS";
             this.btnJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -871,10 +820,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(0, 497);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(0, 404);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(207, 62);
+            this.button2.Size = new System.Drawing.Size(155, 50);
             this.button2.TabIndex = 303;
             this.button2.Text = "SERVICES";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -891,10 +839,9 @@
             this.btnMaps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaps.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaps.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMaps.Location = new System.Drawing.Point(0, 377);
-            this.btnMaps.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMaps.Location = new System.Drawing.Point(0, 306);
             this.btnMaps.Name = "btnMaps";
-            this.btnMaps.Size = new System.Drawing.Size(207, 62);
+            this.btnMaps.Size = new System.Drawing.Size(155, 50);
             this.btnMaps.TabIndex = 302;
             this.btnMaps.Text = "MAPS";
             this.btnMaps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -913,10 +860,9 @@
             this.btnHome.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Transparent;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHome.Location = new System.Drawing.Point(0, 196);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHome.Location = new System.Drawing.Point(0, 159);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(207, 62);
+            this.btnHome.Size = new System.Drawing.Size(155, 50);
             this.btnHome.TabIndex = 301;
             this.btnHome.Text = "HOME";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -928,9 +874,8 @@
             this.pictureBox1.BackColor = System.Drawing.Color.DarkGreen;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(207, 218);
+            this.pictureBox1.Size = new System.Drawing.Size(155, 177);
             this.pictureBox1.TabIndex = 306;
             this.pictureBox1.TabStop = false;
             // 
@@ -938,31 +883,28 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.DarkGreen;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 558);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox5.Location = new System.Drawing.Point(0, 453);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(207, 393);
+            this.pictureBox5.Size = new System.Drawing.Size(155, 319);
             this.pictureBox5.TabIndex = 305;
             this.pictureBox5.TabStop = false;
             // 
             // unassignrooms
             // 
             this.unassignrooms.FormattingEnabled = true;
-            this.unassignrooms.ItemHeight = 16;
-            this.unassignrooms.Location = new System.Drawing.Point(1503, 306);
-            this.unassignrooms.Margin = new System.Windows.Forms.Padding(4);
+            this.unassignrooms.Location = new System.Drawing.Point(1127, 249);
             this.unassignrooms.Name = "unassignrooms";
-            this.unassignrooms.Size = new System.Drawing.Size(205, 196);
+            this.unassignrooms.Size = new System.Drawing.Size(155, 160);
             this.unassignrooms.TabIndex = 307;
             // 
             // Mapground
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1837, 960);
+            this.ClientSize = new System.Drawing.Size(1370, 772);
             this.Controls.Add(this.unassignrooms);
             this.Controls.Add(this.lbl_navigation);
             this.Controls.Add(this.btnOffices);
@@ -990,7 +932,6 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Mapground";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
