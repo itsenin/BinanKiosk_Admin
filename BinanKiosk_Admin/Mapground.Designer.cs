@@ -90,6 +90,7 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.unassignrooms = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -181,9 +182,9 @@
             this.secondfbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.secondfbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.secondfbutton.ForeColor = System.Drawing.Color.Transparent;
-            this.secondfbutton.Location = new System.Drawing.Point(176, 175);
+            this.secondfbutton.Location = new System.Drawing.Point(164, 168);
             this.secondfbutton.Name = "secondfbutton";
-            this.secondfbutton.Size = new System.Drawing.Size(142, 67);
+            this.secondfbutton.Size = new System.Drawing.Size(80, 63);
             this.secondfbutton.TabIndex = 254;
             this.secondfbutton.Text = "2F";
             this.secondfbutton.UseVisualStyleBackColor = false;
@@ -197,9 +198,9 @@
             this.thirdfbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.thirdfbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thirdfbutton.ForeColor = System.Drawing.Color.Transparent;
-            this.thirdfbutton.Location = new System.Drawing.Point(176, 248);
+            this.thirdfbutton.Location = new System.Drawing.Point(164, 241);
             this.thirdfbutton.Name = "thirdfbutton";
-            this.thirdfbutton.Size = new System.Drawing.Size(142, 67);
+            this.thirdfbutton.Size = new System.Drawing.Size(80, 63);
             this.thirdfbutton.TabIndex = 255;
             this.thirdfbutton.Text = "3F";
             this.thirdfbutton.UseVisualStyleBackColor = false;
@@ -212,7 +213,7 @@
             this.editbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editbtn.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editbtn.ForeColor = System.Drawing.Color.Transparent;
-            this.editbtn.Location = new System.Drawing.Point(1156, 177);
+            this.editbtn.Location = new System.Drawing.Point(1097, 134);
             this.editbtn.Name = "editbtn";
             this.editbtn.Size = new System.Drawing.Size(96, 43);
             this.editbtn.TabIndex = 258;
@@ -223,7 +224,7 @@
             // roomtxt
             // 
             this.roomtxt.Enabled = false;
-            this.roomtxt.Location = new System.Drawing.Point(1157, 138);
+            this.roomtxt.Location = new System.Drawing.Point(1101, 98);
             this.roomtxt.Multiline = true;
             this.roomtxt.Name = "roomtxt";
             this.roomtxt.Size = new System.Drawing.Size(197, 27);
@@ -238,7 +239,7 @@
             this.savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savebtn.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savebtn.ForeColor = System.Drawing.Color.Transparent;
-            this.savebtn.Location = new System.Drawing.Point(1258, 177);
+            this.savebtn.Location = new System.Drawing.Point(1206, 134);
             this.savebtn.Name = "savebtn";
             this.savebtn.Size = new System.Drawing.Size(96, 43);
             this.savebtn.TabIndex = 260;
@@ -405,12 +406,11 @@
             // valuelbl
             // 
             this.valuelbl.AutoSize = true;
-            this.valuelbl.Location = new System.Drawing.Point(161, 616);
+            this.valuelbl.Location = new System.Drawing.Point(190, 563);
             this.valuelbl.Name = "valuelbl";
             this.valuelbl.Size = new System.Drawing.Size(35, 13);
             this.valuelbl.TabIndex = 294;
             this.valuelbl.Text = "label1";
-            this.valuelbl.Visible = false;
             // 
             // panelfloor1
             // 
@@ -428,7 +428,7 @@
             this.panelfloor1.Controls.Add(this.r105);
             this.panelfloor1.Controls.Add(this.r106);
             this.panelfloor1.Controls.Add(this.pictureBox2);
-            this.panelfloor1.Location = new System.Drawing.Point(324, 102);
+            this.panelfloor1.Location = new System.Drawing.Point(253, 95);
             this.panelfloor1.Name = "panelfloor1";
             this.panelfloor1.Size = new System.Drawing.Size(838, 569);
             this.panelfloor1.TabIndex = 295;
@@ -441,9 +441,9 @@
             this.gfbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gfbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gfbutton.ForeColor = System.Drawing.Color.Transparent;
-            this.gfbutton.Location = new System.Drawing.Point(176, 102);
+            this.gfbutton.Location = new System.Drawing.Point(164, 95);
             this.gfbutton.Name = "gfbutton";
-            this.gfbutton.Size = new System.Drawing.Size(142, 67);
+            this.gfbutton.Size = new System.Drawing.Size(80, 63);
             this.gfbutton.TabIndex = 296;
             this.gfbutton.Text = "GF";
             this.gfbutton.UseVisualStyleBackColor = false;
@@ -474,7 +474,7 @@
             this.panelfloor2.Controls.Add(this.r202);
             this.panelfloor2.Controls.Add(this.r201);
             this.panelfloor2.Controls.Add(this.pictureBox6);
-            this.panelfloor2.Location = new System.Drawing.Point(324, 102);
+            this.panelfloor2.Location = new System.Drawing.Point(253, 95);
             this.panelfloor2.Name = "panelfloor2";
             this.panelfloor2.Size = new System.Drawing.Size(838, 569);
             this.panelfloor2.TabIndex = 297;
@@ -889,6 +889,14 @@
             this.pictureBox5.TabIndex = 305;
             this.pictureBox5.TabStop = false;
             // 
+            // unassignrooms
+            // 
+            this.unassignrooms.FormattingEnabled = true;
+            this.unassignrooms.Location = new System.Drawing.Point(1127, 249);
+            this.unassignrooms.Name = "unassignrooms";
+            this.unassignrooms.Size = new System.Drawing.Size(155, 160);
+            this.unassignrooms.TabIndex = 307;
+            // 
             // Mapground
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -897,6 +905,7 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.unassignrooms);
             this.Controls.Add(this.lbl_navigation);
             this.Controls.Add(this.btnOffices);
             this.Controls.Add(this.btnOfficers);
@@ -1003,5 +1012,6 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.ListBox unassignrooms;
     }
 }

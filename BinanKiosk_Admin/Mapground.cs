@@ -15,13 +15,14 @@ namespace BinanKiosk_Admin
     {
 
         string roomname, roomtext;
-        
-
+        bool editable = false;
+        List<KeyValuePair<string,string>> mapchange;
         public Mapground()
         {
             InitializeComponent();
             timer1.Interval = 5000;
             timer1.Start();
+            mapchange = new List<KeyValuePair<string,string>>();
             
         }
 
@@ -64,7 +65,24 @@ namespace BinanKiosk_Admin
             MySqlConnection conn = Config.conn;
             MySqlDataReader reader;
 
-            
+            conn.Open();
+            string queryStr2 = "SELECT office_name from offices WHERE room_name = 'No Room' ";
+            MySqlCommand cmd2 = new MySqlCommand(queryStr2, conn);
+            reader = cmd2.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    //child.Text = reader.GetString(0);
+                 unassignrooms.Items.Add(reader["office_name"].ToString());
+                }
+            }
+            conn.Close();
+
+
+
+
 
             if (Config.currentfloor == "f1")
             {
@@ -89,7 +107,7 @@ namespace BinanKiosk_Admin
                 if (child is Button)
                 {
                     conn.Open();
-                    string queryStr = "SELECT room_label from floors WHERE room_id = '" + child.Name + "' ";
+                    string queryStr = "SELECT office_name from offices WHERE room_name = '" + child.Name + "' ";
                     MySqlCommand cmd = new MySqlCommand(queryStr, conn);
                     reader = cmd.ExecuteReader();
 
@@ -111,7 +129,7 @@ namespace BinanKiosk_Admin
                 if (child is Button)
                 {
                     conn.Open();
-                    string queryStr = "SELECT room_label from floors WHERE room_id = '" + child.Name + "' ";
+                    string queryStr = "SELECT office_name from offices WHERE room_name = '" + child.Name + "' ";
                     MySqlCommand cmd = new MySqlCommand(queryStr, conn);
                     reader = cmd.ExecuteReader();
 
@@ -135,7 +153,50 @@ namespace BinanKiosk_Admin
         {
 
             var bttn = sender as Button;
+            string unassigned;
             getnames(bttn.Name, bttn.Text);
+
+            if (editable)
+            {
+                if(unassignrooms.SelectedIndex == -1)
+                {
+                    unassignrooms.Items.Add(bttn.Text);
+                    
+                    //mapchange.Remove(bttn.Text);
+                    //var templist = mapchange.re.Where(stringtocheck => stringtocheck.ToString() == bttn.Text);
+                    var templist = mapchange;
+                    int index = 0;
+                    foreach (var roomname in templist)
+                    {
+                        if (roomname.Value == bttn.Text)
+                        {
+
+                            mapchange.RemoveAt(index);
+                            break;
+
+                        }
+                        index++;
+                    }
+                    mapchange = templist.ToList<KeyValuePair<string,string>>();
+                    bttn.Text = "";
+                }
+
+                else
+                {
+                    unassigned = unassignrooms.SelectedItem.ToString();
+                    mapchange.Add(new KeyValuePair<string, string>(bttn.Name, unassigned));
+                    bttn.Text = unassigned;
+                    var templistindex = unassignrooms.SelectedIndex;
+                    unassignrooms.Items.RemoveAt(templistindex);
+                    
+                }
+
+                
+
+               
+
+            }
+            
 
         }
 
@@ -143,15 +204,16 @@ namespace BinanKiosk_Admin
 
         private void getnames(string roomname2,string roomtxt2)
         {
-            roomtxt.Text = roomtxt2;
-            valuelbl.Text = roomname2;
+            roomtxt.Text = roomname2;
+            valuelbl.Text = roomtxt2;
 
         }
 
         //edit button
         private void button6_Click(object sender, EventArgs e)
         {
-            if (roomtxt.Text!= "")
+            editable = true;
+            if (editable)
             {
                 enabling();
             }
@@ -163,6 +225,7 @@ namespace BinanKiosk_Admin
 
             roomtxt.Enabled = true;
             savebtn.Enabled = true;
+            
 
         }
 
@@ -170,25 +233,48 @@ namespace BinanKiosk_Admin
         {
             roomtxt.Enabled = false;
             savebtn.Enabled = false;
+            
 
         }
 
         private void savebtn_Click(object sender, EventArgs e)
         {
-            if (roomtxt.Text == "")
+
+            editable = false;
+            if (editable)
             {
-                roomtxt.Text = "Empty Room";
+                roomtxt.Text = "No Room";
 
             }
 
 
-            MySqlConnection conn = Config.conn;
-            MySqlDataReader reader;
-            conn.Open();
-            string queryStr = "UPDATE floors SET room_label = '" + roomtxt.Text + "' WHERE room_id = '"+valuelbl.Text+"' ";
-            MySqlCommand cmd = new MySqlCommand(queryStr, conn);
-            reader = cmd.ExecuteReader();
-            conn.Close();
+            foreach (var saveroom in mapchange)
+            {
+
+                MySqlConnection conn = Config.conn;
+                MySqlDataReader reader;
+                conn.Open();
+                string queryStr = "UPDATE offices SET room_name = '" + saveroom.Key + "' WHERE office_name = '" + saveroom.Value + "' ";
+                MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                reader = cmd.ExecuteReader();
+                conn.Close();
+
+            }
+
+            foreach (var unusedoffice in unassignrooms.Items)
+            {
+
+                MySqlConnection conn = Config.conn;
+                MySqlDataReader reader;
+                conn.Open();
+                string queryStr = "UPDATE offices SET room_name = 'No Room' WHERE office_name = '" + unusedoffice.ToString() + "' ";
+                MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                reader = cmd.ExecuteReader();
+                conn.Close();
+
+
+            }
+            
             disabling();
 
             if (panelfloor1.Visible == true)
@@ -223,6 +309,20 @@ namespace BinanKiosk_Admin
         {
             panelfloor1.Visible = false;
             panelfloor2.Visible = true;
+
+        }
+
+        private void removerooms_Click(object sender, EventArgs e)
+        {
+
+            //MySqlConnection conn = Config.conn;
+            //MySqlDataReader reader;
+            //conn.Open();
+            //string queryStr = "UPDATE offices SET room_name = '" + roomtxt.Text + "' WHERE office_name = '" + valuelbl.Text + "' ";
+            //MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+            //reader = cmd.ExecuteReader();
+            //conn.Close();
+            //disabling();
 
         }
 
