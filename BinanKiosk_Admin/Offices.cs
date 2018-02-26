@@ -216,16 +216,16 @@ namespace BinanKiosk_Admin
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            /*DialogResult result = MessageBox.Show("Are you sure you want to delete the record of " + txtID.Text + "?", "Confirmation!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete the record of " + txtID.Text + "?", "Confirmation!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 conn.Open();
 
-                cmd = new MySqlCommand("DELETE FROM pictures WHERE pictures.officials_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                cmd = new MySqlCommand("DELETE FROM deparments_pictures.pictures WHERE pictures.department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
                 cmd.ExecuteNonQuery();
 
-                cmd = new MySqlCommand("DELETE FROM officials WHERE officials.officials_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                cmd = new MySqlCommand("DELETE FROM departments WHERE departments.department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
                 cmd.ExecuteNonQuery();
 
                 conn.Close();
@@ -233,7 +233,7 @@ namespace BinanKiosk_Admin
                 MessageBox.Show("Deleted!");
 
                 officeList.Items.Clear();
-                officers();
+                offices();
                 clear();
             }
             else
@@ -241,9 +241,9 @@ namespace BinanKiosk_Admin
                 MessageBox.Show("Not Deleted!");
 
                 officeList.Items.Clear();
-                officers();
+                offices();
                 clear();
-            }*/
+            }
 
 
         }

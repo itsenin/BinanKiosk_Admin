@@ -17,9 +17,17 @@ namespace BinanKiosk_Admin
         MySqlDataReader reader;
         MySqlCommand cmd;
 
+        String insertOfficial;
+
         String selectedValue;
+        String officialsID;
+        String firstName;
+        String middleInitial;
+        String lastName;
+        String suffix;
         String position;
         String department;
+        String description;
         String imageString;
 
         bool add = false, available = false;
@@ -27,6 +35,18 @@ namespace BinanKiosk_Admin
         public Officers()
         {
             InitializeComponent();
+        }
+
+        private void initialize()
+        {
+            this.officialsID = txtID.Text.ToString();
+            this.firstName = txtFirstName.Text.ToString();
+            this.lastName = txtLastName.Text.ToString();
+            this.middleInitial = txtMI.Text.ToString();
+            this.suffix = txtSuffix.Text.ToString();
+            this.position = comboBoxPosition.Text.ToString();
+            this.department = comboBoxDepartment.Text.ToString();
+            this.description = txtDescription.Text.ToString();
         }
 
         private void Search_Load(object sender, EventArgs e)
@@ -249,6 +269,7 @@ namespace BinanKiosk_Admin
             {
                 if (add == true)
                 {
+                    initialize();
                     conn.Open();
 
                     cmd = new MySqlCommand("SELECT departments.department_id, positions.position_id FROM departments,positions WHERE departments.department_name = '" + comboBoxDepartment.Text + "' AND positions.position_name = '" + comboBoxPosition.Text + "' ", conn);
@@ -261,10 +282,19 @@ namespace BinanKiosk_Admin
                         department = reader["department_id"].ToString();
                         position = reader["position_id"].ToString();
                     }
-
                     reader.Close();
 
-                    cmd = new MySqlCommand("insert into officials (officials_id, first_name, last_name, middle_initial, suffex, position_id, department_id) values('" + Convert.ToInt32(txtID.Text) + "', '" + txtFirstName.Text + "','" + txtLastName.Text + "','" + txtMI.Text + "','" + txtSuffix.Text + "','" + Convert.ToInt32(position) + "','" + Convert.ToInt32(department) + "')", conn);
+                    this.insertOfficial = "insert into officials (officials_id, first_name, last_name, middle_initial, suffex, position_id, department_id) values (@officials_id, @first_name, @last_name, @middle_initial, @suffex, @position_id, @department_id)";
+                    
+                    cmd = new MySqlCommand(insertOfficial, conn);
+                    cmd.Parameters.AddWithValue("@officials_id", officialsID);
+                    cmd.Parameters.AddWithValue("@first_name", firstName);
+                    cmd.Parameters.AddWithValue("@last_name", lastName);
+                    cmd.Parameters.AddWithValue("@middle_initial", middleInitial);
+                    cmd.Parameters.AddWithValue("@suffex", suffix);
+                    cmd.Parameters.AddWithValue("@position_id", position);
+                    cmd.Parameters.AddWithValue("@department_id", department);
+
                     cmd.ExecuteNonQuery();
 
                     //Picture Saving
@@ -361,10 +391,12 @@ namespace BinanKiosk_Admin
         {
             Config.CallHome(this);
         }
+
         private void btnOfficers_Click(object sender, EventArgs e)
         {
             Config.CallOfficers(this);
         }
+
         private void btnOffices_Click(object sender, EventArgs e)
         {
             Config.CallOffices(this);
@@ -374,6 +406,7 @@ namespace BinanKiosk_Admin
         {
             Config.CallMap1(this);
         }
+
         private void btnJobs_Click(object sender, EventArgs e)
         {
             Config.CallJobs(this);
