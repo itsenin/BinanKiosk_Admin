@@ -222,7 +222,7 @@ namespace BinanKiosk_Admin
             {
                 conn.Open();
 
-                cmd = new MySqlCommand("DELETE FROM deparments_pictures.pictures WHERE pictures.department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                cmd = new MySqlCommand("DELETE FROM departments_pictures WHERE departments_pictures.department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
                 cmd.ExecuteNonQuery();
 
                 cmd = new MySqlCommand("DELETE FROM departments WHERE departments.department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
@@ -321,7 +321,8 @@ namespace BinanKiosk_Admin
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            clear();
+            officeInformation.Enabled = false;
         }
 
         private void officerPicture_Click(object sender, EventArgs e)

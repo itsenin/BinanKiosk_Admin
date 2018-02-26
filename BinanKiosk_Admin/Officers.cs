@@ -17,18 +17,9 @@ namespace BinanKiosk_Admin
         MySqlDataReader reader;
         MySqlCommand cmd;
 
-        String insertOfficial;
-
-        String selectedValue;
-        String officialsID;
-        String firstName;
-        String middleInitial;
-        String lastName;
-        String suffix;
-        String position;
-        String department;
-        String description;
-        String imageString;
+        String insertOfficial, insertPicture;
+        String comboPosition, comboDept;
+        String selectedValue, officialsID, firstName, middleInitial, lastName, suffix, position, department, description, imageString;
 
         bool add = false, available = false;
 
@@ -272,8 +263,16 @@ namespace BinanKiosk_Admin
                     initialize();
                     conn.Open();
 
-                    cmd = new MySqlCommand("SELECT departments.department_id, positions.position_id FROM departments,positions WHERE departments.department_name = '" + comboBoxDepartment.Text + "' AND positions.position_name = '" + comboBoxPosition.Text + "' ", conn);
-                    cmd.ExecuteNonQuery();
+                    comboPosition = comboBoxPosition.Text;
+                    comboDept = comboBoxDepartment.Text;
+
+                    this.insertOfficial = "SELECT departments.department_id, positions.position_id FROM departments,positions WHERE departments.department_name = @departments AND positions.position_name = @positions ";
+
+                    cmd = new MySqlCommand(insertOfficial, conn);
+
+                    cmd.Parameters.AddWithValue("@departments", department);
+                    cmd.Parameters.AddWithValue("@positions", position);
+
                     reader = cmd.ExecuteReader();
 
                     if (reader.HasRows)
@@ -410,6 +409,12 @@ namespace BinanKiosk_Admin
         private void btnJobs_Click(object sender, EventArgs e)
         {
             Config.CallJobs(this);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            clear();
+            officerInformation.Enabled = false;
         }
 
         private void btnServices_Click(object sender, EventArgs e)

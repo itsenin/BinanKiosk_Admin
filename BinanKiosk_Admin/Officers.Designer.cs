@@ -72,6 +72,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lbl_navigation = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -162,6 +163,7 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.White;
+            this.btnEdit.Enabled = false;
             this.btnEdit.Location = new System.Drawing.Point(353, 77);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
@@ -173,6 +175,7 @@
             // officerInformation
             // 
             this.officerInformation.BackColor = System.Drawing.Color.White;
+            this.officerInformation.Controls.Add(this.btnCancel);
             this.officerInformation.Controls.Add(this.officerPicture);
             this.officerInformation.Controls.Add(this.label8);
             this.officerInformation.Controls.Add(this.txtID);
@@ -251,7 +254,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(231, 330);
+            this.btnSave.Location = new System.Drawing.Point(112, 328);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 11;
@@ -370,6 +373,7 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.White;
+            this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(353, 48);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
@@ -571,6 +575,17 @@
             this.lbl_navigation.Text = "Navigation";
             this.lbl_navigation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(231, 328);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 17;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // Officers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,5 +676,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label lbl_navigation;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
