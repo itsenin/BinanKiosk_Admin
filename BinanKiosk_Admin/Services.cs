@@ -18,11 +18,6 @@ namespace BinanKiosk_Admin
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnHome_Click(object sender, EventArgs e)
         {
             Config.CallHome(this);

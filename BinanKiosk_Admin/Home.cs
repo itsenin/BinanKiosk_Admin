@@ -226,5 +226,15 @@ namespace BinanKiosk_Admin
                 return;
 
         }
+
+        private void btn_add_MouseHover(object sender, EventArgs e)
+        {
+            btn_add.BackgroundImage = Properties.Resources.button4;
+        }
+
+        private void btn_add_MouseLeave(object sender, EventArgs e)
+        {
+            btn_add.BackgroundImage = Properties.Resources.button1;
+        }
     }
 }
