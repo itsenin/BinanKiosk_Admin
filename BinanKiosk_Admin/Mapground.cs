@@ -59,9 +59,13 @@ namespace BinanKiosk_Admin
 
         private void Mapground_Load_1(object sender, EventArgs e)
         {
-            //Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112 };
+            Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112, r201, r202,
+             r203, r204, r205, r206, r207, r208 };
             //loadbuttonnames(btnarray);
             //MessageBox.Show(Config.currentfloor.ToString());
+            
+            
+
             MySqlConnection conn = Config.conn;
             MySqlDataReader reader;
 
@@ -88,11 +92,20 @@ namespace BinanKiosk_Admin
             {
                 panelfloor1.Visible = true;
                 panelfloor2.Visible = false;
+                panelfloor3.Visible = false;
             }
             else if (Config.currentfloor == "f2")
             {
                 panelfloor1.Visible = false;
                 panelfloor2.Visible = true;
+                panelfloor3.Visible = false;
+
+            }
+            else if (Config.currentfloor == "f3")
+            {
+                panelfloor1.Visible = false;
+                panelfloor2.Visible = false;
+                panelfloor3.Visible = true;
 
             }
 
@@ -146,6 +159,28 @@ namespace BinanKiosk_Admin
                 }
             }
 
+            foreach (Control child in panelfloor3.Controls)
+            {
+                if (child is Button)
+                {
+                    conn.Open();
+                    string queryStr = "SELECT office_name from offices WHERE room_name = '" + child.Name + "' ";
+                    MySqlCommand cmd = new MySqlCommand(queryStr, conn);
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            child.Text = reader.GetString(0);
+                        }
+                    }
+                    conn.Close();
+
+                    child.Click += new EventHandler(clickbait);
+                }
+            }
+
 
         }
 
@@ -161,9 +196,10 @@ namespace BinanKiosk_Admin
                 if(unassignrooms.SelectedIndex == -1)//nothing is selected
                 {
 
-                    if (bttn.Text !="")
+                    if (bttn.Text !="Empty Room")
                     {
                       unassignrooms.Items.Add(bttn.Text);
+                       
 
                     }
                     
@@ -190,7 +226,7 @@ namespace BinanKiosk_Admin
                 else //something is selected
                 {
                     unassigned = unassignrooms.SelectedItem.ToString();
-                    if (bttn.Text == "")
+                    if (bttn.Text == "Empty Room")
                     {
                         mapchange.Add(new KeyValuePair<string, string>(bttn.Name, unassigned));
                         bttn.Text = unassigned;
@@ -256,6 +292,7 @@ namespace BinanKiosk_Admin
             if (editable)
             {
                 roomtxt.Text = "No Room";
+                
 
             }
 
@@ -296,9 +333,15 @@ namespace BinanKiosk_Admin
 
             }
 
-            else if (panelfloor1.Visible == false)
+            else if (panelfloor2.Visible == true)
             {
                 Config.currentfloor = "f2";
+                Config.CallMap1(this);
+            }
+
+            else if (panelfloor3.Visible == true)
+            {
+                Config.currentfloor = "f3";
                 Config.CallMap1(this);
             }
 
@@ -314,6 +357,7 @@ namespace BinanKiosk_Admin
         {
             panelfloor1.Visible = true;
             panelfloor2.Visible = false;
+            panelfloor3.Visible = false;
 
         }
 
@@ -321,6 +365,7 @@ namespace BinanKiosk_Admin
         {
             panelfloor1.Visible = false;
             panelfloor2.Visible = true;
+            panelfloor3.Visible = false;
 
         }
 
@@ -335,6 +380,15 @@ namespace BinanKiosk_Admin
             //reader = cmd.ExecuteReader();
             //conn.Close();
             //disabling();
+
+        }
+
+        private void thirdfbutton_Click(object sender, EventArgs e)
+        {
+            panelfloor1.Visible = false;
+            panelfloor2.Visible = false;
+            panelfloor3.Visible = true;
+            
 
         }
 
