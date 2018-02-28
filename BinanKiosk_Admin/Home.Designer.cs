@@ -56,6 +56,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lbl_navigation = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -64,6 +65,7 @@
             this.pnl_Save.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timestamp
@@ -75,6 +77,7 @@
             this.btn_save.BackColor = System.Drawing.Color.Transparent;
             this.btn_save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_save.BackgroundImage")));
             this.btn_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_save.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_save.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_save.FlatAppearance.BorderSize = 0;
             this.btn_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
@@ -82,9 +85,12 @@
             this.btn_save.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.Transparent;
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_save.Location = new System.Drawing.Point(184, 355);
+            this.btn_save.Location = new System.Drawing.Point(436, 0);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_save.MaximumSize = new System.Drawing.Size(189, 84);
+            this.btn_save.MinimumSize = new System.Drawing.Size(189, 84);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(142, 68);
+            this.btn_save.Size = new System.Drawing.Size(189, 84);
             this.btn_save.TabIndex = 248;
             this.btn_save.Text = "SAVE";
             this.btn_save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -103,9 +109,10 @@
             this.btn_delete.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.Transparent;
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_delete.Location = new System.Drawing.Point(598, 323);
+            this.btn_delete.Location = new System.Drawing.Point(797, 398);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(142, 68);
+            this.btn_delete.Size = new System.Drawing.Size(189, 84);
             this.btn_delete.TabIndex = 247;
             this.btn_delete.Text = "DELETE";
             this.btn_delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -115,9 +122,11 @@
             // pb_preview
             // 
             this.pb_preview.BackColor = System.Drawing.Color.Transparent;
-            this.pb_preview.Location = new System.Drawing.Point(7, 54);
+            this.pb_preview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pb_preview.Location = new System.Drawing.Point(0, 38);
+            this.pb_preview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pb_preview.Name = "pb_preview";
-            this.pb_preview.Size = new System.Drawing.Size(319, 284);
+            this.pb_preview.Size = new System.Drawing.Size(625, 411);
             this.pb_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_preview.TabIndex = 244;
             this.pb_preview.TabStop = false;
@@ -134,9 +143,10 @@
             this.btn_add.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.Transparent;
             this.btn_add.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_add.Location = new System.Drawing.Point(598, 249);
+            this.btn_add.Location = new System.Drawing.Point(797, 306);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(142, 68);
+            this.btn_add.Size = new System.Drawing.Size(189, 84);
             this.btn_add.TabIndex = 243;
             this.btn_add.Text = "ADD";
             this.btn_add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -150,9 +160,10 @@
             this.pictureBox7.BackColor = System.Drawing.Color.ForestGreen;
             this.pictureBox7.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.binancity_nav_logo;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(503, 5);
+            this.pictureBox7.Location = new System.Drawing.Point(671, 6);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(74, 74);
+            this.pictureBox7.Size = new System.Drawing.Size(99, 91);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 241;
             this.pictureBox7.TabStop = false;
@@ -162,9 +173,10 @@
             this.pictureBox8.BackColor = System.Drawing.Color.ForestGreen;
             this.pictureBox8.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.Binan_city;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(593, 5);
+            this.pictureBox8.Location = new System.Drawing.Point(791, 6);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(209, 74);
+            this.pictureBox8.Size = new System.Drawing.Size(279, 91);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 95;
             this.pictureBox8.TabStop = false;
@@ -176,9 +188,10 @@
             this.lbldate.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldate.ForeColor = System.Drawing.Color.White;
             this.lbldate.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbldate.Location = new System.Drawing.Point(970, 691);
+            this.lbldate.Location = new System.Drawing.Point(1293, 850);
+            this.lbldate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbldate.Name = "lbldate";
-            this.lbldate.Size = new System.Drawing.Size(396, 81);
+            this.lbldate.Size = new System.Drawing.Size(528, 100);
             this.lbldate.TabIndex = 94;
             this.lbldate.Text = ".";
             this.lbldate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -189,8 +202,9 @@
             this.pictureBox4.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.uppermenu;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1366, 86);
+            this.pictureBox4.Size = new System.Drawing.Size(1821, 106);
             this.pictureBox4.TabIndex = 92;
             this.pictureBox4.TabStop = false;
             // 
@@ -199,22 +213,26 @@
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
             this.pictureBox3.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.undermenu;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 677);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 833);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1459, 94);
+            this.pictureBox3.Size = new System.Drawing.Size(1945, 116);
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
             // 
             // lbl_imageName
             // 
             this.lbl_imageName.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_imageName.Dock = System.Windows.Forms.DockStyle.Left;
             this.lbl_imageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_imageName.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbl_imageName.Location = new System.Drawing.Point(8, 381);
+            this.lbl_imageName.Location = new System.Drawing.Point(0, 0);
+            this.lbl_imageName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_imageName.Name = "lbl_imageName";
-            this.lbl_imageName.Size = new System.Drawing.Size(160, 23);
+            this.lbl_imageName.Size = new System.Drawing.Size(213, 84);
             this.lbl_imageName.TabIndex = 255;
             this.lbl_imageName.Text = "imageName";
+            this.lbl_imageName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_sliderPics
             // 
@@ -222,9 +240,10 @@
             this.lbl_sliderPics.BackColor = System.Drawing.Color.Transparent;
             this.lbl_sliderPics.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_sliderPics.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbl_sliderPics.Location = new System.Drawing.Point(232, 206);
+            this.lbl_sliderPics.Location = new System.Drawing.Point(309, 254);
+            this.lbl_sliderPics.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_sliderPics.Name = "lbl_sliderPics";
-            this.lbl_sliderPics.Size = new System.Drawing.Size(204, 31);
+            this.lbl_sliderPics.Size = new System.Drawing.Size(243, 38);
             this.lbl_sliderPics.TabIndex = 256;
             this.lbl_sliderPics.Text = "Slider Pictures";
             // 
@@ -232,11 +251,13 @@
             // 
             this.lbl_imagePrv.AutoSize = true;
             this.lbl_imagePrv.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_imagePrv.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_imagePrv.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_imagePrv.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbl_imagePrv.Location = new System.Drawing.Point(7, 14);
+            this.lbl_imagePrv.Location = new System.Drawing.Point(0, 0);
+            this.lbl_imagePrv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_imagePrv.Name = "lbl_imagePrv";
-            this.lbl_imagePrv.Size = new System.Drawing.Size(206, 31);
+            this.lbl_imagePrv.Size = new System.Drawing.Size(245, 38);
             this.lbl_imagePrv.TabIndex = 257;
             this.lbl_imagePrv.Text = "Image Preview";
             // 
@@ -246,9 +267,10 @@
             this.lbl_Home.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Home.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Home.Location = new System.Drawing.Point(598, 102);
+            this.lbl_Home.Location = new System.Drawing.Point(797, 126);
+            this.lbl_Home.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(172, 55);
+            this.lbl_Home.Size = new System.Drawing.Size(214, 69);
             this.lbl_Home.TabIndex = 258;
             this.lbl_Home.Text = "HOME";
             // 
@@ -256,24 +278,24 @@
             // 
             this.lst_sliderPics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lst_sliderPics.FormattingEnabled = true;
-            this.lst_sliderPics.ItemHeight = 20;
-            this.lst_sliderPics.Location = new System.Drawing.Point(237, 249);
+            this.lst_sliderPics.ItemHeight = 25;
+            this.lst_sliderPics.Location = new System.Drawing.Point(316, 306);
+            this.lst_sliderPics.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lst_sliderPics.Name = "lst_sliderPics";
-            this.lst_sliderPics.Size = new System.Drawing.Size(301, 204);
+            this.lst_sliderPics.Size = new System.Drawing.Size(400, 229);
             this.lst_sliderPics.TabIndex = 254;
             this.lst_sliderPics.SelectedIndexChanged += new System.EventHandler(this.lst_sliderPics_SelectedIndexChanged);
             // 
             // pnl_Save
             // 
             this.pnl_Save.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_Save.Controls.Add(this.lbl_imagePrv);
             this.pnl_Save.Controls.Add(this.pb_preview);
-            this.pnl_Save.Controls.Add(this.lbl_imageName);
-            this.pnl_Save.Controls.Add(this.btn_save);
-            this.pnl_Save.Location = new System.Drawing.Point(796, 193);
-            this.pnl_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_Save.Controls.Add(this.panel1);
+            this.pnl_Save.Controls.Add(this.lbl_imagePrv);
+            this.pnl_Save.Location = new System.Drawing.Point(1056, 256);
+            this.pnl_Save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_Save.Name = "pnl_Save";
-            this.pnl_Save.Size = new System.Drawing.Size(337, 433);
+            this.pnl_Save.Size = new System.Drawing.Size(625, 533);
             this.pnl_Save.TabIndex = 259;
             this.pnl_Save.Visible = false;
             // 
@@ -287,9 +309,10 @@
             this.btnOffices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOffices.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffices.ForeColor = System.Drawing.Color.Transparent;
-            this.btnOffices.Location = new System.Drawing.Point(0, 257);
+            this.btnOffices.Location = new System.Drawing.Point(0, 316);
+            this.btnOffices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOffices.Name = "btnOffices";
-            this.btnOffices.Size = new System.Drawing.Size(155, 50);
+            this.btnOffices.Size = new System.Drawing.Size(207, 62);
             this.btnOffices.TabIndex = 276;
             this.btnOffices.Text = "DEPARTMENTS";
             this.btnOffices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -307,9 +330,10 @@
             this.btnOfficers.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfficers.ForeColor = System.Drawing.Color.Transparent;
             this.btnOfficers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnOfficers.Location = new System.Drawing.Point(0, 208);
+            this.btnOfficers.Location = new System.Drawing.Point(0, 256);
+            this.btnOfficers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOfficers.Name = "btnOfficers";
-            this.btnOfficers.Size = new System.Drawing.Size(155, 50);
+            this.btnOfficers.Size = new System.Drawing.Size(207, 62);
             this.btnOfficers.TabIndex = 275;
             this.btnOfficers.Text = "OFFICERS";
             this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -326,9 +350,10 @@
             this.btnJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJobs.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJobs.ForeColor = System.Drawing.Color.Transparent;
-            this.btnJobs.Location = new System.Drawing.Point(0, 355);
+            this.btnJobs.Location = new System.Drawing.Point(0, 437);
+            this.btnJobs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnJobs.Name = "btnJobs";
-            this.btnJobs.Size = new System.Drawing.Size(155, 50);
+            this.btnJobs.Size = new System.Drawing.Size(207, 62);
             this.btnJobs.TabIndex = 280;
             this.btnJobs.Text = "JOBS";
             this.btnJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -345,9 +370,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(0, 404);
+            this.button2.Location = new System.Drawing.Point(0, 497);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 50);
+            this.button2.Size = new System.Drawing.Size(207, 62);
             this.button2.TabIndex = 279;
             this.button2.Text = "SERVICES";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -364,9 +390,10 @@
             this.btnMaps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaps.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaps.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMaps.Location = new System.Drawing.Point(0, 306);
+            this.btnMaps.Location = new System.Drawing.Point(0, 377);
+            this.btnMaps.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMaps.Name = "btnMaps";
-            this.btnMaps.Size = new System.Drawing.Size(155, 50);
+            this.btnMaps.Size = new System.Drawing.Size(207, 62);
             this.btnMaps.TabIndex = 278;
             this.btnMaps.Text = "MAPS";
             this.btnMaps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -385,9 +412,10 @@
             this.btnHome.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Transparent;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHome.Location = new System.Drawing.Point(0, 159);
+            this.btnHome.Location = new System.Drawing.Point(0, 196);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(155, 50);
+            this.btnHome.Size = new System.Drawing.Size(207, 62);
             this.btnHome.TabIndex = 277;
             this.btnHome.Text = "HOME";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -399,8 +427,9 @@
             this.pictureBox2.BackColor = System.Drawing.Color.DarkGreen;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(155, 177);
+            this.pictureBox2.Size = new System.Drawing.Size(207, 218);
             this.pictureBox2.TabIndex = 282;
             this.pictureBox2.TabStop = false;
             // 
@@ -408,9 +437,10 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.DarkGreen;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 453);
+            this.pictureBox5.Location = new System.Drawing.Point(0, 558);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(155, 319);
+            this.pictureBox5.Size = new System.Drawing.Size(207, 393);
             this.pictureBox5.TabIndex = 281;
             this.pictureBox5.TabStop = false;
             // 
@@ -419,22 +449,31 @@
             this.lbl_navigation.BackColor = System.Drawing.Color.DarkGreen;
             this.lbl_navigation.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_navigation.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbl_navigation.Location = new System.Drawing.Point(1, 114);
-            this.lbl_navigation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_navigation.Location = new System.Drawing.Point(1, 140);
             this.lbl_navigation.Name = "lbl_navigation";
-            this.lbl_navigation.Size = new System.Drawing.Size(153, 42);
+            this.lbl_navigation.Size = new System.Drawing.Size(204, 52);
             this.lbl_navigation.TabIndex = 294;
             this.lbl_navigation.Text = "Navigation";
             this.lbl_navigation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbl_imageName);
+            this.panel1.Controls.Add(this.btn_save);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 449);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(625, 84);
+            this.panel1.TabIndex = 258;
+            // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.ClientSize = new System.Drawing.Size(1837, 960);
             this.Controls.Add(this.lbl_navigation);
             this.Controls.Add(this.btnOffices);
             this.Controls.Add(this.btnOfficers);
@@ -457,6 +496,7 @@
             this.Controls.Add(this.pnl_Save);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
@@ -470,6 +510,7 @@
             this.pnl_Save.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,5 +543,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label lbl_navigation;
+        private System.Windows.Forms.Panel panel1;
     }
 }
