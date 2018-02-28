@@ -37,16 +37,6 @@
             this.lbldate = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btnsave = new System.Windows.Forms.Button();
-            this.btndelete = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btninsert = new System.Windows.Forms.Button();
             this.lbl_navigation = new System.Windows.Forms.Label();
             this.btnOffices = new System.Windows.Forms.Button();
             this.btnOfficers = new System.Windows.Forms.Button();
@@ -56,15 +46,28 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.lbl_Services = new System.Windows.Forms.Label();
+            this.txt_serviceName = new System.Windows.Forms.TextBox();
+            this.lst_sliderPics = new System.Windows.Forms.ListBox();
+            this.lbl_serviceList = new System.Windows.Forms.Label();
+            this.btn_edit = new System.Windows.Forms.Button();
+            this.pnl_buttons = new System.Windows.Forms.Panel();
+            this.pnl_Save = new System.Windows.Forms.Panel();
+            this.lbl_contentPrv = new System.Windows.Forms.Label();
+            this.pb_preview = new System.Windows.Forms.PictureBox();
+            this.lbl_serviceName = new System.Windows.Forms.Label();
+            this.btn_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.pnl_buttons.SuspendLayout();
+            this.pnl_Save.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox7
@@ -126,139 +129,6 @@
             this.pictureBox3.Size = new System.Drawing.Size(1459, 94);
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Gainsboro;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(241, 474);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 31);
-            this.label1.TabIndex = 250;
-            this.label1.Text = "Insert new service";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox2.Location = new System.Drawing.Point(191, 121);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1139, 521);
-            this.pictureBox2.TabIndex = 251;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Gainsboro;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(241, 138);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(277, 31);
-            this.label2.TabIndex = 252;
-            this.label2.Text = "Insert new Service Image";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(247, 513);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(478, 102);
-            this.textBox1.TabIndex = 253;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.pictureBox5.Location = new System.Drawing.Point(247, 188);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(478, 261);
-            this.pictureBox5.TabIndex = 250;
-            this.pictureBox5.TabStop = false;
-            // 
-            // btnsave
-            // 
-            this.btnsave.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnsave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnsave.BackgroundImage")));
-            this.btnsave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnsave.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnsave.FlatAppearance.BorderSize = 0;
-            this.btnsave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsave.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsave.ForeColor = System.Drawing.Color.Transparent;
-            this.btnsave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnsave.Location = new System.Drawing.Point(989, 535);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(142, 68);
-            this.btnsave.TabIndex = 248;
-            this.btnsave.Text = "SAVE";
-            this.btnsave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnsave.UseVisualStyleBackColor = false;
-            // 
-            // btndelete
-            // 
-            this.btndelete.BackColor = System.Drawing.Color.Gainsboro;
-            this.btndelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btndelete.BackgroundImage")));
-            this.btndelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btndelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btndelete.FlatAppearance.BorderSize = 0;
-            this.btndelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btndelete.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndelete.ForeColor = System.Drawing.Color.Transparent;
-            this.btndelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btndelete.Location = new System.Drawing.Point(1152, 535);
-            this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(142, 68);
-            this.btndelete.TabIndex = 247;
-            this.btndelete.Text = "DELETE";
-            this.btndelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btndelete.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Gainsboro;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(798, 134);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 31);
-            this.label3.TabIndex = 259;
-            this.label3.Text = "Services";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(804, 173);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(490, 313);
-            this.dataGridView1.TabIndex = 260;
-            // 
-            // btninsert
-            // 
-            this.btninsert.BackColor = System.Drawing.Color.Gainsboro;
-            this.btninsert.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btninsert.BackgroundImage")));
-            this.btninsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btninsert.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btninsert.FlatAppearance.BorderSize = 0;
-            this.btninsert.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btninsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btninsert.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btninsert.ForeColor = System.Drawing.Color.Transparent;
-            this.btninsert.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btninsert.Location = new System.Drawing.Point(826, 535);
-            this.btninsert.Name = "btninsert";
-            this.btninsert.Size = new System.Drawing.Size(142, 68);
-            this.btninsert.TabIndex = 261;
-            this.btninsert.Text = "SAVE";
-            this.btninsert.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btninsert.UseVisualStyleBackColor = false;
             // 
             // lbl_navigation
             // 
@@ -405,13 +275,202 @@
             this.pictureBox6.TabIndex = 300;
             this.pictureBox6.TabStop = false;
             // 
+            // btn_delete
+            // 
+            this.btn_delete.BackColor = System.Drawing.Color.Transparent;
+            this.btn_delete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_delete.BackgroundImage")));
+            this.btn_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_delete.FlatAppearance.BorderSize = 0;
+            this.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_delete.Location = new System.Drawing.Point(18, 101);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(142, 68);
+            this.btn_delete.TabIndex = 303;
+            this.btn_delete.Text = "DELETE";
+            this.btn_delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_delete.UseVisualStyleBackColor = false;
+            // 
+            // btn_add
+            // 
+            this.btn_add.BackColor = System.Drawing.Color.Transparent;
+            this.btn_add.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_add.BackgroundImage")));
+            this.btn_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_add.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_add.FlatAppearance.BorderSize = 0;
+            this.btn_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_add.Location = new System.Drawing.Point(18, 26);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(142, 68);
+            this.btn_add.TabIndex = 302;
+            this.btn_add.Text = "ADD";
+            this.btn_add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_add.UseVisualStyleBackColor = false;
+            // 
+            // lbl_Services
+            // 
+            this.lbl_Services.AutoSize = true;
+            this.lbl_Services.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Services.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Services.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Services.Location = new System.Drawing.Point(604, 100);
+            this.lbl_Services.Name = "lbl_Services";
+            this.lbl_Services.Size = new System.Drawing.Size(275, 55);
+            this.lbl_Services.TabIndex = 304;
+            this.lbl_Services.Text = "SERVICES";
+            // 
+            // txt_serviceName
+            // 
+            this.txt_serviceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_serviceName.Location = new System.Drawing.Point(155, 292);
+            this.txt_serviceName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_serviceName.Name = "txt_serviceName";
+            this.txt_serviceName.Size = new System.Drawing.Size(326, 32);
+            this.txt_serviceName.TabIndex = 0;
+            // 
+            // lst_sliderPics
+            // 
+            this.lst_sliderPics.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lst_sliderPics.FormattingEnabled = true;
+            this.lst_sliderPics.ItemHeight = 20;
+            this.lst_sliderPics.Location = new System.Drawing.Point(237, 249);
+            this.lst_sliderPics.Name = "lst_sliderPics";
+            this.lst_sliderPics.Size = new System.Drawing.Size(301, 204);
+            this.lst_sliderPics.TabIndex = 305;
+            // 
+            // lbl_serviceList
+            // 
+            this.lbl_serviceList.AutoSize = true;
+            this.lbl_serviceList.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_serviceList.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_serviceList.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbl_serviceList.Location = new System.Drawing.Point(232, 206);
+            this.lbl_serviceList.Name = "lbl_serviceList";
+            this.lbl_serviceList.Size = new System.Drawing.Size(182, 31);
+            this.lbl_serviceList.TabIndex = 306;
+            this.lbl_serviceList.Text = "Services List";
+            // 
+            // btn_edit
+            // 
+            this.btn_edit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_edit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_edit.BackgroundImage")));
+            this.btn_edit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_edit.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_edit.FlatAppearance.BorderSize = 0;
+            this.btn_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_edit.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edit.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_edit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_edit.Location = new System.Drawing.Point(18, 176);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(142, 68);
+            this.btn_edit.TabIndex = 307;
+            this.btn_edit.Text = "EDIT";
+            this.btn_edit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_edit.UseVisualStyleBackColor = false;
+            // 
+            // pnl_buttons
+            // 
+            this.pnl_buttons.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_buttons.Controls.Add(this.btn_add);
+            this.pnl_buttons.Controls.Add(this.btn_edit);
+            this.pnl_buttons.Controls.Add(this.btn_delete);
+            this.pnl_buttons.Location = new System.Drawing.Point(637, 219);
+            this.pnl_buttons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_buttons.Name = "pnl_buttons";
+            this.pnl_buttons.Size = new System.Drawing.Size(180, 276);
+            this.pnl_buttons.TabIndex = 308;
+            // 
+            // pnl_Save
+            // 
+            this.pnl_Save.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_Save.Controls.Add(this.lbl_contentPrv);
+            this.pnl_Save.Controls.Add(this.pb_preview);
+            this.pnl_Save.Controls.Add(this.lbl_serviceName);
+            this.pnl_Save.Controls.Add(this.btn_save);
+            this.pnl_Save.Controls.Add(this.txt_serviceName);
+            this.pnl_Save.Location = new System.Drawing.Point(859, 189);
+            this.pnl_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_Save.Name = "pnl_Save";
+            this.pnl_Save.Size = new System.Drawing.Size(496, 433);
+            this.pnl_Save.TabIndex = 308;
+            this.pnl_Save.Visible = false;
+            // 
+            // lbl_contentPrv
+            // 
+            this.lbl_contentPrv.AutoSize = true;
+            this.lbl_contentPrv.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_contentPrv.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_contentPrv.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbl_contentPrv.Location = new System.Drawing.Point(7, 14);
+            this.lbl_contentPrv.Name = "lbl_contentPrv";
+            this.lbl_contentPrv.Size = new System.Drawing.Size(229, 31);
+            this.lbl_contentPrv.TabIndex = 257;
+            this.lbl_contentPrv.Text = "Content Preview";
+            // 
+            // pb_preview
+            // 
+            this.pb_preview.BackColor = System.Drawing.Color.Transparent;
+            this.pb_preview.Location = new System.Drawing.Point(7, 54);
+            this.pb_preview.Name = "pb_preview";
+            this.pb_preview.Size = new System.Drawing.Size(188, 203);
+            this.pb_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_preview.TabIndex = 244;
+            this.pb_preview.TabStop = false;
+            // 
+            // lbl_serviceName
+            // 
+            this.lbl_serviceName.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_serviceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_serviceName.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbl_serviceName.Location = new System.Drawing.Point(8, 292);
+            this.lbl_serviceName.Name = "lbl_serviceName";
+            this.lbl_serviceName.Size = new System.Drawing.Size(160, 37);
+            this.lbl_serviceName.TabIndex = 255;
+            this.lbl_serviceName.Text = "Service Name:";
+            // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.Transparent;
+            this.btn_save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_save.BackgroundImage")));
+            this.btn_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_save.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            this.btn_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_save.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_save.Location = new System.Drawing.Point(338, 351);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(142, 68);
+            this.btn_save.TabIndex = 248;
+            this.btn_save.Text = "SAVE";
+            this.btn_save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_save.UseVisualStyleBackColor = false;
+            // 
             // Services
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.Controls.Add(this.pnl_Save);
+            this.Controls.Add(this.pnl_buttons);
+            this.Controls.Add(this.lbl_serviceList);
+            this.Controls.Add(this.lst_sliderPics);
+            this.Controls.Add(this.lbl_Services);
             this.Controls.Add(this.lbl_navigation);
             this.Controls.Add(this.btnOffices);
             this.Controls.Add(this.btnOfficers);
@@ -421,21 +480,12 @@
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.btninsert);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnsave);
-            this.Controls.Add(this.btndelete);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.lbldate);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Services";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -444,11 +494,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.pnl_buttons.ResumeLayout(false);
+            this.pnl_Save.ResumeLayout(false);
+            this.pnl_Save.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,16 +513,6 @@
         private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button btnsave;
-        private System.Windows.Forms.Button btndelete;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btninsert;
         private System.Windows.Forms.Label lbl_navigation;
         private System.Windows.Forms.Button btnOffices;
         private System.Windows.Forms.Button btnOfficers;
@@ -481,5 +522,18 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Label lbl_Services;
+        private System.Windows.Forms.TextBox txt_serviceName;
+        private System.Windows.Forms.ListBox lst_sliderPics;
+        private System.Windows.Forms.Label lbl_serviceList;
+        private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.Panel pnl_buttons;
+        private System.Windows.Forms.Panel pnl_Save;
+        private System.Windows.Forms.Label lbl_contentPrv;
+        private System.Windows.Forms.PictureBox pb_preview;
+        private System.Windows.Forms.Label lbl_serviceName;
+        private System.Windows.Forms.Button btn_save;
     }
 }

@@ -98,7 +98,7 @@
             this.btn_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_delete.FlatAppearance.BorderSize = 0;
-            this.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.Transparent;
@@ -129,7 +129,7 @@
             this.btn_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_add.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_add.FlatAppearance.BorderSize = 0;
-            this.btn_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btn_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.Transparent;
@@ -142,6 +142,8 @@
             this.btn_add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            this.btn_add.MouseLeave += new System.EventHandler(this.btn_add_MouseLeave);
+            this.btn_add.MouseHover += new System.EventHandler(this.btn_add_MouseHover);
             // 
             // pictureBox7
             // 
@@ -257,7 +259,7 @@
             this.lst_sliderPics.ItemHeight = 20;
             this.lst_sliderPics.Location = new System.Drawing.Point(237, 249);
             this.lst_sliderPics.Name = "lst_sliderPics";
-            this.lst_sliderPics.Size = new System.Drawing.Size(301, 224);
+            this.lst_sliderPics.Size = new System.Drawing.Size(301, 204);
             this.lst_sliderPics.TabIndex = 254;
             this.lst_sliderPics.SelectedIndexChanged += new System.EventHandler(this.lst_sliderPics_SelectedIndexChanged);
             // 
@@ -269,7 +271,7 @@
             this.pnl_Save.Controls.Add(this.lbl_imageName);
             this.pnl_Save.Controls.Add(this.btn_save);
             this.pnl_Save.Location = new System.Drawing.Point(796, 193);
-            this.pnl_Save.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnl_Save.Name = "pnl_Save";
             this.pnl_Save.Size = new System.Drawing.Size(337, 433);
             this.pnl_Save.TabIndex = 259;
@@ -432,7 +434,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1378, 780);
             this.Controls.Add(this.lbl_navigation);
             this.Controls.Add(this.btnOffices);
             this.Controls.Add(this.btnOfficers);
