@@ -59,10 +59,13 @@ namespace BinanKiosk_Admin
 
         private void Mapground_Load_1(object sender, EventArgs e)
         {
-            Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112, r201, r202,
-             r203, r204, r205, r206, r207, r208 };
+            
+            //Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112, r201, r202,
+            // r203, r204, r205, r206, r207, r208, R209, r210, r211, r212, r213, r214, r215, r216, r217, r218, r219
+            //, r220, r221, r301, r302, r303, r304, r305, r306, r307, r308, r309, r310, r311};
             //loadbuttonnames(btnarray);
             //MessageBox.Show(Config.currentfloor.ToString());
+            
             
             
 
@@ -199,6 +202,7 @@ namespace BinanKiosk_Admin
                     if (bttn.Text !="Empty Room")
                     {
                       unassignrooms.Items.Add(bttn.Text);
+                        
                        
 
                     }
@@ -390,6 +394,21 @@ namespace BinanKiosk_Admin
             panelfloor3.Visible = true;
             
 
+        }
+
+        private void btnOfficers_Click(object sender, EventArgs e)
+        {
+            Config.CallOfficers(this);
+        }
+
+        private void btnOffices_Click(object sender, EventArgs e)
+        {
+            Config.CallOffices(this);
+        }
+
+        private void btnJobs_Click(object sender, EventArgs e)
+        {
+            Config.CallJobs(this);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
