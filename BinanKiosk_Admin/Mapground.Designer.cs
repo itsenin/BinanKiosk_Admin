@@ -92,18 +92,19 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.unassignrooms = new System.Windows.Forms.ListBox();
             this.panelfloor3 = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.r302 = new System.Windows.Forms.Button();
-            this.r301 = new System.Windows.Forms.Button();
-            this.r303 = new System.Windows.Forms.Button();
-            this.r304 = new System.Windows.Forms.Button();
-            this.r305 = new System.Windows.Forms.Button();
-            this.r306 = new System.Windows.Forms.Button();
-            this.r308 = new System.Windows.Forms.Button();
-            this.r309 = new System.Windows.Forms.Button();
-            this.r307 = new System.Windows.Forms.Button();
-            this.r310 = new System.Windows.Forms.Button();
             this.r311 = new System.Windows.Forms.Button();
+            this.r310 = new System.Windows.Forms.Button();
+            this.r307 = new System.Windows.Forms.Button();
+            this.r309 = new System.Windows.Forms.Button();
+            this.r308 = new System.Windows.Forms.Button();
+            this.r306 = new System.Windows.Forms.Button();
+            this.r305 = new System.Windows.Forms.Button();
+            this.r304 = new System.Windows.Forms.Button();
+            this.r303 = new System.Windows.Forms.Button();
+            this.r301 = new System.Windows.Forms.Button();
+            this.r302 = new System.Windows.Forms.Button();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -229,7 +230,7 @@
             this.editbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editbtn.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editbtn.ForeColor = System.Drawing.Color.Transparent;
-            this.editbtn.Location = new System.Drawing.Point(1097, 134);
+            this.editbtn.Location = new System.Drawing.Point(1114, 134);
             this.editbtn.Name = "editbtn";
             this.editbtn.Size = new System.Drawing.Size(96, 43);
             this.editbtn.TabIndex = 258;
@@ -240,7 +241,7 @@
             // roomtxt
             // 
             this.roomtxt.Enabled = false;
-            this.roomtxt.Location = new System.Drawing.Point(1101, 98);
+            this.roomtxt.Location = new System.Drawing.Point(1114, 98);
             this.roomtxt.Multiline = true;
             this.roomtxt.Name = "roomtxt";
             this.roomtxt.Size = new System.Drawing.Size(197, 27);
@@ -256,7 +257,7 @@
             this.savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savebtn.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savebtn.ForeColor = System.Drawing.Color.Transparent;
-            this.savebtn.Location = new System.Drawing.Point(1206, 134);
+            this.savebtn.Location = new System.Drawing.Point(1223, 134);
             this.savebtn.Name = "savebtn";
             this.savebtn.Size = new System.Drawing.Size(96, 43);
             this.savebtn.TabIndex = 260;
@@ -802,6 +803,7 @@
             this.btnOffices.Text = "DEPARTMENTS";
             this.btnOffices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOffices.UseVisualStyleBackColor = false;
+            this.btnOffices.Click += new System.EventHandler(this.btnOffices_Click);
             // 
             // btnOfficers
             // 
@@ -821,6 +823,7 @@
             this.btnOfficers.Text = "OFFICERS";
             this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOfficers.UseVisualStyleBackColor = false;
+            this.btnOfficers.Click += new System.EventHandler(this.btnOfficers_Click);
             // 
             // btnJobs
             // 
@@ -839,6 +842,7 @@
             this.btnJobs.Text = "JOBS";
             this.btnJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnJobs.UseVisualStyleBackColor = false;
+            this.btnJobs.Click += new System.EventHandler(this.btnJobs_Click);
             // 
             // button2
             // 
@@ -922,9 +926,9 @@
             // unassignrooms
             // 
             this.unassignrooms.FormattingEnabled = true;
-            this.unassignrooms.Location = new System.Drawing.Point(1127, 249);
+            this.unassignrooms.Location = new System.Drawing.Point(1123, 237);
             this.unassignrooms.Name = "unassignrooms";
-            this.unassignrooms.Size = new System.Drawing.Size(155, 160);
+            this.unassignrooms.Size = new System.Drawing.Size(183, 251);
             this.unassignrooms.TabIndex = 307;
             // 
             // panelfloor3
@@ -947,70 +951,60 @@
             this.panelfloor3.TabIndex = 308;
             this.panelfloor3.Visible = false;
             // 
-            // pictureBox9
+            // r311
             // 
-            this.pictureBox9.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources._3rd_Floor;
-            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Location = new System.Drawing.Point(26, 10);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(798, 551);
-            this.pictureBox9.TabIndex = 0;
-            this.pictureBox9.TabStop = false;
+            this.r311.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r311.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r311.Location = new System.Drawing.Point(565, 436);
+            this.r311.Name = "r311";
+            this.r311.Size = new System.Drawing.Size(149, 57);
+            this.r311.TabIndex = 309;
+            this.r311.Text = "Empty Room";
+            this.r311.UseVisualStyleBackColor = true;
             // 
-            // r302
+            // r310
             // 
-            this.r302.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r302.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r302.Location = new System.Drawing.Point(87, 444);
-            this.r302.Name = "r302";
-            this.r302.Size = new System.Drawing.Size(101, 45);
-            this.r302.TabIndex = 1;
-            this.r302.Text = "Empty Room";
-            this.r302.UseVisualStyleBackColor = true;
+            this.r310.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r310.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r310.Location = new System.Drawing.Point(682, 369);
+            this.r310.Name = "r310";
+            this.r310.Size = new System.Drawing.Size(101, 45);
+            this.r310.TabIndex = 312;
+            this.r310.Text = "Empty Room";
+            this.r310.UseVisualStyleBackColor = true;
             // 
-            // r301
+            // r307
             // 
-            this.r301.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r301.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r301.Location = new System.Drawing.Point(194, 440);
-            this.r301.Name = "r301";
-            this.r301.Size = new System.Drawing.Size(89, 57);
-            this.r301.TabIndex = 309;
-            this.r301.Text = "Empty Room";
-            this.r301.UseVisualStyleBackColor = true;
+            this.r307.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r307.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r307.Location = new System.Drawing.Point(359, 410);
+            this.r307.Name = "r307";
+            this.r307.Size = new System.Drawing.Size(101, 45);
+            this.r307.TabIndex = 311;
+            this.r307.Text = "Empty Room";
+            this.r307.UseVisualStyleBackColor = true;
             // 
-            // r303
+            // r309
             // 
-            this.r303.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r303.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r303.Location = new System.Drawing.Point(62, 369);
-            this.r303.Name = "r303";
-            this.r303.Size = new System.Drawing.Size(101, 45);
-            this.r303.TabIndex = 309;
-            this.r303.Text = "Empty Room";
-            this.r303.UseVisualStyleBackColor = true;
+            this.r309.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r309.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r309.Location = new System.Drawing.Point(550, 369);
+            this.r309.Name = "r309";
+            this.r309.Size = new System.Drawing.Size(101, 45);
+            this.r309.TabIndex = 310;
+            this.r309.Text = "Empty Room";
+            this.r309.UseVisualStyleBackColor = true;
             // 
-            // r304
+            // r308
             // 
-            this.r304.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r304.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r304.Location = new System.Drawing.Point(179, 369);
-            this.r304.Name = "r304";
-            this.r304.Size = new System.Drawing.Size(101, 45);
-            this.r304.TabIndex = 309;
-            this.r304.Text = "Empty Room";
-            this.r304.UseVisualStyleBackColor = true;
-            // 
-            // r305
-            // 
-            this.r305.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r305.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r305.Location = new System.Drawing.Point(182, 273);
-            this.r305.Name = "r305";
-            this.r305.Size = new System.Drawing.Size(101, 45);
-            this.r305.TabIndex = 309;
-            this.r305.Text = "Empty Room";
-            this.r305.UseVisualStyleBackColor = true;
+            this.r308.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r308.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r308.Location = new System.Drawing.Point(524, 158);
+            this.r308.Name = "r308";
+            this.r308.Size = new System.Drawing.Size(121, 85);
+            this.r308.TabIndex = 309;
+            this.r308.Text = "Empty Room";
+            this.r308.UseVisualStyleBackColor = true;
             // 
             // r306
             // 
@@ -1024,60 +1018,82 @@
             this.r306.Text = "Empty Room";
             this.r306.UseVisualStyleBackColor = false;
             // 
-            // r308
+            // r305
             // 
-            this.r308.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r308.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r308.Location = new System.Drawing.Point(524, 158);
-            this.r308.Name = "r308";
-            this.r308.Size = new System.Drawing.Size(121, 85);
-            this.r308.TabIndex = 309;
-            this.r308.Text = "Empty Room";
-            this.r308.UseVisualStyleBackColor = true;
+            this.r305.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r305.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r305.Location = new System.Drawing.Point(182, 273);
+            this.r305.Name = "r305";
+            this.r305.Size = new System.Drawing.Size(101, 45);
+            this.r305.TabIndex = 309;
+            this.r305.Text = "Empty Room";
+            this.r305.UseVisualStyleBackColor = true;
             // 
-            // r309
+            // r304
             // 
-            this.r309.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r309.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r309.Location = new System.Drawing.Point(550, 369);
-            this.r309.Name = "r309";
-            this.r309.Size = new System.Drawing.Size(101, 45);
-            this.r309.TabIndex = 310;
-            this.r309.Text = "Empty Room";
-            this.r309.UseVisualStyleBackColor = true;
+            this.r304.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r304.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r304.Location = new System.Drawing.Point(179, 369);
+            this.r304.Name = "r304";
+            this.r304.Size = new System.Drawing.Size(101, 45);
+            this.r304.TabIndex = 309;
+            this.r304.Text = "Empty Room";
+            this.r304.UseVisualStyleBackColor = true;
             // 
-            // r307
+            // r303
             // 
-            this.r307.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r307.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r307.Location = new System.Drawing.Point(359, 410);
-            this.r307.Name = "r307";
-            this.r307.Size = new System.Drawing.Size(101, 45);
-            this.r307.TabIndex = 311;
-            this.r307.Text = "Empty Room";
-            this.r307.UseVisualStyleBackColor = true;
+            this.r303.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r303.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r303.Location = new System.Drawing.Point(62, 369);
+            this.r303.Name = "r303";
+            this.r303.Size = new System.Drawing.Size(101, 45);
+            this.r303.TabIndex = 309;
+            this.r303.Text = "Empty Room";
+            this.r303.UseVisualStyleBackColor = true;
             // 
-            // r310
+            // r301
             // 
-            this.r310.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r310.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r310.Location = new System.Drawing.Point(682, 369);
-            this.r310.Name = "r310";
-            this.r310.Size = new System.Drawing.Size(101, 45);
-            this.r310.TabIndex = 312;
-            this.r310.Text = "Empty Room";
-            this.r310.UseVisualStyleBackColor = true;
+            this.r301.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r301.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r301.Location = new System.Drawing.Point(194, 440);
+            this.r301.Name = "r301";
+            this.r301.Size = new System.Drawing.Size(89, 57);
+            this.r301.TabIndex = 309;
+            this.r301.Text = "Empty Room";
+            this.r301.UseVisualStyleBackColor = true;
             // 
-            // r311
+            // r302
             // 
-            this.r311.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.r311.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r311.Location = new System.Drawing.Point(565, 436);
-            this.r311.Name = "r311";
-            this.r311.Size = new System.Drawing.Size(149, 57);
-            this.r311.TabIndex = 309;
-            this.r311.Text = "Empty Room";
-            this.r311.UseVisualStyleBackColor = true;
+            this.r302.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.r302.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r302.Location = new System.Drawing.Point(87, 444);
+            this.r302.Name = "r302";
+            this.r302.Size = new System.Drawing.Size(101, 45);
+            this.r302.TabIndex = 1;
+            this.r302.Text = "Empty Room";
+            this.r302.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources._3rd_Floor;
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Location = new System.Drawing.Point(26, 10);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(798, 551);
+            this.pictureBox9.TabIndex = 0;
+            this.pictureBox9.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label1.Location = new System.Drawing.Point(1099, 201);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(247, 29);
+            this.label1.TabIndex = 309;
+            this.label1.Text = "Unassigned Rooms:";
             // 
             // Mapground
             // 
@@ -1087,6 +1103,7 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 772);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelfloor3);
             this.Controls.Add(this.unassignrooms);
             this.Controls.Add(this.lbl_navigation);
@@ -1211,5 +1228,6 @@
         private System.Windows.Forms.Button r303;
         private System.Windows.Forms.Button r301;
         private System.Windows.Forms.Button r302;
+        private System.Windows.Forms.Label label1;
     }
 }

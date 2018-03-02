@@ -212,5 +212,6 @@ namespace BinanKiosk_Admin
         {
             btn_add.BackgroundImage = Properties.Resources.button1;
         }
+
     }
 }
