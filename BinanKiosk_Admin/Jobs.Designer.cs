@@ -79,9 +79,10 @@
             this.pictureBox7.BackColor = System.Drawing.Color.ForestGreen;
             this.pictureBox7.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.binancity_nav_logo;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(503, 5);
+            this.pictureBox7.Location = new System.Drawing.Point(671, 6);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(74, 74);
+            this.pictureBox7.Size = new System.Drawing.Size(99, 91);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 241;
             this.pictureBox7.TabStop = false;
@@ -91,9 +92,10 @@
             this.pictureBox8.BackColor = System.Drawing.Color.ForestGreen;
             this.pictureBox8.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.Binan_city;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(593, 5);
+            this.pictureBox8.Location = new System.Drawing.Point(791, 6);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(209, 74);
+            this.pictureBox8.Size = new System.Drawing.Size(279, 91);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 95;
             this.pictureBox8.TabStop = false;
@@ -105,9 +107,10 @@
             this.lbldate.Font = new System.Drawing.Font("Arial", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldate.ForeColor = System.Drawing.Color.White;
             this.lbldate.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbldate.Location = new System.Drawing.Point(970, 691);
+            this.lbldate.Location = new System.Drawing.Point(1293, 850);
+            this.lbldate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbldate.Name = "lbldate";
-            this.lbldate.Size = new System.Drawing.Size(396, 81);
+            this.lbldate.Size = new System.Drawing.Size(528, 100);
             this.lbldate.TabIndex = 94;
             this.lbldate.Text = ".";
             this.lbldate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -118,8 +121,9 @@
             this.pictureBox4.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.uppermenu;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1366, 86);
+            this.pictureBox4.Size = new System.Drawing.Size(1821, 106);
             this.pictureBox4.TabIndex = 92;
             this.pictureBox4.TabStop = false;
             // 
@@ -128,9 +132,10 @@
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(94)))), ((int)(((byte)(13)))));
             this.pictureBox3.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.undermenu;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 677);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 833);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1459, 94);
+            this.pictureBox3.Size = new System.Drawing.Size(1945, 116);
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
             // 
@@ -140,9 +145,10 @@
             this.lbl_Home.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Home.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Home.Location = new System.Drawing.Point(1168, 105);
+            this.lbl_Home.Location = new System.Drawing.Point(1557, 129);
+            this.lbl_Home.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(172, 55);
+            this.lbl_Home.Size = new System.Drawing.Size(214, 69);
             this.lbl_Home.TabIndex = 258;
             this.lbl_Home.Text = "HOME";
             // 
@@ -150,10 +156,11 @@
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(180, 92);
+            this.txtSearch.Location = new System.Drawing.Point(240, 113);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearch.MaxLength = 30;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(322, 38);
+            this.txtSearch.Size = new System.Drawing.Size(429, 48);
             this.txtSearch.TabIndex = 260;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -162,11 +169,12 @@
             this.gridview.AllowUserToAddRows = false;
             this.gridview.AllowUserToDeleteRows = false;
             this.gridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridview.Location = new System.Drawing.Point(180, 140);
+            this.gridview.Location = new System.Drawing.Point(240, 172);
+            this.gridview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridview.Name = "gridview";
             this.gridview.ReadOnly = true;
             this.gridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridview.Size = new System.Drawing.Size(749, 150);
+            this.gridview.Size = new System.Drawing.Size(999, 185);
             this.gridview.TabIndex = 261;
             this.gridview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_CellClick);
             this.gridview.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridview_RowHeaderMouseClick);
@@ -176,9 +184,10 @@
             this.txtJobType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtJobType.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJobType.FormattingEnabled = true;
-            this.txtJobType.Location = new System.Drawing.Point(602, 92);
+            this.txtJobType.Location = new System.Drawing.Point(803, 113);
+            this.txtJobType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtJobType.Name = "txtJobType";
-            this.txtJobType.Size = new System.Drawing.Size(327, 43);
+            this.txtJobType.Size = new System.Drawing.Size(435, 52);
             this.txtJobType.TabIndex = 262;
             this.txtJobType.SelectedValueChanged += new System.EventHandler(this.txtJobType_SelectedValueChanged);
             // 
@@ -186,41 +195,45 @@
             // 
             this.txtJobTypeID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtJobTypeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtJobTypeID.Location = new System.Drawing.Point(353, 376);
+            this.txtJobTypeID.Location = new System.Drawing.Point(471, 463);
+            this.txtJobTypeID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtJobTypeID.MaxLength = 30;
             this.txtJobTypeID.Name = "txtJobTypeID";
-            this.txtJobTypeID.Size = new System.Drawing.Size(164, 38);
+            this.txtJobTypeID.Size = new System.Drawing.Size(219, 48);
             this.txtJobTypeID.TabIndex = 263;
             // 
             // txtJobLocation
             // 
             this.txtJobLocation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtJobLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtJobLocation.Location = new System.Drawing.Point(353, 440);
+            this.txtJobLocation.Location = new System.Drawing.Point(471, 542);
+            this.txtJobLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtJobLocation.MaxLength = 30;
             this.txtJobLocation.Name = "txtJobLocation";
-            this.txtJobLocation.Size = new System.Drawing.Size(322, 38);
+            this.txtJobLocation.Size = new System.Drawing.Size(429, 48);
             this.txtJobLocation.TabIndex = 264;
             // 
             // txtJobDescription
             // 
             this.txtJobDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtJobDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtJobDescription.Location = new System.Drawing.Point(748, 376);
+            this.txtJobDescription.Location = new System.Drawing.Point(997, 463);
+            this.txtJobDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtJobDescription.MaxLength = 128;
             this.txtJobDescription.Multiline = true;
             this.txtJobDescription.Name = "txtJobDescription";
-            this.txtJobDescription.Size = new System.Drawing.Size(322, 223);
+            this.txtJobDescription.Size = new System.Drawing.Size(429, 274);
             this.txtJobDescription.TabIndex = 265;
             // 
             // txtJobCompany
             // 
             this.txtJobCompany.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtJobCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtJobCompany.Location = new System.Drawing.Point(353, 501);
+            this.txtJobCompany.Location = new System.Drawing.Point(471, 617);
+            this.txtJobCompany.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtJobCompany.MaxLength = 30;
             this.txtJobCompany.Name = "txtJobCompany";
-            this.txtJobCompany.Size = new System.Drawing.Size(322, 38);
+            this.txtJobCompany.Size = new System.Drawing.Size(429, 48);
             this.txtJobCompany.TabIndex = 266;
             // 
             // txtJobCategory
@@ -228,9 +241,10 @@
             this.txtJobCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtJobCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJobCategory.FormattingEnabled = true;
-            this.txtJobCategory.Location = new System.Drawing.Point(353, 560);
+            this.txtJobCategory.Location = new System.Drawing.Point(471, 689);
+            this.txtJobCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtJobCategory.Name = "txtJobCategory";
-            this.txtJobCategory.Size = new System.Drawing.Size(322, 43);
+            this.txtJobCategory.Size = new System.Drawing.Size(428, 52);
             this.txtJobCategory.TabIndex = 268;
             // 
             // label5
@@ -238,9 +252,10 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(173, 376);
+            this.label5.Location = new System.Drawing.Point(231, 463);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 39);
+            this.label5.Size = new System.Drawing.Size(189, 48);
             this.label5.TabIndex = 270;
             this.label5.Text = "Type ID: ";
             // 
@@ -249,9 +264,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(173, 441);
+            this.label1.Location = new System.Drawing.Point(231, 543);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 39);
+            this.label1.Size = new System.Drawing.Size(201, 48);
             this.label1.TabIndex = 271;
             this.label1.Text = "Location: ";
             // 
@@ -260,9 +276,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(173, 501);
+            this.label2.Location = new System.Drawing.Point(231, 617);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 39);
+            this.label2.Size = new System.Drawing.Size(221, 48);
             this.label2.TabIndex = 272;
             this.label2.Text = "Company: ";
             // 
@@ -271,9 +288,10 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(173, 559);
+            this.label3.Location = new System.Drawing.Point(231, 688);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 39);
+            this.label3.Size = new System.Drawing.Size(212, 48);
             this.label3.TabIndex = 273;
             this.label3.Text = "Category: ";
             // 
@@ -282,9 +300,10 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(536, 376);
+            this.label4.Location = new System.Drawing.Point(715, 463);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(206, 39);
+            this.label4.Size = new System.Drawing.Size(253, 48);
             this.label4.TabIndex = 274;
             this.label4.Text = "Description: ";
             // 
@@ -297,9 +316,10 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(1129, 454);
+            this.btnSave.Location = new System.Drawing.Point(1505, 559);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(211, 57);
+            this.btnSave.Size = new System.Drawing.Size(281, 70);
             this.btnSave.TabIndex = 275;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -314,9 +334,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1129, 526);
+            this.btnDelete.Location = new System.Drawing.Point(1505, 647);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(211, 57);
+            this.btnDelete.Size = new System.Drawing.Size(281, 70);
             this.btnDelete.TabIndex = 276;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -331,9 +352,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(1129, 376);
+            this.btnAdd.Location = new System.Drawing.Point(1505, 463);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(211, 57);
+            this.btnAdd.Size = new System.Drawing.Size(281, 70);
             this.btnAdd.TabIndex = 277;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -344,9 +366,10 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(173, 315);
+            this.label6.Location = new System.Drawing.Point(231, 388);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 39);
+            this.label6.Size = new System.Drawing.Size(202, 48);
             this.label6.TabIndex = 279;
             this.label6.Text = "Job Title: ";
             // 
@@ -354,10 +377,11 @@
             // 
             this.txtJobTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtJobTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtJobTitle.Location = new System.Drawing.Point(353, 314);
+            this.txtJobTitle.Location = new System.Drawing.Point(471, 386);
+            this.txtJobTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtJobTitle.MaxLength = 30;
             this.txtJobTitle.Name = "txtJobTitle";
-            this.txtJobTitle.Size = new System.Drawing.Size(322, 38);
+            this.txtJobTitle.Size = new System.Drawing.Size(429, 48);
             this.txtJobTitle.TabIndex = 278;
             // 
             // btnClear
@@ -369,9 +393,10 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(748, 308);
+            this.btnClear.Location = new System.Drawing.Point(997, 379);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(322, 57);
+            this.btnClear.Size = new System.Drawing.Size(429, 70);
             this.btnClear.TabIndex = 280;
             this.btnClear.Text = "CLEAR FIELDS";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -387,13 +412,15 @@
             this.btnOffices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOffices.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffices.ForeColor = System.Drawing.Color.Transparent;
-            this.btnOffices.Location = new System.Drawing.Point(0, 257);
+            this.btnOffices.Location = new System.Drawing.Point(0, 316);
+            this.btnOffices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOffices.Name = "btnOffices";
-            this.btnOffices.Size = new System.Drawing.Size(155, 50);
+            this.btnOffices.Size = new System.Drawing.Size(207, 62);
             this.btnOffices.TabIndex = 282;
             this.btnOffices.Text = "DEPARTMENTS";
             this.btnOffices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOffices.UseVisualStyleBackColor = false;
+            this.btnOffices.Click += new System.EventHandler(this.btnOffices_Click);
             // 
             // btnOfficers
             // 
@@ -406,13 +433,15 @@
             this.btnOfficers.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfficers.ForeColor = System.Drawing.Color.Transparent;
             this.btnOfficers.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnOfficers.Location = new System.Drawing.Point(0, 208);
+            this.btnOfficers.Location = new System.Drawing.Point(0, 256);
+            this.btnOfficers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOfficers.Name = "btnOfficers";
-            this.btnOfficers.Size = new System.Drawing.Size(155, 50);
+            this.btnOfficers.Size = new System.Drawing.Size(207, 62);
             this.btnOfficers.TabIndex = 281;
             this.btnOfficers.Text = "OFFICERS";
             this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOfficers.UseVisualStyleBackColor = false;
+            this.btnOfficers.Click += new System.EventHandler(this.btnOfficers_Click);
             // 
             // btnJobs
             // 
@@ -424,13 +453,15 @@
             this.btnJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJobs.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJobs.ForeColor = System.Drawing.Color.Transparent;
-            this.btnJobs.Location = new System.Drawing.Point(0, 355);
+            this.btnJobs.Location = new System.Drawing.Point(0, 437);
+            this.btnJobs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnJobs.Name = "btnJobs";
-            this.btnJobs.Size = new System.Drawing.Size(155, 50);
+            this.btnJobs.Size = new System.Drawing.Size(207, 62);
             this.btnJobs.TabIndex = 286;
             this.btnJobs.Text = "JOBS";
             this.btnJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnJobs.UseVisualStyleBackColor = false;
+            this.btnJobs.Click += new System.EventHandler(this.btnJobs_Click);
             // 
             // button2
             // 
@@ -442,13 +473,15 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(0, 404);
+            this.button2.Location = new System.Drawing.Point(0, 497);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 50);
+            this.button2.Size = new System.Drawing.Size(207, 62);
             this.button2.TabIndex = 285;
             this.button2.Text = "SERVICES";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnMaps
             // 
@@ -460,13 +493,15 @@
             this.btnMaps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaps.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaps.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMaps.Location = new System.Drawing.Point(0, 306);
+            this.btnMaps.Location = new System.Drawing.Point(0, 377);
+            this.btnMaps.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMaps.Name = "btnMaps";
-            this.btnMaps.Size = new System.Drawing.Size(155, 50);
+            this.btnMaps.Size = new System.Drawing.Size(207, 62);
             this.btnMaps.TabIndex = 284;
             this.btnMaps.Text = "MAPS";
             this.btnMaps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMaps.UseVisualStyleBackColor = false;
+            this.btnMaps.Click += new System.EventHandler(this.btnMaps_Click);
             // 
             // btnHome
             // 
@@ -480,9 +515,10 @@
             this.btnHome.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.Transparent;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHome.Location = new System.Drawing.Point(0, 159);
+            this.btnHome.Location = new System.Drawing.Point(0, 196);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(155, 50);
+            this.btnHome.Size = new System.Drawing.Size(207, 62);
             this.btnHome.TabIndex = 283;
             this.btnHome.Text = "HOME";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -494,8 +530,9 @@
             this.pictureBox2.BackColor = System.Drawing.Color.DarkGreen;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(155, 177);
+            this.pictureBox2.Size = new System.Drawing.Size(207, 218);
             this.pictureBox2.TabIndex = 288;
             this.pictureBox2.TabStop = false;
             // 
@@ -503,9 +540,10 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.DarkGreen;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 453);
+            this.pictureBox5.Location = new System.Drawing.Point(0, 558);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(155, 319);
+            this.pictureBox5.Size = new System.Drawing.Size(207, 393);
             this.pictureBox5.TabIndex = 287;
             this.pictureBox5.TabStop = false;
             // 
@@ -514,22 +552,21 @@
             this.lbl_navigation.BackColor = System.Drawing.Color.DarkGreen;
             this.lbl_navigation.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_navigation.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbl_navigation.Location = new System.Drawing.Point(1, 114);
-            this.lbl_navigation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_navigation.Location = new System.Drawing.Point(1, 140);
             this.lbl_navigation.Name = "lbl_navigation";
-            this.lbl_navigation.Size = new System.Drawing.Size(153, 42);
+            this.lbl_navigation.Size = new System.Drawing.Size(204, 52);
             this.lbl_navigation.TabIndex = 294;
             this.lbl_navigation.Text = "Navigation";
             this.lbl_navigation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Jobs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.ClientSize = new System.Drawing.Size(1837, 960);
             this.Controls.Add(this.lbl_navigation);
             this.Controls.Add(this.btnOffices);
             this.Controls.Add(this.btnOfficers);
@@ -566,6 +603,7 @@
             this.Controls.Add(this.pictureBox3);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Jobs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";

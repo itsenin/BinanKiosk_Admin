@@ -74,11 +74,6 @@ namespace BinanKiosk_Admin
             changeForm(current, mg);
         }
 
-        public static void CallSearch(Form current)
-        {
-            Officers ofc = new Officers();
-            changeForm(current, ofc);
-        }
 #endregion
         public static byte[] ImageToByteArray(Image img, PictureBox pb)
         {

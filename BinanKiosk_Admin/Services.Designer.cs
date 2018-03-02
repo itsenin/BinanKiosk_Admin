@@ -41,7 +41,7 @@
             this.btnOffices = new System.Windows.Forms.Button();
             this.btnOfficers = new System.Windows.Forms.Button();
             this.btnJobs = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnServices = new System.Windows.Forms.Button();
             this.btnMaps = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -165,6 +165,7 @@
             this.btnOffices.Text = "DEPARTMENTS";
             this.btnOffices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOffices.UseVisualStyleBackColor = false;
+            this.btnOffices.Click += new System.EventHandler(this.btnOffices_Click_1);
             // 
             // btnOfficers
             // 
@@ -185,6 +186,7 @@
             this.btnOfficers.Text = "OFFICERS";
             this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOfficers.UseVisualStyleBackColor = false;
+            this.btnOfficers.Click += new System.EventHandler(this.btnOfficers_Click_1);
             // 
             // btnJobs
             // 
@@ -204,25 +206,27 @@
             this.btnJobs.Text = "JOBS";
             this.btnJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnJobs.UseVisualStyleBackColor = false;
+            this.btnJobs.Click += new System.EventHandler(this.btnJobs_Click_1);
             // 
-            // button2
+            // btnServices
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkGreen;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(0, 497);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(207, 62);
-            this.button2.TabIndex = 298;
-            this.button2.Text = "SERVICES";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnServices.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnServices.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnServices.FlatAppearance.BorderSize = 2;
+            this.btnServices.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServices.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServices.ForeColor = System.Drawing.Color.Transparent;
+            this.btnServices.Location = new System.Drawing.Point(0, 497);
+            this.btnServices.Margin = new System.Windows.Forms.Padding(4);
+            this.btnServices.Name = "btnServices";
+            this.btnServices.Size = new System.Drawing.Size(207, 62);
+            this.btnServices.TabIndex = 298;
+            this.btnServices.Text = "SERVICES";
+            this.btnServices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnServices.UseVisualStyleBackColor = false;
+            this.btnServices.Click += new System.EventHandler(this.btnServices_Click_1);
             // 
             // btnMaps
             // 
@@ -242,6 +246,7 @@
             this.btnMaps.Text = "MAPS";
             this.btnMaps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMaps.UseVisualStyleBackColor = false;
+            this.btnMaps.Click += new System.EventHandler(this.btnMaps_Click_1);
             // 
             // btnHome
             // 
@@ -508,7 +513,7 @@
             this.Controls.Add(this.btnOffices);
             this.Controls.Add(this.btnOfficers);
             this.Controls.Add(this.btnJobs);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnServices);
             this.Controls.Add(this.btnMaps);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.pictureBox1);
@@ -552,7 +557,7 @@
         private System.Windows.Forms.Button btnOffices;
         private System.Windows.Forms.Button btnOfficers;
         private System.Windows.Forms.Button btnJobs;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnServices;
         private System.Windows.Forms.Button btnMaps;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.PictureBox pictureBox1;
