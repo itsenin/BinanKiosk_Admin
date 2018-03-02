@@ -1,4 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
+using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,8 +19,7 @@ namespace BinanKiosk_Admin
             current.Hide();
             current.Close();
         }
-
-
+#region callforms
         public static void CallLogin(Form current)
         {
             Login lg = new Login();
@@ -35,30 +36,6 @@ namespace BinanKiosk_Admin
         {
             Jobs jb = new Jobs();
             changeForm(current, jb);
-        }
-
-        public static void loadbuttonnames(Button[] buttonarray)
-        {
-            foreach (Button btn in buttonarray)
-            {
-                MySqlConnection conn = Config.conn;
-                MySqlDataReader reader;
-                conn.Open();
-                string queryStr = "SELECT room_label from floors WHERE room_id = '" + btn.Name + "' ";
-                MySqlCommand cmd = new MySqlCommand(queryStr, conn);
-                reader = cmd.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        btn.Text = reader.GetString(0);
-                    }
-                }
-                conn.Close();
-            }
-
-
         }
 
         public static void CallHome(Form current)
@@ -101,6 +78,30 @@ namespace BinanKiosk_Admin
         {
             Officers ofc = new Officers();
             changeForm(current, ofc);
+        }
+#endregion
+        public static byte[] ImageToByteArray(Image img, PictureBox pb)
+        {
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            if (pb.Image != null)
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+            return ms.ToArray();
+        }
+
+        public static Image GetDataToImage(byte[] pData)
+        {
+            try
+            {
+                ImageConverter imgConverter = new ImageConverter();
+                return imgConverter.ConvertFrom(pData) as Image;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+                return null;
+            }
         }
     }
 }

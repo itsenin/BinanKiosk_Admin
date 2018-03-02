@@ -13,6 +13,7 @@ namespace BinanKiosk_Admin
 {
     public partial class Home : Form
     {
+
         MySqlConnection conn = Config.conn;
         MySqlDataReader reader;
         List<int> imgIds;
@@ -21,7 +22,6 @@ namespace BinanKiosk_Admin
         {
             DoubleBuffered = true;
             InitializeComponent();
-            lst_sliderPics.AllowDrop = true;
             timer1.Interval = 5000;
             timer1.Start();
         }
@@ -33,6 +33,7 @@ namespace BinanKiosk_Admin
             timestamp.Interval = 1;
             timestamp.Start();
             loadImageList();
+            
         }
 
         private void OnTimerEvent(object sender, EventArgs e)
@@ -53,7 +54,7 @@ namespace BinanKiosk_Admin
 
             conn.Open();
 
-            using (var cmd = new MySqlCommand("SELECT image_id,image_name from images WHERE image_type = 1", conn))
+            using (var cmd = new MySqlCommand("SELECT * from images", conn))
             {
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -85,7 +86,7 @@ namespace BinanKiosk_Admin
                         pb_preview.Image = img;
                         lbl_imageName.Text = openFile.SafeFileName;
                         pnl_Save.Visible = true;
-                        btn_save.Visible = true; //show save button in case it is disabled by review
+                        btn_save.Visible = true; //show save button in case it is disabled by view
                     }
                 }
                 catch(Exception ex)
@@ -98,10 +99,10 @@ namespace BinanKiosk_Admin
         private void btn_save_Click(object sender, EventArgs e)
         {
             conn.Open();
-            var serializedImage = ImageToByteArray(pb_preview.Image, pb_preview);
+            var serializedImage = Config.ImageToByteArray(pb_preview.Image, pb_preview);
 
             //INSERT
-            using (var cmd = new MySqlCommand("INSERT INTO images(image_id, image_type, image_name, image_byte) VALUES(NULL, 1, @name, @image)", conn))
+            using (var cmd = new MySqlCommand("INSERT INTO images(image_id, image_name, image_byte) VALUES(NULL, @name, @image)", conn))
             {
                 cmd.Parameters.AddWithValue("@name", lbl_imageName.Text);
                 cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
@@ -113,30 +114,6 @@ namespace BinanKiosk_Admin
             loadImageList();
             pnl_Save.Visible = false;
 
-        }
-
-        public static byte[] ImageToByteArray(Image img, PictureBox pb)
-        {
-            System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            if (pb.Image != null)
-            {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            }
-            return ms.ToArray();
-        }
-
-        public Image GetDataToImage(byte[] pData)
-        {
-            try
-            {
-                ImageConverter imgConverter = new ImageConverter();
-                return imgConverter.ConvertFrom(pData) as Image;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
-                return null;
-            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -184,7 +161,7 @@ namespace BinanKiosk_Admin
                     {
                         reader.Read();
                         byte[] deserializedImage = (byte[])reader["image_byte"];
-                        pb_preview.Image = GetDataToImage(deserializedImage);
+                        pb_preview.Image = Config.GetDataToImage(deserializedImage);
                     }
                 }
 
@@ -213,7 +190,6 @@ namespace BinanKiosk_Admin
                 {
                     cmd.Parameters.AddWithValue("@name", name);
                     cmd.Parameters.AddWithValue("@id", id);
-
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();
