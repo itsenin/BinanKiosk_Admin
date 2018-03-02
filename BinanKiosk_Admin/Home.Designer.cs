@@ -279,7 +279,7 @@
             this.pnl_Save.Controls.Add(this.panel1);
             this.pnl_Save.Controls.Add(this.lbl_imagePrv);
             this.pnl_Save.Location = new System.Drawing.Point(792, 208);
-            this.pnl_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_Save.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Save.Name = "pnl_Save";
             this.pnl_Save.Size = new System.Drawing.Size(469, 433);
             this.pnl_Save.TabIndex = 259;
@@ -291,7 +291,7 @@
             this.panel1.Controls.Add(this.btn_save);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 365);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(469, 68);
             this.panel1.TabIndex = 258;

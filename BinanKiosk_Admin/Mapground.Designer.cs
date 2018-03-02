@@ -104,6 +104,7 @@
             this.r301 = new System.Windows.Forms.Button();
             this.r302 = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -229,7 +230,7 @@
             this.editbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editbtn.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editbtn.ForeColor = System.Drawing.Color.Transparent;
-            this.editbtn.Location = new System.Drawing.Point(1097, 134);
+            this.editbtn.Location = new System.Drawing.Point(1114, 134);
             this.editbtn.Name = "editbtn";
             this.editbtn.Size = new System.Drawing.Size(96, 43);
             this.editbtn.TabIndex = 258;
@@ -240,7 +241,7 @@
             // roomtxt
             // 
             this.roomtxt.Enabled = false;
-            this.roomtxt.Location = new System.Drawing.Point(1101, 98);
+            this.roomtxt.Location = new System.Drawing.Point(1114, 98);
             this.roomtxt.Multiline = true;
             this.roomtxt.Name = "roomtxt";
             this.roomtxt.Size = new System.Drawing.Size(197, 27);
@@ -256,7 +257,7 @@
             this.savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savebtn.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savebtn.ForeColor = System.Drawing.Color.Transparent;
-            this.savebtn.Location = new System.Drawing.Point(1206, 134);
+            this.savebtn.Location = new System.Drawing.Point(1223, 134);
             this.savebtn.Name = "savebtn";
             this.savebtn.Size = new System.Drawing.Size(96, 43);
             this.savebtn.TabIndex = 260;
@@ -925,9 +926,9 @@
             // unassignrooms
             // 
             this.unassignrooms.FormattingEnabled = true;
-            this.unassignrooms.Location = new System.Drawing.Point(1127, 249);
+            this.unassignrooms.Location = new System.Drawing.Point(1123, 237);
             this.unassignrooms.Name = "unassignrooms";
-            this.unassignrooms.Size = new System.Drawing.Size(155, 160);
+            this.unassignrooms.Size = new System.Drawing.Size(183, 251);
             this.unassignrooms.TabIndex = 307;
             // 
             // panelfloor3
@@ -1082,6 +1083,18 @@
             this.pictureBox9.TabIndex = 0;
             this.pictureBox9.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label1.Location = new System.Drawing.Point(1099, 201);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(247, 29);
+            this.label1.TabIndex = 309;
+            this.label1.Text = "Unassigned Rooms:";
+            // 
             // Mapground
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1090,6 +1103,7 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 772);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelfloor3);
             this.Controls.Add(this.unassignrooms);
             this.Controls.Add(this.lbl_navigation);
@@ -1214,5 +1228,6 @@
         private System.Windows.Forms.Button r303;
         private System.Windows.Forms.Button r301;
         private System.Windows.Forms.Button r302;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -16,14 +16,16 @@ namespace BinanKiosk_Admin
 
         string roomname, roomtext;
         bool editable = false;
-        List<KeyValuePair<string,string>> mapchange;
+        List<KeyValuePair<string, string>> mapchange;
+        MySqlConnection conn = Config.conn;
+        MySqlDataReader reader;
         public Mapground()
         {
             InitializeComponent();
             timer1.Interval = 5000;
             timer1.Start();
-            mapchange = new List<KeyValuePair<string,string>>();
-            
+            mapchange = new List<KeyValuePair<string, string>>();
+
         }
 
 
@@ -31,7 +33,7 @@ namespace BinanKiosk_Admin
 
         private void OnTimerEvent(object sender, EventArgs e)
         {
-            lbldate.Text =  DateTime.Now.ToLongDateString() + System.Environment.NewLine + DateTime.Now.ToLongTimeString();
+            lbldate.Text = DateTime.Now.ToLongDateString() + System.Environment.NewLine + DateTime.Now.ToLongTimeString();
         }
 
         private void timestamp_Tick_1(object sender, EventArgs e)
@@ -59,19 +61,12 @@ namespace BinanKiosk_Admin
 
         private void Mapground_Load_1(object sender, EventArgs e)
         {
-            
-            //Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112, r201, r202,
-            // r203, r204, r205, r206, r207, r208, R209, r210, r211, r212, r213, r214, r215, r216, r217, r218, r219
-            //, r220, r221, r301, r302, r303, r304, r305, r306, r307, r308, r309, r310, r311};
-            //loadbuttonnames(btnarray);
-            //MessageBox.Show(Config.currentfloor.ToString());
-            
-            
-            
 
-            MySqlConnection conn = Config.conn;
-            MySqlDataReader reader;
+            Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112, r201, r202,
+             r203, r204, r205, r206, r207, r208, R209, r210, r211, r212, r213, r214, r215, r216, r217, r218, r219
+            , r220, r221, r301, r302, r303, r304, r305, r306, r307, r308, r309, r310, r311};
 
+       
             conn.Open();
             string queryStr2 = "SELECT office_name from offices WHERE room_name = 'No Room' ";
             MySqlCommand cmd2 = new MySqlCommand(queryStr2, conn);
@@ -82,42 +77,36 @@ namespace BinanKiosk_Admin
                 while (reader.Read())
                 {
                     //child.Text = reader.GetString(0);
-                 unassignrooms.Items.Add(reader["office_name"].ToString());
+                    unassignrooms.Items.Add(reader["office_name"].ToString());
                 }
             }
             conn.Close();
 
+            Visiblemap();
+            panelmap();
 
-
-
-
-            if (Config.currentfloor == "f1")
+            for (int i = 0; i < btnarray.Length; i++)
             {
-                panelfloor1.Visible = true;
-                panelfloor2.Visible = false;
-                panelfloor3.Visible = false;
-            }
-            else if (Config.currentfloor == "f2")
-            {
-                panelfloor1.Visible = false;
-                panelfloor2.Visible = true;
-                panelfloor3.Visible = false;
 
-            }
-            else if (Config.currentfloor == "f3")
-            {
-                panelfloor1.Visible = false;
-                panelfloor2.Visible = false;
-                panelfloor3.Visible = true;
+                if (btnarray[i].Text.ToString() == "Empty Room")
+                {
+
+                    btnarray[i].BackColor = Color.LimeGreen;
+
+                }
+                else
+                {
+                    btnarray[i].BackColor = Color.Red;
+                }
+
 
             }
 
-            else
-            {
-                MessageBox.Show(Config.currentfloor.ToString());
 
-            }
+        }
 
+        private void panelmap()
+        {
             foreach (Control child in panelfloor1.Controls)
             {
                 if (child is Button)
@@ -182,6 +171,39 @@ namespace BinanKiosk_Admin
 
                     child.Click += new EventHandler(clickbait);
                 }
+            }
+
+
+        }
+
+        private void Visiblemap()
+        {
+
+            if (Config.currentfloor == "f1")
+            {
+                panelfloor1.Visible = true;
+                panelfloor2.Visible = false;
+                panelfloor3.Visible = false;
+            }
+            else if (Config.currentfloor == "f2")
+            {
+                panelfloor1.Visible = false;
+                panelfloor2.Visible = true;
+                panelfloor3.Visible = false;
+
+            }
+            else if (Config.currentfloor == "f3")
+            {
+                panelfloor1.Visible = false;
+                panelfloor2.Visible = false;
+                panelfloor3.Visible = true;
+
+            }
+
+            else
+            {
+                MessageBox.Show(Config.currentfloor.ToString());
+
             }
 
 
