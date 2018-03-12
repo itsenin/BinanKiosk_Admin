@@ -33,6 +33,8 @@ namespace BinanKiosk_Admin
         String company;
         String category;
 
+        String imgFileName;
+
         public Jobs()
         {
             InitializeComponent();
@@ -126,6 +128,24 @@ namespace BinanKiosk_Admin
             jobtype = txtSearch.ToString();
         }
 
+        private void displayImage(String ID)
+        {
+            conn.Open();
+            using (var cmdImg = new MySqlCommand("SELECT image_byte from jobtypes WHERE job_typeID = @id", conn))
+            {
+                cmdImg.Parameters.AddWithValue("@id", jobID);
+                MySqlDataReader r = cmdImg.ExecuteReader();
+                r = cmdImg.ExecuteReader();
+                if (r.HasRows)
+                {
+                    r.Read();
+                    byte[] deserializedImage = (byte[])r["image_byte"];
+                    pictureBoxPrev.Image = Config.GetDataToImage(deserializedImage);
+                    r.Close();
+                }
+            }
+        }
+
         private void displayValues (int row)
         {
             row = 0;
@@ -135,6 +155,7 @@ namespace BinanKiosk_Admin
             txtJobDescription.Text = gridview.SelectedRows[row].Cells[3].Value.ToString();
             txtJobLocation.Text = gridview.SelectedRows[row].Cells[4].Value.ToString();
             txtJobCompany.Text = gridview.SelectedRows[row].Cells[5].Value.ToString();
+            pictureBoxPrev.Image = Config.GetDataToImage((byte[])gridview.SelectedRows[row].Cells[7].Value);
             getValues();
         }
 
@@ -209,7 +230,8 @@ namespace BinanKiosk_Admin
         {
             bool success;
             getValues();
-            string insert = "INSERT INTO jobtypes (job_typeID, job_types, job_id, job_description, job_location, job_company, job_category) VALUES (@job_typeID, @job_types, @job_id, @job_description, @job_location, @job_company, @job_category);";
+            var serializedImage = Config.ImageToByteArray(pictureBoxPrev.Image, pictureBoxPrev);
+            string insert = "INSERT INTO jobtypes (job_typeID, job_types, job_id, job_description, job_location, job_company, job_category, image_byte) VALUES (@job_typeID, @job_types, @job_id, @job_description, @job_location, @job_company, @job_category);";
             cmdAdd = new MySqlCommand(insert, conn);
             cmdAdd.Parameters.AddWithValue("@job_typeID", type_id);
             cmdAdd.Parameters.AddWithValue("@job_types", types);
@@ -218,6 +240,7 @@ namespace BinanKiosk_Admin
             cmdAdd.Parameters.AddWithValue("@job_location", location);
             cmdAdd.Parameters.AddWithValue("@job_company", company);
             cmdAdd.Parameters.AddWithValue("@job_category", category);
+            cmdAdd.Parameters.AddWithValue("@image", MySqlDbType.MediumBlob).Value = serializedImage;
 
             using (conn)
             {
@@ -225,14 +248,15 @@ namespace BinanKiosk_Admin
                 return success = queryCheck(cmdAdd.ExecuteNonQuery());
             }
             
-            
         }
 
         private bool save ()
         {
             bool success;
             getValues();
-            string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company, job_category = @job_category WHERE job_typeID = @job_typeID;";
+            var serializedImage = Config.ImageToByteArray(pictureBoxPrev.Image, pictureBoxPrev);
+
+            string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company, job_category = @job_category, image_byte = @image WHERE job_typeID = @job_typeID;";
             cmdSave = new MySqlCommand(update, conn);
             cmdSave.Parameters.AddWithValue("@job_typeID", type_id);
             cmdSave.Parameters.AddWithValue("@job_types", types);
@@ -241,7 +265,7 @@ namespace BinanKiosk_Admin
             cmdSave.Parameters.AddWithValue("@job_location", location);
             cmdSave.Parameters.AddWithValue("@job_company", company);
             cmdSave.Parameters.AddWithValue("@job_category", category);
-
+            cmdSave.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
             using (conn)
             {
                 conn.Open();
@@ -364,18 +388,30 @@ namespace BinanKiosk_Admin
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!checkEmpty())
+            if (MessageBox.Show("Save the changes made?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                updateDatabase();
+                if (!checkEmpty())
+                {
+                    updateDatabase();
+                }
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (!checkEmpty())
+            if (MessageBox.Show("Delete the selected item?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                deleteFromDatabase();
+                if (!checkEmpty())
+                {
+                    deleteFromDatabase();
+                }
             }
+            
+        }
+
+        private void displayImg ()
+        {
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -411,6 +447,47 @@ namespace BinanKiosk_Admin
         private void button2_Click(object sender, EventArgs e)
         {
             Config.CallServices(this);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Title = "Choose Image";
+            openFile.Filter = "Images (*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG;*.)|*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Image img = new Bitmap(openFile.FileName);
+                    {
+                        pictureBoxPrev.Image = img;
+                        imgFileName = openFile.SafeFileName;
+                        btnSave.Enabled = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + " error");
+                }
+            }
+        }
+
+        private void btnRemoveImg_Click(object sender, EventArgs e)
+        {
+            int zero = 0;
+            if (MessageBox.Show("Delete the selected item?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                conn.Open();
+                using (var cmdRemove = new MySqlCommand("UPDATE jobtypes SET image_byte = @null WHERE job_typeID = @job_typeID;", conn))
+                {
+                    cmdRemove.Parameters.AddWithValue("@job_typeID", type_id);
+                    cmdRemove.Parameters.AddWithValue("@null", null);
+                    cmdRemove.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+            else
+                return;
         }
     }
 }
