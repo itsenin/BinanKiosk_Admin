@@ -47,8 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDeptName = new System.Windows.Forms.TextBox();
-            this.txtRoomID = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -173,8 +171,6 @@
             this.officeInformation.Controls.Add(this.label1);
             this.officeInformation.Controls.Add(this.label4);
             this.officeInformation.Controls.Add(this.txtDeptName);
-            this.officeInformation.Controls.Add(this.txtRoomID);
-            this.officeInformation.Controls.Add(this.label5);
             this.officeInformation.Controls.Add(this.txtDescription);
             this.officeInformation.Enabled = false;
             this.officeInformation.Location = new System.Drawing.Point(444, 19);
@@ -249,7 +245,7 @@
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 105);
+            this.label4.Location = new System.Drawing.Point(6, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 20);
             this.label4.TabIndex = 5;
@@ -262,31 +258,12 @@
             this.txtDeptName.Size = new System.Drawing.Size(194, 20);
             this.txtDeptName.TabIndex = 4;
             // 
-            // txtRoomID
-            // 
-            this.txtRoomID.Enabled = false;
-            this.txtRoomID.Location = new System.Drawing.Point(112, 74);
-            this.txtRoomID.Name = "txtRoomID";
-            this.txtRoomID.Size = new System.Drawing.Size(194, 20);
-            this.txtRoomID.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Enabled = false;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 20);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Room ID:";
-            // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(112, 105);
+            this.txtDescription.Location = new System.Drawing.Point(112, 74);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(194, 219);
+            this.txtDescription.Size = new System.Drawing.Size(194, 250);
             this.txtDescription.TabIndex = 10;
             // 
             // btnDelete
@@ -555,8 +532,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDeptName;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.TextBox txtRoomID;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox officeInformation;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ListBox officeList;

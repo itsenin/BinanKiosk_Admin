@@ -42,7 +42,7 @@ namespace BinanKiosk_Admin
 
             conn.Open();
 
-            cmd = new MySqlCommand("SELECT department_name FROM departments", conn);
+            cmd = new MySqlCommand("SELECT department_name FROM departments WHERE department_name NOT LIKE 'others%' ", conn);
             cmd.ExecuteNonQuery();
             reader = cmd.ExecuteReader();
 
@@ -83,7 +83,6 @@ namespace BinanKiosk_Admin
         {
             txtID.Text = "";
             txtDeptName.Text = "";
-            txtRoomID.Text = "";
             txtDescription.Text = "";
             officeLogo.Image = null;
         }
@@ -137,7 +136,6 @@ namespace BinanKiosk_Admin
                     reader.Read();
                     txtID.Text = selectedID;
                     txtDeptName.Text = reader["department_name"].ToString();
-                    txtRoomID.Text = reader["room_name"].ToString();
                     txtDescription.Text = reader["Dep_description"].ToString();
                 }
 
@@ -153,7 +151,6 @@ namespace BinanKiosk_Admin
                     reader.Read();
                     txtID.Text = selectedID;
                     txtDeptName.Text = reader["department_name"].ToString();
-                    txtRoomID.Text = "";
                     txtDescription.Text = reader["Dep_description"].ToString();
                 }
 
