@@ -322,6 +322,9 @@ namespace BinanKiosk_Admin
         private void btnCancel_Click(object sender, EventArgs e)
         {
             clear();
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
             officeInformation.Enabled = false;
         }
 
