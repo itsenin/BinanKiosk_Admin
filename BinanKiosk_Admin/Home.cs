@@ -1,4 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿using BinanKiosk_Admin.APIServices;
+using BinanKiosk_Admin.Models;
+using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +16,10 @@ namespace BinanKiosk_Admin
 {
     public partial class Home : Form
     {
-
         MySqlConnection conn = Config.conn;
         MySqlDataReader reader;
         List<int> imgIds;
+        string selectedImagePath = "";
 
         public Home()
         {
@@ -49,6 +52,7 @@ namespace BinanKiosk_Admin
 
         private void loadImageList()
         {
+            pb_preview.Image = null;
             lst_sliderPics.Items.Clear(); //clear image name list on reloads
             imgIds.Clear(); //clear image ID list on reloads
 
@@ -99,13 +103,19 @@ namespace BinanKiosk_Admin
         private void btn_save_Click(object sender, EventArgs e)
         {
             conn.Open();
-            var serializedImage = Config.ImageToByteArray(pb_preview.Image, pb_preview);
+            var serializedImage = Config.ImageToByteArray(pb_preview.Image);
+
+            //Create Picture Model to send to API
+            Picture pic = new Picture { Name = lbl_imageName.Text, FolderName = "Home", img = serializedImage };
+
+            //send the picture to the API(returns path)
+            string path = SavePic(pic);
 
             //INSERT
-            using (var cmd = new MySqlCommand("INSERT INTO images(image_id, image_name, image_byte) VALUES(NULL, @name, @image)", conn))
+            using (var cmd = new MySqlCommand("INSERT INTO images(image_id, image_name, image_path) VALUES(NULL, @name, @path)", conn))
             {
                 cmd.Parameters.AddWithValue("@name", lbl_imageName.Text);
-                cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+                cmd.Parameters.AddWithValue("@path", path);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Successfully Saved to Database!");
             }
@@ -116,6 +126,7 @@ namespace BinanKiosk_Admin
 
         }
 
+        #region Navigation buttons
         private void btnHome_Click(object sender, EventArgs e)
         {
             Config.CallHome(this);
@@ -142,6 +153,7 @@ namespace BinanKiosk_Admin
         {
             Config.CallServices(this);
         }
+        #endregion
 
         private void lst_sliderPics_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -150,7 +162,7 @@ namespace BinanKiosk_Admin
             {
                 //RETRIEVE using Name and ID
                 conn.Open();
-                using (var cmd = new MySqlCommand("SELECT image_byte from images WHERE image_name = @name AND image_id = @id", conn))
+                using (var cmd = new MySqlCommand("SELECT image_path from images WHERE image_name = @name AND image_id = @id", conn))
                 {
                     string name = lst_sliderPics.SelectedItem.ToString();
                     cmd.Parameters.AddWithValue("@name", name);
@@ -160,8 +172,10 @@ namespace BinanKiosk_Admin
                     if (reader.HasRows)
                     {
                         reader.Read();
-                        byte[] deserializedImage = (byte[])reader["image_byte"];
-                        pb_preview.Image = Config.GetDataToImage(deserializedImage);
+                        /* byte[] deserializedImage = (byte[])reader["image_byte"];
+                         pb_preview.Image = Config.GetDataToImage(deserializedImage);*/
+                        selectedImagePath = reader["image_path"].ToString();
+                        pb_preview.Image = Config.GetDataToImage(GetPic(selectedImagePath).img);
                     }
                 }
 
@@ -183,9 +197,16 @@ namespace BinanKiosk_Admin
             string name = lst_sliderPics.SelectedItem.ToString();
             int id = imgIds[lst_sliderPics.SelectedIndex];
 
+
             if (MessageBox.Show("Delete the selected item?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                conn.Open();
+                pb_preview.Image = null;
+                //delete file
+                DeletePic(selectedImagePath);
+
+                //delete in dbase
+                conn.Open();                
+
                 using (var cmd = new MySqlCommand("DELETE from images WHERE image_name = @name AND image_id = @id", conn))
                 {
                     cmd.Parameters.AddWithValue("@name", name);
@@ -213,5 +234,56 @@ namespace BinanKiosk_Admin
             btn_add.BackgroundImage = Properties.Resources.button1;
         }
 
+        #region API calls
+        public string SavePic(Picture picture)
+        {
+            ServiceClientWrapper client = new ServiceClientWrapper();
+#if DEBUG
+            var Address = Config.BASE_ADDRESS_DEBUG + "Image/SavePicture";
+#else
+            var Address = Config.BASE_ADDRESS + "Image/SavePicture";
+#endif
+            var result = client.Send(new ServiceRequest { BaseAddress = Address, HttpProtocol = Protocols.HTTP_POST, Body = JsonConvert.SerializeObject(picture) });
+            var path = JsonConvert.DeserializeObject<string>(result.Response);
+
+            return path;
+        }
+
+        public void DeletePic(string path)
+        {
+            ServiceClientWrapper client = new ServiceClientWrapper();
+#if DEBUG
+            var Address = Config.BASE_ADDRESS_DEBUG + "Image/DeletePicture";
+#else
+            var Address = Config.BASE_ADDRESS + "Image/DeletePicture";
+#endif
+            var Params = new Dictionary<string, string>
+            {
+                { "path", path }
+            };
+
+            var result = client.Send(new ServiceRequest { BaseAddress = Address, HttpProtocol = Protocols.HTTP_POST, RequestParameters = Params });
+            //var status = JsonConvert.DeserializeObject<int>(result.Response);
+        }
+
+        public Picture GetPic(string path)
+        {
+            ServiceClientWrapper client = new ServiceClientWrapper();
+#if DEBUG
+            var Address = Config.BASE_ADDRESS_DEBUG + "Image/GetPicture";
+#else
+            var Address = Config.BASE_ADDRESS + "Image/GetPicture";
+#endif
+            var Params = new Dictionary<string, string>
+            {
+                { "path", path }
+            };
+
+            var result = client.Send(new ServiceRequest { BaseAddress = Address, HttpProtocol = Protocols.HTTP_GET, RequestParameters = Params });
+            var picture = JsonConvert.DeserializeObject<Picture>(result.Response);
+
+            return picture;
+        }
+        #endregion
     }
 }

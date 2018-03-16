@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using BinanKiosk_Admin.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace BinanKiosk_Admin
         MySqlConnection conn = Config.conn;
         MySqlDataReader reader;
         List<int> svcIds;
+        string selectedServiceImagePath = "";
+
         public Services()
         {
             DoubleBuffered = true;
@@ -91,6 +94,7 @@ namespace BinanKiosk_Admin
                     Image img = new Bitmap(openFile.FileName);
                     {
                         pb_preview.Image = img;
+                        txt_serviceName.Text = openFile.SafeFileName.Split('.')[0];
                     }
                 }
                 catch (Exception ex)
@@ -103,15 +107,21 @@ namespace BinanKiosk_Admin
         private void btn_save_Click(object sender, EventArgs e)
         {
             conn.Open();
-            var serializedImage = Config.ImageToByteArray(pb_preview.Image, pb_preview);
+            var serializedImage = Config.ImageToByteArray(pb_preview.Image);
 
             if (txt_serviceName.Text != String.Empty)
             {
+                //Create Picture Model to send to API
+                Picture pic = new Picture { Name = txt_serviceName.Text, FolderName = "Services", img = serializedImage };
+
+                //send the picture to the API(returns path)
+                string path = Config.SavePic(pic);
+
                 //INSERT IMAGE
-                using (var cmd = new MySqlCommand("INSERT INTO services(service_id, service_name, image_byte) VALUES(NULL, @name, @image)", conn))
+                using (var cmd = new MySqlCommand("INSERT INTO services(service_id, service_name, image_path) VALUES(NULL, @name, @path)", conn))
                 {
                     cmd.Parameters.AddWithValue("@name", txt_serviceName.Text);
-                    cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+                    cmd.Parameters.AddWithValue("@path", path);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successfully Saved to Database!");
                 }
@@ -132,6 +142,7 @@ namespace BinanKiosk_Admin
             btn_delete.Enabled = false;
             btn_edit.Enabled = false;
 
+            pb_preview.Image = null;
             lst_servicePics.Items.Clear(); //clear image name list on reloads
             svcIds.Clear(); //clear image ID list on reloads
 
@@ -171,9 +182,11 @@ namespace BinanKiosk_Admin
                     if (reader.HasRows)
                     {
                         reader.Read();
-                        byte[] deserializedImage = (byte[])reader["image_byte"];
-                        pb_preview.Image = Config.GetDataToImage(deserializedImage);
+                        /*byte[] deserializedImage = (byte[])reader["image_byte"];
+                        pb_preview.Image = Config.GetDataToImage(deserializedImage);*/
                         txt_serviceName.Text = reader["service_name"].ToString();
+                        selectedServiceImagePath = reader["image_path"].ToString();
+                        pb_preview.Image = Config.GetDataToImage(Config.GetPic(selectedServiceImagePath).img);
                     }
                 }
 
@@ -199,6 +212,10 @@ namespace BinanKiosk_Admin
 
             if (MessageBox.Show("Delete the selected item?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                //delete from files
+                int status = Config.DeletePic(selectedServiceImagePath);
+
+                //delete from dbase
                 conn.Open();
                 using (var cmd = new MySqlCommand("DELETE from services WHERE service_name = @name AND service_id = @id", conn))
                 {
@@ -230,8 +247,7 @@ namespace BinanKiosk_Admin
             }
             else
                 return;
-
-            
+     
         }
 
         private void btnOfficers_Click_1(object sender, EventArgs e)

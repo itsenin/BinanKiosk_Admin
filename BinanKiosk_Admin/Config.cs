@@ -1,5 +1,9 @@
-﻿using MySql.Data.MySqlClient;
+﻿using BinanKiosk_Admin.APIServices;
+using BinanKiosk_Admin.Models;
+using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -8,6 +12,10 @@ namespace BinanKiosk_Admin
 {
     public static class Config
     {
+        //WebServices paths
+        public const string BASE_ADDRESS = "http://localhost:8080/api/";
+        public const string BASE_ADDRESS_DEBUG = "http://localhost:54470/api/";
+
         public static MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
 
         public static string currentfloor = "f1";
@@ -19,7 +27,7 @@ namespace BinanKiosk_Admin
             current.Hide();
             current.Close();
         }
-#region callforms
+        #region callforms
         public static void CallLogin(Form current)
         {
             Login lg = new Login();
@@ -74,11 +82,12 @@ namespace BinanKiosk_Admin
             changeForm(current, mg);
         }
 
-#endregion
-        public static byte[] ImageToByteArray(Image img, PictureBox pb)
+        #endregion
+        #region ImageCommands
+        public static byte[] ImageToByteArray(Image img)
         {
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            if (pb.Image != null)
+            if (img != null)
             {
                 img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             }
@@ -98,5 +107,59 @@ namespace BinanKiosk_Admin
                 return null;
             }
         }
+        #endregion
+        #region API calls
+        public static string SavePic(Picture picture)
+        {
+            ServiceClientWrapper client = new ServiceClientWrapper();
+#if DEBUG
+            var Address = Config.BASE_ADDRESS_DEBUG + "Image/SavePicture";
+#else
+            var Address = Config.BASE_ADDRESS + "Image/SavePicture";
+#endif
+            var result = client.Send(new ServiceRequest { BaseAddress = Address, HttpProtocol = Protocols.HTTP_POST, Body = JsonConvert.SerializeObject(picture) });
+            var path = JsonConvert.DeserializeObject<string>(result.Response);
+
+            return path;
+        }
+
+        public static int DeletePic(string path)
+        {
+            ServiceClientWrapper client = new ServiceClientWrapper();
+#if DEBUG
+            var Address = Config.BASE_ADDRESS_DEBUG + "Image/DeletePicture";
+#else
+            var Address = Config.BASE_ADDRESS + "Image/DeletePicture";
+#endif
+            var Params = new Dictionary<string, string>
+            {
+                { "path", path }
+            };
+
+            var result = client.Send(new ServiceRequest { BaseAddress = Address, HttpProtocol = Protocols.HTTP_POST, RequestParameters = Params });
+            var status = JsonConvert.DeserializeObject<int>(result.Response);
+
+            return status;
+        }
+
+        public static Picture GetPic(string path)
+        {
+            ServiceClientWrapper client = new ServiceClientWrapper();
+#if DEBUG
+            var Address = Config.BASE_ADDRESS_DEBUG + "Image/GetPicture";
+#else
+            var Address = Config.BASE_ADDRESS + "Image/GetPicture";
+#endif
+            var Params = new Dictionary<string, string>
+            {
+                { "path", path }
+            };
+
+            var result = client.Send(new ServiceRequest { BaseAddress = Address, HttpProtocol = Protocols.HTTP_GET, RequestParameters = Params });
+            var picture = JsonConvert.DeserializeObject<Picture>(result.Response);
+
+            return picture;
+        }
+        #endregion
     }
 }

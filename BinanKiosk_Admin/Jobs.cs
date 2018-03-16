@@ -230,7 +230,7 @@ namespace BinanKiosk_Admin
         {
             bool success;
             getValues();
-            var serializedImage = Config.ImageToByteArray(pictureBoxPrev.Image, pictureBoxPrev);
+            var serializedImage = Config.ImageToByteArray(pictureBoxPrev.Image);
             string insert = "INSERT INTO jobtypes (job_typeID, job_types, job_id, job_description, job_location, job_company, job_category, image_byte) VALUES (@job_typeID, @job_types, @job_id, @job_description, @job_location, @job_company, @job_category);";
             cmdAdd = new MySqlCommand(insert, conn);
             cmdAdd.Parameters.AddWithValue("@job_typeID", type_id);
@@ -254,7 +254,7 @@ namespace BinanKiosk_Admin
         {
             bool success;
             getValues();
-            var serializedImage = Config.ImageToByteArray(pictureBoxPrev.Image, pictureBoxPrev);
+            var serializedImage = Config.ImageToByteArray(pictureBoxPrev.Image);
 
             string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company, job_category = @job_category, image_byte = @image WHERE job_typeID = @job_typeID;";
             cmdSave = new MySqlCommand(update, conn);
