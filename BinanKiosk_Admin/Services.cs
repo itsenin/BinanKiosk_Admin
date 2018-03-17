@@ -112,7 +112,7 @@ namespace BinanKiosk_Admin
             if (txt_serviceName.Text != String.Empty)
             {
                 //Create Picture Model to send to API
-                Picture pic = new Picture { Name = txt_serviceName.Text, FolderName = "Services", img = serializedImage };
+                Picture pic = new Picture { Name = txt_serviceName.Text, FolderName = "Services", image = serializedImage };
 
                 //send the picture to the API(returns path)
                 string path = Config.SavePic(pic);
@@ -186,7 +186,7 @@ namespace BinanKiosk_Admin
                         pb_preview.Image = Config.GetDataToImage(deserializedImage);*/
                         txt_serviceName.Text = reader["service_name"].ToString();
                         selectedServiceImagePath = reader["image_path"].ToString();
-                        pb_preview.Image = Config.GetDataToImage(Config.GetPic(selectedServiceImagePath).img);
+                        pb_preview.Image = Config.GetDataToImage(Config.GetPic(selectedServiceImagePath).image);
                     }
                 }
 

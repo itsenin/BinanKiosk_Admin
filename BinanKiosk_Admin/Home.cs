@@ -106,7 +106,7 @@ namespace BinanKiosk_Admin
             var serializedImage = Config.ImageToByteArray(pb_preview.Image);
 
             //Create Picture Model to send to API
-            Picture pic = new Picture { Name = lbl_imageName.Text, FolderName = "Home", img = serializedImage };
+            Picture pic = new Picture { Name = lbl_imageName.Text, FolderName = "Home", image = serializedImage };
 
             //send the picture to the API(returns path)
             string path = SavePic(pic);
@@ -175,7 +175,7 @@ namespace BinanKiosk_Admin
                         /* byte[] deserializedImage = (byte[])reader["image_byte"];
                          pb_preview.Image = Config.GetDataToImage(deserializedImage);*/
                         selectedImagePath = reader["image_path"].ToString();
-                        pb_preview.Image = Config.GetDataToImage(GetPic(selectedImagePath).img);
+                        pb_preview.Image = Config.GetDataToImage(GetPic(selectedImagePath).image);
                     }
                 }
 
