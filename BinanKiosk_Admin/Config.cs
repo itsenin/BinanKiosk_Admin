@@ -124,7 +124,7 @@ namespace BinanKiosk_Admin
             return path;
         }
 
-        public static int DeletePic(string path)
+        public static void DeletePic(string path)
         {
             ServiceClientWrapper client = new ServiceClientWrapper();
 #if DEBUG
@@ -138,9 +138,7 @@ namespace BinanKiosk_Admin
             };
 
             var result = client.Send(new ServiceRequest { BaseAddress = Address, HttpProtocol = Protocols.HTTP_POST, RequestParameters = Params });
-            var status = JsonConvert.DeserializeObject<int>(result.Response);
-
-            return status;
+            //var status = JsonConvert.DeserializeObject<int>(result.Response);
         }
 
         public static Picture GetPic(string path)
