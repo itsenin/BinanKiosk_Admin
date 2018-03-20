@@ -213,7 +213,7 @@ namespace BinanKiosk_Admin
             if (MessageBox.Show("Delete the selected item?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 //delete from files
-                int status = Config.DeletePic(selectedServiceImagePath);
+                Config.DeletePic(selectedServiceImagePath);
 
                 //delete from dbase
                 conn.Open();
