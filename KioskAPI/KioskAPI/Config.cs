@@ -9,7 +9,7 @@ namespace KioskAPI
 {
     public static class Config
     {
-        public static MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
+        //public static MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
         public static string imageRootPath = HttpContext.Current.Server.MapPath("~/Images");
 
         public enum Directory{

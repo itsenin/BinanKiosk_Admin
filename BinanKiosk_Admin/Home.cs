@@ -58,7 +58,7 @@ namespace BinanKiosk_Admin
 
             conn.Open();
 
-            using (var cmd = new MySqlCommand("SELECT * from images", conn))
+            using (var cmd = new MySqlCommand("SELECT * from slider_images", conn))
             {
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -112,7 +112,7 @@ namespace BinanKiosk_Admin
             string path = SavePic(pic);
 
             //INSERT
-            using (var cmd = new MySqlCommand("INSERT INTO images(image_id, image_name, image_path) VALUES(NULL, @name, @path)", conn))
+            using (var cmd = new MySqlCommand("INSERT INTO slider_images(image_id, image_name, image_path) VALUES(NULL, @name, @path)", conn))
             {
                 cmd.Parameters.AddWithValue("@name", lbl_imageName.Text);
                 cmd.Parameters.AddWithValue("@path", path);
@@ -162,7 +162,7 @@ namespace BinanKiosk_Admin
             {
                 //RETRIEVE using Name and ID
                 conn.Open();
-                using (var cmd = new MySqlCommand("SELECT image_path from images WHERE image_name = @name AND image_id = @id", conn))
+                using (var cmd = new MySqlCommand("SELECT image_path from slider_images WHERE image_name = @name AND image_id = @id", conn))
                 {
                     string name = lst_sliderPics.SelectedItem.ToString();
                     cmd.Parameters.AddWithValue("@name", name);
@@ -207,7 +207,7 @@ namespace BinanKiosk_Admin
                 //delete in dbase
                 conn.Open();                
 
-                using (var cmd = new MySqlCommand("DELETE from images WHERE image_name = @name AND image_id = @id", conn))
+                using (var cmd = new MySqlCommand("DELETE from slider_images WHERE image_name = @name AND image_id = @id", conn))
                 {
                     cmd.Parameters.AddWithValue("@name", name);
                     cmd.Parameters.AddWithValue("@id", id);

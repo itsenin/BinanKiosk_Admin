@@ -14,9 +14,10 @@ namespace BinanKiosk_Admin
     {
         //WebServices paths
         public const string BASE_ADDRESS = "http://192.168.43.152:8080/api/";
-        public const string BASE_ADDRESS_DEBUG = "http://192.168.43.152:8080/api/";
+        public const string BASE_ADDRESS_DEBUG = "http://localhost:8080/api/";
 
-        public static MySqlConnection conn = new MySqlConnection("SERVER=" + "192.168.43.152" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "password" + ";");
+        //public static MySqlConnection conn = new MySqlConnection("SERVER=" + "192.168.43.152" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "password" + ";");
+        public static MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
 
         public static string currentfloor = "f1";
 

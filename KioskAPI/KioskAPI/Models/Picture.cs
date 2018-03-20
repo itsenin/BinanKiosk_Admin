@@ -11,6 +11,6 @@ namespace KioskAPI.Models
     {
         public string Name { get; set; }
         public string FolderName { get; set; }
-        public byte[] img { get; set; }
+        public byte[] image { get; set; }
     }
 }

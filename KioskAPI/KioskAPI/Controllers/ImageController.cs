@@ -39,7 +39,7 @@ namespace KioskAPI.Controllers
                 {
                     Name = str[2],
                     FolderName = str[1],
-                    img = ImageToByteArray(Image.FromFile(path))
+                    image = ImageToByteArray(Image.FromFile(path))
                 };
 
                 return img;
@@ -57,7 +57,7 @@ namespace KioskAPI.Controllers
             //save image locally
             try
             {
-                Image img = GetDataToImage(picture.img);
+                Image img = GetDataToImage(picture.image);
                 Bitmap bmp = new Bitmap(img);
                 if (bmp != null)
                 {
