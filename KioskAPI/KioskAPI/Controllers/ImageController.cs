@@ -69,7 +69,7 @@ namespace KioskAPI.Controllers
                     {
                         Directory.CreateDirectory(savePath);
                     }
-                    bmp.Save(savePath + "/" + picture.Name, System.Drawing.Imaging.ImageFormat.Png);
+                    bmp.Save(savePath + "/" + picture.Name, System.Drawing.Imaging.ImageFormat.Jpeg);
                     bmp.Dispose();
                     img.Dispose();
                     img = null;

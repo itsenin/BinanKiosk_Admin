@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,7 @@ namespace BinanKiosk_Admin
         MySqlDataReader reader;
         List<int> svcIds;
         string selectedServiceImagePath = "";
+        bool editMode = false;
 
         public Services()
         {
@@ -105,35 +107,107 @@ namespace BinanKiosk_Admin
         }
 
         private void btn_save_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            var serializedImage = Config.ImageToByteArray(pb_preview.Image);
-
-            if (txt_serviceName.Text != String.Empty)
+        { 
+            if ( !string.IsNullOrWhiteSpace(txt_serviceName.Text) && pb_preview.Image != null)
             {
-                //Create Picture Model to send to API
-                Picture pic = new Picture { Name = txt_serviceName.Text, FolderName = "Services", image = serializedImage };
-
-                //send the picture to the API(returns path)
-                string path = Config.SavePic(pic);
-
-                //INSERT IMAGE
-                using (var cmd = new MySqlCommand("INSERT INTO services(service_id, service_name, image_path) VALUES(NULL, @name, @path)", conn))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@name", txt_serviceName.Text);
-                    cmd.Parameters.AddWithValue("@path", path);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successfully Saved to Database!");
+                    conn.Open();
+                    
+                    if (editMode)
+                    {
+                        int selectedID = svcIds[lst_servicePics.SelectedIndex];
+                        string oldImagepath = "";
+
+                        //Get and old image path
+                        using (var cmd = new MySqlCommand("Select image_path from services where service_id = @id", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@id", selectedID);
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.HasRows)
+                                {
+                                    reader.Read();
+                                    oldImagepath = reader["image_path"].ToString();
+                                }
+                            }
+                        }
+
+                        //delete old image file in IIS
+                        Config.DeletePic(oldImagepath);
+
+                        //======New Image creation=======//
+
+                        var serializedImage = Config.ImageToByteArray(pb_preview.Image);
+                        //Create Picture Model to send to API
+                        string replacement = Regex.Replace(txt_serviceName.Text, @"\t|\n|\r", "");
+                        Picture pic = new Picture { Name = replacement, FolderName = "Services", image = serializedImage };
+
+                        //send the picture to the API(returns path)
+                        string path = Config.SavePic(pic);
+
+                        //Update Entry with new ImagePath
+                        using (var cmd = new MySqlCommand("UPDATE services SET service_name=@name, image_path=@path WHERE service_id=@id", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@name", txt_serviceName.Text);
+                            cmd.Parameters.AddWithValue("@path", path);
+                            cmd.Parameters.AddWithValue("@id", selectedID);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Changes Successfully Saved to Database!");
+                        }
+
+                        editMode = false;
+                        
+                    }
+                    else
+                    {
+                        //Check if image with same name exists
+                        using (var cmd = new MySqlCommand("SELECT * FROM services WHERE service_name = @name", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@name", txt_serviceName.Text);
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.HasRows)
+                                {
+                                    throw new ArgumentException("An entry with the same name already exists! Please rename the new entry, or delete existing entry");
+                                }
+                            }
+                        }
+
+                        var serializedImage = Config.ImageToByteArray(pb_preview.Image);
+                        //Create Picture Model to send to API
+                        Picture pic = new Picture { Name = txt_serviceName.Text, FolderName = "Services", image = serializedImage };
+
+                        //send the picture to the API(returns path)
+                        string path = Config.SavePic(pic);
+
+                        //INSERT IMAGE
+                        using (var cmd = new MySqlCommand("INSERT INTO services(service_id, service_name, image_path) VALUES(NULL, @name, @path)", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@name", txt_serviceName.Text);
+                            cmd.Parameters.AddWithValue("@path", path);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Successfully Saved to Database!");
+                        }
+                    }
+
+
+                    loadServiceList();
+                    pnl_Save.Visible = false;
                 }
-                conn.Close();
-                loadServiceList();
-                pnl_Save.Visible = false;
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Failed to save entry: "+ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                } 
             }
             else
             {
-                MessageBox.Show("Cannot save with an empty name!");
+                MessageBox.Show("Service Name and/or Picture cannot be empty");
             }
-            conn.Close();
         }
 
         private void loadServiceList()
@@ -146,7 +220,8 @@ namespace BinanKiosk_Admin
             lst_servicePics.Items.Clear(); //clear image name list on reloads
             svcIds.Clear(); //clear image ID list on reloads
 
-            conn.Open();
+            if(conn.State == ConnectionState.Closed)
+                conn.Open();
 
             using (var cmd = new MySqlCommand("SELECT * from services", conn))
             {
@@ -236,6 +311,8 @@ namespace BinanKiosk_Admin
         {
             if (MessageBox.Show("Edit the selected item?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                editMode = true;
+
                 disableOtherButtons(sender);
 
                 txt_serviceName.Enabled = true;
