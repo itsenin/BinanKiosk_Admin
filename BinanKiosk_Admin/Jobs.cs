@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BinanKiosk_Admin.APIServices;
+using BinanKiosk_Admin.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +36,11 @@ namespace BinanKiosk_Admin
         String category;
 
         String imgFileName;
+        String logoFileName;
+        String prepare_imgFileName;
+        String prepare_logoFileName;
+        String imgPath;
+        String logoPath;
 
         public Jobs()
         {
@@ -131,19 +138,63 @@ namespace BinanKiosk_Admin
         private void displayImage(String ID)
         {
             conn.Open();
-            using (var cmdImg = new MySqlCommand("SELECT image_byte from jobtypes WHERE job_typeID = @id", conn))
+            string imgquery = "SELECT job_image_path from jobtypes WHERE job_typeID = @id";
+            using (var cmdImg = new MySqlCommand(imgquery, conn))
             {
-                cmdImg.Parameters.AddWithValue("@id", jobID);
+                cmdImg.Parameters.AddWithValue("@id", ID);
                 MySqlDataReader r = cmdImg.ExecuteReader();
-                r = cmdImg.ExecuteReader();
                 if (r.HasRows)
                 {
-                    r.Read();
-                    byte[] deserializedImage = (byte[])r["image_byte"];
-                    pictureBoxPrev.Image = Config.GetDataToImage(deserializedImage);
-                    r.Close();
+                    try
+                    {
+                        while (r.Read())
+                        {
+                            imgFileName = r["job_image_path"].ToString();
+                            
+                            pictureBoxPrev.Image = Config.GetDataToImage(Config.GetPic(imgFileName).image);
+                        }
+                    }
+                    catch
+                    {
+                        r.Close();
+                        cmdImg.Parameters.AddWithValue("@placeholder", "C:/WebApps/Images/Jobs/test.jpg");
+                        imgquery = "UPDATE jobtypes set job_image_path = @placeholder WHERE job_typeID = @id;";
+                        cmdImg.ExecuteNonQuery();
+                    }
                 }
             }
+            conn.Close();
+        }
+
+        private void displayLogo (String ID)
+        {
+            conn.Open();
+            string imgquery = "SELECT Logo_image_path from jobtypes WHERE job_typeID = @id";
+            using (var cmdImg = new MySqlCommand(imgquery, conn))
+            {
+                cmdImg.Parameters.AddWithValue("@id", ID);
+                MySqlDataReader r = cmdImg.ExecuteReader();
+                if (r.HasRows)
+                {
+                    try
+                    {
+                        while (r.Read())
+                        {
+                            logoFileName = r["Logo_image_path"].ToString();
+                            
+                            pictureBoxLogo.Image = Config.GetDataToImage(Config.GetPic(logoFileName).image);
+                        }
+                    }
+                    catch
+                    {
+                        r.Close();
+                        cmdImg.Parameters.AddWithValue("@placeholder", "C:/WebApps/Images/Jobs_CompanyLogo/test.jpg");
+                        imgquery = "UPDATE jobtypes set Logo_image_path = @placeholder WHERE job_typeID = @id;";
+                        cmdImg.ExecuteNonQuery();
+                    }
+                }
+            }
+            conn.Close();
         }
 
         private void displayValues (int row)
@@ -155,7 +206,8 @@ namespace BinanKiosk_Admin
             txtJobDescription.Text = gridview.SelectedRows[row].Cells[3].Value.ToString();
             txtJobLocation.Text = gridview.SelectedRows[row].Cells[4].Value.ToString();
             txtJobCompany.Text = gridview.SelectedRows[row].Cells[5].Value.ToString();
-            pictureBoxPrev.Image = Config.GetDataToImage((byte[])gridview.SelectedRows[row].Cells[7].Value);
+            displayImage(gridview.SelectedRows[row].Cells[0].Value.ToString());
+            displayLogo(gridview.SelectedRows[row].Cells[0].Value.ToString());
             getValues();
         }
 
@@ -189,7 +241,9 @@ namespace BinanKiosk_Admin
                 string.IsNullOrEmpty(txtJobTypeID.Text) ||
                 string.IsNullOrEmpty(txtJobLocation.Text) ||
                 string.IsNullOrEmpty(txtJobCompany.Text) ||
-                string.IsNullOrEmpty(txtJobDescription.Text))
+                string.IsNullOrEmpty(txtJobDescription.Text) ||
+                (pictureBoxLogo.Image == null) ||
+                (pictureBoxPrev.Image == null))
             {
                 return true;
             }
@@ -229,9 +283,9 @@ namespace BinanKiosk_Admin
         private bool add ()
         {
             bool success;
-            getValues();
-            var serializedImage = Config.ImageToByteArray(pictureBoxPrev.Image);
-            string insert = "INSERT INTO jobtypes (job_typeID, job_types, job_id, job_description, job_location, job_company, job_category, image_byte) VALUES (@job_typeID, @job_types, @job_id, @job_description, @job_location, @job_company, @job_category);";
+            string imgPath = prepareImage();
+            string logoPath = prepareLogo();
+            string insert = "INSERT INTO jobtypes (job_typeID, job_types, job_id, job_description, job_location, job_company, job_category, job_image_path, Logo_image_path) VALUES (@job_typeID, @job_types, @job_id, @job_description, @job_location, @job_company, @job_category, @job_image_path, @Logo_image_path);";
             cmdAdd = new MySqlCommand(insert, conn);
             cmdAdd.Parameters.AddWithValue("@job_typeID", type_id);
             cmdAdd.Parameters.AddWithValue("@job_types", types);
@@ -240,7 +294,8 @@ namespace BinanKiosk_Admin
             cmdAdd.Parameters.AddWithValue("@job_location", location);
             cmdAdd.Parameters.AddWithValue("@job_company", company);
             cmdAdd.Parameters.AddWithValue("@job_category", category);
-            cmdAdd.Parameters.AddWithValue("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+            cmdAdd.Parameters.AddWithValue("@job_image_path", imgPath);
+            cmdAdd.Parameters.AddWithValue("@Logo_image_path", logoPath);
 
             using (conn)
             {
@@ -250,13 +305,40 @@ namespace BinanKiosk_Admin
             
         }
 
+        private string prepareImage ()
+        {
+            prepare_imgFileName = type_id + ".jpg";
+            var serializedImage = Config.ImageToByteArray(pictureBoxPrev.Image);
+            //Create Picture Model to send to API
+            Picture pic = new Picture { Name = prepare_imgFileName, FolderName = "Jobs_CompanyLogo", image = serializedImage };
+
+            //send the picture to the API(returns path)
+            string path = Config.SavePic(pic);
+
+            return path;
+        }
+
+        private string prepareLogo ()
+        {
+            prepare_logoFileName = company + "_logo.jpg";
+            var serializedImage = Config.ImageToByteArray(pictureBoxLogo.Image);
+            //Create Picture Model to send to API
+            Picture pic = new Picture { Name = prepare_logoFileName, FolderName = "Jobs", image = serializedImage };
+            
+            //send the picture to the API(returns path)
+            string path = Config.SavePic(pic);
+
+            return path;
+        }
+
         private bool save ()
         {
             bool success;
             getValues();
-            var serializedImage = Config.ImageToByteArray(pictureBoxPrev.Image);
+            string imgPath = prepareImage();
+            string logoPath = prepareLogo();
 
-            string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company, job_category = @job_category, image_byte = @image WHERE job_typeID = @job_typeID;";
+            string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company, job_category = @job_category, job_image_path = @job_image_path, Logo_image_path = @Logo_image_path WHERE job_typeID = @job_typeID;";
             cmdSave = new MySqlCommand(update, conn);
             cmdSave.Parameters.AddWithValue("@job_typeID", type_id);
             cmdSave.Parameters.AddWithValue("@job_types", types);
@@ -265,7 +347,8 @@ namespace BinanKiosk_Admin
             cmdSave.Parameters.AddWithValue("@job_location", location);
             cmdSave.Parameters.AddWithValue("@job_company", company);
             cmdSave.Parameters.AddWithValue("@job_category", category);
-            cmdSave.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+            cmdSave.Parameters.AddWithValue("@job_image_path", imgPath);
+            cmdSave.Parameters.AddWithValue("@Logo_image_path", logoPath);
             using (conn)
             {
                 conn.Open();
@@ -280,12 +363,16 @@ namespace BinanKiosk_Admin
             string delete = "DELETE FROM jobtypes WHERE job_typeID = @job_typeID;";
             cmdDelete = new MySqlCommand(delete, conn);
             cmdDelete.Parameters.AddWithValue("@job_typeID", type_id);
-
+            pictureBoxLogo.Image = null;
+            pictureBoxPrev.Image = null;
+            Config.DeletePic(logoFileName);
+            Config.DeletePic(imgFileName);
             using (conn)
             {
                 conn.Open();
                 return success = queryCheck(cmdDelete.ExecuteNonQuery());
             }
+            
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -363,6 +450,7 @@ namespace BinanKiosk_Admin
                 if (delete())
                 {
                     MessageBox.Show("delete successful");
+                    clearFields();
                 }
 
                 else
@@ -474,20 +562,42 @@ namespace BinanKiosk_Admin
 
         private void btnRemoveImg_Click(object sender, EventArgs e)
         {
-            int zero = 0;
-            if (MessageBox.Show("Delete the selected item?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                conn.Open();
-                using (var cmdRemove = new MySqlCommand("UPDATE jobtypes SET image_byte = @null WHERE job_typeID = @job_typeID;", conn))
-                {
-                    cmdRemove.Parameters.AddWithValue("@job_typeID", type_id);
-                    cmdRemove.Parameters.AddWithValue("@null", null);
-                    cmdRemove.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
-            else
                 return;
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Title = "Choose Logo Image";
+            openFile.Filter = "Images (*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG;*.)|*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Image img = new Bitmap(openFile.FileName);
+                    {
+                        pictureBoxLogo.Image = img;
+                        logoFileName = openFile.SafeFileName;
+                        btnSave.Enabled = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + " error");
+                }
+            }
+        }
+
+        private void gridview_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (IndexOutOfRangeException)
+            {
+
+            }
         }
     }
 }
