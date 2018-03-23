@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BinanKiosk_Admin.Models;
 using MySql.Data.MySqlClient;
 
 namespace BinanKiosk_Admin
@@ -157,14 +158,14 @@ namespace BinanKiosk_Admin
                 reader.Close();
             }
 
-            using (var cmd = new MySqlCommand("SELECT picture_string from departments_pictures WHERE department_id = '" + Convert.ToInt32(selectedID) + "' ", conn))
+            using (var cmd = new MySqlCommand("SELECT Department_image_path from departments WHERE department_id = '" + Convert.ToInt32(selectedID) + "' ", conn))
             {
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
                     reader.Read();
-                    byte[] deserializedImage = (byte[])reader["picture_string"];
-                    officeLogo.Image = GetDataToImage(deserializedImage);
+                    byte[] deserializedImage = Config.GetPic(reader["Department_image_path"].ToString()).image;
+                    officeLogo.Image = Config.GetDataToImage(deserializedImage);
                 }
                 else
                 {
@@ -219,10 +220,12 @@ namespace BinanKiosk_Admin
             {
                 conn.Open();
 
-                cmd = new MySqlCommand("DELETE FROM departments_pictures WHERE departments_pictures.department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                //Delete the entry in Departments
+                cmd = new MySqlCommand("DELETE FROM departments WHERE departments.department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
                 cmd.ExecuteNonQuery();
 
-                cmd = new MySqlCommand("DELETE FROM departments WHERE departments.department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                //Delete picture in IIS
+                cmd = new MySqlCommand("DELETE FROM departments_pictures WHERE departments_pictures.department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
                 cmd.ExecuteNonQuery();
 
                 conn.Close();
@@ -260,21 +263,33 @@ namespace BinanKiosk_Admin
             
             if (add == true)
             {
-                cmd = new MySqlCommand("insert into departments (department_id, department_name, Dep_description) values('" + Convert.ToInt32(txtID.Text) + "', '" + txtDeptName.Text + "','" + txtDescription.Text + "')", conn);
+                //serialize the Image (IIS can't encode/decode Image objects to JSON)
+                var serializedImage = Config.ImageToByteArray(officeLogo.Image);
+
+                //Create Picture Model to send to API
+                Picture pic = new Picture { Name = txtDeptName.Text + ".jpg", FolderName = "Departments", image = serializedImage };
+
+                //send the picture to the API(returns path)
+                string path = Config.SavePic(pic);
+
+                //save Department with picture path to database
+                cmd = new MySqlCommand("insert into departments (department_id, department_name, Dep_description, Department_image_path) values('" + Convert.ToInt32(txtID.Text) + "', '" + txtDeptName.Text + "','" + txtDescription.Text + "',@path )", conn);
+                cmd.Parameters.AddWithValue("@path", path);
                 cmd.ExecuteNonQuery();
 
-                //Picture Saving
-                var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
-                cmd = new MySqlCommand("INSERT INTO departments_pictures(picture_id, department_id, picture_string) VALUES('" + Convert.ToInt32(txtID.Text) + "', '" + Convert.ToInt32(txtID.Text) + "', @image)", conn);
-                cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
-                cmd.ExecuteNonQuery();
+                ////Picture Saving
+                //var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
+                //cmd = new MySqlCommand("INSERT INTO departments_pictures(picture_id, department_id, picture_string) VALUES('" + Convert.ToInt32(txtID.Text) + "', '" + Convert.ToInt32(txtID.Text) + "', @image)", conn);
+                //cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+                //cmd.ExecuteNonQuery();
             }
-            else
+            else //save after edit
             {
+                //update Department info
                 cmd = new MySqlCommand("UPDATE departments SET department_name = '" + txtDeptName.Text + "', Dep_description = '" + txtDescription.Text + "' WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
                 cmd.ExecuteNonQuery();
 
-                using (var cmd = new MySqlCommand("SELECT picture_string from departments_pictures WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "' ", conn))
+                using (var cmd = new MySqlCommand("SELECT Department_image_path from departments WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "' ", conn))
                 {
                     reader = cmd.ExecuteReader();
                     if (reader.HasRows)
@@ -287,22 +302,36 @@ namespace BinanKiosk_Admin
                     }
                 }
 
-                if (availalbe == true)
-                {
-                    //Picture Saving
-                    var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
-                    cmd = new MySqlCommand("UPDATE departments_pictures SET picture_string = @image WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
-                    cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
-                    cmd.ExecuteNonQuery();
-                }
-                else
-                {
-                    //Picture Saving
-                    var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
-                    cmd = new MySqlCommand("INSERT INTO departments_pictures(picture_id, department_id, picture_string) VALUES('" + Convert.ToInt32(txtID.Text) + "', '" + Convert.ToInt32(txtID.Text) + "', @image)", conn);
-                    cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
-                    cmd.ExecuteNonQuery();
-                }
+                //serialize the Image (IIS can't encode/decode Image objects to JSON)
+                var serializedImage = Config.ImageToByteArray(officeLogo.Image);
+
+                //Create Picture Model to send to API
+                Picture pic = new Picture { Name = txtDeptName.Text, FolderName = "Departments", image = serializedImage };
+
+                //send the picture to the API(returns path)
+                string path = Config.SavePic(pic);
+
+                //save all with picture path to database
+                cmd = new MySqlCommand("insert into departments (department_id, department_name, Dep_description, Department_image_path) values('" + Convert.ToInt32(txtID.Text) + "', '" + txtDeptName.Text + "','" + txtDescription.Text + "',@path )", conn);
+                cmd.Parameters.AddWithValue("@path", path);
+                cmd.ExecuteNonQuery();
+
+                //if (availalbe == true)
+                //{
+                //    //Picture Saving
+                //    var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
+                //    cmd = new MySqlCommand("UPDATE departments_pictures SET picture_string = @image WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                //    cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+                //    cmd.ExecuteNonQuery();
+                //}
+                //else
+                //{
+                //    //Picture Saving
+                //    var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
+                //    cmd = new MySqlCommand("INSERT INTO departments_pictures(picture_id, department_id, picture_string) VALUES('" + Convert.ToInt32(txtID.Text) + "', '" + Convert.ToInt32(txtID.Text) + "', @image)", conn);
+                //    cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+                //    cmd.ExecuteNonQuery();
+                //}
             }
 
             conn.Close();

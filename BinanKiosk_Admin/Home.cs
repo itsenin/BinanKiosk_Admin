@@ -102,28 +102,52 @@ namespace BinanKiosk_Admin
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            var serializedImage = Config.ImageToByteArray(pb_preview.Image);
-
-            //Create Picture Model to send to API
-            Picture pic = new Picture { Name = lbl_imageName.Text, FolderName = "Home", image = serializedImage };
-
-            //send the picture to the API(returns path)
-            string path = Config.SavePic(pic);
-
-            //INSERT
-            using (var cmd = new MySqlCommand("INSERT INTO slider_images(image_id, image_name, image_path) VALUES(NULL, @name, @path)", conn))
+            try
             {
-                cmd.Parameters.AddWithValue("@name", lbl_imageName.Text);
-                cmd.Parameters.AddWithValue("@path", path);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Successfully Saved to Database!");
+                conn.Open();
+
+                //Check if image with same name exists
+                using (var cmd = new MySqlCommand("SELECT * FROM slider_images WHERE image_name = @name", conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", lbl_imageName.Text);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            throw new ArgumentException("An image with the same name already exists! Please rename the new image, or delete existing entry");
+                        }
+                    }
+                }
+
+                //serialize Image for Model
+                var serializedImage = Config.ImageToByteArray(pb_preview.Image);
+
+                //Create Picture Model to send to API
+                Picture pic = new Picture { Name = lbl_imageName.Text, FolderName = "Home", image = serializedImage };
+
+                //send the picture to the API(returns path)
+                string path = Config.SavePic(pic);
+
+                //INSERT if no duplicates found
+                using (var cmd = new MySqlCommand("INSERT INTO slider_images(image_id, image_name, image_path) VALUES(NULL, @name, @path)", conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", lbl_imageName.Text);
+                    cmd.Parameters.AddWithValue("@path", path);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Successfully Saved to Database!");
+                }
+
             }
-            conn.Close();
-
-            loadImageList();
-            pnl_Save.Visible = false;
-
+            catch(Exception ex)
+            {
+                MessageBox.Show("Failed to Save Image: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                loadImageList();
+                pnl_Save.Visible = false;
+            }
         }
 
         #region Navigation buttons
