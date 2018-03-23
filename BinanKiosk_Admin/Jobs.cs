@@ -472,6 +472,10 @@ namespace BinanKiosk_Admin
             {
                 addToDatabase();
             }
+            else
+            {
+                MessageBox.Show("Add failed. Please complete the fields.");
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -481,6 +485,10 @@ namespace BinanKiosk_Admin
                 if (!checkEmpty())
                 {
                     updateDatabase();
+                }
+                else
+                {
+                    MessageBox.Show("Save failed. Please complete the fields.");
                 }
             }
         }
@@ -492,6 +500,10 @@ namespace BinanKiosk_Admin
                 if (!checkEmpty())
                 {
                     deleteFromDatabase();
+                }
+                else
+                {
+                    MessageBox.Show("Delete failed. Please select a row from the table and try again.");
                 }
             }
             

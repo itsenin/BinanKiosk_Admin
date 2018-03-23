@@ -122,5 +122,9 @@ namespace BinanKiosk_Admin
             }
         }
 
+        private void btnForgotPass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
