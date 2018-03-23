@@ -66,6 +66,8 @@
             this.lbl_navigation = new System.Windows.Forms.Label();
             this.pictureBoxPrev = new System.Windows.Forms.PictureBox();
             this.btnChangeImg = new System.Windows.Forms.Button();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -74,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox7
@@ -160,6 +163,7 @@
             this.gridview.TabIndex = 261;
             this.gridview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_CellClick);
             this.gridview.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridview_RowHeaderMouseClick);
+            this.gridview.SelectionChanged += new System.EventHandler(this.gridview_SelectionChanged);
             // 
             // txtJobType
             // 
@@ -200,7 +204,7 @@
             this.txtJobDescription.MaxLength = 128;
             this.txtJobDescription.Multiline = true;
             this.txtJobDescription.Name = "txtJobDescription";
-            this.txtJobDescription.Size = new System.Drawing.Size(616, 163);
+            this.txtJobDescription.Size = new System.Drawing.Size(324, 163);
             this.txtJobDescription.TabIndex = 265;
             // 
             // txtJobCompany
@@ -287,7 +291,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(642, 352);
+            this.btnSave.Location = new System.Drawing.Point(642, 334);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(140, 44);
             this.btnSave.TabIndex = 275;
@@ -304,7 +308,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(793, 296);
+            this.btnDelete.Location = new System.Drawing.Point(793, 291);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(140, 44);
             this.btnDelete.TabIndex = 276;
@@ -321,7 +325,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(642, 296);
+            this.btnAdd.Location = new System.Drawing.Point(642, 291);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(140, 44);
             this.btnAdd.TabIndex = 277;
@@ -359,9 +363,9 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(642, 410);
+            this.btnClear.Location = new System.Drawing.Point(642, 378);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(286, 44);
+            this.btnClear.Size = new System.Drawing.Size(140, 44);
             this.btnClear.TabIndex = 280;
             this.btnClear.Text = "CLEAR FIELDS";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -535,13 +539,39 @@
             this.btnChangeImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeImg.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangeImg.ForeColor = System.Drawing.Color.White;
-            this.btnChangeImg.Location = new System.Drawing.Point(793, 352);
+            this.btnChangeImg.Location = new System.Drawing.Point(793, 334);
             this.btnChangeImg.Name = "btnChangeImg";
             this.btnChangeImg.Size = new System.Drawing.Size(140, 44);
             this.btnChangeImg.TabIndex = 296;
             this.btnChangeImg.Text = "CHANGE IMAGE";
             this.btnChangeImg.UseVisualStyleBackColor = false;
             this.btnChangeImg.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Location = new System.Drawing.Point(642, 428);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(291, 195);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 297;
+            this.pictureBoxLogo.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.button11;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(793, 378);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 44);
+            this.button1.TabIndex = 298;
+            this.button1.Text = "CHANGE LOGO";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // Jobs
             // 
@@ -551,6 +581,8 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.btnChangeImg);
             this.Controls.Add(this.pictureBoxPrev);
             this.Controls.Add(this.lbl_navigation);
@@ -599,6 +631,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,5 +675,7 @@
         private System.Windows.Forms.Label lbl_navigation;
         private System.Windows.Forms.PictureBox pictureBoxPrev;
         private System.Windows.Forms.Button btnChangeImg;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
+        private System.Windows.Forms.Button button1;
     }
 }

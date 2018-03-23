@@ -1,7 +1,6 @@
 ﻿using BinanKiosk_Admin.APIServices;
 using BinanKiosk_Admin.Models;
 using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
