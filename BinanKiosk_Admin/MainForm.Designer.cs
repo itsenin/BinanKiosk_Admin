@@ -46,6 +46,7 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.btn_registration = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -277,6 +278,25 @@
             this.pictureBox5.TabIndex = 291;
             this.pictureBox5.TabStop = false;
             // 
+            // btn_registration
+            // 
+            this.btn_registration.BackColor = System.Drawing.Color.DarkGreen;
+            this.btn_registration.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_registration.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btn_registration.FlatAppearance.BorderSize = 2;
+            this.btn_registration.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btn_registration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_registration.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_registration.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_registration.Location = new System.Drawing.Point(0, 453);
+            this.btn_registration.Name = "btn_registration";
+            this.btn_registration.Size = new System.Drawing.Size(155, 50);
+            this.btn_registration.TabIndex = 293;
+            this.btn_registration.Text = "REGISTRATION";
+            this.btn_registration.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_registration.UseVisualStyleBackColor = false;
+            this.btn_registration.Click += new System.EventHandler(this.btn_registration_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,6 +305,7 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.Controls.Add(this.btn_registration);
             this.Controls.Add(this.lbl_navigation);
             this.Controls.Add(this.btnOffices);
             this.Controls.Add(this.btnOfficers);
@@ -334,5 +355,6 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button btn_registration;
     }
 }

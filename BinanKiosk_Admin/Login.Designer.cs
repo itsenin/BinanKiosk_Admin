@@ -33,7 +33,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnSignup = new System.Windows.Forms.Button();
-            this.btnForgotPass = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -70,7 +69,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(469, 544);
+            this.btnLogin.Location = new System.Drawing.Point(616, 545);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(122, 61);
             this.btnLogin.TabIndex = 1;
@@ -87,29 +86,14 @@
             this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignup.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignup.ForeColor = System.Drawing.Color.White;
-            this.btnSignup.Location = new System.Drawing.Point(611, 544);
+            this.btnSignup.Location = new System.Drawing.Point(1234, 689);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(122, 61);
             this.btnSignup.TabIndex = 47;
             this.btnSignup.Text = "Sign Up";
             this.btnSignup.UseVisualStyleBackColor = false;
+            this.btnSignup.Visible = false;
             this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
-            // 
-            // btnForgotPass
-            // 
-            this.btnForgotPass.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnForgotPass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnForgotPass.BackgroundImage")));
-            this.btnForgotPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnForgotPass.FlatAppearance.BorderSize = 0;
-            this.btnForgotPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnForgotPass.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForgotPass.ForeColor = System.Drawing.Color.White;
-            this.btnForgotPass.Location = new System.Drawing.Point(755, 544);
-            this.btnForgotPass.Name = "btnForgotPass";
-            this.btnForgotPass.Size = new System.Drawing.Size(122, 61);
-            this.btnForgotPass.TabIndex = 48;
-            this.btnForgotPass.Text = "Forgot\r\nPassword";
-            this.btnForgotPass.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
@@ -158,7 +142,6 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.btnForgotPass);
             this.Controls.Add(this.btnSignup);
             this.Controls.Add(this.pictureBox4);
             this.DoubleBuffered = true;
@@ -180,7 +163,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnSignup;
-        private System.Windows.Forms.Button btnForgotPass;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;

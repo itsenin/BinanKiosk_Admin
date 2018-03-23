@@ -65,8 +65,8 @@ namespace BinanKiosk_Admin
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Go back to the Login screen? (Current registration info will be discarded)", "Confirm Action", MessageBoxButtons.YesNo)==DialogResult.Yes)
-                Config.CallLogin(this);
+            if(MessageBox.Show("Go back to the Main screen? (Current registration info will be discarded)", "Confirm Action", MessageBoxButtons.YesNo)==DialogResult.Yes)
+                Config.CallMain(this);
         }
 
         private bool valueCheck () //true if email and user is ok

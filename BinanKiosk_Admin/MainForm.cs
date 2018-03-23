@@ -97,6 +97,9 @@ namespace BinanKiosk_Admin
             Config.CallServices(this);
         }
 
-        
+        private void btn_registration_Click(object sender, EventArgs e)
+        {
+            Config.CallSignup(this);
+        }
     }
 }
