@@ -68,6 +68,8 @@
             this.btnChangeImg = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btn_logout = new System.Windows.Forms.Button();
+            this.btn_registration = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -573,6 +575,44 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
+            // btn_logout
+            // 
+            this.btn_logout.BackColor = System.Drawing.Color.DarkGreen;
+            this.btn_logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_logout.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btn_logout.FlatAppearance.BorderSize = 2;
+            this.btn_logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_logout.Location = new System.Drawing.Point(0, 722);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(155, 50);
+            this.btn_logout.TabIndex = 307;
+            this.btn_logout.Text = "LOGOUT";
+            this.btn_logout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
+            // btn_registration
+            // 
+            this.btn_registration.BackColor = System.Drawing.Color.DarkGreen;
+            this.btn_registration.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_registration.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btn_registration.FlatAppearance.BorderSize = 2;
+            this.btn_registration.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btn_registration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_registration.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_registration.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_registration.Location = new System.Drawing.Point(0, 453);
+            this.btn_registration.Name = "btn_registration";
+            this.btn_registration.Size = new System.Drawing.Size(155, 50);
+            this.btn_registration.TabIndex = 306;
+            this.btn_registration.Text = "REGISTRATION";
+            this.btn_registration.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_registration.UseVisualStyleBackColor = false;
+            this.btn_registration.Click += new System.EventHandler(this.btn_registration_Click);
+            // 
             // Jobs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -581,6 +621,8 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.Controls.Add(this.btn_logout);
+            this.Controls.Add(this.btn_registration);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.btnChangeImg);
@@ -677,5 +719,7 @@
         private System.Windows.Forms.Button btnChangeImg;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.Button btn_registration;
     }
 }

@@ -62,6 +62,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lbl_navigation = new System.Windows.Forms.Label();
+            this.btn_logout = new System.Windows.Forms.Button();
+            this.btn_registration = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -470,6 +472,44 @@
             this.lbl_navigation.Text = "Navigation";
             this.lbl_navigation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btn_logout
+            // 
+            this.btn_logout.BackColor = System.Drawing.Color.DarkGreen;
+            this.btn_logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_logout.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btn_logout.FlatAppearance.BorderSize = 2;
+            this.btn_logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_logout.Location = new System.Drawing.Point(0, 716);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(155, 50);
+            this.btn_logout.TabIndex = 315;
+            this.btn_logout.Text = "LOGOUT";
+            this.btn_logout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
+            // btn_registration
+            // 
+            this.btn_registration.BackColor = System.Drawing.Color.DarkGreen;
+            this.btn_registration.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_registration.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btn_registration.FlatAppearance.BorderSize = 2;
+            this.btn_registration.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btn_registration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_registration.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_registration.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_registration.Location = new System.Drawing.Point(-1, 453);
+            this.btn_registration.Name = "btn_registration";
+            this.btn_registration.Size = new System.Drawing.Size(155, 50);
+            this.btn_registration.TabIndex = 314;
+            this.btn_registration.Text = "REGISTRATION";
+            this.btn_registration.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_registration.UseVisualStyleBackColor = false;
+            this.btn_registration.Click += new System.EventHandler(this.btn_registration_Click);
+            // 
             // Offices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,6 +518,8 @@
             this.BackgroundImage = global::BinanKiosk_Admin.Properties.Resources.bgopacity3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.btn_logout);
+            this.Controls.Add(this.btn_registration);
             this.Controls.Add(this.lbl_navigation);
             this.Controls.Add(this.btnOffices);
             this.Controls.Add(this.btnOfficers);
@@ -550,5 +592,7 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lbl_navigation;
+        private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.Button btn_registration;
     }
 }

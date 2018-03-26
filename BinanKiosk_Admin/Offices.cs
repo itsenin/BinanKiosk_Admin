@@ -380,6 +380,17 @@ namespace BinanKiosk_Admin
             Config.CallOffices(this);
         }
 
+        private void btn_registration_Click(object sender, EventArgs e)
+        {
+            Config.CallSignup(this);
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Logout?", "Confirm Action", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Config.CallLogin(this);
+        }
+
         private void btnMaps_Click(object sender, EventArgs e)
         {
             Config.CallMap1(this);

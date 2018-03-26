@@ -472,6 +472,16 @@ namespace BinanKiosk_Admin
         {
             Config.CallServices(this);
         }
+
+        private void btn_registration_Click(object sender, EventArgs e)
+        {
+            Config.CallSignup(this);
+        }
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Logout?", "Confirm Action", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Config.CallLogin(this);
+        }
         #endregion
 
     }

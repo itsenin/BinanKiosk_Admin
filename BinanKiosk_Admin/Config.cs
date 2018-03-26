@@ -14,8 +14,8 @@ namespace BinanKiosk_Admin
     {
         //WebServices paths
         public const string BASE_ADDRESS = "http://192.168.43.152:8080/api/";
-        public const string BASE_ADDRESS_DEBUG = "http://localhost:8080/api/";
-
+        //public const string BASE_ADDRESS_DEBUG = "http://localhost:8080/api/";
+        public const string BASE_ADDRESS_DEBUG = "http://localhost:54470/api/";
         //public static MySqlConnection conn = new MySqlConnection("SERVER=" + "192.168.43.152" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "password" + ";");
         public static MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
 
@@ -90,7 +90,7 @@ namespace BinanKiosk_Admin
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
             if (img != null)
             {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             }
             return ms.ToArray();
         }
@@ -120,6 +120,21 @@ namespace BinanKiosk_Admin
 #endif
             var result = client.Send(new ServiceRequest { BaseAddress = Address, HttpProtocol = Protocols.HTTP_POST, Body = JsonConvert.SerializeObject(picture) });
             var path = JsonConvert.DeserializeObject<string>(result.Response);
+
+            return path;
+        }
+
+
+        public static Picture SavePic2(Picture picture)
+        {
+            ServiceClientWrapper client = new ServiceClientWrapper();
+#if DEBUG
+            var Address = Config.BASE_ADDRESS_DEBUG + "Image/SavePicture2";
+#else
+            var Address = Config.BASE_ADDRESS + "Image/SavePicture";
+#endif
+            var result = client.Send(new ServiceRequest { BaseAddress = Address, HttpProtocol = Protocols.HTTP_GET, Body = JsonConvert.SerializeObject(picture) });
+            var path = JsonConvert.DeserializeObject<Picture>(result.Response);
 
             return path;
         }

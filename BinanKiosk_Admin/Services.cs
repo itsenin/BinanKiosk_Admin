@@ -134,17 +134,17 @@ namespace BinanKiosk_Admin
                         }
 
                         //delete old image file in IIS
-                        Config.DeletePic(oldImagepath);
-
+                        //Config.DeletePic(oldImagepath);
+                        string temp = txt_serviceName.Text;
                         //======New Image creation=======//
 
                         var serializedImage = Config.ImageToByteArray(pb_preview.Image);
                         //Create Picture Model to send to API
-                        string replacement = Regex.Replace(txt_serviceName.Text, @"\t|\n|\r", "");
-                        Picture pic = new Picture { Name = replacement, FolderName = "Services", image = serializedImage };
+                       // string replacement = Regex.Replace(txt_serviceName.Text, @"\t|\n|\r", "");
+                        Picture pic = new Picture { Name = txt_serviceName.Text, FolderName = "Services", image = serializedImage };
 
                         //send the picture to the API(returns path)
-                        string path = Config.SavePic(pic);
+                        var path = Config.SavePic2(pic);
 
                         //Update Entry with new ImagePath
                         using (var cmd = new MySqlCommand("UPDATE services SET service_name=@name, image_path=@path WHERE service_id=@id", conn))
@@ -179,7 +179,7 @@ namespace BinanKiosk_Admin
                         Picture pic = new Picture { Name = txt_serviceName.Text, FolderName = "Services", image = serializedImage };
 
                         //send the picture to the API(returns path)
-                        string path = Config.SavePic(pic);
+                        var path = Config.SavePic(pic);
 
                         //INSERT IMAGE
                         using (var cmd = new MySqlCommand("INSERT INTO services(service_id, service_name, image_path) VALUES(NULL, @name, @path)", conn))
@@ -350,6 +350,17 @@ namespace BinanKiosk_Admin
         private void btnServices_Click_1(object sender, EventArgs e)
         {
             Config.CallServices(this);
+        }
+
+        private void btn_registration_Click(object sender, EventArgs e)
+        {
+            Config.CallSignup(this);
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Logout?", "Confirm Action", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Config.CallLogin(this);
         }
     }
 }

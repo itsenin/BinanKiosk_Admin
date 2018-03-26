@@ -61,7 +61,7 @@ namespace KioskAPI.Controllers
                 Bitmap bmp = new Bitmap(img);
                 if (bmp != null)
                 {
-                    if(!Directory.Exists(Config.imageRootPath))
+                    if (!Directory.Exists(Config.imageRootPath))
                     {
                         Directory.CreateDirectory(Config.imageRootPath);
                     }
@@ -69,18 +69,54 @@ namespace KioskAPI.Controllers
                     {
                         Directory.CreateDirectory(savePath);
                     }
-                    bmp.Save(savePath + "/" + picture.Name, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    bmp.Save(savePath + "/" + picture.Name +".png", System.Drawing.Imaging.ImageFormat.Png);
                     bmp.Dispose();
                     img.Dispose();
                     img = null;
                     bmp = null;
                 }
+                return savePath + "/" + picture.Name + ".png";
             }
             catch (Exception ex)
             {
                 return null;
             }
-            return savePath + "/" + picture.Name;
+            //return savePath + "/" + picture.Name;
+        }
+
+        [HttpGet]
+        public Picture SavePicture2(Picture picture)
+        {
+            //string savePath = Config.imageRootPath + "/" + picture.FolderName;
+            //save image locally
+            try
+            {
+                //Image img = GetDataToImage(picture.image);
+                //Bitmap bmp = new Bitmap(img);
+                //if (bmp != null)
+                //{
+                //    if(!Directory.Exists(Config.imageRootPath))
+                //    {
+                //        Directory.CreateDirectory(Config.imageRootPath);
+                //    }
+                //    if (!Directory.Exists(savePath))
+                //    {
+                //        Directory.CreateDirectory(savePath);
+                //    }
+                //    bmp.Save(savePath + "/" + picture.Name, System.Drawing.Imaging.ImageFormat.Jpeg);
+                //    bmp.Dispose();
+                //    img.Dispose();
+                //    img = null;
+                //    bmp = null;
+                //}
+
+                return picture;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            //return savePath + "/" + picture.Name;
         }
 
         public Image GetDataToImage(byte[] pData)
@@ -102,7 +138,7 @@ namespace KioskAPI.Controllers
             {
                 if (img != null)
                 {
-                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                     img.Dispose();
                     img = null;
                 }
