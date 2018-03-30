@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +13,11 @@ namespace BinanKiosk_Admin
 {
     public static class Config
     {
+        //Windows Auth paths
+        public const string HOST_IP = @"\\192.168.0.3";
+        public const string FOLDER = "SharedFolder";
+        public const string imageRootPath = "Images";
+        public static string basePath = Path.Combine(HOST_IP, FOLDER, imageRootPath); //Remote root Image path
         //WebServices paths
         public const string BASE_ADDRESS = "http://192.168.43.152:8080/api/";
         //public const string BASE_ADDRESS_DEBUG = "http://localhost:8080/api/";
@@ -28,6 +34,36 @@ namespace BinanKiosk_Admin
             current.Hide();
             current.Close();
         }
+        
+        #region WindowsAuthentication
+        public static void SaveImage(OpenFileDialog openfile, Subfolders sub)
+        {
+            string savePath = Path.Combine(basePath, sub.ToString()); //Remote SubFolder path
+            if (!Directory.Exists(basePath))
+            {
+                Directory.CreateDirectory(basePath);
+            }
+            if (!Directory.Exists(savePath))
+            {
+                Directory.CreateDirectory(savePath);
+            }
+            //save to remote destination
+            var destination = Path.Combine(savePath, openfile.SafeFileName);
+
+            File.Copy(openfile.FileName, destination);
+        }
+        public static Bitmap GetImage(string img_name, Subfolders sub)//get image from source using image name and subfolder
+        { 
+            using (Image img = Image.FromFile(Path.Combine(basePath, sub.ToString(), img_name)))
+            {
+                return new Bitmap(img);
+            }
+        }
+        public static void DeleteImage(Subfolders sub, string image_name)
+        {
+            File.Delete(Path.Combine(basePath,sub.ToString(),image_name));
+        }
+        #endregion
         #region callforms
         public static void CallLogin(Form current)
         {

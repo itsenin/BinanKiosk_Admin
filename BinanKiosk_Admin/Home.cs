@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +20,8 @@ namespace BinanKiosk_Admin
         MySqlConnection conn = Config.conn;
         MySqlDataReader reader;
         List<int> imgIds;
-        string selectedImagePath = "";
+        string selectedImageName = "";
+        OpenFileDialog open;
 
         public Home()
         {
@@ -35,7 +38,6 @@ namespace BinanKiosk_Admin
             timestamp.Interval = 1;
             timestamp.Start();
             loadImageList();
-            
         }
 
         private void OnTimerEvent(object sender, EventArgs e)
@@ -84,15 +86,21 @@ namespace BinanKiosk_Admin
             {
                 try
                 {
-                    Image img = new Bitmap(openFile.FileName);
-                    {
-                        pb_preview.Image = img;
-                        lbl_imageName.Text = openFile.SafeFileName;
-                        pnl_Save.Visible = true;
-                        btn_save.Visible = true; //show save button in case it is disabled by view
-                    }
+                    open = openFile;
+
+                    //Image img = new Bitmap(openFile.FileName);
+
+                    //pb_preview.Image = img;
+                    //lbl_imageName.Text = openFile.SafeFileName;
+
+                    pb_preview.Image = Image.FromFile(openFile.FileName);
+                    lbl_imageName.Text = openFile.SafeFileName;
+
+                    pnl_Save.Visible = true;
+                    btn_save.Visible = true; //show save button in case it is disabled by view
+
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message + " error");
                 }
@@ -118,20 +126,24 @@ namespace BinanKiosk_Admin
                     }
                 }
 
-                //serialize Image for Model
-                var serializedImage = Config.ImageToByteArray(pb_preview.Image);
+                ////serialize Image for Model
+                //var serializedImage = Config.ImageToByteArray(pb_preview.Image);
 
-                //Create Picture Model to send to API
-                Picture pic = new Picture { Name = lbl_imageName.Text, FolderName = "Home", image = serializedImage };
+                ////Create Picture Model to send to API
+                //Picture pic = new Picture { Name = lbl_imageName.Text, FolderName = "Home", image = serializedImage };
 
-                //send the picture to the API(returns path)
-                string path = Config.SavePic(pic);
+                ////send the picture to the API(returns path)
+                //string path = Config.SavePic(pic);
+
+
+                //Windows Auth
+                Config.SaveImage(open, Subfolders.Home);//saves currently opened File to a subfolder in the remote directory
+
 
                 //INSERT if no duplicates found
-                using (var cmd = new MySqlCommand("INSERT INTO slider_images(image_id, image_name, image_path) VALUES(NULL, @name, @path)", conn))
+                using (var cmd = new MySqlCommand("INSERT INTO slider_images(image_id, image_name) VALUES(NULL, @name)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", lbl_imageName.Text);
-                    cmd.Parameters.AddWithValue("@path", path);
+                    cmd.Parameters.AddWithValue("@name", open.SafeFileName);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successfully Saved to Database!");
                 }
@@ -194,20 +206,17 @@ namespace BinanKiosk_Admin
             {
                 //RETRIEVE using Name and ID
                 conn.Open();
-                using (var cmd = new MySqlCommand("SELECT image_path from slider_images WHERE image_name = @name AND image_id = @id", conn))
+                using (var cmd = new MySqlCommand("SELECT image_name from slider_images WHERE image_id = @id", conn))
                 {
                     string name = lst_sliderPics.SelectedItem.ToString();
-                    cmd.Parameters.AddWithValue("@name", name);
                     cmd.Parameters.AddWithValue("@id", imgIds[index]);
 
                     reader = cmd.ExecuteReader();
                     if (reader.HasRows)
                     {
                         reader.Read();
-                        /* byte[] deserializedImage = (byte[])reader["image_byte"];
-                         pb_preview.Image = Config.GetDataToImage(deserializedImage);*/
-                        selectedImagePath = reader["image_path"].ToString();
-                        pb_preview.Image = Config.GetDataToImage(Config.GetPic(selectedImagePath).image);
+                        selectedImageName = reader["image_name"].ToString();
+                        pb_preview.Image = Config.GetImage(selectedImageName, Subfolders.Home);
                     }
                 }
 
@@ -233,15 +242,17 @@ namespace BinanKiosk_Admin
             if (MessageBox.Show("Delete the selected item?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 pb_preview.Image = null;
-                //delete file
-                Config.DeletePic(selectedImagePath);
+                ////delete file
+                //Config.DeletePic(selectedImageName);
+
+                //delete in remote
+                Config.DeleteImage(Subfolders.Home, name);
 
                 //delete in dbase
                 conn.Open();                
 
-                using (var cmd = new MySqlCommand("DELETE from slider_images WHERE image_name = @name AND image_id = @id", conn))
+                using (var cmd = new MySqlCommand("DELETE from slider_images WHERE image_id = @id", conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", name);
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.ExecuteNonQuery();
                 }

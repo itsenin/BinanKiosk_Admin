@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="Jobs.cs">
       <SubType>Form</SubType>
     </Compile>
