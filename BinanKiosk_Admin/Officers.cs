@@ -17,11 +17,13 @@ namespace BinanKiosk_Admin
         MySqlDataReader reader;
         MySqlCommand cmd;
 
-        String comboPosition, comboDept;
-        String insertOfficial, insertPicture, selectOfficial, selectPicture, selectDepartment, selectPosition, retrieveInfo, deleteInfo;
+        OpenFileDialog openFile;
+
+        String comboPosition, comboDept, imageFileName, imageFileNameNew;
+        String insertOfficial, selectOfficial, selectDepartment, selectPosition, retrieveInfo, deleteInfo;
         String selectedValue, officialsID, firstName, middleInitial, lastName, suffix, position, department, description, imageString;
 
-        bool add = false, available = false;
+        bool add = false;
 
         public Officers()
         {
@@ -71,7 +73,7 @@ namespace BinanKiosk_Admin
         {
             conn.Open();
 
-            selectDepartment = "SELECT department_name FROM departments";
+            selectDepartment = "SELECT office_name FROM offices";
             cmd = new MySqlCommand(selectDepartment, conn);
             reader = cmd.ExecuteReader();
 
@@ -158,7 +160,7 @@ namespace BinanKiosk_Admin
 
                 conn.Open();
 
-                this.retrieveInfo = "SELECT officials.officials_id, officials.first_name, officials.last_name, officials.middle_initial, officials.suffex, departments.department_name, positions.position_name FROM officials,departments,positions WHERE positions.position_id = officials.position_id AND departments.department_id = officials.department_id AND CONCAT (officials.first_name, ' ', officials.middle_initial, ' ', officials.last_name, ' ', officials.suffex) LIKE @selectedValue ";
+                this.retrieveInfo = "SELECT officials.officials_id, officials.first_name, officials.last_name, officials.middle_initial, officials.suffex, offices.office_name, positions.position_name FROM officials,offices,positions WHERE positions.position_id = officials.position_id AND offices.office_id = officials.office_id AND CONCAT (officials.first_name, ' ', officials.middle_initial, ' ', officials.last_name, ' ', officials.suffex) LIKE @selectedValue";
 
                 cmd = new MySqlCommand(retrieveInfo, conn);
                 cmd.Parameters.AddWithValue("@selectedValue", selectedValue);
@@ -173,29 +175,36 @@ namespace BinanKiosk_Admin
                     txtLastName.Text = reader["last_name"].ToString();
                     txtMI.Text = reader["middle_initial"].ToString();
                     txtSuffix.Text = reader["suffex"].ToString();
-                    comboBoxDepartment.Text = reader["department_name"].ToString();
+                    comboBoxDepartment.Text = reader["office_name"].ToString();
                     comboBoxPosition.Text = reader["position_name"].ToString();
                 }
 
                 reader.Close();
 
-                using (var cmd = new MySqlCommand("SELECT picture_string from officials_pictures WHERE officials_id = @ID ", conn))
-                {
-                    cmd.Parameters.AddWithValue("@ID", txtID.Text);
+                string imgquery = "SELECT image_path from officials WHERE officials.officials_id = @id";
 
-                    reader = cmd.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        reader.Read();
-                        byte[] deserializedImage = (byte[])reader["picture_string"];
-                        officerPicture.Image = GetDataToImage(deserializedImage);
-                    }
-                    else
+                cmd = new MySqlCommand(imgquery, conn);
+                cmd.Parameters.AddWithValue("@id", txtID.Text);
+
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    imageFileName = reader["image_path"].ToString();
+                    imageFileNameNew = reader["image_path"].ToString();
+
+                    if (imageFileName.Equals(""))
                     {
                         officerPicture.Image = null;
                     }
+                    else
+                    {
+                        officerPicture.Image = Config.GetImage(imageFileName, Subfolders.Officials);
+                    }
                 }
                 conn.Close();
+                reader.Close();
             }
         }
 
@@ -214,16 +223,11 @@ namespace BinanKiosk_Admin
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete the record of " + txtID.Text + "?", "Confirmation!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete the record of " + txtFirstName.Text + " " + txtLastName.Text + "?", "Confirmation!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 conn.Open();
-
-                deleteInfo = "DELETE FROM officials_pictures WHERE officials_pictures.officials_id = @ID ";
-                cmd = new MySqlCommand(deleteInfo, conn);
-                cmd.Parameters.AddWithValue("@ID", txtID.Text);
-                cmd.ExecuteNonQuery();
 
                 deleteInfo = "DELETE FROM officials WHERE officials_id = @ID";
 
@@ -274,32 +278,38 @@ namespace BinanKiosk_Admin
             }
             else
             {
+                initialize();
+
+                comboPosition = comboBoxPosition.Text;
+                comboDept = comboBoxDepartment.Text;
+
+                conn.Open();
+
+                this.insertOfficial = "SELECT offices.office_id, positions.position_id FROM offices,positions WHERE offices.office_name = @departments AND positions.position_name = @positions ";
+
+                cmd = new MySqlCommand(insertOfficial, conn);
+
+                cmd.Parameters.AddWithValue("@departments", comboDept);
+                cmd.Parameters.AddWithValue("@positions", comboPosition);
+
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    department = reader["office_id"].ToString();
+                    position = reader["position_id"].ToString();
+                    
+                }
+                reader.Close();
+                conn.Close();
+
+                //Insert
                 if (add == true)
                 {
-                    initialize();
                     conn.Open();
-
-                    comboPosition = comboBoxPosition.Text;
-                    comboDept = comboBoxDepartment.Text;
-
-                    this.insertOfficial = "SELECT departments.department_id, positions.position_id FROM departments,positions WHERE departments.department_name = @departments AND positions.position_name = @positions ";
-
-                    cmd = new MySqlCommand(insertOfficial, conn);
-
-                    cmd.Parameters.AddWithValue("@departments", comboDept);
-                    cmd.Parameters.AddWithValue("@positions", comboPosition);
-
-                    reader = cmd.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        reader.Read();
-                        department = reader["department_id"].ToString();
-                        position = reader["position_id"].ToString();
-                    }
-                    reader.Close();
-
-                    this.insertOfficial = "insert into officials (officials_id, first_name, last_name, middle_initial, suffex, position_id, department_id) values (@officials_id, @first_name, @last_name, @middle_initial, @suffex, @position_id, @department_id)";
+                    
+                    this.insertOfficial = "insert into officials (officials_id, first_name, last_name, middle_initial, suffex, position_id, office_id, image_path) values (@officials_id, @first_name, @last_name, @middle_initial, @suffex, @position_id, @department_id, @img)";
 
                     cmd = new MySqlCommand(insertOfficial, conn);
                     cmd.Parameters.AddWithValue("@officials_id", officialsID);
@@ -309,9 +319,24 @@ namespace BinanKiosk_Admin
                     cmd.Parameters.AddWithValue("@suffex", suffix);
                     cmd.Parameters.AddWithValue("@position_id", position);
                     cmd.Parameters.AddWithValue("@department_id", department);
+                    cmd.Parameters.AddWithValue("@img", imageFileName);
 
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
 
+                        using (conn)
+                        {
+                            Config.SaveImage(openFile, Subfolders.Officials);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    
+
+                    /*
                     //Picture Saving
                     var serializedImage = ImageToByteArray(officerPicture.Image, officerPicture);
 
@@ -322,6 +347,7 @@ namespace BinanKiosk_Admin
                     cmd.Parameters.AddWithValue("@department_id", txtID.Text);
                     cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
                     cmd.ExecuteNonQuery();
+                    */
 
                     conn.Close();
 
@@ -332,33 +358,18 @@ namespace BinanKiosk_Admin
                     officers();
                     clear();
                 }
+                
+                //Update
                 else
                 {
-                    initialize();
                     conn.Open();
 
-                    comboPosition = comboBoxPosition.Text;
-                    comboDept = comboBoxDepartment.Text;
+                    cmd = new MySqlCommand("UPDATE officials SET first_name = @firstName, last_name = @lastName," +
+                        " middle_initial = @MI, suffex = @suffix, position_id = @position, office_id = @department," +
+                        " image_path = @img WHERE officials_id = @ID", conn);
 
-                    this.insertOfficial = "SELECT departments.department_id, positions.position_id FROM departments,positions WHERE departments.department_name = @department AND positions.position_name = @position ";
-
-                    cmd = new MySqlCommand(insertOfficial, conn);
-
-                    cmd.Parameters.AddWithValue("@department", comboDept);
-                    cmd.Parameters.AddWithValue("@position", comboPosition);
-
-                    reader = cmd.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        reader.Read();
-                        department = reader["department_id"].ToString();
-                        position = reader["position_id"].ToString();
-                    }
-                    reader.Close();
-
-                    cmd = new MySqlCommand("UPDATE officials SET first_name = @firstName, last_name = @lastName, middle_initial = @MI, suffex = @suffix, position_id = @position, department_id = @department WHERE officials_id = @ID ", conn);
-
+                    //cmd = new MySqlCommand("UPDATE officials SET first_name = @firstName, last_name = @lastName, middle_initial = @MI, suffex = @suffix, image_path = @img WHERE officials_id = @ID ", conn);
+                    
                     cmd.Parameters.AddWithValue("@ID", txtID.Text);
                     cmd.Parameters.AddWithValue("@firstName", txtFirstName.Text);
                     cmd.Parameters.AddWithValue("@lastName", txtLastName.Text);
@@ -366,9 +377,28 @@ namespace BinanKiosk_Admin
                     cmd.Parameters.AddWithValue("@suffix", txtSuffix.Text);
                     cmd.Parameters.AddWithValue("@position", position);
                     cmd.Parameters.AddWithValue("@department", department);
+                    cmd.Parameters.AddWithValue("@img", imageFileName);
 
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
 
+                        if (imageFileName != imageFileNameNew) {
+                            using (conn)
+                            {
+                                Config.SaveImage(openFile, Subfolders.Officials);
+                            }
+                        }
+
+                        MessageBox.Show("Updated!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+
+
+                    /*
                     using (var cmd = new MySqlCommand("SELECT picture_string from officials_pictures WHERE officials_id = @ID ", conn))
                     {
                         cmd.Parameters.AddWithValue("@ID", txtID.Text);
@@ -406,11 +436,10 @@ namespace BinanKiosk_Admin
                         cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
                         cmd.ExecuteNonQuery();
                     }
+                    */
 
                     conn.Close();
-
-                    MessageBox.Show("Updated!");
-
+                    
                     officerInformation.Enabled = false;
                     officersList.Items.Clear();
                     officers();
@@ -431,7 +460,26 @@ namespace BinanKiosk_Admin
 
         private void officerPicture_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
+            openFile = new OpenFileDialog();
+            openFile.Title = "Choose Logo Image";
+            openFile.Filter = "Images (*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG;*.)|*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Image img = new Bitmap(openFile.FileName);
+                    {
+                        officerPicture.Image = img;
+                        imageFileName = openFile.SafeFileName;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + " error");
+                }
+            }
+
+            /*OpenFileDialog openFile = new OpenFileDialog();
             openFile.Title = "Choose Image";
             openFile.Filter = "Images (*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG;*.)|*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG";
             if (openFile.ShowDialog() == DialogResult.OK)
@@ -439,10 +487,10 @@ namespace BinanKiosk_Admin
                 Image img = new Bitmap(openFile.FileName);
                 officerPicture.Image = img;
                 imageString = openFile.SafeFileName;
-            }
+            }*/
         }
 
-        #region
+        #region default buttons
         private void btnHome_Click(object sender, EventArgs e)
         {
             Config.CallHome(this);
