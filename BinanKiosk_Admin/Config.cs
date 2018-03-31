@@ -49,8 +49,7 @@ namespace BinanKiosk_Admin
             }
             //save to remote destination
             var destination = Path.Combine(savePath, openfile.SafeFileName);
-
-            File.Copy(openfile.FileName, destination);
+            File.Copy(openfile.FileName, destination, true);
         }
         public static Bitmap GetImage(string img_name, Subfolders sub)//get image from source using image name and subfolder
         { 

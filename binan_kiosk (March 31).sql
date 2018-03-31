@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2018 at 08:48 AM
+-- Generation Time: Mar 31, 2018 at 10:32 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -104,7 +104,6 @@ CREATE TABLE `jobtypes` (
   `job_description` text NOT NULL,
   `job_location` varchar(70) NOT NULL,
   `job_company` varchar(70) NOT NULL,
-  `job_category` varchar(70) NOT NULL,
   `job_image_path` varchar(100) NOT NULL,
   `Logo_image_path` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -113,23 +112,21 @@ CREATE TABLE `jobtypes` (
 -- Dumping data for table `jobtypes`
 --
 
-INSERT INTO `jobtypes` (`job_typeID`, `job_types`, `job_id`, `job_description`, `job_location`, `job_company`, `job_category`, `job_image_path`, `Logo_image_path`) VALUES
-(1111, 'Sales Representative', 1, 'Develops sales strategies for a company. Focus on sales, and marketing activities. Supports the marketing department by carrying out the daily tasks that keep the department functioning and facilitate the duties of the marketing manager. Arrange meetings/ appointments for prospect..', 'Binan, Laguna', ' SOUTHERN ARMS CORPORATION ', 'Advertising', 'test.jpg', 'test.jpg'),
-(1122, 'Gardener', 2, 'Candidate must possess at least a High School Diploma, Vocational Diploma / Short Course Certificate, any field. Candidate must know how to propagate ornamental plants. No work experience required. Full-Time position(s) available.', 'Laguna (Calabarzon & Mimaropa)', 'CALIRAYA RESORT CLUB\r\n', 'Agriculture', 'test.jpg', 'test.jpg'),
-(1123, 'Senior Electrical Engineers (DESIGN)', 4, 'Electrical design experience, Feeder line system, Substation design, High &amp; low voltage, With experience either in hotel project or semi-con plant or commercial buildings, Building codes and other electrical design standards, Computer literate,', 'Manila City - Malate', ' WEL Contracting Corp.', 'Electrical Engineering', 'test.jpg', 'test.jpg'),
-(1124, 'Plumbing Engineer', 6, 'Employee specialized in Engineering - Civil/Construction/Structural or equivalent', 'Manila City - Malate	', 'WEL Contracting Corp.', 'Civil Engineer', 'test.jpg', 'test.jpg'),
-(1125, 'Production Coordinator', 5, 'Job Overview: The Coordinator\'s main responsibilities include organizing and coordinating the activities between the external and internal parties...', 'National Capital Reg - Makati', 'SDI Media', 'Entertainment\r\n', 'test.jpg', 'test.jpg'),
-(1126, 'Store Planning Secretary', 7, 'Candidate must possess at least Bachelor\'s/College Degree in Business Studies/Administration/Management or equivalent. Fresh graduate/Experienced...', 'Pasig City (National Capital Reg)', 'I-FASHION MKTG. CO.', 'Secretarial', 'test.jpg', 'test.jpg'),
-(1127, 'Stockman (Farm Supervisor)', 2, 'Conducts, facilitates, and evaluates 5 days immersion for newly-hired Store Crew in an accredited Training Hub.', 'Binan, Laguna', 'Bounty Fresh Food Inc.', 'Agriculture', 'test.jpg', 'test.jpg'),
-(1128, 'Bounty Fresh Food Inc.', 2, 'Schedules feed mills activities to include feed manufacturing and shipments.', 'Pasay City, Manila', 'Bounty Fresh Food Inc.', 'Agriculture', 'test.jpg', 'test.jpg'),
-(1130, 'Credit Card Field Sales Officer ', 11, 'Responsible for acquiring complete New-To-Bank (NTB) credit card applications that will convert to approved applications.', 'Metro Manila', 'UnionBank', 'Retail Sales', 'test.jpg', 'test.jpg'),
-(1131, 'Sales Representative', 1, 'dffdsfasdfafdsfasfasfdfdsfasfsdfsafsfddasfsdfsdfsdfsafsafdasfasfsafafa', 'Binan, Laguna', 'GrafixArts', 'Advertising', 'test.jpg', 'test.jpg'),
-(1133, 'Village Architect', 3, 'To ensure that on-going house construction and existing houses within the village are compliance with the Village Construction Rules...', 'Cavite (Calabarzon & Mimaropa) ', 'AYALA WESTGROVE HEIGHTS HOMEOWNERS ASSOCIATION INC.', 'Architect', 'test.jpg', 'test.jpg'),
-(1134, 'Hotel Operations Supervisor', 8, 'Oversee day-to-day work performance of Hotel Staff; Monitor team performance and report on metrics<br>&bull; Delegate tasks, set deadlines and prepare work schedule; Discover training needs and provide coaching', 'Cebu (Cebu City)', 'Temps and Staffers Inc.', 'Hotel/Tourism', 'test.jpg', 'test.jpg'),
-(1135, 'Animal Nutritionist', 2, 'Formulates good quality animal diets for sales. Accurately encodes feeds formula into Feed Mill ', 'Taguig City, Manila', 'Bounty Fresh Food Inc.', 'Agriculture', 'test.jpg', 'test.jpg'),
-(1136, 'Fertilizer Specialist', 2, 'The fertilizer specialist will be responsible in formulating manure-based fertilizers that are made specifically for the soil nutrient requirements of agricultural lands of a particular customer.', 'Taguig City, Manila', 'Bounty Fresh Food Inc.', 'Agriculture', 'test.jpg', 'test.jpg'),
-(1137, 'Category Merchandise Manager', 9, 'Responsible for ordering of merchandise for the department/branch and monitors them thereafter. Ensures availability of stocks proportionate to merchandise movements. Review and analyzes sales reports and updates the same based on changes in business/market trends. Ensures that all..', 'MOA Complex Pasay City', 'CASAMIA FURNITURE CENTER, INC.', 'Merchandising', 'test.jpg', 'test.jpg'),
-(1144, 'Beauty Advisor -Clinique', 20, 'Lauder Beauty Advisors set the standard for excellence in the cosmetics industry by providing exceptional customer service and achieving sales goals on a daily basis', 'Brgy. San Antonio, Makati City', 'Topserve Service Solutions, Inc.', 'Personal Care', 'test.jpg', 'test.jpg');
+INSERT INTO `jobtypes` (`job_typeID`, `job_types`, `job_id`, `job_description`, `job_location`, `job_company`, `job_image_path`, `Logo_image_path`) VALUES
+(1111, 'Sales Representative', 1, 'Develops sales strategies for a company. Focus on sales, and marketing activities. Supports the marketing department by carrying out the daily tasks that keep the department functioning and facilitate the duties of the marketing manager. Arrange meetings/ appointments for prospect..', 'Binan, Laguna', ' SOUTHERN ARMS CORPORATION ', 'test.jpg', 'test.jpg'),
+(1122, 'Gardener', 2, 'Candidate must possess at least a High School Diploma, Vocational Diploma / Short Course Certificate, any field. Candidate must know how to propagate ornamental plants. No work experience required. Full-Time position(s) available.', 'Laguna (Calabarzon & Mimaropa)', 'CALIRAYA RESORT CLUB\r\n', '1122.jpg', 'man-two.jpg'),
+(1123, 'Senior Electrical Engineers (DESIGN)', 4, 'Electrical design experience, Feeder line system, Substation design, High &amp; low voltage, With experience either in hotel project or semi-con plant or commercial buildings, Building codes and other electrical design standards, Computer literate,', 'Manila City - Malate', ' WEL Contracting Corp.', 'one.png', 'three.png'),
+(1126, 'Store Planning Secretary', 7, 'Candidate must possess at least Bachelor\'s/College Degree in Business Studies/Administration/Management or equivalent. Fresh graduate/Experienced...', 'Pasig City (National Capital Reg)', 'I-FASHION MKTG. CO.', 'test.jpg', 'test.jpg'),
+(1127, 'Stockman (Farm Supervisor)', 2, 'Conducts, facilitates, and evaluates 5 days immersion for newly-hired Store Crew in an accredited Training Hub.', 'Binan, Laguna', 'Bounty Fresh Food Inc.', 'test.jpg', 'test.jpg'),
+(1128, 'Bounty Fresh Food Inc.', 2, 'Schedules feed mills activities to include feed manufacturing and shipments.', 'Pasay City, Manila', 'Bounty Fresh Food Inc.', 'test.jpg', 'test.jpg'),
+(1130, 'Credit Card Field Sales Officer ', 11, 'Responsible for acquiring complete New-To-Bank (NTB) credit card applications that will convert to approved applications.', 'Metro Manila', 'UnionBank', 'test.jpg', 'test.jpg'),
+(1131, 'Sales Representative', 1, 'dffdsfasdfafdsfasfasfdfdsfasfsdfsafsfddasfsdfsdfsdfsafsafdasfasfsafafa', 'Binan, Laguna', 'GrafixArts', 'test.jpg', 'test.jpg'),
+(1133, 'Village Architect', 3, 'To ensure that on-going house construction and existing houses within the village are compliance with the Village Construction Rules...', 'Cavite (Calabarzon & Mimaropa) ', 'AYALA WESTGROVE HEIGHTS HOMEOWNERS ASSOCIATION INC.', 'test.jpg', 'test.jpg'),
+(1134, 'Hotel Operations Supervisor', 8, 'Oversee day-to-day work performance of Hotel Staff; Monitor team performance and report on metrics<br>&bull; Delegate tasks, set deadlines and prepare work schedule; Discover training needs and provide coaching', 'Cebu (Cebu City)', 'Temps and Staffers Inc.', 'test.jpg', 'test.jpg'),
+(1135, 'Animal Nutritionist', 2, 'Formulates good quality animal diets for sales. Accurately encodes feeds formula into Feed Mill ', 'Taguig City, Manila', 'Bounty Fresh Food Inc.', 'test.jpg', 'test.jpg'),
+(1136, 'Fertilizer Specialist', 2, 'The fertilizer specialist will be responsible in formulating manure-based fertilizers that are made specifically for the soil nutrient requirements of agricultural lands of a particular customer.', 'Taguig City, Manila', 'Bounty Fresh Food Inc.', 'test.jpg', 'test.jpg'),
+(1137, 'Category Merchandise Manager', 9, 'Responsible for ordering of merchandise for the department/branch and monitors them thereafter. Ensures availability of stocks proportionate to merchandise movements. Review and analyzes sales reports and updates the same based on changes in business/market trends. Ensures that all..', 'MOA Complex Pasay City', 'CASAMIA FURNITURE CENTER, INC.', 'test.jpg', 'test.jpg'),
+(1144, 'Beauty Advisor -Clinique', 20, 'Lauder Beauty Advisors set the standard for excellence in the cosmetics industry by providing exceptional customer service and achieving sales goals on a daily basis', 'Brgy. San Antonio, Makati City', 'Topserve Service Solutions, Inc.', 'test.jpg', 'test.jpg');
 
 -- --------------------------------------------------------
 
@@ -440,7 +437,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `slider_images`
 --
 ALTER TABLE `slider_images`
-  MODIFY `image_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `image_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

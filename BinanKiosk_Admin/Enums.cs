@@ -10,7 +10,7 @@ namespace BinanKiosk_Admin
     {
         Home,
         Jobs,
-        Job_Company_Logos,
+        Jobs_CompanyLogo,
         Services,
         Offices,
         Officials,

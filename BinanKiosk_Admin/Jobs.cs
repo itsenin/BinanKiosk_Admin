@@ -21,6 +21,7 @@ namespace BinanKiosk_Admin
         MySqlCommand cmdDelete;
         MySqlCommand cmdJobLookUp;
         MySqlCommand gv_cmd;
+        MySqlCommand cmdImgLookUp;
         String dropdownQuery;
         String query;
         String jobtype;
@@ -41,6 +42,9 @@ namespace BinanKiosk_Admin
         String prepare_logoFileName;
         String imgPath;
         String logoPath;
+
+        OpenFileDialog openImg;
+        OpenFileDialog openLogo;
 
         public Jobs()
         {
@@ -151,13 +155,13 @@ namespace BinanKiosk_Admin
                         {
                             imgFileName = r["job_image_path"].ToString();
                             
-                            pictureBoxPrev.Image = Config.GetDataToImage(Config.GetPic(imgFileName).image);
+                            pictureBoxPrev.Image = Config.GetImage(imgFileName, Subfolders.Jobs);
                         }
                     }
                     catch
                     {
                         r.Close();
-                        cmdImg.Parameters.AddWithValue("@placeholder", "C:/WebApps/Images/Jobs/test.jpg");
+                        cmdImg.Parameters.AddWithValue("@placeholder", "Jobs/test.jpg");
                         imgquery = "UPDATE jobtypes set job_image_path = @placeholder WHERE job_typeID = @id;";
                         cmdImg.ExecuteNonQuery();
                     }
@@ -181,14 +185,14 @@ namespace BinanKiosk_Admin
                         while (r.Read())
                         {
                             logoFileName = r["Logo_image_path"].ToString();
-                            
-                            pictureBoxLogo.Image = Config.GetDataToImage(Config.GetPic(logoFileName).image);
+
+                            pictureBoxLogo.Image = Config.GetImage(logoFileName, Subfolders.Jobs_CompanyLogo);
                         }
                     }
                     catch
                     {
                         r.Close();
-                        cmdImg.Parameters.AddWithValue("@placeholder", "C:/WebApps/Images/Jobs_CompanyLogo/test.jpg");
+                        cmdImg.Parameters.AddWithValue("@placeholder", "Jobs_CompanyLogo/test.jpg");
                         imgquery = "UPDATE jobtypes set Logo_image_path = @placeholder WHERE job_typeID = @id;";
                         cmdImg.ExecuteNonQuery();
                     }
@@ -280,12 +284,28 @@ namespace BinanKiosk_Admin
             }
         }
 
+        private bool imageStillBeingUsed(String ImgFileName)
+        {
+            String qry = "SELECT job_image_path, Logo_image_path FROM jobtypes WHERE job_image_path = @image OR Logo_image_path = @image;";
+            cmdImgLookUp = new MySqlCommand(qry, conn);
+            cmdImgLookUp.Parameters.AddWithValue("@image", ImgFileName);
+            using (conn)
+            {
+                conn.Open();
+                using (cmdImgLookUp)
+                {
+                    MySqlDataReader reader = cmdImgLookUp.ExecuteReader();
+                    return reader.HasRows;
+                }
+            }
+        }
+
         private bool add ()
         {
             bool success;
-            string imgPath = prepareImage();
-            string logoPath = prepareLogo();
-            string insert = "INSERT INTO jobtypes (job_typeID, job_types, job_id, job_description, job_location, job_company, job_category, job_image_path, Logo_image_path) VALUES (@job_typeID, @job_types, @job_id, @job_description, @job_location, @job_company, @job_category, @job_image_path, @Logo_image_path);";
+            string imgPath = imgFileName;
+            string logoPath = logoFileName;
+            string insert = "INSERT INTO jobtypes (job_typeID, job_types, job_id, job_description, job_location, job_company, job_image_path, Logo_image_path) VALUES (@job_typeID, @job_types, @job_id, @job_description, @job_location, @job_company, @job_image_path, @Logo_image_path);";
             cmdAdd = new MySqlCommand(insert, conn);
             cmdAdd.Parameters.AddWithValue("@job_typeID", type_id);
             cmdAdd.Parameters.AddWithValue("@job_types", types);
@@ -293,27 +313,28 @@ namespace BinanKiosk_Admin
             cmdAdd.Parameters.AddWithValue("@job_description", desc);
             cmdAdd.Parameters.AddWithValue("@job_location", location);
             cmdAdd.Parameters.AddWithValue("@job_company", company);
-            cmdAdd.Parameters.AddWithValue("@job_category", category);
             cmdAdd.Parameters.AddWithValue("@job_image_path", imgPath);
             cmdAdd.Parameters.AddWithValue("@Logo_image_path", logoPath);
 
             using (conn)
             {
                 conn.Open();
+                Config.SaveImage(openImg, Subfolders.Jobs);
+                Config.SaveImage(openLogo, Subfolders.Jobs_CompanyLogo);
                 return success = queryCheck(cmdAdd.ExecuteNonQuery());
             }
             
         }
-
+        /*
         private string prepareImage ()
         {
-            prepare_imgFileName = type_id + ".jpg";
+            imgFileName = type_id + ".jpg";
             var serializedImage = Config.ImageToByteArray(pictureBoxPrev.Image);
-            //Create Picture Model to send to API
-            Picture pic = new Picture { Name = prepare_imgFileName, FolderName = "Jobs_CompanyLogo", image = serializedImage };
+            ////Create Picture Model to send to API
+            //Picture pic = new Picture { Name = prepare_imgFileName, FolderName = "Jobs_CompanyLogo", image = serializedImage };
 
-            //send the picture to the API(returns path)
-            string path = Config.SavePic(pic);
+            ////send the picture to the API(returns path)
+            //string path = Config.SavePic(pic);
 
             return path;
         }
@@ -330,15 +351,15 @@ namespace BinanKiosk_Admin
 
             return path;
         }
-
+        */
         private bool save ()
         {
             bool success;
             getValues();
-            string imgPath = prepareImage();
-            string logoPath = prepareLogo();
+            string imgPath = imgFileName;
+            string logoPath = logoFileName;
 
-            string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company, job_category = @job_category, job_image_path = @job_image_path, Logo_image_path = @Logo_image_path WHERE job_typeID = @job_typeID;";
+            string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company, job_image_path = @job_image_path, Logo_image_path = @Logo_image_path WHERE job_typeID = @job_typeID;";
             cmdSave = new MySqlCommand(update, conn);
             cmdSave.Parameters.AddWithValue("@job_typeID", type_id);
             cmdSave.Parameters.AddWithValue("@job_types", types);
@@ -346,27 +367,33 @@ namespace BinanKiosk_Admin
             cmdSave.Parameters.AddWithValue("@job_description", desc);
             cmdSave.Parameters.AddWithValue("@job_location", location);
             cmdSave.Parameters.AddWithValue("@job_company", company);
-            cmdSave.Parameters.AddWithValue("@job_category", category);
             cmdSave.Parameters.AddWithValue("@job_image_path", imgPath);
             cmdSave.Parameters.AddWithValue("@Logo_image_path", logoPath);
             using (conn)
             {
                 conn.Open();
+                Config.SaveImage(openImg, Subfolders.Jobs);
+                Config.SaveImage(openLogo, Subfolders.Jobs_CompanyLogo);
                 return success = queryCheck(cmdSave.ExecuteNonQuery());
             }
         }
 
-        private bool delete ()
+        private bool delete (bool deleteImage)
         {
             bool success;
             getValues();
+            imgFileName = type_id;
+            prepare_logoFileName = company + "_logo";
             string delete = "DELETE FROM jobtypes WHERE job_typeID = @job_typeID;";
             cmdDelete = new MySqlCommand(delete, conn);
             cmdDelete.Parameters.AddWithValue("@job_typeID", type_id);
             pictureBoxLogo.Image = null;
             pictureBoxPrev.Image = null;
-            Config.DeletePic(logoFileName);
-            Config.DeletePic(imgFileName);
+            if (deleteImage)
+            {
+                Config.DeleteImage(Subfolders.Jobs_CompanyLogo, logoFileName);
+                Config.DeleteImage(Subfolders.Jobs, imgFileName);
+            }
             using (conn)
             {
                 conn.Open();
@@ -447,15 +474,35 @@ namespace BinanKiosk_Admin
             getValues();
             if (jobExists(type_id))
             {
-                if (delete())
+                if ((!imageStillBeingUsed(imgFileName))&&(!imageStillBeingUsed(logoFileName)))
                 {
-                    MessageBox.Show("delete successful");
-                    clearFields();
-                }
+                    if (delete(true))
+                    {
+                        MessageBox.Show("delete successful");
+                        clearFields();
+                    }
 
+                    else
+                    {
+                        MessageBox.Show("delete failed");
+                    }
+                }
                 else
                 {
-                    MessageBox.Show("delete failed");
+                    if (MessageBox.Show("The image file used in this entry is still being used by another entry." +
+                        "Delete the entry without deleting the image file?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        if (delete(false))
+                        {
+                            MessageBox.Show("delete successful");
+                            clearFields();
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("delete failed");
+                        }
+                    }
                 }
             }
 
@@ -567,6 +614,7 @@ namespace BinanKiosk_Admin
             {
                 try
                 {
+                    openImg = openFile;
                     Image img = new Bitmap(openFile.FileName);
                     {
                         pictureBoxPrev.Image = img;
@@ -595,6 +643,7 @@ namespace BinanKiosk_Admin
             {
                 try
                 {
+                    openLogo = openFile;
                     Image img = new Bitmap(openFile.FileName);
                     {
                         pictureBoxLogo.Image = img;
