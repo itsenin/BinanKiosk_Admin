@@ -18,8 +18,9 @@ namespace BinanKiosk_Admin
         MySqlConnection conn = Config.conn;
         MySqlDataReader reader;
         List<int> svcIds;
-        string selectedServiceImagePath = "";
         bool editMode = false;
+        string selectedImageName;
+        OpenFileDialog open;
 
         public Services()
         {
@@ -30,7 +31,44 @@ namespace BinanKiosk_Admin
         {
             svcIds = new List<int>();
             loadServiceList();
+            populate_officeComboBox();
+            cmb_office.DropDownWidth = DropDownWidth(cmb_office);
+            cmb_office.SelectedIndex = 0;
         }
+
+        private void populate_officeComboBox()
+        {
+            conn.Open();
+            using (var cmd = new MySqlCommand("Select * from offices", conn))
+            {
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while(reader.Read())
+                        {
+                            cmb_office.Items.Add(reader["office_name"].ToString());
+                        }
+                    }
+                }
+            }
+            conn.Close();
+        }
+
+        int DropDownWidth(ComboBox myCombo)
+        {
+            int maxWidth = 0, temp = 0;
+            foreach (var obj in myCombo.Items)
+            {
+                temp = TextRenderer.MeasureText(obj.ToString(), myCombo.Font).Width;
+                if (temp > maxWidth)
+                {
+                    maxWidth = temp;
+                }
+            }
+            return maxWidth + 3;
+        }
+
 
         #region navigation
         private void btnHome_Click(object sender, EventArgs e)
@@ -80,6 +118,8 @@ namespace BinanKiosk_Admin
 
             pb_preview.Image = Properties.Resources.plus;
             pb_preview.Enabled = true;
+            cmb_office.Enabled = true;
+            cmb_office.SelectedIndex = 0;
 
             btn_save.Visible = true;
         }
@@ -93,6 +133,7 @@ namespace BinanKiosk_Admin
             {
                 try
                 {
+                    open = openFile;
                     Image img = new Bitmap(openFile.FileName);
                     {
                         pb_preview.Image = img;
@@ -107,20 +148,51 @@ namespace BinanKiosk_Admin
         }
 
         private void btn_save_Click(object sender, EventArgs e)
-        { 
-            if ( !string.IsNullOrWhiteSpace(txt_serviceName.Text) && pb_preview.Image != null)
-            {
-                try
-                {
-                    conn.Open();
-                    
-                    if (editMode)
-                    {
-                        int selectedID = svcIds[lst_servicePics.SelectedIndex];
-                        string oldImagepath = "";
+        {
 
-                        //Get and old image path
-                        using (var cmd = new MySqlCommand("Select image_path from services where service_id = @id", conn))
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txt_serviceName.Text))
+                    throw new ArgumentException("Service Name can't be empty!");
+
+                conn.Open();
+
+                if (editMode)//EDIT MODE  //2 branches, when image is changed, when not
+                {
+                    int selectedID = svcIds[lst_servicePics.SelectedIndex];
+                    string oldImageName = "";
+
+                    if (open == null)
+                    {
+                        //BRANCH 1: RETAINED IMAGE
+                        using (var cmd = new MySqlCommand("UPDATE services SET service_name=@name, office_id=@officeID image WHERE service_id=@id", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@name", txt_serviceName.Text);
+                            cmd.Parameters.AddWithValue("@officeID", cmb_office.SelectedIndex + 1);//saving to database needs +1(dbase offices_id starts at 1)
+                            cmd.Parameters.AddWithValue("@id", selectedID);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Changes Successfully Saved to Database!");
+                        }
+                    }
+                    else
+                    {
+                        //BRANCH 2: CHANGED IMAGE
+
+                        //check if new image name exists in database(don't allow to use same image in different entries)
+                        using (var cmd = new MySqlCommand("SELECT * FROM services WHERE image_name = @imgName", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@imgName", open.SafeFileName);
+                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.HasRows)
+                                {
+                                    throw new ArgumentException("An entry with the same Image already exists! Please select a different image");
+                                }
+                            }
+                        }
+
+                        //Get and old image name
+                        using (var cmd = new MySqlCommand("Select image_name from services where service_id = @id", conn))
                         {
                             cmd.Parameters.AddWithValue("@id", selectedID);
                             using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -128,86 +200,95 @@ namespace BinanKiosk_Admin
                                 if (reader.HasRows)
                                 {
                                     reader.Read();
-                                    oldImagepath = reader["image_path"].ToString();
+                                    oldImageName = reader["image_name"].ToString();
                                 }
                             }
                         }
 
-                        //delete old image file in IIS
-                        //Config.DeletePic(oldImagepath);
-                        string temp = txt_serviceName.Text;
-                        //======New Image creation=======//
+                        //delete old image file in network
+                        Config.DeleteImage(Subfolders.Services, oldImageName);
 
-                        var serializedImage = Config.ImageToByteArray(pb_preview.Image);
-                        //Create Picture Model to send to API
-                       // string replacement = Regex.Replace(txt_serviceName.Text, @"\t|\n|\r", "");
-                        Picture pic = new Picture { Name = txt_serviceName.Text, FolderName = "Services", image = serializedImage };
 
-                        //send the picture to the API(returns path)
-                        var path = Config.SavePic2(pic);
+                        //string temp = txt_serviceName.Text;
+                        ////======New Image creation=======//
 
-                        //Update Entry with new ImagePath
-                        using (var cmd = new MySqlCommand("UPDATE services SET service_name=@name, image_path=@path WHERE service_id=@id", conn))
+                        //var serializedImage = Config.ImageToByteArray(pb_preview.Image);
+                        ////Create Picture Model to send to API
+                        //// string replacement = Regex.Replace(txt_serviceName.Text, @"\t|\n|\r", "");
+                        //Picture pic = new Picture { Name = txt_serviceName.Text, FolderName = "Services", image = serializedImage };
+
+                        ////send the picture to the API(returns path)
+                        //var path = Config.SavePic2(pic);
+
+                        Config.SaveImage(open, Subfolders.Services); //assuming user opened an image file
+
+                        //Update Entry with new Image or Both(Name & Image)
+                        using (var cmd = new MySqlCommand("UPDATE services SET service_name=@name, office_id=@officeID,image_name=@imgName WHERE service_id=@id", conn))
                         {
                             cmd.Parameters.AddWithValue("@name", txt_serviceName.Text);
-                            cmd.Parameters.AddWithValue("@path", path);
+                            cmd.Parameters.AddWithValue("@officeID", cmb_office.SelectedIndex + 1);//saving to database needs +1(dbase offices_id starts at 1)
+                            cmd.Parameters.AddWithValue("@imgName", open.SafeFileName);
                             cmd.Parameters.AddWithValue("@id", selectedID);
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("Changes Successfully Saved to Database!");
                         }
-
-                        editMode = false;
-                        
                     }
-                    else
+                    editMode = false;
+
+                }
+                else //ADD MODE
+                {
+                    if (open == null)
+                        throw new ArgumentException("Service Image can't be empty!");
+
+                    //Check if service with same name or image exists
+                    using (var cmd = new MySqlCommand("SELECT * FROM services WHERE service_name = @name OR image_name = @imgName", conn))
                     {
-                        //Check if image with same name exists
-                        using (var cmd = new MySqlCommand("SELECT * FROM services WHERE service_name = @name", conn))
+                        cmd.Parameters.AddWithValue("@name", txt_serviceName.Text);
+                        cmd.Parameters.AddWithValue("@imgName", open.SafeFileName);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            cmd.Parameters.AddWithValue("@name", txt_serviceName.Text);
-                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            if (reader.HasRows)
                             {
-                                if (reader.HasRows)
-                                {
-                                    throw new ArgumentException("An entry with the same name already exists! Please rename the new entry, or delete existing entry");
-                                }
+                                throw new ArgumentException("An entry with the same Service Name or Image already exists!");
                             }
                         }
-
-                        var serializedImage = Config.ImageToByteArray(pb_preview.Image);
-                        //Create Picture Model to send to API
-                        Picture pic = new Picture { Name = txt_serviceName.Text, FolderName = "Services", image = serializedImage };
-
-                        //send the picture to the API(returns path)
-                        var path = Config.SavePic(pic);
-
-                        //INSERT IMAGE
-                        using (var cmd = new MySqlCommand("INSERT INTO services(service_id, service_name, image_path) VALUES(NULL, @name, @path)", conn))
-                        {
-                            cmd.Parameters.AddWithValue("@name", txt_serviceName.Text);
-                            cmd.Parameters.AddWithValue("@path", path);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Successfully Saved to Database!");
-                        }
                     }
 
+                    //var serializedImage = Config.ImageToByteArray(pb_preview.Image);
+                    ////Create Picture Model to send to API
+                    //Picture pic = new Picture { Name = txt_serviceName.Text, FolderName = "Services", image = serializedImage };
 
-                    loadServiceList();
-                    pnl_Save.Visible = false;
+                    ////send the picture to the API(returns path)
+                    //var path = Config.SavePic(pic);
+
+                    //Windows Authentication
+                    Config.SaveImage(open, Subfolders.Services);//saves currently opened File to a subfolder in the remote directory
+
+                    //INSERT to Database
+                    using (var cmd = new MySqlCommand("INSERT INTO services(service_id, service_name, image_name, office_id) VALUES(NULL, @name, @imgName, @officeID)", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@name", txt_serviceName.Text);
+                        cmd.Parameters.AddWithValue("@imgName", open.SafeFileName);
+                        cmd.Parameters.AddWithValue("@officeID", cmb_office.SelectedIndex + 1);//saving to database needs +1(dbase offices_id starts at 1)
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Successfully Saved to Database!");
+                    }
                 }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Failed to save entry: "+ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                } 
+
+
+                loadServiceList();
+                pnl_Save.Visible = false;
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Service Name and/or Picture cannot be empty");
+                MessageBox.Show("Failed to save entry: " + ex.Message);
             }
+            finally
+            {
+                conn.Close();
+            }
+
         }
 
         private void loadServiceList()
@@ -216,6 +297,8 @@ namespace BinanKiosk_Admin
             btn_delete.Enabled = false;
             btn_edit.Enabled = false;
 
+            open = null;
+            selectedImageName = null;
             pb_preview.Image = null;
             lst_servicePics.Items.Clear(); //clear image name list on reloads
             svcIds.Clear(); //clear image ID list on reloads
@@ -249,8 +332,6 @@ namespace BinanKiosk_Admin
                 //using (var cmd = new MySqlCommand("SELECT * from services WHERE service_name = @name AND service_id = @id", conn))
                 using (var cmd = new MySqlCommand("SELECT * from services WHERE service_id = @id", conn))
                 {
-                    string name = lst_servicePics.SelectedItem.ToString();
-                    //cmd.Parameters.AddWithValue("@name", name);
                     cmd.Parameters.AddWithValue("@id", svcIds[index]);
 
                     reader = cmd.ExecuteReader();
@@ -259,9 +340,14 @@ namespace BinanKiosk_Admin
                         reader.Read();
                         /*byte[] deserializedImage = (byte[])reader["image_byte"];
                         pb_preview.Image = Config.GetDataToImage(deserializedImage);*/
+
+                        selectedImageName = reader["image_name"].ToString();
                         txt_serviceName.Text = reader["service_name"].ToString();
-                        selectedServiceImagePath = reader["image_path"].ToString();
-                        pb_preview.Image = Config.GetDataToImage(Config.GetPic(selectedServiceImagePath).image);
+
+                        //pb_preview.Image = Config.GetDataToImage(Config.GetPic(selectedServiceImagePath).image);
+                        pb_preview.Image = Config.GetImage(selectedImageName, Subfolders.Services);
+
+                        cmb_office.SelectedIndex = int.Parse(reader["office_id"].ToString()) - 1; //retrieving from dbase to list needs -1(combobox items list start at 0, not 1)
                     }
                 }
 
@@ -272,6 +358,7 @@ namespace BinanKiosk_Admin
 
                 txt_serviceName.Enabled = false;
                 pb_preview.Enabled = false;
+                cmb_office.Enabled = false;
                 btn_save.Visible = false; //hide save button to just preview Image of item selected from the list
 
                 conn.Close();
@@ -282,19 +369,18 @@ namespace BinanKiosk_Admin
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            string name = lst_servicePics.SelectedItem.ToString();
             int id = svcIds[lst_servicePics.SelectedIndex];
 
             if (MessageBox.Show("Delete the selected item?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 //delete from files
-                Config.DeletePic(selectedServiceImagePath);
+                //Config.DeletePic(selectedServiceImagePath);
+                Config.DeleteImage(Subfolders.Services, selectedImageName);
 
                 //delete from dbase
                 conn.Open();
-                using (var cmd = new MySqlCommand("DELETE from services WHERE service_name = @name AND service_id = @id", conn))
+                using (var cmd = new MySqlCommand("DELETE from services WHERE service_id = @id", conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", name);
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.ExecuteNonQuery();
                 }
@@ -318,6 +404,8 @@ namespace BinanKiosk_Admin
                 txt_serviceName.Enabled = true;
 
                 pb_preview.Enabled = true;
+
+                cmb_office.Enabled = true;
 
                 btn_save.Visible = true;
 

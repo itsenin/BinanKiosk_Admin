@@ -55,6 +55,8 @@
             this.btn_edit = new System.Windows.Forms.Button();
             this.pnl_buttons = new System.Windows.Forms.Panel();
             this.pnl_Save = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmb_office = new System.Windows.Forms.ComboBox();
             this.lbl_contentPrv = new System.Windows.Forms.Label();
             this.pb_preview = new System.Windows.Forms.PictureBox();
             this.lbl_serviceName = new System.Windows.Forms.Label();
@@ -341,7 +343,7 @@
             // 
             this.txt_serviceName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_serviceName.Location = new System.Drawing.Point(169, 60);
-            this.txt_serviceName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_serviceName.Margin = new System.Windows.Forms.Padding(2);
             this.txt_serviceName.Name = "txt_serviceName";
             this.txt_serviceName.Size = new System.Drawing.Size(308, 32);
             this.txt_serviceName.TabIndex = 0;
@@ -353,7 +355,7 @@
             this.lst_servicePics.ItemHeight = 20;
             this.lst_servicePics.Location = new System.Drawing.Point(237, 249);
             this.lst_servicePics.Name = "lst_servicePics";
-            this.lst_servicePics.Size = new System.Drawing.Size(301, 184);
+            this.lst_servicePics.Size = new System.Drawing.Size(340, 224);
             this.lst_servicePics.TabIndex = 305;
             this.lst_servicePics.SelectedIndexChanged += new System.EventHandler(this.lst_servicePics_SelectedIndexChanged);
             // 
@@ -398,7 +400,7 @@
             this.pnl_buttons.Controls.Add(this.btn_edit);
             this.pnl_buttons.Controls.Add(this.btn_delete);
             this.pnl_buttons.Location = new System.Drawing.Point(637, 219);
-            this.pnl_buttons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_buttons.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_buttons.Name = "pnl_buttons";
             this.pnl_buttons.Size = new System.Drawing.Size(180, 276);
             this.pnl_buttons.TabIndex = 308;
@@ -406,17 +408,41 @@
             // pnl_Save
             // 
             this.pnl_Save.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_Save.Controls.Add(this.label1);
+            this.pnl_Save.Controls.Add(this.cmb_office);
             this.pnl_Save.Controls.Add(this.lbl_contentPrv);
             this.pnl_Save.Controls.Add(this.pb_preview);
             this.pnl_Save.Controls.Add(this.lbl_serviceName);
             this.pnl_Save.Controls.Add(this.btn_save);
             this.pnl_Save.Controls.Add(this.txt_serviceName);
             this.pnl_Save.Location = new System.Drawing.Point(865, 100);
-            this.pnl_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_Save.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Save.Name = "pnl_Save";
             this.pnl_Save.Size = new System.Drawing.Size(496, 554);
             this.pnl_Save.TabIndex = 308;
             this.pnl_Save.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label1.Location = new System.Drawing.Point(12, 502);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 37);
+            this.label1.TabIndex = 259;
+            this.label1.Text = "Office:";
+            // 
+            // cmb_office
+            // 
+            this.cmb_office.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_office.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_office.FormattingEnabled = true;
+            this.cmb_office.IntegralHeight = false;
+            this.cmb_office.Location = new System.Drawing.Point(93, 500);
+            this.cmb_office.Name = "cmb_office";
+            this.cmb_office.Size = new System.Drawing.Size(200, 33);
+            this.cmb_office.TabIndex = 258;
             // 
             // lbl_contentPrv
             // 
@@ -450,7 +476,7 @@
             this.lbl_serviceName.ForeColor = System.Drawing.Color.DarkGreen;
             this.lbl_serviceName.Location = new System.Drawing.Point(12, 60);
             this.lbl_serviceName.Name = "lbl_serviceName";
-            this.lbl_serviceName.Size = new System.Drawing.Size(152, 37);
+            this.lbl_serviceName.Size = new System.Drawing.Size(162, 37);
             this.lbl_serviceName.TabIndex = 255;
             this.lbl_serviceName.Text = "Service Name:";
             // 
@@ -466,7 +492,7 @@
             this.btn_save.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.Transparent;
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_save.Location = new System.Drawing.Point(184, 483);
+            this.btn_save.Location = new System.Drawing.Point(335, 490);
             this.btn_save.MaximumSize = new System.Drawing.Size(142, 68);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(142, 68);
@@ -596,5 +622,7 @@
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_registration;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmb_office;
     }
 }

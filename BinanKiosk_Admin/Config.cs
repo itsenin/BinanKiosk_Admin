@@ -14,14 +14,15 @@ namespace BinanKiosk_Admin
     public static class Config
     {
         //Windows Auth paths
-        public const string HOST_IP = @"\\192.168.1.4";
+        //public const string HOST_IP = @"\\192.168.1.4"; //Fahad IP
+        public const string HOST_IP = @"\\192.168.0.3"; //Gab PC IP
         public const string FOLDER = "SharedFolder";
         public const string imageRootPath = "Images";
         public static string basePath = Path.Combine(HOST_IP, FOLDER, imageRootPath); //Remote root Image path
         //WebServices paths
         public const string BASE_ADDRESS = "http://192.168.1.4:8080/api/";
-        //public const string BASE_ADDRESS_DEBUG = "http://localhost:8080/api/";
-        public const string BASE_ADDRESS_DEBUG = "http://localhost:54470/api/";
+        public const string BASE_ADDRESS_DEBUG = "http://localhost:8080/api/";
+        //public const string BASE_ADDRESS_DEBUG = "http://localhost:54470/api/";
         //public static MySqlConnection conn = new MySqlConnection("SERVER=" + "192.168.43.152" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "password" + ";");
         public static MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
 
@@ -49,7 +50,7 @@ namespace BinanKiosk_Admin
             }
             //save to remote destination
             var destination = Path.Combine(savePath, openfile.SafeFileName);
-            File.Copy(openfile.FileName, destination, true);
+            File.Copy(openfile.FileName, destination, true); //Overwrite set to true
         }
         public static Bitmap GetImage(string img_name, Subfolders sub)//get image from source using image name and subfolder
         { 
