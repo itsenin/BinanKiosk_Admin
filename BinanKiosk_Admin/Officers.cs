@@ -235,6 +235,8 @@ namespace BinanKiosk_Admin
                 cmd.Parameters.AddWithValue("@ID", txtID.Text);
                 cmd.ExecuteNonQuery();
 
+                Config.DeleteImage(Subfolders.Officials, imageFileName);
+
                 conn.Close();
 
                 MessageBox.Show("Deleted!");
@@ -329,10 +331,12 @@ namespace BinanKiosk_Admin
                         {
                             Config.SaveImage(openFile, Subfolders.Officials);
                         }
+
+                        MessageBox.Show("Inserted!");
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString());
+                        MessageBox.Show("Insert Unsuccessful!");
                     }
                     
 
@@ -350,9 +354,7 @@ namespace BinanKiosk_Admin
                     */
 
                     conn.Close();
-
-                    MessageBox.Show("Inserted!");
-
+                    
                     officerInformation.Enabled = false;
                     officersList.Items.Clear();
                     officers();
@@ -394,7 +396,7 @@ namespace BinanKiosk_Admin
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString());
+                        MessageBox.Show("Update Unsuccessful!");
                     }
 
 

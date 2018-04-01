@@ -19,7 +19,10 @@ namespace BinanKiosk_Admin
         MySqlCommand cmd;
 
         String selectedValue, selectedID;
-        String imageString;
+        String imageString, imageFileName, imageFileNameNew;
+        String deptID, deptName, deptDesc;
+
+        OpenFileDialog openFile;
 
         bool add = false, availalbe = false, officeAvailable = false;
 
@@ -36,6 +39,13 @@ namespace BinanKiosk_Admin
 
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
+        }
+
+        private void initialize()
+        {
+            this.deptID = txtID.Text;
+            this.deptName = txtDeptName.Text;
+            this.deptDesc = txtDescription.Text;
         }
 
         public void offices()
@@ -146,7 +156,7 @@ namespace BinanKiosk_Admin
             {
                 cmd = new MySqlCommand("SELECT departments.department_name, offices.room_name, departments.Dep_description FROM departments, offices WHERE departments.department_id  = '" + Convert.ToInt32(selectedID) + "' ", conn);
                 reader = cmd.ExecuteReader();
-
+                
                 if (reader.HasRows)
                 {
                     reader.Read();
@@ -158,7 +168,30 @@ namespace BinanKiosk_Admin
                 reader.Close();
             }
 
-            using (var cmd = new MySqlCommand("SELECT Department_image_path from departments WHERE department_id = '" + Convert.ToInt32(selectedID) + "' ", conn))
+            string imgquery = "SELECT Department_image_path from departments WHERE departments.department_id = @id";
+            
+            cmd = new MySqlCommand(imgquery, conn);
+            cmd.Parameters.AddWithValue("@id", txtID.Text);
+            
+            reader = cmd.ExecuteReader();
+            
+            if (reader.HasRows)
+            {
+                reader.Read();
+                imageFileName = reader["Department_image_path"].ToString();
+                imageFileNameNew = reader["Department_image_path"].ToString();
+                
+                if (imageFileName.Equals(""))
+                {
+                    officeLogo.Image = null;
+                }
+                else
+                {
+                    officeLogo.Image = Config.GetImage(imageFileName, Subfolders.Offices);
+                }
+            }
+
+            /*using (var cmd = new MySqlCommand("SELECT Department_image_path from departments WHERE department_id = '" + Convert.ToInt32(selectedID) + "' ", conn))
             {
                 reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -171,8 +204,8 @@ namespace BinanKiosk_Admin
                 {
                     officeLogo.Image = null;
                 }
-            }
-            
+            }*/
+
             conn.Close();
             }
         }
@@ -220,13 +253,14 @@ namespace BinanKiosk_Admin
             {
                 conn.Open();
 
+                initialize();
+
                 //Delete the entry in Departments
-                cmd = new MySqlCommand("DELETE FROM departments WHERE departments.department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
+                cmd = new MySqlCommand("DELETE FROM departments WHERE departments.department_id = @id", conn);
+                cmd.Parameters.AddWithValue("@id", deptID);
                 cmd.ExecuteNonQuery();
 
-                //Delete picture in IIS
-                cmd = new MySqlCommand("DELETE FROM departments_pictures WHERE departments_pictures.department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
-                cmd.ExecuteNonQuery();
+                Config.DeleteImage(Subfolders.Offices, imageFileName);
 
                 conn.Close();
 
@@ -263,81 +297,70 @@ namespace BinanKiosk_Admin
             
             if (add == true)
             {
-                //serialize the Image (IIS can't encode/decode Image objects to JSON)
-                var serializedImage = Config.ImageToByteArray(officeLogo.Image);
+                if (txtID.Text != "" && txtDeptName.Text != "" && txtDescription.Text != "")
+                {
+                    initialize();
 
-                //Create Picture Model to send to API
-                Picture pic = new Picture { Name = txtDeptName.Text + ".jpg", FolderName = "Departments", image = serializedImage };
+                    //save Department with picture path to database
+                    cmd = new MySqlCommand("insert into departments (department_id, department_name, Dep_description, Department_image_path) values(@id, @deptName, @deptDesc, @path)", conn);
+                    cmd.Parameters.AddWithValue("@path", imageFileName);
+                    cmd.Parameters.AddWithValue("@id", deptID);
+                    cmd.Parameters.AddWithValue("@deptName", deptName);
+                    cmd.Parameters.AddWithValue("@deptDesc", deptDesc);
 
-                //send the picture to the API(returns path)
-                string path = Config.SavePic(pic);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
 
-                //save Department with picture path to database
-                cmd = new MySqlCommand("insert into departments (department_id, department_name, Dep_description, Department_image_path) values('" + Convert.ToInt32(txtID.Text) + "', '" + txtDeptName.Text + "','" + txtDescription.Text + "',@path )", conn);
-                cmd.Parameters.AddWithValue("@path", path);
-                cmd.ExecuteNonQuery();
+                        using (conn)
+                        {
+                            Config.SaveImage(openFile, Subfolders.Offices);
+                        }
 
-                ////Picture Saving
-                //var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
-                //cmd = new MySqlCommand("INSERT INTO departments_pictures(picture_id, department_id, picture_string) VALUES('" + Convert.ToInt32(txtID.Text) + "', '" + Convert.ToInt32(txtID.Text) + "', @image)", conn);
-                //cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
-                //cmd.ExecuteNonQuery();
+                        MessageBox.Show("Inserted!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                        //MessageBox.Show("Insert Unsuccessful!");
+                    }
+                }
             }
             else //save after edit
             {
+                initialize();
+
                 //update Department info
-                cmd = new MySqlCommand("UPDATE departments SET department_name = '" + txtDeptName.Text + "', Dep_description = '" + txtDescription.Text + "' WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
-                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand("UPDATE departments SET department_name = @deptName, Dep_description = @deptDesc, Department_image_path = @path WHERE department_id = @id", conn);
+                cmd.Parameters.AddWithValue("@path", imageFileName);
+                cmd.Parameters.AddWithValue("@id", deptID);
+                cmd.Parameters.AddWithValue("@deptName", deptName);
+                cmd.Parameters.AddWithValue("@deptDesc", deptDesc);
 
-                using (var cmd = new MySqlCommand("SELECT Department_image_path from departments WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "' ", conn))
+                MessageBox.Show(imageFileName + " " + imageFileNameNew);
+
+                try
                 {
-                    reader = cmd.ExecuteReader();
-                    if (reader.HasRows)
+                    cmd.ExecuteNonQuery();
+
+                    if (imageFileName != imageFileNameNew)
                     {
-                        availalbe = true;
+                        using (conn)
+                        {
+                            Config.SaveImage(openFile, Subfolders.Offices);
+                        }
                     }
-                    else
-                    {
-                        availalbe = false;
-                    }
+
+                    MessageBox.Show("Updated!");
                 }
-
-                //serialize the Image (IIS can't encode/decode Image objects to JSON)
-                var serializedImage = Config.ImageToByteArray(officeLogo.Image);
-
-                //Create Picture Model to send to API
-                Picture pic = new Picture { Name = txtDeptName.Text, FolderName = "Departments", image = serializedImage };
-
-                //send the picture to the API(returns path)
-                string path = Config.SavePic(pic);
-
-                //save all with picture path to database
-                cmd = new MySqlCommand("insert into departments (department_id, department_name, Dep_description, Department_image_path) values('" + Convert.ToInt32(txtID.Text) + "', '" + txtDeptName.Text + "','" + txtDescription.Text + "',@path )", conn);
-                cmd.Parameters.AddWithValue("@path", path);
-                cmd.ExecuteNonQuery();
-
-                //if (availalbe == true)
-                //{
-                //    //Picture Saving
-                //    var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
-                //    cmd = new MySqlCommand("UPDATE departments_pictures SET picture_string = @image WHERE department_id = '" + Convert.ToInt32(txtID.Text) + "'", conn);
-                //    cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
-                //    cmd.ExecuteNonQuery();
-                //}
-                //else
-                //{
-                //    //Picture Saving
-                //    var serializedImage = ImageToByteArray(officeLogo.Image, officeLogo);
-                //    cmd = new MySqlCommand("INSERT INTO departments_pictures(picture_id, department_id, picture_string) VALUES('" + Convert.ToInt32(txtID.Text) + "', '" + Convert.ToInt32(txtID.Text) + "', @image)", conn);
-                //    cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
-                //    cmd.ExecuteNonQuery();
-                //}
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Update Unsuccessful!");
+                }
             }
 
             conn.Close();
-
-            MessageBox.Show("Updated!");
-
+            
             officeInformation.Enabled = false;
             officeList.Items.Clear();
             offices();
@@ -356,14 +379,23 @@ namespace BinanKiosk_Admin
 
         private void officerPicture_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Title = "Choose Image";
+            openFile = new OpenFileDialog();
+            openFile.Title = "Choose Logo Image";
             openFile.Filter = "Images (*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG;*.)|*.JPEG;*.BMP;*.JPG;*.GIF;*.PNG";
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                Image img = new Bitmap(openFile.FileName);
-                officeLogo.Image = img;
-                imageString = openFile.SafeFileName;
+                try
+                {
+                    Image img = new Bitmap(openFile.FileName);
+                    {
+                        officeLogo.Image = img;
+                        imageFileName = openFile.SafeFileName;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + " error");
+                }
             }
         }
 
@@ -371,10 +403,12 @@ namespace BinanKiosk_Admin
         {
             Config.CallHome(this);
         }
+
         private void btnOfficers_Click(object sender, EventArgs e)
         {
             Config.CallOfficers(this);
         }
+
         private void btnOffices_Click(object sender, EventArgs e)
         {
             Config.CallOffices(this);
@@ -395,6 +429,7 @@ namespace BinanKiosk_Admin
         {
             Config.CallMap1(this);
         }
+
         private void btnJobs_Click(object sender, EventArgs e)
         {
             Config.CallJobs(this);
