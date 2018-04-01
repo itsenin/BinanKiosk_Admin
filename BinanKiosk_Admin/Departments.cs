@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace BinanKiosk_Admin
 {
-    public partial class Offices : Form
+    public partial class Departments : Form
     {
         MySqlConnection conn = Config.conn;
         MySqlDataReader reader;
@@ -26,7 +26,7 @@ namespace BinanKiosk_Admin
 
         bool add = false, availalbe = false, officeAvailable = false;
 
-        public Offices()
+        public Departments()
         {
             InitializeComponent();
         }
@@ -187,7 +187,7 @@ namespace BinanKiosk_Admin
                 }
                 else
                 {
-                    officeLogo.Image = Config.GetImage(imageFileName, Subfolders.Offices);
+                    officeLogo.Image = Config.GetImage(imageFileName, Subfolders.Departments);
                 }
             }
 
@@ -260,7 +260,7 @@ namespace BinanKiosk_Admin
                 cmd.Parameters.AddWithValue("@id", deptID);
                 cmd.ExecuteNonQuery();
 
-                Config.DeleteImage(Subfolders.Offices, imageFileName);
+                Config.DeleteImage(Subfolders.Departments, imageFileName);
 
                 conn.Close();
 
@@ -314,7 +314,7 @@ namespace BinanKiosk_Admin
 
                         using (conn)
                         {
-                            Config.SaveImage(openFile, Subfolders.Offices);
+                            Config.SaveImage(openFile, Subfolders.Departments);
                         }
 
                         MessageBox.Show("Inserted!");
@@ -347,7 +347,7 @@ namespace BinanKiosk_Admin
                     {
                         using (conn)
                         {
-                            Config.SaveImage(openFile, Subfolders.Offices);
+                            Config.SaveImage(openFile, Subfolders.Departments);
                         }
                     }
 
@@ -411,7 +411,7 @@ namespace BinanKiosk_Admin
 
         private void btnOffices_Click(object sender, EventArgs e)
         {
-            Config.CallOffices(this);
+            Config.CallDepartments(this);
         }
 
         private void btn_registration_Click(object sender, EventArgs e)

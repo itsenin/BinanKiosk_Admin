@@ -81,7 +81,7 @@ namespace BinanKiosk_Admin
         }
         private void btnOffices_Click(object sender, EventArgs e)
         {
-            Config.CallOffices(this);
+            Config.CallDepartments(this);
         }
         private void btnMaps_Click(object sender, EventArgs e)
         {
@@ -422,7 +422,7 @@ namespace BinanKiosk_Admin
 
         private void btnOffices_Click_1(object sender, EventArgs e)
         {
-            Config.CallOffices(this);
+            Config.CallDepartments(this);
         }
 
         private void btnMaps_Click_1(object sender, EventArgs e)

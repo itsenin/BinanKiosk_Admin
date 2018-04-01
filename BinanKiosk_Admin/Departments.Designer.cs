@@ -1,6 +1,6 @@
 ﻿namespace BinanKiosk_Admin
 {
-    partial class Offices
+    partial class Departments
     {
         /// <summary>
         /// Required designer variable.

@@ -425,7 +425,7 @@ namespace BinanKiosk_Admin
 
         private void btnOffices_Click(object sender, EventArgs e)
         {
-            Config.CallOffices(this);
+            Config.CallDepartments(this);
         }
 
         private void btnJobs_Click(object sender, EventArgs e)

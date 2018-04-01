@@ -15,7 +15,8 @@ namespace BinanKiosk_Admin
     {
         //Windows Auth paths
         //public const string HOST_IP = @"\\192.168.1.4"; //Fahad IP
-        public const string HOST_IP = @"\\192.168.0.3"; //Gab PC IP
+        //public const string HOST_IP = @"\\192.168.0.3"; //Gab PC IP
+        public const string HOST_IP = @"\\192.168.0.28"; //Kenneth PC IP
         public const string FOLDER = "SharedFolder";
         public const string imageRootPath = "Images";
         public static string basePath = Path.Combine(HOST_IP, FOLDER, imageRootPath); //Remote root Image path
@@ -107,10 +108,10 @@ namespace BinanKiosk_Admin
             changeForm(current, ofc);
         }
 
-        public static void CallOffices(Form current)
+        public static void CallDepartments(Form current)
         {
-            Offices ofs = new Offices();
-            changeForm(current, ofs);
+            Departments dep = new Departments();
+            changeForm(current, dep);
         }
 
         public static void CallMap1(Form current)
