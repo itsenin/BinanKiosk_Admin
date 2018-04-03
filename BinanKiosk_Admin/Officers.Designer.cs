@@ -320,7 +320,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Department:";
+            this.label3.Text = "Office:";
             // 
             // txtLastName
             // 

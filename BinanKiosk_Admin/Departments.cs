@@ -90,6 +90,27 @@ namespace BinanKiosk_Admin
             conn.Close();*/
         }
 
+        private bool isImageExisting(String img)
+        {
+            conn.Open();
+
+            cmd = new MySqlCommand("SELECT Department_image_path FROM officers WHERE Department_image_path = @img", conn);
+            cmd.Parameters.AddWithValue("@img", img);
+
+            reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                conn.Close();
+                return true;
+            }
+            else
+            {
+                conn.Close();
+                return false;
+            }
+        }
+
         public void clear()
         {
             txtID.Text = "";
@@ -240,6 +261,9 @@ namespace BinanKiosk_Admin
             btnDelete.Enabled = false;
             btnEdit.Enabled = false;
             clear();
+
+            imageFileName = "";
+
             add = true;
             txtID.Enabled = true;
             officeInformation.Enabled = true;
@@ -251,6 +275,8 @@ namespace BinanKiosk_Admin
 
             if (result == DialogResult.Yes)
             {
+                bool checkImageExist = isImageExisting(imageFileName);
+
                 conn.Open();
 
                 initialize();
@@ -260,8 +286,11 @@ namespace BinanKiosk_Admin
                 cmd.Parameters.AddWithValue("@id", deptID);
                 cmd.ExecuteNonQuery();
 
-                Config.DeleteImage(Subfolders.Departments, imageFileName);
-
+                if(checkImageExist == false)
+                {
+                    Config.DeleteImage(Subfolders.Departments, imageFileName);
+                }
+                
                 conn.Close();
 
                 MessageBox.Show("Deleted!");
@@ -297,7 +326,7 @@ namespace BinanKiosk_Admin
             
             if (add == true)
             {
-                if (txtID.Text != "" && txtDeptName.Text != "" && txtDescription.Text != "")
+                if (txtID.Text != "" && txtDeptName.Text != "" && txtDescription.Text != "" && imageFileName != "")
                 {
                     initialize();
 
@@ -325,37 +354,49 @@ namespace BinanKiosk_Admin
                         //MessageBox.Show("Insert Unsuccessful!");
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Please fill up all informations!", "Confirmation!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+
             else //save after edit
             {
                 initialize();
 
-                //update Department info
-                cmd = new MySqlCommand("UPDATE departments SET department_name = @deptName, Dep_description = @deptDesc, Department_image_path = @path WHERE department_id = @id", conn);
-                cmd.Parameters.AddWithValue("@path", imageFileName);
-                cmd.Parameters.AddWithValue("@id", deptID);
-                cmd.Parameters.AddWithValue("@deptName", deptName);
-                cmd.Parameters.AddWithValue("@deptDesc", deptDesc);
-
-                MessageBox.Show(imageFileName + " " + imageFileNameNew);
-
-                try
+                if (txtID.Text != "" && txtDeptName.Text != "" && txtDescription.Text != "" && imageFileName != "")
                 {
-                    cmd.ExecuteNonQuery();
+                    //update Department info
+                    cmd = new MySqlCommand("UPDATE departments SET department_name = @deptName, Dep_description = @deptDesc, Department_image_path = @path WHERE department_id = @id", conn);
+                    cmd.Parameters.AddWithValue("@path", imageFileName);
+                    cmd.Parameters.AddWithValue("@id", deptID);
+                    cmd.Parameters.AddWithValue("@deptName", deptName);
+                    cmd.Parameters.AddWithValue("@deptDesc", deptDesc);
 
-                    if (imageFileName != imageFileNameNew)
+                    MessageBox.Show(imageFileName + " " + imageFileNameNew);
+
+                    try
                     {
-                        using (conn)
-                        {
-                            Config.SaveImage(openFile, Subfolders.Departments);
-                        }
-                    }
+                        cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Updated!");
+                        if (imageFileName != imageFileNameNew)
+                        {
+                            using (conn)
+                            {
+                                Config.SaveImage(openFile, Subfolders.Departments);
+                            }
+                        }
+
+                        MessageBox.Show("Updated!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Update Unsuccessful!");
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Update Unsuccessful!");
+                    MessageBox.Show("Please fill up all informations!", "Confirmation!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 

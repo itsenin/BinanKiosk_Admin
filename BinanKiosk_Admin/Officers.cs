@@ -123,6 +123,27 @@ namespace BinanKiosk_Admin
             officerPicture.Image = null;
         }
 
+        private bool isImageExisting(String img)
+        {
+            conn.Open();
+
+            cmd = new MySqlCommand("SELECT image_path FROM officials WHERE image_path = @img", conn);
+            cmd.Parameters.AddWithValue("@img", img);
+
+            reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                conn.Close();
+                return true;
+            }
+            else
+            {
+                conn.Close();
+                return false;
+            }
+        }
+
         public static byte[] ImageToByteArray(Image img, PictureBox pb)
         {
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
@@ -213,6 +234,8 @@ namespace BinanKiosk_Admin
             officersList.ClearSelected();
             clear();
 
+            imageFileName = "";
+
             add = true;
             txtID.Enabled = true;
             btnEdit.Enabled = false;
@@ -220,7 +243,7 @@ namespace BinanKiosk_Admin
             officerInformation.Enabled = true;
 
         }
-
+        
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to delete the record of " + txtFirstName.Text + " " + txtLastName.Text + "?", "Confirmation!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -274,10 +297,11 @@ namespace BinanKiosk_Admin
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "" || txtFirstName.Text == "" || txtMI.Text == "" || txtLastName.Text == "" || comboBoxDepartment.Text == "" || comboBoxPosition.Text == "")
+            if (txtID.Text == "" || txtFirstName.Text == "" || txtMI.Text == "" || txtLastName.Text == "" || comboBoxDepartment.Text == "" || comboBoxPosition.Text == "" || imageFileName == "")
             {
-                MessageBox.Show("Please enter all credentials!", "Confirmation!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please fill up all informations!", "Confirmation!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
             else
             {
                 initialize();
@@ -286,7 +310,7 @@ namespace BinanKiosk_Admin
                 comboDept = comboBoxDepartment.Text;
 
                 conn.Open();
-
+                
                 this.insertOfficial = "SELECT offices.office_id, positions.position_id FROM offices,positions WHERE offices.office_name = @departments AND positions.position_name = @positions ";
 
                 cmd = new MySqlCommand(insertOfficial, conn);
@@ -305,60 +329,70 @@ namespace BinanKiosk_Admin
                 }
                 reader.Close();
                 conn.Close();
-
+                
                 //Insert
                 if (add == true)
                 {
-                    conn.Open();
-                    
-                    this.insertOfficial = "insert into officials (officials_id, first_name, last_name, middle_initial, suffex, position_id, office_id, image_path) values (@officials_id, @first_name, @last_name, @middle_initial, @suffex, @position_id, @department_id, @img)";
+                    bool checkImageExist = isImageExisting(imageFileName);
 
-                    cmd = new MySqlCommand(insertOfficial, conn);
-                    cmd.Parameters.AddWithValue("@officials_id", officialsID);
-                    cmd.Parameters.AddWithValue("@first_name", firstName);
-                    cmd.Parameters.AddWithValue("@last_name", lastName);
-                    cmd.Parameters.AddWithValue("@middle_initial", middleInitial);
-                    cmd.Parameters.AddWithValue("@suffex", suffix);
-                    cmd.Parameters.AddWithValue("@position_id", position);
-                    cmd.Parameters.AddWithValue("@department_id", department);
-                    cmd.Parameters.AddWithValue("@img", imageFileName);
-
-                    try
+                    if (checkImageExist == true)
                     {
-                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Image Exist! Select another Image!");
+                    }
+                    else
+                    {
+                        conn.Open();
 
-                        using (conn)
+                        this.insertOfficial = "insert into officials (officials_id, first_name, last_name, middle_initial, suffex, position_id, office_id, image_path) values (@officials_id, @first_name, @last_name, @middle_initial, @suffex, @position_id, @department_id, @img)";
+
+                        cmd = new MySqlCommand(insertOfficial, conn);
+                        cmd.Parameters.AddWithValue("@officials_id", officialsID);
+                        cmd.Parameters.AddWithValue("@first_name", firstName);
+                        cmd.Parameters.AddWithValue("@last_name", lastName);
+                        cmd.Parameters.AddWithValue("@middle_initial", middleInitial);
+                        cmd.Parameters.AddWithValue("@suffex", suffix);
+                        cmd.Parameters.AddWithValue("@position_id", position);
+                        cmd.Parameters.AddWithValue("@department_id", department);
+                        cmd.Parameters.AddWithValue("@img", imageFileName);
+
+                        try
                         {
-                            Config.SaveImage(openFile, Subfolders.Officials);
+                            cmd.ExecuteNonQuery();
+
+                            using (conn)
+                            {
+                                Config.SaveImage(openFile, Subfolders.Officials);
+                            }
+
+                            MessageBox.Show("Inserted!");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                            //MessageBox.Show("Insert Unsuccessful!");
                         }
 
-                        MessageBox.Show("Inserted!");
+
+                        /*
+                        //Picture Saving
+                        var serializedImage = ImageToByteArray(officerPicture.Image, officerPicture);
+
+                        this.insertPicture = "INSERT INTO officials_pictures(picture_id, officials_id, picture_string) VALUES(@picture_id, @department_id, @image)";
+
+                        cmd = new MySqlCommand(insertPicture, conn);
+                        cmd.Parameters.AddWithValue("@picture_id", txtID.Text);
+                        cmd.Parameters.AddWithValue("@department_id", txtID.Text);
+                        cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
+                        cmd.ExecuteNonQuery();
+                        */
+
+                        conn.Close();
+
+                        officerInformation.Enabled = false;
+                        officersList.Items.Clear();
+                        officers();
+                        clear();
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Insert Unsuccessful!");
-                    }
-                    
-
-                    /*
-                    //Picture Saving
-                    var serializedImage = ImageToByteArray(officerPicture.Image, officerPicture);
-
-                    this.insertPicture = "INSERT INTO officials_pictures(picture_id, officials_id, picture_string) VALUES(@picture_id, @department_id, @image)";
-
-                    cmd = new MySqlCommand(insertPicture, conn);
-                    cmd.Parameters.AddWithValue("@picture_id", txtID.Text);
-                    cmd.Parameters.AddWithValue("@department_id", txtID.Text);
-                    cmd.Parameters.Add("@image", MySqlDbType.MediumBlob).Value = serializedImage;
-                    cmd.ExecuteNonQuery();
-                    */
-
-                    conn.Close();
-                    
-                    officerInformation.Enabled = false;
-                    officersList.Items.Clear();
-                    officers();
-                    clear();
                 }
                 
                 //Update
@@ -389,6 +423,7 @@ namespace BinanKiosk_Admin
                             using (conn)
                             {
                                 Config.SaveImage(openFile, Subfolders.Officials);
+                                Config.DeleteImage(Subfolders.Officials, imageFileNameNew);
                             }
                         }
 
