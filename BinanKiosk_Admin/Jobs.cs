@@ -206,7 +206,7 @@ namespace BinanKiosk_Admin
             row = 0;
             txtJobTypeID.Text = gridview.SelectedRows[row].Cells[0].Value.ToString();
             txtJobTitle.Text = gridview.SelectedRows[row].Cells[1].Value.ToString();
-            txtJobCategory.SelectedIndex = int.Parse(gridview.SelectedRows[row].Cells[2].Value.ToString());
+            txtJobCategory.SelectedIndex = int.Parse(gridview.SelectedRows[row].Cells[2].Value.ToString())-1;
             txtJobDescription.Text = gridview.SelectedRows[row].Cells[3].Value.ToString();
             txtJobLocation.Text = gridview.SelectedRows[row].Cells[4].Value.ToString();
             txtJobCompany.Text = gridview.SelectedRows[row].Cells[5].Value.ToString();
@@ -219,7 +219,7 @@ namespace BinanKiosk_Admin
         {
             type_id = txtJobTypeID.Text;
             types = txtJobTitle.Text;
-            job_id = (txtJobCategory.SelectedIndex).ToString();
+            job_id = (txtJobCategory.SelectedIndex+1).ToString();
             desc = txtJobDescription.Text;
             location = txtJobLocation.Text;
             company = txtJobCompany.Text;
@@ -246,8 +246,8 @@ namespace BinanKiosk_Admin
                 string.IsNullOrEmpty(txtJobLocation.Text) ||
                 string.IsNullOrEmpty(txtJobCompany.Text) ||
                 string.IsNullOrEmpty(txtJobDescription.Text) ||
-                (pictureBoxLogo.Image == null) ||
-                (pictureBoxPrev.Image == null))
+                (openImg == null) ||
+                (openLogo == null))
             {
                 return true;
             }
@@ -265,6 +265,10 @@ namespace BinanKiosk_Admin
             txtJobLocation.Text = string.Empty;
             txtJobCompany.Text = string.Empty;
             txtJobDescription.Text = string.Empty;
+            pictureBoxLogo.Image = null;
+            pictureBoxPrev.Image = null;
+            openImg = null;
+            openLogo = null;
         }
 
         private bool jobExists (String id)
@@ -352,14 +356,13 @@ namespace BinanKiosk_Admin
             return path;
         }
         */
-        private bool save ()
+        private bool save (string update, int Case)
         {
             bool success;
             getValues();
             string imgPath = imgFileName;
             string logoPath = logoFileName;
-
-            string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company, job_image_path = @job_image_path, Logo_image_path = @Logo_image_path WHERE job_typeID = @job_typeID;";
+            
             cmdSave = new MySqlCommand(update, conn);
             cmdSave.Parameters.AddWithValue("@job_typeID", type_id);
             cmdSave.Parameters.AddWithValue("@job_types", types);
@@ -372,9 +375,34 @@ namespace BinanKiosk_Admin
             using (conn)
             {
                 conn.Open();
-                Config.SaveImage(openImg, Subfolders.Jobs);
-                Config.SaveImage(openLogo, Subfolders.Jobs_CompanyLogo);
-                return success = queryCheck(cmdSave.ExecuteNonQuery());
+                switch (Case)
+                {
+                    case 1:
+                        {
+                            Config.SaveImage(openImg, Subfolders.Jobs);
+                            Config.SaveImage(openLogo, Subfolders.Jobs_CompanyLogo);
+                            return success = queryCheck(cmdSave.ExecuteNonQuery());
+                        } 
+                    case 2:
+                        {
+                            return success = queryCheck(cmdSave.ExecuteNonQuery());
+                        }
+                    case 3:
+                        {
+                            Config.SaveImage(openLogo, Subfolders.Jobs_CompanyLogo);
+                            return success = queryCheck(cmdSave.ExecuteNonQuery());
+                        }
+                    case 4:
+                        {
+                            Config.SaveImage(openLogo, Subfolders.Jobs_CompanyLogo);
+                            return success = queryCheck(cmdSave.ExecuteNonQuery());
+                        }
+                    default:
+                        {
+                            return false;
+                        }
+                }
+                
             }
         }
 
@@ -446,12 +474,12 @@ namespace BinanKiosk_Admin
             populateGridView();
         }
 
-        private void updateDatabase()
+        private void updateDatabase(string update, int Case)
         {
             getValues();
             if (jobExists(type_id))
             {
-                if (save())
+                if (save(update, Case))
                 {
                     MessageBox.Show("changes saved");
                 }
@@ -518,6 +546,7 @@ namespace BinanKiosk_Admin
             if (!checkEmpty())
             {
                 addToDatabase();
+                clearFields();
             }
             else
             {
@@ -531,8 +560,32 @@ namespace BinanKiosk_Admin
             {
                 if (!checkEmpty())
                 {
-                    updateDatabase();
+                    string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company, job_image_path = @job_image_path, Logo_image_path = @Logo_image_path WHERE job_typeID = @job_typeID;";
+                    updateDatabase(update, 1);
+                    clearFields();
                 }
+
+                else if (checkFields() && (OpenImgIsNull() && OpenLogoIsNull()))
+                {
+                    string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company WHERE job_typeID = @job_typeID;";
+                    updateDatabase(update, 2);
+                    clearFields();
+                }
+
+                else if (checkFields() && OpenImgIsNull())
+                {
+                    string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company, Logo_image_path = @Logo_image_path WHERE job_typeID = @job_typeID;";
+                    updateDatabase(update, 3);
+                    clearFields();
+                }
+
+                else if (checkFields() && OpenLogoIsNull())
+                {
+                    string update = "UPDATE jobtypes SET job_types = @job_types, job_id = @job_id, job_description = @job_description, job_location = @job_location, job_company = @job_company, job_image_path = @job_image_path WHERE job_typeID = @job_typeID;";
+                    updateDatabase(update, 4);
+                    clearFields();
+                }
+
                 else
                 {
                     MessageBox.Show("Save failed. Please complete the fields.");
@@ -540,18 +593,65 @@ namespace BinanKiosk_Admin
             }
         }
 
+        private bool checkFields()
+        {
+            if (string.IsNullOrEmpty(txtJobTitle.Text) ||
+                string.IsNullOrEmpty(txtJobTypeID.Text) ||
+                string.IsNullOrEmpty(txtJobLocation.Text) ||
+                string.IsNullOrEmpty(txtJobCompany.Text) ||
+                string.IsNullOrEmpty(txtJobDescription.Text))
+            {
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool OpenImgIsNull()
+        {
+            if ((openImg == null))
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool OpenLogoIsNull()
+        {
+            if ((openLogo == null))
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Delete the selected item?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                deleteFromDatabase();
+                clearFields();
+                /*
                 if (!checkEmpty())
                 {
                     deleteFromDatabase();
+                    clearFields();
                 }
                 else
                 {
                     MessageBox.Show("Delete failed. Please select a row from the table and try again.");
-                }
+                }*/
             }
             
         }

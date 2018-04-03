@@ -16,7 +16,9 @@ namespace BinanKiosk_Admin
         //Windows Auth paths
         //public const string HOST_IP = @"\\192.168.1.4"; //Fahad IP
         //public const string HOST_IP = @"\\192.168.0.3"; //Gab PC IP
-        public const string HOST_IP = @"\\192.168.0.28"; //Kenneth PC IP
+        public const string HOST_IP = @"\\192.168.137.218"; //Gab Laptop IP
+        //public const string HOST_IP = @"\\192.168.0.28"; //Kenneth PC IP
+        //public const string HOST_IP = @"\\192.168.43.191"; //Genrev PC IP
         public const string FOLDER = "SharedFolder";
         public const string imageRootPath = "Images";
         public static string basePath = Path.Combine(HOST_IP, FOLDER, imageRootPath); //Remote root Image path
@@ -24,8 +26,8 @@ namespace BinanKiosk_Admin
         public const string BASE_ADDRESS = "http://192.168.1.4:8080/api/";
         public const string BASE_ADDRESS_DEBUG = "http://localhost:8080/api/";
         //public const string BASE_ADDRESS_DEBUG = "http://localhost:54470/api/";
-        //public static MySqlConnection conn = new MySqlConnection("SERVER=" + "192.168.43.152" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "password" + ";");
-        public static MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
+        public static MySqlConnection conn = new MySqlConnection("SERVER=" + "192.168.137.94" + ";" + "DATABASE=" + "binan_kiosk" + ";" + "UID=" + "" + ";" + "PASSWORD=password" + ";");
+        //public static MySqlConnection conn = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "binan_kiosk_actual" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "" + ";");
 
         public static string currentfloor = "f1";
 
