@@ -437,9 +437,9 @@
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(595, 89);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(223, 57);
+            this.label9.Size = new System.Drawing.Size(232, 57);
             this.label9.TabIndex = 33;
-            this.label9.Text = "OFFICERS";
+            this.label9.Text = "OFFICIALS";
             // 
             // btnOffices
             // 
@@ -475,7 +475,7 @@
             this.btnOfficers.Name = "btnOfficers";
             this.btnOfficers.Size = new System.Drawing.Size(155, 50);
             this.btnOfficers.TabIndex = 275;
-            this.btnOfficers.Text = "OFFICERS";
+            this.btnOfficers.Text = "OFFICIALS";
             this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOfficers.UseVisualStyleBackColor = false;
             this.btnOfficers.Click += new System.EventHandler(this.btnOfficers_Click);
@@ -553,7 +553,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(155, 50);
             this.btnHome.TabIndex = 277;
-            this.btnHome.Text = "HOME";
+            this.btnHome.Text = "EVENTS";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);

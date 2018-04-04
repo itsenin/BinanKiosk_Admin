@@ -359,7 +359,7 @@
             this.btnOfficers.Name = "btnOfficers";
             this.btnOfficers.Size = new System.Drawing.Size(155, 50);
             this.btnOfficers.TabIndex = 267;
-            this.btnOfficers.Text = "OFFICERS";
+            this.btnOfficers.Text = "OFFICIALS";
             this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOfficers.UseVisualStyleBackColor = false;
             this.btnOfficers.Click += new System.EventHandler(this.btnOfficers_Click);
@@ -437,7 +437,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(155, 50);
             this.btnHome.TabIndex = 269;
-            this.btnHome.Text = "HOME";
+            this.btnHome.Text = "EVENTS";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);

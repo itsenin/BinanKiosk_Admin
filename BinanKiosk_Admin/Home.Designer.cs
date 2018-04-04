@@ -43,7 +43,7 @@
             this.lbl_imageName = new System.Windows.Forms.Label();
             this.lbl_sliderPics = new System.Windows.Forms.Label();
             this.lbl_imagePrv = new System.Windows.Forms.Label();
-            this.lbl_Home = new System.Windows.Forms.Label();
+            this.lbl_Events = new System.Windows.Forms.Label();
             this.lst_sliderPics = new System.Windows.Forms.ListBox();
             this.pnl_Save = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -259,17 +259,17 @@
             this.lbl_imagePrv.TabIndex = 257;
             this.lbl_imagePrv.Text = "Image Preview";
             // 
-            // lbl_Home
+            // lbl_Events
             // 
-            this.lbl_Home.AutoSize = true;
-            this.lbl_Home.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Home.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Home.Location = new System.Drawing.Point(598, 102);
-            this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(172, 55);
-            this.lbl_Home.TabIndex = 258;
-            this.lbl_Home.Text = "HOME";
+            this.lbl_Events.AutoSize = true;
+            this.lbl_Events.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Events.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Events.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Events.Location = new System.Drawing.Point(598, 102);
+            this.lbl_Events.Name = "lbl_Events";
+            this.lbl_Events.Size = new System.Drawing.Size(222, 55);
+            this.lbl_Events.TabIndex = 258;
+            this.lbl_Events.Text = "EVENTS";
             // 
             // lst_sliderPics
             // 
@@ -353,7 +353,7 @@
             this.btnOfficers.Name = "btnOfficers";
             this.btnOfficers.Size = new System.Drawing.Size(155, 50);
             this.btnOfficers.TabIndex = 295;
-            this.btnOfficers.Text = "OFFICERS";
+            this.btnOfficers.Text = "OFFICIALS";
             this.btnOfficers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOfficers.UseVisualStyleBackColor = false;
             this.btnOfficers.Click += new System.EventHandler(this.btnOfficers_Click);
@@ -431,7 +431,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(155, 50);
             this.btnHome.TabIndex = 297;
-            this.btnHome.Text = "HOME";
+            this.btnHome.Text = "EVENTS";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -513,7 +513,7 @@
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.lbl_Home);
+            this.Controls.Add(this.lbl_Events);
             this.Controls.Add(this.lbl_sliderPics);
             this.Controls.Add(this.lst_sliderPics);
             this.Controls.Add(this.btn_delete);
@@ -560,7 +560,7 @@
         private System.Windows.Forms.Label lbl_imageName;
         private System.Windows.Forms.Label lbl_sliderPics;
         private System.Windows.Forms.Label lbl_imagePrv;
-        private System.Windows.Forms.Label lbl_Home;
+        private System.Windows.Forms.Label lbl_Events;
         private System.Windows.Forms.ListBox lst_sliderPics;
         private System.Windows.Forms.Panel pnl_Save;
         private System.Windows.Forms.Panel panel1;
