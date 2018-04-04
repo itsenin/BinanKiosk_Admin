@@ -27,28 +27,21 @@ namespace BinanKiosk_Admin
         {
             DoubleBuffered = true;
             InitializeComponent();
-            timer1.Interval = 5000;
-            timer1.Start();
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
             btn_delete.Enabled = false;
             imgIds = new List<int>();
+            timestamp.Enabled = true;
             timestamp.Interval = 1;
             timestamp.Start();
             loadImageList();
         }
 
-        private void OnTimerEvent(object sender, EventArgs e)
-        {
-            lbldate.Text = DateTime.Now.ToLongDateString() + System.Environment.NewLine + DateTime.Now.ToLongTimeString();
-        }
-
         private void timestamp_Tick(object sender, EventArgs e)
         {
-            timestamp.Enabled = true;
-            timestamp.Tick += new System.EventHandler(OnTimerEvent);
+            lbldate.Text = DateTime.Now.ToLongDateString() + System.Environment.NewLine + DateTime.Now.ToLongTimeString();
         }
 
         private void loadImageList()

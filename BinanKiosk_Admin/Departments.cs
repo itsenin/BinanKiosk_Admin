@@ -33,12 +33,21 @@ namespace BinanKiosk_Admin
 
         private void Search_Load(object sender, EventArgs e)
         {
+            timestamp.Enabled = true;
+            timestamp.Interval = 1;
+            timestamp.Start();
+
             offices();
             //departments();
             positions();
 
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
+        }
+
+        private void timestamp_Tick(object sender, EventArgs e)
+        {
+            lbldate.Text = DateTime.Now.ToLongDateString() + System.Environment.NewLine + DateTime.Now.ToLongTimeString();
         }
 
         private void initialize()

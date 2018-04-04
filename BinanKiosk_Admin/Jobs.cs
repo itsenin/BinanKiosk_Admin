@@ -54,6 +54,18 @@ namespace BinanKiosk_Admin
             populateGridView();
         }
 
+        private void Jobs_Load(object sender, EventArgs e)
+        {
+            timestamp.Enabled = true;
+            timestamp.Interval = 1;
+            timestamp.Start();
+        }
+
+        private void timestamp_Tick(object sender, EventArgs e)
+        {
+            lbldate.Text = DateTime.Now.ToLongDateString() + System.Environment.NewLine + DateTime.Now.ToLongTimeString();
+        }
+
         private void setDefaults ()
         {
             txtJobType.SelectedIndex = 0;
@@ -770,6 +782,6 @@ namespace BinanKiosk_Admin
             }
         }
 
-       
+
     }
 }

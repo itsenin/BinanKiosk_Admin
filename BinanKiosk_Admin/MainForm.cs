@@ -32,8 +32,6 @@ namespace BinanKiosk_Admin
             lbl_navigation.Parent = pictureBox2;
             lbl_navigation.Location = pos;
 
-            timer1.Interval = 5000;
-            timer1.Start();
             this.userName = User.userName;
             this.firstName = User.firstName;
             this.lastName = User.lastName;
@@ -52,9 +50,14 @@ namespace BinanKiosk_Admin
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            timestamp.Enabled = true;
             timestamp.Interval = 1;
             timestamp.Start();
+        }
+
+        private void timestamp_Tick(object sender, EventArgs e)
+        {
+            lbldate.Text = DateTime.Now.ToLongDateString() + System.Environment.NewLine + DateTime.Now.ToLongTimeString();
         }
 
         public int seconds = 0;
@@ -62,12 +65,6 @@ namespace BinanKiosk_Admin
         private void OnTimerEvent(object sender, EventArgs e)
         {
             lbldate.Text =  DateTime.Now.ToLongDateString() + System.Environment.NewLine + DateTime.Now.ToLongTimeString();
-        }
-
-        private void timestamp_Tick_1(object sender, EventArgs e)
-        {
-            timestamp.Enabled = true;
-            timestamp.Tick += new System.EventHandler(OnTimerEvent);
         }
 
         private void btnHome_Click(object sender, EventArgs e)

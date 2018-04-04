@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Services));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timestamp = new System.Windows.Forms.Timer(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -73,6 +72,10 @@
             this.pnl_Save.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_preview)).BeginInit();
             this.SuspendLayout();
+            // 
+            // timestamp
+            // 
+            this.timestamp.Tick += new System.EventHandler(this.timestamp_Tick);
             // 
             // pictureBox7
             // 
@@ -591,7 +594,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Timer timestamp;
         private System.Windows.Forms.PictureBox pictureBox4;

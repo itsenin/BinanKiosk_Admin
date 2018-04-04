@@ -22,8 +22,6 @@ namespace BinanKiosk_Admin
         public Mapground()
         {
             InitializeComponent();
-            timer1.Interval = 5000;
-            timer1.Start();
             mapchange = new List<KeyValuePair<string, string>>();
 
         }
@@ -31,15 +29,9 @@ namespace BinanKiosk_Admin
 
         public int seconds = 0;
 
-        private void OnTimerEvent(object sender, EventArgs e)
+        private void timestamp_Tick(object sender, EventArgs e)
         {
             lbldate.Text = DateTime.Now.ToLongDateString() + System.Environment.NewLine + DateTime.Now.ToLongTimeString();
-        }
-
-        private void timestamp_Tick_1(object sender, EventArgs e)
-        {
-            timestamp.Enabled = true;
-            timestamp.Tick += new System.EventHandler(OnTimerEvent);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -61,6 +53,10 @@ namespace BinanKiosk_Admin
 
         private void Mapground_Load_1(object sender, EventArgs e)
         {
+            timestamp.Enabled = true;
+            timestamp.Interval = 1;
+            timestamp.Start();
+
 
             Button[] btnarray = { r101, r102, r103, r104, r105, r106, r107, r108, r109, r110, r111, r112, r201, r202,
              r203, r204, r205, r206, r207, r208, R209, r210, r211, r212, r213, r214, r215, r216, r217, r218, r219

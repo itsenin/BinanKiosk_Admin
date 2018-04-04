@@ -30,7 +30,6 @@
     {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timestamp = new System.Windows.Forms.Timer(this.components);
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -548,7 +547,6 @@
     }
 
     #endregion
-    private System.Windows.Forms.Timer timer1;
     private System.Windows.Forms.PictureBox pictureBox3;
     private System.Windows.Forms.Timer timestamp;
     private System.Windows.Forms.PictureBox pictureBox4;

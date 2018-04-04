@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timestamp = new System.Windows.Forms.Timer(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -55,6 +54,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
+            // 
+            // timestamp
+            // 
+            this.timestamp.Tick += new System.EventHandler(this.timestamp_Tick);
             // 
             // pictureBox7
             // 
@@ -123,10 +126,10 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(446, 357);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(679, 66);
+            this.label1.Size = new System.Drawing.Size(679, 97);
             this.label1.TabIndex = 283;
             this.label1.Text = "Welcome to Binan Kiosk Administration Software!\r\nClick the buttons from the left " +
-    "side bar to view the modules!";
+    "side bar to view the modules";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_navigation
@@ -347,6 +350,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -359,7 +363,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Timer timestamp;
         private System.Windows.Forms.PictureBox pictureBox4;

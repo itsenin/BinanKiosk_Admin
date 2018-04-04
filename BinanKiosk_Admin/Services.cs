@@ -29,11 +29,20 @@ namespace BinanKiosk_Admin
         }
         private void Services_Load(object sender, EventArgs e)
         {
+            timestamp.Enabled = true;
+            timestamp.Interval = 1;
+            timestamp.Start();
+
             svcIds = new List<int>();
             loadServiceList();
             populate_officeComboBox();
             cmb_office.DropDownWidth = DropDownWidth(cmb_office);
             cmb_office.SelectedIndex = 0;
+        }
+
+        private void timestamp_Tick(object sender, EventArgs e)
+        {
+            lbldate.Text = DateTime.Now.ToLongDateString() + System.Environment.NewLine + DateTime.Now.ToLongTimeString();
         }
 
         private void populate_officeComboBox()
@@ -450,5 +459,6 @@ namespace BinanKiosk_Admin
             if (MessageBox.Show("Logout?", "Confirm Action", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 Config.CallLogin(this);
         }
+
     }
 }
