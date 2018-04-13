@@ -204,7 +204,7 @@
             // txtJobDescription
             // 
             this.txtJobDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtJobDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJobDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJobDescription.Location = new System.Drawing.Point(312, 460);
             this.txtJobDescription.MaxLength = 128;
             this.txtJobDescription.Multiline = true;

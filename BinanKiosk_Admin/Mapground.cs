@@ -219,9 +219,7 @@ namespace BinanKiosk_Admin
 
                     if (bttn.Text !="Empty Room")
                     {
-                      unassignrooms.Items.Add(bttn.Text);
-                        
-                       
+                      unassignrooms.Items.Add(bttn.Text);                      
 
                     }
                     

@@ -40,7 +40,7 @@ namespace BinanKiosk_Admin
             this.office = User.office;
             this.email = User.email;
             this.password = User.password;
-            showValues();
+            //showValues();
         }
 
         private void showValues()
